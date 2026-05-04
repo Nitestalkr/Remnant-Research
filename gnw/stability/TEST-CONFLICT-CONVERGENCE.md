@@ -43,7 +43,7 @@ The resolution protocol is designed to converge in ≤ 3 steps:
 
 ### Simulation Test
 
-`python
+```python
 def test_convergence():
     """Test that conflict resolution always converges."""
     test_cases = [
@@ -61,7 +61,7 @@ def test_convergence():
         assert result == expected, f"Expected {expected}, got {result} for {context}"
 
     return True
-`
+```
 
 ## Success Criteria
 
