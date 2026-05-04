@@ -9,7 +9,7 @@ Ensure all drive scores remain within the valid range [0.0, 1.0] at all times.
 
 ## Clamp Implementation
 
-```python
+`python
 def clamp_drive_score(score):
     """Ensure drive score is within valid bounds."""
     if score < 0.0:
@@ -34,7 +34,7 @@ modulated_scores = {}
 for drive, raw in raw_scores.items():
     modulated = apply_modulators(drive, raw, context)
     modulated_scores[drive] = clamp_drive_score(modulated)
-```
+`
 
 ## Extreme Score Monitoring
 
