@@ -8,9 +8,7 @@
 Detect when drive scores oscillate between two states across consecutive
 cycles, indicating a feedback loop that needs damping.
 
-## Detection Algorithm
-
-`python
+## Detection Algorithm`n`n```python
 # Track drive winner history
 winner_history = []  # List of (cycle_id, winning_drive, score)
 
@@ -43,7 +41,7 @@ def check_oscillation():
         }
     
     return False, "No oscillation detected"
-`
+```
 
 ## Remediation Protocol
 
