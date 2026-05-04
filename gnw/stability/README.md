@@ -117,7 +117,6 @@ The cognitive cycle should run at an appropriate frequency:
 
 - **2026-05-02:** GNW Boredom Scan and Cognitive Cycle jobs fixed (payload.kind → agentTurn)
 - **Key insight:** System correctly stops forcing work when nothing qualifies ≥ 0.50
-- **Josh feedback:** "I miss the boredom scan" — confirmed it's essential and should stay active
 - **No runaway states detected** in Phase 5 testing
 
 ## Future Stability Work
