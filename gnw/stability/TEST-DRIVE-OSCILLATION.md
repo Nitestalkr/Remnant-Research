@@ -40,10 +40,7 @@ def check_oscillation():
             "cycle_range": recent
         }
     
-    return False, "No oscillation detected"
-```
-
-## Remediation Protocol
+    return False, "No oscillation detected"````n`n## Remediation Protocol
 
 ### Level 1: Recency Bias (First Response)
 
