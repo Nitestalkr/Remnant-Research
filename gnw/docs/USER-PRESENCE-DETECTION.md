@@ -65,6 +65,26 @@ def calculate_engagement_level(last_message_age: int, messages_per_minute: float
 
 ---
 
+## Modulation Mechanics
+
+Modulation uses **multiplicative factors**, not additive. Each factor is applied sequentially:
+
+```
+modulated_score = raw_score × factor_1 × factor_2 × ... (all factors)
+```
+
+When user is active:
+1. **Helpfulness boost:** `helpfulness × 1.10` (10% multiplicative increase)
+2. **Curiosity suppression:** `curiosity × 0.70` (30% multiplicative decrease)
+3. **Both factors apply independently** to their respective drives
+
+This means:
+- High engagement → helpfulness goes UP, curiosity goes DOWN (they move in opposite directions)
+- The dampening of curiosity is NOT caused by helpfulness boosting — it's an independent rule
+- Both are multiplicative, not additive
+
+---
+
 ## Integration with OpenClaw
 
 In practice, user presence detection uses:

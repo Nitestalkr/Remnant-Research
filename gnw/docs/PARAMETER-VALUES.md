@@ -31,7 +31,7 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 |-----------|-------|-----------|
 | **Trigger threshold** | 0.50 | Midpoint — triggers exploration before stagnation, but not too aggressively |
 | **Floor (user active)** | 0.30 | Low enough to not interfere, high enough to not be zero |
-| **Floor (user away)** | 0.0 | No floor — boredom should be able to reach 0 when engaged |
+| **Floor (user away)** | 0.0 | No floor — boredom can reach 0 when user is away and engaged |
 | **Stale bonus max** | 0.20 | Capped to prevent runaway boredom from stale time alone |
 
 ### Why 0.50 vs. Alternatives
@@ -70,6 +70,7 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 | **Recency dampening** | 0.85 | 15% dampening for last winner |
 | **Oscillation detection** | 4 alternations in 6 cycles | Enough to confirm pattern, not so sensitive as to trigger on noise |
 | **Oscillation damping** | 0.80 | 20% dampening for oscillating drives |
+| **Oscillation damping duration** | Persists until context changes or 12 cycles pass (whichever first) | Damping is temporary — not permanent punishment |
 
 ---
 

@@ -17,9 +17,33 @@ cohesive unit rather than independent agents with competing priorities.
 
 ## Drive Score Sharing Protocol
 
-### Broadcast Format
+### Broadcast Schema
 
-Each agent broadcasts its drive scores at the end of each cognitive cycle:
+Each agent broadcasts its drive scores at the end of each cognitive cycle.
+Malformed payloads are rejected and logged.
+
+```json
+{
+  "agent_id": "string",           // Unique agent identifier
+  "timestamp": "ISO-8601",        // Broadcast time
+  "drives": {
+    "curiosity": "number",        // 0.0–1.0
+    "helpfulness": "number",      // 0.0–1.0
+    "competence": "number",       // 0.0–1.0
+    "safety": "number",           // 0.0–1.0
+    "goal_directed": "number"     // 0.0–1.0
+  },
+  "winner": "string",             // Winning drive name
+  "action": "string",             // Selected action
+  "confidence": "number",         // 0.0–1.0
+  "version": "string"             // Schema version (e.g., "1.0")
+}
+```
+
+**Validation:** Receiving agents check that all drive values are 0.0–1.0.
+Malformed payloads are logged and discarded.
+
+### Broadcast Format
 
 ```json
 {
