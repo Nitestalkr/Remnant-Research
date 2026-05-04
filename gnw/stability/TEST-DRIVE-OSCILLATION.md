@@ -8,39 +8,44 @@
 Detect when drive scores oscillate between two states across consecutive
 cycles, indicating a feedback loop that needs damping.
 
-## Detection Algorithm`n`n```python
+## Detection Algorithm
+
+`python
 # Track drive winner history
 winner_history = []  # List of (cycle_id, winning_drive, score)
 
 def check_oscillation():
     if len(winner_history) < 6:
         return False, "Insufficient data"
-    
+
     # Get last 6 winners
     recent = winner_history[-6:]
-    
+
     # Check for alternating pattern
     drives = [w[1] for w in recent]
-    
+
     # Count alternations
     alternations = 0
     for i in range(1, len(drives)):
         if drives[i] != drives[i-1]:
             alternations += 1
-    
+
     # If 4+ alternations in 6 cycles, likely oscillation
     if alternations >= 4:
         # Identify the two oscillating drives
         drive_counts = Counter(drives)
         top_two = drive_counts.most_common(2)
-        
+
         return True, {
             "oscillating_drives": [d[0] for d in top_two],
             "alternations": alternations,
             "cycle_range": recent
         }
-    
-    return False, "No oscillation detected"````n`n## Remediation Protocol
+
+    return False, "No oscillation detected"
+`
+
+## Remediation Protocol
 
 ### Level 1: Recency Bias (First Response)
 
