@@ -60,7 +60,7 @@ Both jobs were fixed on 2026-05-02 (payload.kind changed from systemEvent → ag
 
 ## Lessons Learned
 
-1. **Boredom is essential** — Josh noted "I miss the boredom scan" — it's the agent's primary self-motivation mechanism
+1. **Boredom is essential** — it's the agent's primary self-motivation mechanism
 2. **Don't force work** — The system correctly stops when nothing qualifies ≥ 0.50. Forcing work breaks the model.
 3. **Drive weights should be dynamic** — Static weights lead to drift. Weights must shift based on context.
 4. **Safety veto is non-negotiable** — Any external action must pass safety check first.
