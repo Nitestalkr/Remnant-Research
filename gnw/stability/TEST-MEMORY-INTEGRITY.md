@@ -40,7 +40,7 @@ If any write fails:
 
 ### Periodic Integrity Check (Every 100 cycles)
 
-`python
+```python
 def memory_integrity_check():
     """Verify all GNW memory components are intact."""
     checks = [
@@ -65,7 +65,7 @@ def memory_integrity_check():
             continue
 
     return failures
-`
+```
 
 ### Check Functions
 
