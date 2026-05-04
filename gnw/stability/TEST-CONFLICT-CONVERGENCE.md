@@ -42,6 +42,7 @@ The resolution protocol is designed to converge in ≤ 3 steps:
 ## Test Methodology
 
 ### Simulation Test
+
 `python
 def test_convergence():
     """Test that conflict resolution always converges."""
@@ -53,12 +54,12 @@ def test_convergence():
         ({'curiosity': 0.72, 'competence': 0.70, 'goal_directed': 0.68}, 'user_away_stale', 'curiosity'),  # Tie test
         ({'curiosity': 0.50, 'helpfulness': 0.48, 'competence': 0.47, 'safety': 0.45, 'goal_directed': 0.44}, 'all_low', None),  # No trigger
     ]
-    
+
     for scores, context, expected in test_cases:
         result = resolve_conflict(scores, context)
         assert result is not None, f"Resolution failed for {context}"
         assert result == expected, f"Expected {expected}, got {result} for {context}"
-    
+
     return True
 `
 
