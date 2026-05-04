@@ -173,7 +173,7 @@ gnw-research/
 │       ├── TEST-DRIVE-OSCILLATION.md
 │       ├── TEST-MEMORY-INTEGRITY.md
 │       └── TEST-SCORE-BOUNDS.md
-├── gnw-phase1-plan.md
+├── gnw-phase1-plan.md (legacy — see PHASE-1-4-SUMMARIES.md for full phase history)
 └── LICENSE
 ```
 

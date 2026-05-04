@@ -9,6 +9,30 @@ This bridges the gap between specification and executable code.
 
 ---
 
+## Decay Formula
+
+The exponential half-life decay formula applied to all drive scores:
+
+```
+score_t = score_{t-1} × 0.5^(cycles_elapsed / half_life)
+```
+
+Where:
+- `score_t` = current drive score
+- `score_{t-1}` = previous drive score
+- `cycles_elapsed` = number of cycles since last reinforcement
+- `half_life` = the drive's half-life parameter (in cycles)
+
+**Example:** Curiosity (half-life = 6 cycles), score = 0.80, 3 cycles elapsed:
+```
+score = 0.80 × 0.5^(3/6) = 0.80 × 0.5^0.5 = 0.80 × 0.707 = 0.566
+```
+
+After 6 cycles (one half-life): score = 0.80 × 0.5 = **0.40**
+After 12 cycles (two half-lives): score = 0.80 × 0.25 = **0.20**
+
+---
+
 ## Core Types
 
 ```python
@@ -448,6 +472,11 @@ def get_priority_order(context: dict) -> dict:
 def apply_tie_breaking(drive_a: dict, drive_b: dict, context: dict) -> dict:
     """
     Tie-breaking: less recently dominant drive gets priority.
+    
+    "last_winner" refers to the immediately previous cycle's winner,
+    stored in context['last_winner'] after each cycle completes.
+    The non-dominant drive (the one that did NOT win the previous cycle)
+    gets priority to prevent runaway dominance.
     """
     last_winner = context.get('last_winner', None)
     

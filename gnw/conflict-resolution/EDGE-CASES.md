@@ -139,6 +139,26 @@ Example:
 
 **Prevention:** Regular memory backups and state validation checks.
 
+### Degraded Mode Scope
+
+When memory integrity fails, GNW enters "degraded mode":
+
+| Component | Works in Degraded Mode? |
+|-----------|------------------------|
+| Drive computation | ✅ Yes — uses default baseline weights |
+| Boredom scan | ✅ Yes — uses default parameters |
+| Conflict resolution | ✅ Yes — uses default priority matrix |
+| Cognitive cycle | ✅ Yes — executes with default weights |
+| Self-improvement (drive weight adaptation) | ❌ No — cannot persist weight changes |
+| Cross-session drive persistence | ❌ No — cannot load historical state |
+| Cycle log persistence | ❌ No — logs not written |
+| User request processing | ✅ Yes — unaffected |
+| External action safety veto | ✅ Yes — safety is hard-coded, not memory-dependent |
+
+**Bottom line:** GNW can still execute user requests and compute drives in degraded mode.
+It loses self-improvement capability (weight adaptation, cross-session persistence).
+Safety is never compromised — veto thresholds are hard-coded.
+
 ---
 
 *Remnant Research — from theory to deployment.*
