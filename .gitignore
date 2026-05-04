@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OpenClaw / Agent workspaces
+.openclaw/
+workspace-*/
+*.pid
+*.log
+
+# Research data
+research/data/*.csv
+research/data/*.json
+research/data/*.parquet
+papers/downloaded/*.pdf
+
+# AI/ML artifacts
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.gguf
+models/
+checkpoints/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Temp
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Logs
+logs/
+*.log
+
+# Memory / daily notes
+memory/2026-*/
+memory/archive-*/
+
+# Nostr
+.nostr/
+keys/
