@@ -1,0 +1,16 @@
+# Cycle Logs
+
+Cycle logs are stored here in the format:
+cycle-YYYY-MM-DD-HHMM.md
+
+Each log contains:
+- Timestamp
+- Boredom score
+- All 5 drive scores (pre and post modulation)
+- Selected drive and action
+- Result summary
+- Reflection quality score
+
+---
+
+*Remnant Research — from theory to deployment.*
