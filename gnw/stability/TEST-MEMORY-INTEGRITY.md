@@ -40,7 +40,7 @@ If any write fails:
 
 ### Periodic Integrity Check (Every 100 cycles)
 
-```python
+`python
 def memory_integrity_check():
     """Verify all GNW memory components are intact."""
     checks = [
@@ -48,24 +48,24 @@ def memory_integrity_check():
         ('boredom-state.json', validate_json, check_boredom_state),
         ('winner-history.json', validate_json, check_winner_history),
     ]
-    
+
     failures = []
     for path, validator, checker in checks:
         if not file_exists(path):
             failures.append(f"{path}: file missing")
             continue
-        
+
         content = read_file(path)
         if not validator(content):
             failures.append(f"{path}: invalid format")
             continue
-        
+
         if not checker(content):
             failures.append(f"{path}: data inconsistency")
             continue
-    
+
     return failures
-```
+`
 
 ### Check Functions
 
