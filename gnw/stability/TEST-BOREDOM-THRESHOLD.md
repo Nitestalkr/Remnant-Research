@@ -62,7 +62,6 @@ Each boredom computation logs:
 - Boredom formula correctly stops forcing work when nothing qualifies ≥ 0.50
 - Key insight from testing: the system should not "try harder" when bored — it should just work on what's most relevant
 
-
 ---
 
 *Remnant Research — from theory to deployment.*
