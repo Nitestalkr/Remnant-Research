@@ -10,7 +10,7 @@ what to work on based on weighted cognitive drives that respond to context.
 
 ## Component Diagram
 
-`
+```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        GNW Framework                                │
 │                                                                     │
@@ -51,11 +51,11 @@ what to work on based on weighted cognitive drives that respond to context.
 │  │  └────────────┘  └────────────┘  └────────────┘     │          │
 │  └──────────────────────────────────────────────────────┘          │
 └─────────────────────────────────────────────────────────────────────┘
-`
+```
 
 ## Data Flow
 
-`
+```
 External Input / Cron Trigger
         │
         ▼
@@ -88,11 +88,11 @@ External Input / Cron Trigger
 │  Memory      │──→ Persist drive weights, cycle log, state
 │  Write       │
 └──────────────┘
-`
+```
 
 ## Drive Module
 
-`
+```
 ┌─────────────────────────────────────┐
 │           Drive Module               │
 │                                      │
@@ -114,12 +114,12 @@ External Input / Cron Trigger
 │  All modules → raw scores → modulate │
 │  → conflict detection → output       │
 └─────────────────────────────────────┘
-`
+```
 
 ## Key Interfaces
 
 ### Drive Score Interface
-`json
+```json
 {
   "curiosity": 0.72,
   "helpfulness": 0.65,
@@ -130,10 +130,10 @@ External Input / Cron Trigger
   "winner": "curiosity",
   "action": "scan_arxiv_for_self_evolution"
 }
-`
+```
 
 ### Cycle Log Interface
-`markdown
+```markdown
 # Cycle 2026-05-03-1430
 
 ## Drives
@@ -147,19 +147,19 @@ External Input / Cron Trigger
 ## Action: Scan arXiv for self-evolving agent papers
 ## Result: 15 papers found, 3 recommended
 ## Reflection: 0.75 (good quality output)
-`
+```
 
 ## Future Architecture
 
 ### Phase 6: Cross-Agent Coordination
-`
+```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │  Agent 1    │    │  Agent 2    │    │  Agent 3    │
 │  (Andi)     │◄──►│  (Randi2)   │◄──►│  (Claude)   │
 │             │    │             │    │             │
 │  Drive Sync │    │  Drive Sync │    │  Drive Sync │
 └─────────────┘    └─────────────┘    └─────────────┘
-`
+```
 
 ### Phase 7: Self-Modifying Drives
 - Drives learn from their own success/failure rates
