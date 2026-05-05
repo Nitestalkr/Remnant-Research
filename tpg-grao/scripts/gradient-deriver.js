@@ -168,7 +168,7 @@ function computePatternStrength(traces) {
 
   // Count unique sources in cluster
   const sources = new Set(traces.map(t => t.source));
-  const source Diversity = sources.size / traces.length;
+  const sourceDiversity = sources.size / traces.length;
 
   // Count traces with high confidence
   const highConfidence = traces.filter(t => (t.metadata?.confidence || 0) >= 0.7).length;

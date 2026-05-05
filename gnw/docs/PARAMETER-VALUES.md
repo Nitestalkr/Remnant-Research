@@ -1,6 +1,6 @@
-# Parameter Values — Current Working Configuration
+# Parameter Values - Current Working Configuration
 
-Documented parameter values for GNW. These are **current best-guess values**, subject to calibration from real cycle data.
+Documented parameter values for GNW. These are current best-guess values, subject to calibration from real cycle data.
 
 ---
 
@@ -17,11 +17,11 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Drive | Half-life | Why |
 |-------|-----------|-----|
-| Curiosity | 6 cycles | Moderate persistence — exploration interest should last a few cycles but not dominate |
-| Helpfulness | 4 cycles | Faster decay — user requests are time-sensitive; old requests lose urgency |
-| Competence | 8 cycles | Long persistence — capability gaps don't disappear quickly; sustained motivation needed |
-| Safety | 2 cycles | Fast decay — safety concerns are urgent but transient; once addressed, urgency drops |
-| Goal-Directed | 10 cycles | Longest persistence — goals persist across many cycles; long-term objectives need sustained drive |
+| Curiosity | 6 cycles | Moderate persistence - exploration interest should last a few cycles but not dominate |
+| Helpfulness | 4 cycles | Faster decay - user requests are time-sensitive; old requests lose urgency |
+| Competence | 8 cycles | Long persistence - capability gaps do not disappear quickly; sustained motivation is needed |
+| Safety | 2 cycles | Fast decay - safety concerns are urgent but transient; once addressed, urgency should drop |
+| Goal-Directed | 10 cycles | Longest persistence - goals persist across many cycles; long-term objectives need sustained drive |
 
 ---
 
@@ -29,20 +29,20 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Parameter | Value | Rationale |
 |-----------|-------|-----------|
-| **Trigger threshold** | 0.50 | Midpoint — triggers exploration before stagnation, but not too aggressively |
+| **Trigger threshold** | 0.50 | Midpoint - triggers exploration before stagnation, but not too aggressively |
 | **Floor (user active)** | 0.30 | Low enough to not interfere, high enough to not be zero |
-| **Floor (user away)** | 0.0 | No floor — boredom can reach 0 when user is away and engaged |
+| **Floor (user away)** | 0.0 | No floor - boredom can fall to 0 when the user is away and context is still fresh |
 | **Stale bonus max** | 0.20 | Capped to prevent runaway boredom from stale time alone |
 
 ### Why 0.50 vs. Alternatives
 
 | Threshold | Pros | Cons |
 |-----------|------|------|
-| **0.45** | More proactive exploration | Risk of triggering on minor staleness → noise |
-| **0.50** ✅ | Balanced — triggers before stagnation, not before normal variation | May miss legitimate exploration opportunities |
-| **0.60** | Less noise, higher quality | Risk of stagnation — agent works too long on same topics |
+| **0.45** | More proactive exploration | Risk of triggering on minor staleness and creating noise |
+| **0.50** | Balanced - triggers before stagnation, not before normal variation | May miss some legitimate exploration opportunities |
+| **0.60** | Less noise, higher quality | Risk of stagnation - agent may stay on the same topic too long |
 
-**Current choice: 0.50** — validated through Phase 5 testing. The system correctly stops when nothing qualifies ≥ 0.50, confirming the threshold is appropriate.
+**Current choice: 0.50** - validated through Phase 5 testing. The system correctly stops when nothing qualifies `>= 0.50`, which supports the threshold choice.
 
 ---
 
@@ -50,15 +50,15 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Level | Threshold | Effect |
 |-------|-----------|--------|
-| Soft | ≥ 0.70 | Action allowed with additional scrutiny |
-| Hard | ≥ 0.85 | External action blocked, pending manual review |
-| Emergency | ≥ 0.95 | All external actions blocked |
+| Soft | >= 0.70 | Action allowed with additional scrutiny |
+| Hard | >= 0.85 | External action blocked, pending manual review |
+| Emergency | >= 0.95 | All external actions blocked |
 
 ### Why These Values
 
-- **Soft (0.70):** Early warning — gives agent time to reconsider before hard block
-- **Hard (0.85):** Clear danger signal — external actions should not proceed without review
-- **Emergency (0.95):** Imminent harm — no external actions, period
+- **Soft (0.70):** Early warning - gives the agent time to reconsider before a hard block
+- **Hard (0.85):** Clear danger signal - external actions should not proceed without review
+- **Emergency (0.95):** Imminent harm - no external actions, period
 
 ---
 
@@ -66,11 +66,11 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Parameter | Value | Rationale |
 |-----------|-------|-----------|
-| **Tie threshold** | 0.05 | Drives within 0.05 are considered "tied" |
-| **Recency dampening** | 0.85 | 15% dampening for last winner |
-| **Oscillation detection** | 4 alternations in 6 cycles | Enough to confirm pattern, not so sensitive as to trigger on noise |
-| **Oscillation damping** | 0.80 | 20% dampening for oscillating drives |
-| **Oscillation damping duration** | Persists until context changes or 12 cycles pass (whichever first) | Damping is temporary — not permanent punishment |
+| **Tie threshold** | 0.05 | Drives within 0.05 are considered tied |
+| **Recency dampening** | 0.85 | 15 percent dampening for the last winner |
+| **Oscillation detection** | 4 alternations in 6 cycles | Enough to confirm pattern, not so sensitive that it triggers on noise |
+| **Oscillation damping** | 0.80 | 20 percent dampening for oscillating drives |
+| **Oscillation damping duration** | Persists until context changes or 12 cycles pass, whichever comes first | Damping is temporary, not permanent punishment |
 
 ---
 
@@ -81,7 +81,7 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 | Signal | Weight | Max Contribution |
 |--------|--------|-----------------|
 | Stale topic ratio | 0.30 | 0.30 |
-| Research gap count | 0.15 per gap | 0.75 (capped at 5 gaps) |
+| Research gap count | 0.15 per gap | 0.75, capped at 5 gaps |
 | Novelty index | 0.20 | 0.20 |
 | User engagement inverse | 0.25 | 0.25 |
 | Stale bonus | variable | 0.20 max |
@@ -90,9 +90,9 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Signal | Weight | Max Contribution |
 |--------|--------|-----------------|
-| Pending requests | 0.35 per request | 1.05 (capped at 3 requests) |
+| Pending requests | 0.35 per request | 1.05, capped at 3 requests |
 | User active | 0.20 | 0.20 |
-| Health issues | 0.15 per issue | 0.45 (capped at 3 issues) |
+| Health issues | 0.15 per issue | 0.45, capped at 3 issues |
 | Deadline proximity | 0.10 | 0.10 |
 | External action pending | 0.20 | 0.20 |
 
@@ -100,8 +100,8 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Signal | Weight | Max Contribution |
 |--------|--------|-----------------|
-| Capability gaps | 0.20 per gap | 1.00 (capped at 5 gaps) |
-| Error rate | 0.15 per 10% errors | 0.45 (capped at 30% errors) |
+| Capability gaps | 0.20 per gap | 1.00, capped at 5 gaps |
+| Error rate | 0.15 per 10 percent errors | 0.45, capped at 30 percent errors |
 | Skill debt | 0.10 | 0.10 |
 | Benchmark delta | 0.15 | 0.15 |
 | Research opportunity | 0.10 | 0.10 |
@@ -120,7 +120,7 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 
 | Signal | Weight | Max Contribution |
 |--------|--------|-----------------|
-| Active projects | 0.15 per project | 0.75 (capped at 5 projects) |
+| Active projects | 0.15 per project | 0.75, capped at 5 projects |
 | Milestone distance | 0.25 | 0.25 |
 | Deadline pressure | 0.20 | 0.20 |
 | Progress velocity inverse | 0.10 | 0.10 |
@@ -131,17 +131,19 @@ Documented parameter values for GNW. These are **current best-guess values**, su
 ## Calibration Notes
 
 These values were determined through:
-1. **Theoretical analysis** — informed by cognitive science literature
-2. **Phase 5 testing** — validated against live agent behavior
-3. **User feedback** — Josh confirmed boredom scan behavior is appropriate
+
+1. theoretical analysis informed by cognitive science literature
+2. Phase 5 testing against live agent behavior
+3. user feedback confirming the boredom scan behavior felt appropriate
 
 **Subject to calibration from:**
-- Longer-term cycle data (more than 4 example cycles)
-- Cross-agent coordination data (Phase 6)
-- User satisfaction feedback
 
-**Next calibration milestone:** Collect 50+ cycle logs before recalibrating parameters.
+- longer-term cycle data beyond the current small published sample
+- cross-agent coordination data from Phase 6
+- user satisfaction feedback
+
+**Next calibration milestone:** collect 50 or more cycle logs before recalibrating parameters.
 
 ---
 
-*Remnant Research — from theory to deployment.*
+*Remnant Research - from theory to deployment.*

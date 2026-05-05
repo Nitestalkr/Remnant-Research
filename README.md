@@ -1,245 +1,483 @@
 # Remnant Research
 
+> **Note:** This repo is a public research mirror of an actively evolving private/local OpenClaw setup. Some artifacts are reconstructed from prior runs, and executable scripts will be published incrementally as they stabilize.
+>
 > **From theory to deployment.** Building self-evolving AI agent systems grounded in cognitive science, consciousness research, and gradient-driven optimization.
 
 ---
 
-## 🎯 The Problems We're Solving
+## What This Repo Is
+
+Remnant Research documents two connected systems built inside a live OpenClaw-based AI agent:
+
+- **GNW (Goals / Neural / Work)** — a drive-based cognitive architecture that gives an agent internal motivation: when to work, what to work on, and when to stop.
+- **GRAO (Gradient-Driven Research Optimization)** — a research loop that turns execution traces, pattern analysis, and proven experiments into directional signals that steer the next cycle of work.
+
+Together they form a closed loop: **GNW decides what to do → GRAO tracks the results → GRAO produces gradients → gradients inform GNW's drive weights → the cycle repeats.**
+
+---
+
+## The Problems
 
 ### 1. Autonomous agents lack motivation
-Static task routing works until the work runs out. Without an internal drive state, agents either:
-- **Burn out** — endlessly pursuing stale work with no self-regulation
-- **Apathize** — sitting idle when no external input arrives
-- **Misalign** — optimizing for the wrong drive when contexts shift
 
-We need agents that *know when to work, what to work on, and when to stop* — not from external commands, but from internal state.
+Static task routing works until the obvious work runs out. Without an internal drive state, agents tend to:
 
-### 2. Research systems lack gradient-driven direction
-Most autonomous research frameworks are either:
-- **Random exploration** — sampling papers/tasks without directional signal
-- **Static priority** — fixed relevance scores that don't adapt to what's been learned
-- **No feedback loops** — research outputs don't feed back into research direction
+- **burn out** by endlessly pursuing stale work
+- **go idle** when no external input arrives
+- **misalign** by optimizing the wrong objective when context shifts
 
-We need research that *steers itself* — where each cycle's outputs become the gradient signals for the next cycle's direction.
+GNW solves this by modeling five cognitive drives as continuous weighted vectors that shift with context.
 
-### 3. Cognitive architectures are theoretical, not operational
-Consciousness and cognition theories (GNWT, IIT, RPT, etc.) are well-developed academically but rarely translated into operational agent architectures. The gap between "what consciousness might be" and "how to implement a cognitive drive system" is enormous.
+### 2. Research loops lack directional feedback
 
----
+Many research systems behave like one-off loops:
 
-## 📖 What This Repo Contains
+- random exploration without a durable directional signal
+- static priorities that don't adapt to what was just learned
+- outputs that are logged but not converted into steering information
 
-Remnant Research is a **public mirror** of an actively evolving private OpenClaw-based AI agent system. It contains:
+GRAO solves this by computing gradients from trace patterns and using them to generate actionable proposals.
 
-### GNW Framework — Goals / Neural / Work
-A drive-based cognitive architecture for autonomous agent self-improvement.
+### 3. Cognitive architectures are usually descriptive, not operational
 
-- **5 cognitive drives** — curiosity, helpfulness, competence, safety, goal-directedness as continuous weighted vectors (0.0–1.0)
-- **Unified 12-step cognitive cycle** — perception → evaluation → drive computation → conflict resolution → selection → execution → reflection → memory update
-- **Boredom detection** — formula that triggers self-directed exploration when external input is stale
-- **Priority-based conflict resolution** — when drives compete (e.g., curiosity vs. safety), a priority matrix arbitrates
-- **Stability analysis** — convergence tests to prevent drive oscillation or runaway behavior
-- **Phase 5 complete** — all 5 drives integrated and operational; Phase 6 (cross-agent coordination) logic verified
-
-### GRAO — Gradient-Driven Research Optimization
-A framework for systematic research evolution through gradient-based pattern analysis.
-
-- **Trace collection** — capturing research experiences (manual + auto-captured)
-- **Gradient derivation** — computing directional signals from pattern analysis across traces
-- **TPG routing** — Tensor Processing Graph that routes, transforms, and accumulates gradient signals
-- **Proposal generation** — research proposals derived from gradient analysis
-- **Experiment tracking** — GRAO cycle experiments and results
-
-### Research Infrastructure
-- **REFERENCES.md** — Formal academic citations (APA 7th) covering consciousness theory, self-evolving agents, memory systems, and related frameworks
-- **gnw/** — Complete GNW framework documentation (sprints, cognitive cycle specs, conflict resolution, stability tests)
-- **tpg-grao/** — TPG-GRAO framework skeleton (architecture, gradient derivation, experiment structure)
+Theories such as GNWT, IIT, RPT, predictive processing, and attention schema theory are rich conceptually, but they are rarely turned into concrete agent control systems. A major part of this repo is closing that translation gap — documenting not just the theory, but the operational design, parameter values, stability tests, and real cycle data.
 
 ---
 
-## 🏗️ Architecture
+## GNW Framework
+
+### Overview
+
+GNW models internal motivation as a set of interacting cognitive drives: curiosity, helpfulness, competence, safety, and goal-directedness. Each drive is a continuous weighted signal (0.0–1.0) rather than a binary state. The goal is to give an agent a principled internal basis for deciding when to work, what to work on, and when to defer.
+
+### Five Cognitive Drives
+
+| Drive | Trigger Threshold | Veto Power | Half-Life |
+|-------|-------------------|------------|-----------|
+| **Curiosity** | ≥ 0.50 | No | 6 cycles |
+| **Helpfulness** | ≥ 0.70 | No (user override) | 4 cycles |
+| **Competence** | ≥ 0.60 | No | 8 cycles |
+| **Safety** | ≥ 0.75 (soft), ≥ 0.90 (hard) | Yes (veto on external actions) | 2 cycles |
+| **Goal-Directed** | ≥ 0.55 | No | 10 cycles |
+
+### 12-Step Cognitive Cycle
+
+The unified cognitive cycle is the core processing loop. Every agent turn — whether user-initiated or self-directed — passes through it:
+
+1. **Input Capture** — Receive external input (user message, cron event, system signal)
+2. **Context Load** — Pull relevant memory, workspace state, and active project context
+3. **State Assessment** — Evaluate current system state (boredom, resource availability, task queue)
+4. **Drive Activation** — Compute raw drive scores based on current state
+5. **Drive Modulation** — Apply context modifiers (user presence, safety constraints, project priority)
+6. **Conflict Detection** — Identify competing drives and priority overlaps
+7. **Conflict Resolution** — Apply priority matrix to resolve drive competition
+8. **Action Selection** — Choose the highest-weighted actionable drive
+9. **Plan Formation** — Generate a concrete plan for the selected drive
+10. **Task Dispatch** — Execute the plan (internal work, sub-agent spawn, tool call)
+11. **Result Capture** — Collect outputs, metrics, and side effects
+12. **Memory Update** — Write results to memory, update drive weights, log cycle data
+
+### Boredom Trigger
+
+The boredom formula determines when the agent is permitted to self-initiate work:
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    Remnant Research System                          │
-│                                                                     │
-│  ┌─────────────────────────────────────────────────────────────┐   │
-│  │                    GNW Cognitive Engine                      │   │
-│  │                                                             │   │
-│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  │   │
-│  │  │ Curiosity│  │Helpfulness│  │Competence│  │  Safety  │  │   │
-│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │   │
-│  │           ↓         ↓           ↓           ↓              │   │
-│  │  ┌──────────┐                                      │   │
-│  │  │Goal-Direct│                                      │   │
-│  │  └──────────┘                                      │   │
-│  │           ↓                                      │   │
-│  │  ┌──────────────────────────────────────────┐   │   │
-│  │  │     Drive Weights → Conflict Resolution   │   │   │
-│  │  └──────────────────────────────────────────┘   │   │
-│  │           ↓                                      │   │
-│  │  ┌──────────────────────────────────────────┐   │   │
-│  │  │      Boredom Scanner (trigger)            │   │   │
-│  │  │  boredom ≥ 0.50 + user away → cognitive   │   │   │
-│  │  └──────────────────────────────────────────┘   │   │
-│  │           ↓                                      │   │
-│  │  ┌──────────────────────────────────────────┐   │   │
-│  │  │     12-Step Cognitive Cycle               │   │   │
-│  │  │  perception → execution → reflection      │   │   │
-│  │  └──────────────────────────────────────────┘   │   │
-│  └─────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌─────────────────────────────────────────────────────────────┐   │
-│  │                  GRAO Research Loop                          │   │
-│  │                                                             │   │
-│  │  ┌──────────┐    ┌──────────┐    ┌──────────┐             │   │
-│  │  │ Traces   │───→│ Gradients│───→│ Proposals│             │   │
-│  │  │Collection│    │Derivation│    │Generation│             │   │
-│  │  └──────────┘    └──────────┘    └──────────┘             │   │
-│  │       │                  │                  │              │   │
-│  │       ▼                  ▼                  ▼              │   │
-│  │  ┌─────────────────────────────────────────────────────┐   │   │
-│  │  │              TPG Routing Graph                       │   │   │
-│  │  │  Routes, transforms, and accumulates signals         │   │   │
-│  │  └─────────────────────────────────────────────────────┘   │   │
-│  │       │                                                  │   │
-│  │       ▼                                                  │   │
-│  │  ┌──────────┐                                            │   │
-│  │  │ Experiments│ → Reports → Cycle Updates                │   │
-│  │  └──────────┘                                            │   │
-│  └─────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌─────────────────────────────────────────────────────────────┐   │
-│  │                 Memory Integration                           │   │
-│  │  Drive Weights → Cycle Logs → State → Research Traces       │   │
-│  └─────────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────────┘
+boredom = (traditional + curiosity + self-awareness) / 3 + stale_bonus
+```
+
+- Runs every 15 minutes via cron
+- Triggers full cognitive cycle when ≥ 0.50
+- Suppressed when user is active (floor at 0.30)
+- **Key insight:** The system correctly stops forcing work when nothing qualifies ≥ 0.50. Forcing work breaks the model.
+
+### Conflict Resolution
+
+- Priority matrix with 7 context-dependent conditions
+- Veto protocol with 3 escalation tiers (soft scrutiny → hard block → emergency)
+- Tie-breaking algorithm (recency bias → half-life → base weight)
+- Edge case handling for 8 known scenarios
+
+### Stability Tests
+
+Five formal stability checks ensure the framework doesn't enter runaway states:
+
+| Test | What It Checks | Success Criteria |
+|------|---------------|------------------|
+| **Drive Oscillation** | Detect flip-flop between two drives across consecutive cycles | Resolved within 5 cycles |
+| **Drive Score Bounds** | All scores remain within [0.0, 1.0] | No score outside bounds |
+| **Boredom Threshold** | Boredom triggers only when appropriate | No false positives/negatives |
+| **Conflict Convergence** | Conflict resolution always produces a single winner | ≤ 3 steps |
+| **Memory Integrity** | Drive state persistence and recovery | 100% write success, zero data loss |
+
+### GNW Roadmap
+
+| Phase | Status | Focus |
+|-------|--------|-------|
+| **1: Foundation** | ✅ Complete | Drive architecture, boredom formula, cognitive cycle skeleton |
+| **2: Integration** | ✅ Complete | Drive modulation, conflict priority matrix, veto protocol |
+| **3: Stabilization** | ✅ Complete | Stability tests, oscillation detection, edge case handling |
+| **4: Real Agent Testing** | ✅ Complete | OpenClaw integration, live testing, drive weight calibration |
+| **5: Drive Integration** | ✅ Complete | All 5 drives operational, unified cycle, cron infrastructure |
+| **6: Cross-Agent Coordination** | 🔄 In Progress | Drive score broadcast, weight sharing, multi-agent synchronization |
+| **7: Self-Modifying Drives** | 📋 Planned | Drives learn from success/failure rates, auto-calibration |
+| **8: Memory Integration** | 📋 Planned | Cross-session persistence, drive-driven memory consolidation |
+| **9: Research Integration** | 📋 Planned | GNW drives inform research priorities, autonomous research loop |
+| **10: Multi-Agent Orchestra** | 📋 Planned | Full 5-agent coordination, collective goal-directed behavior |
+
+### Open Questions
+
+1. Optimal drive weight initialization
+2. Drive half-life calibration from real cycle data
+3. Cross-agent conflict resolution at scale
+4. Self-modification safety boundaries
+5. Scalability of priority matrix to 10+ agents
+6. User feedback integration into drive weights
+
+---
+
+## TPG-GRAO Framework
+
+### Overview
+
+TPG (Tensor Processing Graph) + GRAO (Gradient-Driven Research Optimization) is a self-improving research framework that treats research direction as an optimization problem. It collects execution traces, computes directional gradients from pattern analysis, and uses those gradients to generate proposals that steer the system toward high-impact research areas.
+
+### Core Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Traces** | Raw execution records — agent actions, outcomes, metadata |
+| **Gradients** | Directional signals derived from patterns across traces |
+| **TPG** | The processing graph that routes and transforms signals |
+| **GRAO** | The optimization loop that uses gradients to drive research direction |
+| **Experiences** | Proven optimization patterns with quantified impact |
+| **Proposals** | Actionable research directions generated from strong gradients |
+
+### GRAO Pipeline
+
+```
+Raw Traces → Collector → Pattern Analysis → Gradient Derivation
+                                                    │
+                                                    ▼
+                                          Gradient Clustering
+                                                    │
+                                                    ▼
+                                          Proposal Generation
+                                                    │
+                                                    ▼
+                                          Execute → Capture Results
+                                                    │
+                                                    ▼
+                                          Experience Store (if success)
+                                                    │
+                                                    └──→ Next Cycle
+```
+
+### Pipeline Scripts (tpg-grao/scripts/)
+
+| Script | Purpose |
+|--------|---------|
+| `trace-collector.js` | Collect and normalize traces from 4 signal sources (agent, research, stability, experience) |
+| `gradient-deriver.js` | Compute directional/magnitude/temporal gradients from trace patterns |
+| `proposal-generator.js` | Generate proposals from gradients exceeding threshold (default ≥ 0.50) |
+| `grao-retriever.js` | Analyze loop history for trend detection (gradient directions, proposal states, system health) |
+
+### GRAO Loop Specification (9 steps)
+
+1. **Trace Ingestion** — Load new traces, deduplicate, classify by signal type
+2. **Pattern Analysis** — Cluster traces, identify recurring patterns, compute pattern strength
+3. **Gradient Computation** — For each cluster, compute directional gradient with magnitude and temporal factor
+4. **Gradient Storage** — Store computed gradients, apply decay, archive old gradients
+5. **Proposal Evaluation** — Load pending proposals, cross-reference with new gradients, update confidence
+6. **Proposal Generation** — Generate proposals for gradients exceeding threshold with novelty check
+7. **Research Direction Update** — Compute aggregate direction from top gradients
+8. **Report Generation** — Compile cycle summary, health metrics, gradient state
+9. **Cleanup** — Archive old traces, compress data, update retention metadata
+
+### Loop State Management
+
+The GRAO loop state (`grao/grao-state.json`) is the persistent memory of the optimization system:
+
+- Tracks cycle history, active gradients, research priorities, and system health
+- Gradients decay daily (configurable rate, default 0.02)
+- Research priorities derived from top active gradients
+- Automatic recovery from corrupted state
+
+### Experiment Framework
+
+GRAO supports three experiment types:
+
+| Type | Purpose | Example |
+|------|---------|---------|
+| **A/B** | Compare two configurations | Gradient threshold 0.30 vs 0.60 |
+| **Single-Parameter** | Test one parameter change | New gradient computation algorithm |
+| **Hypothesis** | Validate research hypotheses | "Does longer window produce more stable gradients?" |
+
+Experiments run for N cycles against baseline, with safety constraints (max 100 cycles, safe-only parameter overrides, automatic pause on health drop).
+
+### GRAO Live State
+
+| Metric | Value |
+|--------|-------|
+| **Phase** | Phase 1 — Operational (pipeline live) |
+| **GRAO Round** | 39 (2026-05-04) |
+| **Success Ratio** | 92.7% (127/137 gradients successful) |
+| **Total Traces** | 137 |
+| **Experiences** | 7 proven patterns |
+| **Loop Rounds** | 6 documented |
+| **Saturation Status** | ⚠️ Policy saturation detected — exploration phase needed |
+
+### Success Ratio Progression
+
+| Round | Date | Success | Notes |
+|-------|------|---------|-------|
+| 13 | 2026-04-25 | 47.4% | Early, high failure rate (trace metadata issues) |
+| 20 | 2026-04-26 | 65.5% | Upward trend established |
+| 31 | 2026-04-27 | 93.1% | Peak — 7 experiences, 7 pattern clusters |
+| 33 | 2026-04-30 | 89.0% | 33 consecutive reinforcement rounds |
+| 38 | 2026-04-28 | 83.3% | Trace quality stabilizing |
+| 39 | 2026-05-04 | 92.7% | Jump from 83.3%; saturation detected |
+
+### Next GRAO Phase: Exploration
+
+The system is in **policy saturation** (20+ consecutive reinforcement rounds, success ratio plateauing at ~93%). The next phase will:
+
+1. Detect saturation automatically via consecutive reinforcement round count
+2. Generate **exploration gradients** targeting unexplored TPG paths
+3. Prioritize exploration proposals over reinforcement proposals
+4. Investigate persistent failure gradients present since Round 13
+5. Expand the experience cluster to 8+ for richer cross-cluster discovery
+
+---
+
+## How GNW and GRAO Work Together
+
+The two systems form a closed feedback loop:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Remnant Research System                      │
+│                                                                 │
+│  ┌───────────────────┐     ┌───────────────────┐               │
+│  │    GNW Engine     │────▶│    GRAO Loop      │               │
+│  │                   │     │                   │               │
+│  │ Drives → Cycle →  │     │ Traces → Grads →  │               │
+│  │ Action Selection  │     │ Proposals → Exp   │               │
+│  └───────────────────┘     └───────────────────┘               │
+│         │                        │                              │
+│         │    Feedback:           │    Feedback:                 │
+│         │  Gradients → Drive    │  Proven Patterns →           │
+│         │  Weight Updates       │  Experience Store            │
+│         └────────────────────────┘                              │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### The Feedback Loop
+
+1. **GNW decides** — The cognitive cycle selects an action based on drive weights
+2. **GRAO tracks** — The action's execution is captured as a trace
+3. **GRAO computes** — Patterns across traces produce gradients (directional signals)
+4. **GRAO proposes** — Strong gradients generate proposals for research direction
+5. **Experiences form** — Successful patterns enter the experience store
+6. **Feedback to GNW** — Gradients and experiences inform drive weight updates:
+   - Successful research directions boost curiosity in related domains
+   - Proven patterns boost competence drive
+   - System stability metrics feed into safety drive
+   - Project progress feeds into goal-directed drive
+7. **GNW re-evaluates** — Updated drives produce new action selections
+8. **Repeat** — Each cycle leaves richer data for the next
+
+### Key Design Principles
+
+| Principle | Description |
+|-----------|-------------|
+| **Boredom is a trigger, not a command** | `>= 0.50` boredom permits exploration; if nothing qualifies, staying idle is correct |
+| **Safety is a veto, not a score** | Safety blocks external actions regardless of other drive strength |
+| **Drive weights are dynamic** | Weights shift with context — user presence, research gaps, deadlines, stale state |
+| **Conflict resolution is contextual** | Simple max-selection is often wrong; priority matrix reflects context |
+| **Gradients guide, don't dictate** | GRAO produces directional signals; GNW decides whether to act on them |
+| **Experiences compound** | Each proven pattern makes future decisions more accurate |
+| **No forced work** | The system correctly stops when nothing qualifies — forcing work breaks the model |
+
+---
+
+## Repository Structure
+
+```
+remnant-research/
+├── README.md                    # ← You are here
+├── REFERENCES.md                # Formal academic citations
+├── LICENSE
+├── gnw/                         # GNW framework
+│   ├── README.md
+│   ├── DRIVE-COMPUTATION-PSEUDOCODE.md
+│   ├── cognitive-cycle/         # 12-step cycle, boredom formula, drive computation
+│   │   ├── README.md
+│   │   ├── BOREDOM-FORMULA.md
+│   │   ├── CONFLICT-RESOLUTION.md
+│   │   ├── DRIVE-COMPUTATION.md
+│   │   └── cycle-logs/
+│   │       └── PHASE-5-EXAMPLE-LOGS.md
+│   ├── conflict-resolution/     # Priority matrix, veto protocol, edge cases
+│   │   ├── README.md
+│   │   ├── PRIORITY-MATRIX.md
+│   │   ├── VETO-PROTOCOL.md
+│   │   ├── EDGE-CASES.md
+│   │   └── RESOLUTION-LOG.md
+│   ├── stability/               # Stability tests and convergence analysis
+│   │   ├── README.md
+│   │   ├── TEST-DRIVE-OSCILLATION.md
+│   │   ├── TEST-SCORE-BOUNDS.md
+│   │   ├── TEST-BOREDOM-THRESHOLD.md
+│   │   ├── TEST-CONFLICT-CONVERGENCE.md
+│   │   ├── TEST-MEMORY-INTEGRITY.md
+│   │   └── TEST-RUNNER-SPEC.md
+│   ├── docs/                    # Framework documentation
+│   │   ├── ARCHITECTURE.md
+│   │   ├── DESIGN-DECISIONS.md
+│   │   ├── GLOSSARY.md
+│   │   ├── PARAMETER-VALUES.md
+│   │   ├── ROADMAP.md
+│   │   ├── SAFETY-THREAT-MODEL.md
+│   │   ├── USER-PRESENCE-DETECTION.md
+│   │   └── CROSS-AGENT-COORDINATION.md
+│   └── sprints/                 # Phase summaries and sprint progression
+│       ├── README.md
+│       ├── PHASE-1-4-SUMMARIES.md
+│       └── PHASE-5-SUMMARY.md
+└── tpg-grao/                    # GRAO framework
+    ├── README.md
+    ├── tpg/                     # Tensor Processing Graph
+    │   ├── README.md
+    │   ├── architecture.md
+    │   └── routing/
+    │       ├── README.md
+    │       └── ROUTING-IMPL.md
+    ├── grao/                    # GRAO optimization loop
+    │   ├── README.md
+    │   ├── LOOP-SPEC.md
+    │   ├── STATE-MANAGEMENT.md
+    │   ├── EXPERIMENT-FRAMEWORK.md
+    │   ├── gradient-derivation.md
+    │   ├── loops/               # GRAO cycle logs (round_N_YYYY-MM-DD.json)
+    │   └── experiments/         # Proven experiment records
+    ├── traces/                  # Raw research traces (date-partitioned)
+    ├── gradients/               # Computed gradients
+    ├── proposals/               # Generated research proposals
+    ├── reports/                 # GRAO cycle trend reports
+    └── scripts/                 # Pipeline tooling
+        ├── README.md
+        ├── trace-collector.js
+        ├── gradient-deriver.js
+        ├── proposal-generator.js
+        └── grao-retriever.js
 ```
 
 ---
 
-## 📚 Research Papers & Theoretical Foundations
+## Research Foundations
 
-GNW and GRAO draw from multiple research domains. The key papers and frameworks that inform our implementation:
+GNW and GRAO draw from multiple research domains.
 
-### Artificial Consciousness & Cognitive Science
+### Artificial Consciousness and Cognitive Science
 
-| Theory | Key Paper | Relevance to GNW |
-|--------|-----------|-----------------|
-| **Global Workspace Theory (GNWT)** | Dehaene & Naccache (2001), *Current Opinion in Neurobiology* | Information broadcasting as consciousness basis — informs drive module as "workspace" |
-| **Integrated Information Theory (IIT)** | Tononi (2008), *The Biological Bulletin* | Φ as measure of integrated information — informs stability tests |
-| **Recurrent Processing Theory (RPT)** | Lamme (2006), *Trends in Cognitive Sciences* | Sustained recurrent activity as consciousness — informs cognitive cycle feedback loops |
-| **Attention Schema Theory** | Graziano (2013), *Rethinking Consciousness* | Brain's model of attention — informs self-awareness drive |
-| **Predictive Processing** | Friston (2010), *Nature Reviews Neuroscience* | Free-energy principle as unified brain theory — informs GRAO gradient computation |
-
-**Adversarial Study:** Cogitate Consortium (Nature, April 2025) — tested GNWT and IIT against each other. Neither came out unscathed; GNWT partially validated, IIT's posterior hot zone falsified. This informs our hybrid approach.
+| Theory | Key Paper | Relevance |
+|--------|-----------|-----------|
+| **Global Workspace Theory (GNWT)** | Dehaene & Naccache (2001) | Drive competition models workspace broadcasting |
+| **Integrated Information Theory (IIT)** | Tononi (2008) | Informs integration, coherence, and stability concerns |
+| **Recurrent Processing Theory (RPT)** | Lamme (2006) | Informs feedback-heavy cognitive cycling |
+| **Attention Schema Theory** | Graziano (2013) | Informs self-modeling and awareness-related framing |
+| **Predictive Processing** | Friston (2010) | Informs adaptive state estimation and directional update logic |
 
 ### Self-Evolving Agents
 
-| Paper | Key Contribution |
-|-------|-----------------|
-| **A Survey of Self-Evolving Agents** — Liu et al. (2026), TMLR, arXiv:2507.21046v4 | Three dimensions: what to evolve, when to evolve, how to evolve. 77 pages, 26 authors. |
-| **A Comprehensive Survey of Self-Evolving AI Agents** — arXiv:2508.07407 | Unified model: System Inputs → Agent System → Environment → Optimisers |
-| **Awesome-Self-Evolving-Agents** — EvoAgentX GitHub repo | Curated collection of self-evolving agent frameworks and papers |
+| Paper | Contribution |
+|-------|-------------|
+| **A Survey of Self-Evolving Agents** (TMLR, arXiv:2507.21046) | Frames what to evolve, when to evolve, how to evolve |
+| **A Comprehensive Survey of Self-Evolving AI Agents** (arXiv:2508.07407) | Unified model of agent, environment, and optimizer interaction |
+| **Awesome-Self-Evolving-Agents** | Curated map of adjacent frameworks and papers |
 
-### Memory & Knowledge Systems
-
-| Paper | Key Contribution |
-|-------|-----------------|
-| **Mesh Memory Protocol (MMP)** — arXiv:2604.19540 | Semantic memory infrastructure; consolidation improves memory from 0.85→0.95 |
-| **SAKE (Self-Adaptive Knowledge Engine)** — arXiv:2505.15062v4 | Qwen2.5-7B beats GPT-3.5 + agentic KG on benchmarks with 90% less tokens |
-| **ARES Adaptive Red-Teaming** — arXiv:2604.18789 | Dual-targeting systemic weaknesses in AI systems; informs safety drive veto |
-
-### Related Frameworks
-
-| Framework | Contribution |
-|-----------|-------------|
-| **StepPO (Agentic RL)** | Policy optimization for agent behaviors |
-| **CAAF (Convergent AI Agent Framework)** | Multi-agent convergence |
-| **SkillGraph** | Skill dependency and progression modeling |
-| **Gated LLM Interface** | Quality-gate routing architecture (draft) |
-
-### Drive Theory Foundations
+### Memory and Knowledge Systems
 
 | Paper | Contribution |
 |-------|-------------|
-| Mather & Sutherland (2011), *Annual Review of Psychology* | Neuroscientific basis for competing motivational drives |
-| Berridge (2004), *Physiology & Behavior* | Drive theory and reward systems |
-| Berlyne (1960), *Conflict, Arousal, and Curiosity* | Curiosity as arousal-driven exploration — boredom formula basis |
-| Kahneman (2011), *Thinking, Fast and Slow* | Dual-process theory — drive arbitration model |
-| Gigerenzer & Todd (1999), *Simple Heuristics That Make Us Smart* | Fast-and-frugal decision trees for priority selection |
+| **Mesh Memory Protocol (MMP)** (arXiv:2604.19540) | Informs memory structure and consolidation thinking |
+| **SAKE** (arXiv:2505.15062) | Informs efficient adaptive knowledge handling |
+| **ARES Adaptive Red-Teaming** (arXiv:2604.18789) | Informs safety and adversarial-pressure thinking |
+
+For the longer reference list, see [REFERENCES.md](REFERENCES.md).
 
 ---
 
-## 🔬 Key Design Decisions
-
-### 1. Boredom as Exploration Trigger, Not Work Command
-The system uses boredom ≥ 0.50 as a *permission* to explore, not a *command* to work. If boredom triggers but nothing qualifies (no stale context, no research gaps, no novelty), the system stays idle. This prevents the "forced work" failure mode.
-
-### 2. Safety as Veto, Not Weight
-The safety drive doesn't compete with other drives — it *veto*s them. When an external action is pending, safety's veto threshold overrides all other drive scores. This prevents the agent from "choosing" to do something unsafe just because curiosity is high.
-
-### 3. Drive Weights Are Dynamic, Not Static
-Drive weights shift continuously based on context (user presence, research gaps, skill staleness, project status). They're not preset constants — they're computed values that reflect the agent's current state.
-
-### 4. Conflict Resolution Uses Priority Matrix, Not Max-Selection
-When drives compete, a 7-condition priority matrix arbitrates rather than simple max-selection. This handles edge cases like "curiosity vs. safety" (safety wins) and "competence vs. goal-directed" (goal-directed wins during active projects).
-
----
-
-## 📊 Current State
+## Current State
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| **GNW Phase 1–4** | ✅ Complete | Drive modules, cognitive cycle, conflict resolution, stability |
-| **GNW Phase 5** | ✅ Complete | All 5 drives integrated, unified cognitive cycle operational |
-| **GNW Phase 6** | ⏳ In Progress | Cross-agent coordination logic verified, real agent testing pending |
-| **GRAO Traces** | ⏳ In Progress | Manual experiences seeded, auto-capture traces pending |
-| **GRAO Gradients** | ⏳ In Progress | Gradient derivation methodology drafted |
-| **GRAO Proposals** | ⏳ Skeleton | Proposal generation framework structure ready |
-| **TPG Architecture** | ⏳ Draft | Routing rules and signal accumulation defined |
+| **GNW Phase 1–5** | ✅ Complete | 5 drives, 12-step cycle, boredom trigger, conflict resolution, 5 stability tests |
+| **GNW Phase 6** | 🔄 In Progress | Cross-agent coordination design documented; live multi-agent testing pending |
+| **GNW Safety Threat Model** | ✅ Complete | 3 threat categories, 4 adversarial conditions, 6 safety principles |
+| **GRAO Pipeline** | ✅ Operational | 4 scripts implemented, loop spec, state management, experiment framework |
+| **GRAO Loop Rounds** | ✅ 6 documented | Rounds 13–39, success ratio 47.4% → 92.7% |
+| **GRAO Experiences** | ✅ 7 proven patterns | Model switch, coordination, stabilization, compliance, etc. |
+| **GRAO Proposals** | 📋 Documented | Structure and generation logic defined; public examples limited |
+| **TPG Architecture** | 📋 Draft | Routing rules and signal accumulation defined |
 
 ---
 
-## 🚀 How to Use This Repo
+## How To Read This Repo
 
-This is a **research + specification** repo, not a ready-to-run framework. The documentation is complete for Phases 1–5; executable code is being published incrementally.
+This is a research and specification repo first, not a polished install-and-run package.
 
-### For Researchers
-- Start with `gnw/README.md` for the complete GNW framework overview
-- Read `gnw/docs/ARCHITECTURE.md` for system architecture details
-- Review `REFERENCES.md` for the full academic citation list
-- Check `gnw/docs/ROADMAP.md` for the development roadmap through Phase 10
+### If you want the core architecture
 
-### For Implementers
-- `gnw/cognitive-cycle/` — 12-step cycle spec and drive computation formulas
-- `gnw/conflict-resolution/` — Priority matrix, veto protocol, edge cases
-- `gnw/stability/` — 5 formal stability tests (oscillation, score bounds, boredom, conflict convergence, memory integrity)
-- `tpg-grao/` — GRAO framework skeleton (structure ready, content being populated)
+1. Read [gnw/README.md](gnw/README.md)
+2. Read [gnw/docs/ARCHITECTURE.md](gnw/docs/ARCHITECTURE.md)
+3. Read [gnw/docs/DESIGN-DECISIONS.md](gnw/docs/DESIGN-DECISIONS.md)
+4. Read [gnw/docs/ROADMAP.md](gnw/docs/ROADMAP.md)
 
-### For Reviewers
-- `gnw/sprints/` — Individual sprint implementations and logs
-- `gnw/docs/DESIGN-DECISIONS.md` — 9 design decisions with rationale and alternatives
-- `gnw/docs/USER-PRESENCE-DETECTION.md` — How the system detects and responds to user presence
-- `gnw/docs/CROSS-AGENT-COORDINATION.md` — Phase 6 cross-agent drive synchronization
+### If you want GNW implementation detail
+
+1. Read [gnw/DRIVE-COMPUTATION-PSEUDOCODE.md](gnw/DRIVE-COMPUTATION-PSEUDOCODE.md)
+2. Review [gnw/cognitive-cycle/](gnw/cognitive-cycle/)
+3. Review [gnw/conflict-resolution/](gnw/conflict-resolution/)
+4. Review [gnw/stability/](gnw/stability/)
+5. Review [gnw/docs/PARAMETER-VALUES.md](gnw/docs/PARAMETER-VALUES.md)
+
+### If you want GRAO implementation detail
+
+1. Read [tpg-grao/README.md](tpg-grao/README.md)
+2. Read [tpg-grao/grao/LOOP-SPEC.md](tpg-grao/grao/LOOP-SPEC.md)
+3. Read [tpg-grao/grao/STATE-MANAGEMENT.md](tpg-grao/grao/STATE-MANAGEMENT.md)
+4. Read [tpg-grao/grao/EXPERIMENT-FRAMEWORK.md](tpg-grao/grao/EXPERIMENT-FRAMEWORK.md)
+5. Review [tpg-grao/scripts/](tpg-grao/scripts/)
+
+### If you want evidence and progression
+
+1. Read [gnw/cognitive-cycle/cycle-logs/PHASE-5-EXAMPLE-LOGS.md](gnw/cognitive-cycle/cycle-logs/PHASE-5-EXAMPLE-LOGS.md)
+2. Read [gnw/conflict-resolution/RESOLUTION-LOG.md](gnw/conflict-resolution/RESOLUTION-LOG.md)
+3. Read [gnw/sprints/PHASE-1-4-SUMMARIES.md](gnw/sprints/PHASE-1-4-SUMMARIES.md)
+4. Read [gnw/sprints/PHASE-5-SUMMARY.md](gnw/sprints/PHASE-5-SUMMARY.md)
+5. Read [tpg-grao/grao/loops/](tpg-grao/grao/loops/) — GRAO round logs
+6. Read [tpg-grao/grao/experiments/](tpg-grao/grao/experiments/) — Proven experiments
 
 ---
 
-## ⚠️ Notes
+## Notes
 
-- This repo is a **public mirror** of an actively evolving private/local OpenClaw setup
-- Some artifacts are reconstructed from prior local runs
-- Executable scripts will be published incrementally as they stabilize
-- The GNW framework is operational in production but still under active development
+- This repo mirrors a live local OpenClaw-based workflow.
+- Some public documents were reconstructed from prior runs, logs, and private artifacts.
+- Public code and scripts will continue to appear incrementally rather than all at once.
+- GNW is the most mature public portion of the repo today; GRAO pipeline scripts are now operational.
+- GRAO is approaching policy saturation — the next phase shifts from reinforcement to exploration.
 
 ---
 
-## 📝 Citation
+## Citation
 
 When citing Remnant Research or the GNW framework in academic work:
 
-```
-Andi (OpenClaw). (2026). GNW: Goals / Neural / Work — A drive-based cognitive architecture for autonomous AI agents [Computer software]. Remnant Research. https://github.com/Nitestalkr/Remnant-Research
+```text
+Andi (OpenClaw). (2026). GNW: Goals / Neural / Work - A drive-based cognitive architecture for autonomous AI agents [Computer software]. Remnant Research. https://github.com/Nitestalkr/Remnant-Research
 ```
 
 ---

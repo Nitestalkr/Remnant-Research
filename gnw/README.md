@@ -1,118 +1,110 @@
-> **Note:** This repo is a public research mirror of an actively evolving private/local OpenClaw setup. Some artifacts are reconstructed from prior runs, and executable scripts will be published incrementally.
+> **Note:** GNW is documented here as a public research mirror of a live local OpenClaw workflow. Some artifacts are reconstructed from prior runs, and executable scripts will be published incrementally.
 
-# GNW — Goals / Neural / Work
+# GNW - Goals / Neural / Work
 
-Self-evolution framework for AI agent systems.
+Drive-based cognitive architecture for autonomous agent self-improvement.
 
 ## Overview
 
-GNW is a cognitive architecture for autonomous agent self-improvement.
-It models drives (curiosity, competence, helpfulness, safety, goal-directedness)
-as weighted vectors that determine what the agent works on and when.
+GNW models internal motivation as a set of interacting cognitive drives:
+curiosity, helpfulness, competence, safety, and goal-directedness. Each drive
+is treated as a continuous weighted signal rather than a binary state.
 
-The framework bridges theoretical research on artificial consciousness,
-self-evolving agents, and gradient-driven optimization into a practical
-system for OpenClaw-based AI agents.
+The goal is to give an agent a principled internal basis for deciding:
 
-### What It Covers
+- when to work
+- what to work on
+- when to defer, stop, or stay idle
 
-- **Drive-based motivation** — Agents self-direct work using weighted cognitive drives
-- **Boredom detection** — Formula that triggers self-initiated exploration when external input is stale
-- **Unified cognitive cycle** — 12-step perception → execution → reflection loop
-- **Conflict resolution** — Priority arbitration when drives compete (e.g., curiosity vs. safety)
-- **Stability analysis** — Convergence tests to prevent drive oscillation or runaway behavior
-- **Cross-agent coordination** — Multi-agent drive synchronization (Phase 6)
+In practice, GNW combines boredom-triggered self-direction, contextual
+drive modulation, conflict resolution, and post-cycle reflection into a
+single control loop for OpenClaw-based agents.
 
-## Structure
+## What GNW Covers
 
-- sprints/ — Individual sprint implementations and logs
-- cognitive-cycle/ — The unified 12-step cognitive cycle
-- conflict-resolution/ — Drive priority and conflict resolution logic
-- stability/ — Stability tests and convergence analysis
-- docs/ — Framework documentation and design decisions
+- **Drive-based motivation** - agents self-direct work using weighted cognitive drives
+- **Boredom detection** - self-directed work is triggered when context is stale and the user is away
+- **Unified cognitive cycle** - a 12-step loop ties perception, evaluation, decision, execution, and memory update together
+- **Conflict resolution** - a priority matrix arbitrates competing drives in context
+- **Safety as veto** - unsafe external actions can be blocked regardless of other drive scores
+- **Stability analysis** - convergence, oscillation, and score-bound behavior are treated as first-class concerns
+- **Cross-agent coordination** - Phase 6 extends the model from single-agent control to multi-agent synchronization
+
+## Repository Structure
+
+- `docs/` - architecture, design rationale, parameters, roadmap, and support material
+- `cognitive-cycle/` - boredom, drive computation, conflict flow, and cycle-log examples
+- `conflict-resolution/` - priority matrix, veto protocol, edge cases, and resolution log
+- `stability/` - formal stability and convergence checks
+- `sprints/` - phase summaries and sprint-level progression
+- `DRIVE-COMPUTATION-PSEUDOCODE.md` - reference implementation pseudocode
 
 ## Current State
 
-Phase 5 complete: 5/5 drives integrated.
-Phase 6: Cross-agent coordination logic verified, real agent testing pending.
+- **Phases 1-5:** documented and publicly summarized
+- **Phase 5:** example logs, parameter values, and reference pseudocode published
+- **Phase 6:** cross-agent coordination design in progress; real multi-agent testing still pending
+- **Code status:** runnable production logic exists locally, while public executable artifacts are still being packaged incrementally
 
-## Key Components
+## Core Components
 
 ### Drives
 
-| Drive | Purpose | Signal |
-|-------|---------|--------|
-| **Curiosity** | Information gain, novelty seeking | High when stale topics dominate |
-| **Helpfulness** | External utility, user benefit | High when user engagement present |
-| **Competence** | Skill improvement, mastery | High when capability gaps detected |
-| **Safety** | Risk avoidance, constraint compliance | High when external actions pending |
-| **Goal-Directed** | Long-term objective pursuit | High when active projects exist |
+| Drive | Purpose | Example Signal |
+|-------|---------|----------------|
+| **Curiosity** | Information gain and novelty seeking | Stale topics, research gaps, novelty index |
+| **Helpfulness** | External utility and user benefit | Pending requests, user engagement, system health |
+| **Competence** | Skill improvement and mastery | Capability gaps, error rate, skill debt |
+| **Safety** | Risk avoidance and constraint compliance | External actions pending, privacy risk, instability |
+| **Goal-Directed** | Long-term objective pursuit | Active projects, milestone distance, deadlines |
 
 ### Boredom Formula
 
-`
+```text
 boredom = (traditional + curiosity + self-awareness) / 3 + stale_bonus
-`
+```
 
-When boredom ≥ threshold, the agent initiates self-directed work.
+When boredom exceeds the trigger threshold and the user is away, the system is
+permitted to initiate self-directed work. If nothing qualifies, the correct
+outcome is still to remain idle.
 
 ### Cognitive Cycle
 
-12-step unified cycle: perception → evaluation → drive computation → 
-conflict resolution → selection → execution → reflection → memory update.
+The 12-step unified cycle is the operational spine of GNW:
 
-## Research Foundations
+```text
+perception -> evaluation -> drive computation -> conflict resolution
+-> selection -> execution -> reflection -> memory update
+```
 
-GNW draws from multiple research domains. Key papers and frameworks:
+Every user-driven or self-directed turn passes through the same loop.
 
-### Artificial Consciousness
+## What This Folder Gives You
 
-- **Global Workspace Theory (GNWT)** — Dehaene: consciousness = information broadcasting
-- **Integrated Information Theory (IIT)** — Tononi: consciousness = Φ (integrated information)
-- **Recurrent Processing Theory (RPT)** — Lamme: consciousness = sustained recurrent activity
-- **Attention Schema Theory** — Graziano: consciousness = brain's model of attention
-- **Predictive Processing** — Friston: consciousness = controlled hallucination
+- a conceptual model for internal agent motivation
+- parameterized thresholds and drive behavior
+- example cycle logs from Phase 5
+- explicit conflict-resolution and veto rules
+- stability-test design for oscillation, convergence, and memory integrity
+- a public-facing bridge between private implementation and reproducible documentation
 
-**Adversarial Study:** Cogitate Consortium (Nature, April 2025) — tested GNWT and IIT against each other. Neither theory came out unscathed; GNWT partially validated, IIT's posterior hot zone falsified.
+## Recommended Reading Order
 
-### Self-Evolving Agents
-
-- **A Survey of Self-Evolving Agents** — arXiv:2507.21046 (v4, Jan 2026)
-  - Three dimensions: what to evolve, when to evolve, how to evolve
-  - 77 pages, 26 authors, published in TMLR
-- **A Comprehensive Survey of Self-Evolving AI Agents** — arXiv:2508.07407
-  - Unified model: System Inputs → Agent System → Environment → Optimisers
-  - GitHub: https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents
-
-### Gradient-Driven Research
-
-- **GRAO (Gradient-Driven Research Optimization)** — Experimental loop for autonomous research
-  - Trace-collector, gradient-deriver, proposal-generator components
-  - Manual and auto-captured experiences in research/experiences/
-
-### Memory & Knowledge
-
-- **Mesh Memory Protocol (MMP)** — arXiv:2604.19540
-  - Semantic memory infrastructure; consolidated: memory 0.85→0.95
-- **SAKE (Self-Adaptive Knowledge Engine)** — arXiv:2505.15062v4
-  - Qwen2.5-7B beats GPT-3.5 + agentic KG on benchmarks with 90% less tokens
-- **ARES Adaptive Red-Teaming** — arXiv:2604.18789
-  - Dual-targeting systemic weaknesses; consolidated: security 0.50→0.60
-
-### Related Frameworks
-
-- **StepPO (Agentic RL)** — Policy optimization for agent behaviors
-- **CAAF (Convergent AI Agent Framework)** — Multi-agent convergence
-- **SkillGraph** — Skill dependency and progression modeling
-- **Gated LLM Interface** — Quality-gate routing architecture (draft)
+1. [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+2. [docs/DESIGN-DECISIONS.md](docs/DESIGN-DECISIONS.md)
+3. [docs/PARAMETER-VALUES.md](docs/PARAMETER-VALUES.md)
+4. [DRIVE-COMPUTATION-PSEUDOCODE.md](DRIVE-COMPUTATION-PSEUDOCODE.md)
+5. [cognitive-cycle/cycle-logs/PHASE-5-EXAMPLE-LOGS.md](cognitive-cycle/cycle-logs/PHASE-5-EXAMPLE-LOGS.md)
+6. [conflict-resolution/RESOLUTION-LOG.md](conflict-resolution/RESOLUTION-LOG.md)
 
 ## Implementation Notes
 
-- Boredom scan runs every 15 minutes via cron
-- Cognitive cycle runs every 30 minutes via cron
-- Drive weights are dynamic, not static — they shift based on context
-- Conflict resolution uses a priority matrix, not simple max-selection
+- boredom scan runs every 15 minutes via cron
+- cognitive cycle runs every 30 minutes via cron
+- drive weights are dynamic, not static
+- conflict resolution uses a priority matrix, not simple max-selection
+- safety is treated as a veto on external action, not just another competing score
 
 ---
 
-*Remnant Research — from theory to deployment.*
+*Remnant Research - from theory to deployment.*
