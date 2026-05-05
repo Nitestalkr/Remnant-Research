@@ -5,6 +5,8 @@ is a hard block that prevents the action regardless of other drive scores.
 
 ## Veto Levels
 
+> **Note:** All thresholds are inclusive — a score equal to the threshold triggers the corresponding level (≥ means "equal to or above").
+
 ### Level 1: Soft Veto (Score ≥ 0.70)
 
 - **Effect:** Action requires additional scrutiny before execution

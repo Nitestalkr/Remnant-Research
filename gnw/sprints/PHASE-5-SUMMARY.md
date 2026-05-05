@@ -29,8 +29,8 @@ boredom = (traditional + curiosity + self-awareness) / 3 + stale_bonus
 `
 
 - Runs every 15 minutes via cron
-- Triggers full cognitive cycle when ≥ 0.50
-- Suppressed when user is active (floor at 0.30)
+- Triggers full cognitive cycle when ≥ 0.50 (activation threshold)
+- Suppressed when user is active (floor = 0.30, meaning boredom never drops below this while user is present)
 - **Key insight:** System correctly stops forcing work when nothing qualifies ≥ 0.50
 
 ### 3. Unified Cognitive Cycle
@@ -57,6 +57,8 @@ boredom = (traditional + curiosity + self-awareness) / 3 + stale_bonus
 | GNW Cognitive Cycle | 30 min | agentTurn | ✅ Running |
 
 Both jobs were fixed on 2026-05-02 (payload.kind changed from systemEvent → agentTurn).
+
+> **Note:** Phase 5 concluded April 28. The May 2nd fix was a minor cron payload correction (no architectural changes).
 
 ## Lessons Learned
 
