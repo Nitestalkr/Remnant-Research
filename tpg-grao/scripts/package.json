@@ -1,0 +1,33 @@
+{
+  "name": "remnant-research-grao",
+  "version": "1.0.0",
+  "description": "TPG-GRAO pipeline scripts — trace collection, gradient derivation, proposal generation, and loop analysis",
+  "type": "module",
+  "scripts": {
+    "collect": "node trace-collector.js",
+    "derive": "node gradient-deriver.js",
+    "propose": "node proposal-generator.js",
+    "retrieve": "node grao-retriever.js",
+    "pipeline": "node trace-collector.js && node gradient-deriver.js && node proposal-generator.js && node grao-retriever.js"
+  },
+  "keywords": [
+    "gra",
+    "gradient",
+    "research",
+    "optimization",
+    "trace",
+    "tpg"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "notes": {
+    "dependencies": "None — pure Node.js, no external packages required",
+    "data-directory": "grao/grao-state.json (shared state)",
+    "traces-directory": "traces/ (date-partitioned JSON)",
+    "gradients-directory": "gradients/ (computed gradients)",
+    "proposals-directory": "proposals/ (generated proposals)",
+    "reports-directory": "reports/ (trend analysis reports)"
+  }
+}

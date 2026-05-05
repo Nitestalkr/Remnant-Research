@@ -2,7 +2,9 @@
 
 ## Overview
 
-Four Node.js scripts that power the TPG-GRAO pipeline: trace collection, gradient derivation, loop history retrieval, and proposal generation. All scripts are operational and wired into the OpenClaw cron system.
+Four Node.js scripts that power the TPG-GRAO pipeline: trace collection, gradient derivation, loop history retrieval, and proposal generation.
+
+> **Note:** These scripts are designed for the live local OpenClaw environment. They are published here as part of the research mirror. Some trace collection functions use simulated data when running outside the live system. The scripts are functional but not yet packaged for standalone use by external users.
 
 ## Status
 

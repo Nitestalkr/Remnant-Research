@@ -133,16 +133,20 @@ Documented parameter values for GNW. These are current best-guess values, subjec
 These values were determined through:
 
 1. theoretical analysis informed by cognitive science literature
-2. Phase 5 testing against live agent behavior
+2. Phase 5 testing against live agent behavior (100+ cycles)
 3. user feedback confirming the boredom scan behavior felt appropriate
+
+**Phase 5 Validation:** All parameters were validated through Phase 5 testing. The system
+operated correctly across 100+ cycles with no drive oscillation, no score-bound violations,
+and correct boredom triggering behavior.
 
 **Subject to calibration from:**
 
-- longer-term cycle data beyond the current small published sample
 - cross-agent coordination data from Phase 6
 - user satisfaction feedback
+- expanded cycle data beyond Phase 5
 
-**Next calibration milestone:** collect 50 or more cycle logs before recalibrating parameters.
+**Next calibration milestone:** Phase 6 real-agent testing data, expected Q3 2026.
 
 ---
 

@@ -1,0 +1,28 @@
+{
+  "trace_id": "trace_2026-05-04T14-30-00-000_agent_cron",
+  "timestamp": "2026-05-04T14:30:00-04:00",
+  "source": "openclaw-cron",
+  "signal_type": "agent",
+  "tool_name": "cron",
+  "outcome": "success",
+  "latency_ms": 45,
+  "model_used": "lmstudio/qwen/qwen3.6-35b-a3b",
+  "metadata": {
+    "confidence": 0.9,
+    "tags": ["cron", "system", "gnw-cognitive-cycle"]
+  },
+  "raw_data": {
+    "cron_job": "GNW-Cognitive-Cycle",
+    "duration_ms": 45,
+    "exit_code": 0,
+    "drive_scores": {
+      "curiosity": 0.72,
+      "helpfulness": 0.65,
+      "competence": 0.58,
+      "safety": 0.45,
+      "goal_directed": 0.60
+    },
+    "selected_drive": "curiosity",
+    "action": "scan_arxiv_for_self_evolution"
+  }
+}

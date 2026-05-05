@@ -25,18 +25,18 @@
 | **GRAO Round** | 39 (2026-05-04) |
 | **Success Ratio** | 92.7% (127/137 gradients successful) |
 | **Total Traces** | 137 |
-| **Experiences** | 6 proven patterns |
+| **Experiences** | 7 proven patterns |
 | **Consecutive Policy Rounds** | 20 |
 | **Saturation Status** | ⚠️ Policy saturation detected — exploration phase needed |
 
-### Success Ratio Progression
+### Success Ratio Progression (chronological by date)
 
 ```
 Round 13 (2026-04-25):  47.4%  ← High failure rate (trace metadata issues)
 Round 20 (2026-04-26):  65.5%  ← Upward trend established
 Round 31 (2026-04-27):  93.1%  ← Peak — 7 experiences, 7 clusters
-Round 33 (2026-04-30):  89.0%  ← 33 consecutive reinforcement rounds
 Round 38 (2026-04-28):  83.3%  ← Trace quality stabilizing
+Round 33 (2026-04-30):  89.0%  ← 33 consecutive reinforcement rounds
 Round 39 (2026-05-04):  92.7%  ← Jump from 83.3%; saturation detected
 ```
 

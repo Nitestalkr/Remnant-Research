@@ -85,9 +85,9 @@ GRAO treats research optimization like gradient descent in ML:
 | 13 | 2026-04-25 | 47.4% | 3 | 4 | Early stabilization, high failure rate |
 | 20 | 2026-04-26 | 65.5% | 3 | 12 | Upward trend established (56.5→65.5%) |
 | 31 | 2026-04-27 | 93.1% | 7 | 23 | Pattern clustering comprehensive (7 clusters) |
-| 33 | 2026-04-30 | 89.0% | 6 | 33 | 33 consecutive policy rounds (saturation warning) |
 | 38 | 2026-04-28 | 83.3% | 5 | — | Trace quality stable, 60 traces in system |
-| 39 | 2026-05-04 | 92.7% | 6 | 20 | Significant jump from 83.3%, policy saturation detected |
+| 33 | 2026-04-30 | 89.0% | 6 | 33 | 33 consecutive policy rounds (saturation warning) |
+| 39 | 2026-05-04 | 92.7% | 7 | 20 | Significant jump from 83.3%, policy saturation detected |
 
 ### Trend: Success Ratio Over Time
 
@@ -95,8 +95,8 @@ GRAO treats research optimization like gradient descent in ML:
 Round 13: 47.4%  ← Early, high failure rate (trace metadata issues)
 Round 20: 65.5%  ← Upward trend established (56.5→59.1→54.5→58.3→63.0→65.5%)
 Round 31: 93.1%  ← Peak, 7 experiences, 7 pattern clusters
-Round 33: 89.0%  ← Slight dip, 33 consecutive reinforcement rounds
 Round 38: 83.3%  ← Further dip, trace quality bottleneck
+Round 33: 89.0%  ← Slight dip, 33 consecutive reinforcement rounds
 Round 39: 92.7%  ← Significant jump (127/137 success)
 ```
 
@@ -159,7 +159,7 @@ tpg-grao/
 ├── gradients/             # Computed gradients
 ├── proposals/             # Generated research proposals
 ├── reports/               # GRAO cycle trend reports
-└── scripts/               # Pipeline tooling (4 operational scripts)
+└── scripts/               # Pipeline tooling (4 scripts, published incrementally)
 ```
 
 ---

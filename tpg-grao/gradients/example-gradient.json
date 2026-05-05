@@ -1,0 +1,23 @@
+{
+  "gradient_id": "grad_2026-05-04_research_abc123",
+  "timestamp": "2026-05-04T14:30:00-04:00",
+  "type": "directional",
+  "direction": "knowledge-acquisition",
+  "magnitude": 0.72,
+  "confidence": 0.85,
+  "pattern_strength": 0.68,
+  "temporal_factor": "accelerating",
+  "contributing_traces": [
+    "trace_2026-05-04T10-00-00-000_research_arxiv",
+    "trace_2026-05-04T11-00-00-000_research_paper",
+    "trace_2026-05-04T12-00-00-000_research_deepdive"
+  ],
+  "contributing_traces_count": 3,
+  "top_concepts": [
+    { "concept": "self-evolving-agents", "weight": 2.5 },
+    { "concept": "cognitive-architecture", "weight": 1.8 },
+    { "concept": "gradient-optimization", "weight": 1.2 }
+  ],
+  "decay_rate": 0.02,
+  "next_computation": "2026-05-11T14:30:00-04:00"
+}
