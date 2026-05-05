@@ -20,6 +20,7 @@ Remnant Research documents two connected systems built inside a live OpenClaw-ba
 - **GRAO (Gradient-Driven Research Optimization)** — a research loop that turns execution traces, pattern analysis, and proven experiments into directional signals that steer the next cycle of work.
 
 Together they define the closed-loop architecture this project is building toward: **GNW decides what to do → GRAO tracks the results → GRAO produces gradients and proposals → validated feedback informs future GNW behavior → the cycle repeats.**
+
 Models used throughout this project: Kimi-k2.5 for planning out the frame work. Gemma4-26B-A4B for initial local model test and debugging, Qwen3.6-35B-A3B current active model throughout this testing, Claude-Opus-4.6 and Codex 5.4 to help build this repo, flesh out our in-house implementation and for the Multi-Agent phases.
 
 ---
