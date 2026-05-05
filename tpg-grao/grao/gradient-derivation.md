@@ -33,7 +33,7 @@ Every agent action that produces a measurable outcome is traced:
 From round 39 (2026-05-04):
 - **Total traces in system:** 137
 - **Traces collected this round:** 12
-- **Metadata compliance:** 100% (achieved after 25+ rounds of iteration)
+- **Metadata compliance:** 100% (Round 39 only; ongoing target across all rounds)
 
 ---
 

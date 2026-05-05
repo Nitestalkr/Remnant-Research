@@ -6,6 +6,12 @@ Terminology and definitions for the GNW framework.
 
 | Term | Definition |
 |------|------------|
+| **OpenClaw** | The host AI agent platform (OpenClaw Gateway + agent runtime) that runs this system. GNW is implemented as cron jobs within OpenClaw. |
+
+## Drive Definitions
+
+| Term | Definition |
+|------|------------|
 | **Drive** | A weighted cognitive motivation vector (curiosity, helpfulness, competence, safety, goal-directed) |
 | **Cognitive Cycle** | The 12-step processing loop: perception → evaluation → decision → execution → reflection |
 | **Boredom** | A composite score that triggers self-directed work when external input is stale |
@@ -41,6 +47,13 @@ Terminology and definitions for the GNW framework.
 | **Signal Source** | An environmental input that contributes to a drive's raw score |
 | **Modulator** | A context factor that adjusts a drive's raw score |
 | **Cycle Log** | A markdown file recording the state and outcome of a cognitive cycle |
+
+## Model Terms
+
+| Term | Definition |
+|------|------------|
+| **qwen3.6** | Qwen 3.6 35B-A3B (multimodal local model, free via LM Studio). The top GRAO win: switching to qwen3.6 yielded +80% impact (Round 31). Josh's preferred model. |
+| **qwen3.5-9b** | Qwen 3.5 9B — smaller fallback model used when rate limits hit. |
 
 ## Thresholds
 

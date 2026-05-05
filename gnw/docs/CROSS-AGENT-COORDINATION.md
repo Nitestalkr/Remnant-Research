@@ -20,8 +20,8 @@ cohesive unit rather than independent agents with competing priorities.
 
 ### Broadcast Schema
 
-Each agent broadcasts its drive scores at the end of each cognitive cycle.
-Malformed payloads are rejected and logged.
+Each agent **would** broadcast its drive scores at the end of each cognitive cycle.
+Malformed payloads **would** be rejected and logged.
 
 ```json
 {
@@ -41,10 +41,10 @@ Malformed payloads are rejected and logged.
 }
 ```
 
-**Validation:** Receiving agents check that all drive values are 0.0–1.0.
-Malformed payloads are logged and discarded.
+**Validation:** Receiving agents **would** check that all drive values are 0.0–1.0.
+Malformed payloads **would** be logged and discarded.
 
-### Broadcast Format
+### Broadcast Format (example)
 
 ```json
 {
@@ -63,7 +63,7 @@ Malformed payloads are logged and discarded.
 }
 ```
 
-### Sync Mechanism
+### Sync Mechanism (design)
 
 - **Frequency:** At the end of each cognitive cycle
 - **Channel:** Shared drive weight store (JSON file or OpenClaw memory)
@@ -74,9 +74,9 @@ Malformed payloads are logged and discarded.
 
 ## Drive Weight Sharing
 
-### Shared Store
+### Shared Store (design)
 
-All agents read from and write to a shared drive weight store:
+All agents **would** read from and write to a shared drive weight store:
 
 ```json
 {
@@ -98,7 +98,7 @@ All agents read from and write to a shared drive weight store:
 }
 ```
 
-### Weight Synchronization Protocol
+### Weight Synchronization Protocol (design)
 
 1. Agent computes its drive scores locally
 2. Agent broadcasts scores to shared store
@@ -106,11 +106,13 @@ All agents read from and write to a shared drive weight store:
 4. Context-modulated drives account for other agents' states
 5. Conflict resolution considers cross-agent drive states
 
+> **Status:** Protocol designed. Implementation pending Phase 6 real-agent testing.
+
 ---
 
-## Cross-Agent Conflict Resolution
+## Cross-Agent Conflict Resolution (design)
 
-When multiple agents have competing priorities:
+When multiple agents **would** have competing priorities:
 
 | Scenario | Resolution |
 |----------|------------|
@@ -128,9 +130,9 @@ When multiple agents have competing priorities:
 
 ---
 
-## Oscillation Prevention Across Agent Boundaries
+## Oscillation Prevention Across Agent Boundaries (design)
 
-When agents' drives oscillate (Agent A wins cycle 1, Agent B wins cycle 2, repeating):
+When agents' drives **would** oscillate (Agent A wins cycle 1, Agent B wins cycle 2, repeating):
 
 | Detection | Action |
 |-----------|--------|

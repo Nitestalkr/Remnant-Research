@@ -36,32 +36,17 @@ Future development plan and milestones for the GNW self-evolution framework.
 
 **Sprint velocity:** ~2 sprints per month
 
-#### Sprint 19: Multi-Agent Drive Synchronization
+#### Sprint 19: Multi-Agent Drive Synchronization (Target: May 2026)
 - Drive score broadcast protocol
 - Cross-agent priority arbitration
 - Conflict resolution across agent boundaries
 
-#### Sprint 20: Drive Weight Sharing
+#### Sprint 20: Drive Weight Sharing (Target: June 2026)
 - Shared drive weight store across agents
 - Weight synchronization protocol
 - Conflict resolution for competing weights
 
-#### Sprint 21: Real Agent Testing
-- Two-agent coordination test (Andi + Randi2)
-- Drive synchronization under load
-- Oscillation prevention across agent boundaries
-
-#### Sprint 19: Multi-Agent Drive Synchronization
-- Drive score broadcast protocol
-- Cross-agent priority arbitration
-- Conflict resolution across agent boundaries
-
-#### Sprint 20: Drive Weight Sharing
-- Shared drive weight store across agents
-- Weight synchronization protocol
-- Conflict resolution for competing weights
-
-#### Sprint 21: Real Agent Testing
+#### Sprint 21: Real Agent Testing (Target: July 2026)
 - Two-agent coordination test (Andi + Randi2)
 - Drive synchronization under load
 - Oscillation prevention across agent boundaries
@@ -74,9 +59,9 @@ Future development plan and milestones for the GNW self-evolution framework.
 - Drive signals evolve based on environmental changes
 
 **Milestones:**
-- M1: Drive success rate tracking (sprint 22, Q3 2026)
-- M2: Weight auto-calibration (sprint 23, Q3 2026)
-- M3: Signal evolution (sprint 24, Q4 2026)
+- M1: Drive success rate tracking (sprint 22, July 2026)
+- M2: Weight auto-calibration (sprint 23, August 2026)
+- M3: Signal evolution (sprint 24, October 2026)
 
 ### Phase 8: Memory Integration Deepening (Target: Q3–Q4 2026)
 - Drive scores persist across sessions
@@ -84,9 +69,9 @@ Future development plan and milestones for the GNW self-evolution framework.
 - Long-term drive history for pattern analysis
 
 **Milestones:**
-- M1: Cross-session persistence (sprint 25, Q3 2026)
-- M2: Drive-driven memory consolidation (sprint 26, Q4 2026)
-- M3: Long-term pattern analysis (sprint 27, Q4 2026)
+- M1: Cross-session persistence (sprint 25, August 2026)
+- M2: Drive-driven memory consolidation (sprint 26, October 2026)
+- M3: Long-term pattern analysis (sprint 27, November 2026)
 
 ### Phase 9: Research Integration (Target: Q4 2026)
 - GNW drives inform research priorities
@@ -94,9 +79,9 @@ Future development plan and milestones for the GNW self-evolution framework.
 - Autonomous research loop (GNW → research → GNW improvement)
 
 **Milestones:**
-- M1: Research priority driving (sprint 28, Q4 2026)
-- M2: Research feedback loop (sprint 29, Q4 2026)
-- M3: Autonomous research cycle (sprint 30, Q4 2026)
+- M1: Research priority driving (sprint 28, November 2026)
+- M2: Research feedback loop (sprint 29, December 2026)
+- M3: Autonomous research cycle (sprint 30, December 2026)
 
 ### Phase 10: Multi-Agent Orchestra (Target: 2027)
 - Full multi-agent coordination (Andi + Randi2 + Claude + CB + Zero)
@@ -104,9 +89,9 @@ Future development plan and milestones for the GNW self-evolution framework.
 - Collective goal-directed behavior
 
 **Milestones:**
-- M1: Five-agent coordination (sprint 31, 2027)
-- M2: Collective goal allocation (sprint 32, 2027)
-- M3: Self-organizing multi-agent system (sprint 33, 2027)
+- M1: Five-agent coordination (sprint 31, Q1 2027)
+- M2: Collective goal allocation (sprint 32, Q2 2027)
+- M3: Self-organizing multi-agent system (sprint 33, Q3 2027)
 
 ## Unknowns / Open Questions
 

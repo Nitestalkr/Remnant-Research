@@ -2,7 +2,7 @@
   "name": "remnant-research-grao",
   "version": "1.0.0",
   "description": "TPG-GRAO pipeline scripts — trace collection, gradient derivation, proposal generation, and loop analysis",
-  "type": "module",
+
   "scripts": {
     "collect": "node trace-collector.js",
     "derive": "node gradient-deriver.js",
