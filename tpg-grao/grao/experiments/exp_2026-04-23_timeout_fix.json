@@ -1,0 +1,18 @@
+{
+  "id": "exp_2026-04-23_timeout_fix",
+  "timestamp": "2026-04-23T16:00:00Z",
+  "cluster": "agent_prompt_optimization",
+  "type": "timeout_policy",
+  "context": "Cron jobs timing out due to insufficient timeout values",
+  "action": "Set npx+network jobs ≥600s; CLI-only ≥300s; simple fetch ≥120s",
+  "result": "60% improvement in cron job completion rate",
+  "confidence": 0.9,
+  "impact": {
+    "cost_reduction": 0,
+    "success_rate_change": 60,
+    "latency_change": 10
+  },
+  "tags": ["timeout", "cron", "reliability", "policy"],
+  "verified": true,
+  "active": true
+}

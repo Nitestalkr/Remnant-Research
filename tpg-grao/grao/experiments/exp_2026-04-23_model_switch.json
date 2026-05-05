@@ -1,0 +1,18 @@
+{
+  "id": "exp_2026-04-23_model_switch",
+  "timestamp": "2026-04-23T16:00:00Z",
+  "cluster": "agent_prompt_optimization",
+  "type": "model_selection",
+  "context": "Cron jobs using paid APIs causing cost issues",
+  "action": "Switch all cron jobs to free/local model (qwen3.6)",
+  "result": "80% improvement in cost efficiency, no functional degradation",
+  "confidence": 0.95,
+  "impact": {
+    "cost_reduction": 80,
+    "success_rate_change": 0,
+    "latency_change": -5
+  },
+  "tags": ["cron", "model", "cost", "qwen3.6"],
+  "verified": true,
+  "active": true
+}

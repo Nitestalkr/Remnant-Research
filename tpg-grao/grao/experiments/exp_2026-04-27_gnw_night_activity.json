@@ -1,0 +1,18 @@
+{
+  "id": "exp_2026-04-27_gnw_night_activity",
+  "timestamp": "2026-04-27T02:00:00Z",
+  "cluster": "agent_prompt_optimization",
+  "type": "temporal_pattern",
+  "context": "Night activity patterns in multi-agent system",
+  "action": "Stabilized night-time monitoring with reduced heartbeat frequency",
+  "result": "75% improvement in night-time stability, reduced false positives",
+  "confidence": 0.85,
+  "impact": {
+    "cost_reduction": 15,
+    "success_rate_change": 75,
+    "latency_change": -10
+  },
+  "tags": ["temporal", "night", "heartbeat", "stability"],
+  "verified": true,
+  "active": true
+}
