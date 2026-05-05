@@ -1,24 +1,59 @@
 # Remnant Research
 
-> **From theory to deployment.** Self-evolving AI agent systems, cognitive architectures, and autonomous research loops.
+> **From theory to deployment.** Building self-evolving AI agent systems grounded in cognitive science, consciousness research, and gradient-driven optimization.
 
 ---
 
-## 📖 Abstract
+## 🎯 The Problems We're Solving
 
-**What problem are we solving?** Autonomous agents need more than static task routing — they need *motivation*. Without a drive-based internal state, agents either work endlessly (burnout) or sit idle (apathy). Both are failure modes.
+### 1. Autonomous agents lack motivation
+Static task routing works until the work runs out. Without an internal drive state, agents either:
+- **Burn out** — endlessly pursuing stale work with no self-regulation
+- **Apathize** — sitting idle when no external input arrives
+- **Misalign** — optimizing for the wrong drive when contexts shift
 
-**Our approach:** GNW (Goals / Neural / Work) models cognitive drives — curiosity, helpfulness, competence, safety, goal-directedness — as continuous weighted vectors (0.0–1.0) that determine *what* an agent works on and *when*. The system uses boredom detection as a trigger for self-directed exploration, a 12-step cognitive cycle for execution, and priority-based conflict resolution when drives compete.
+We need agents that *know when to work, what to work on, and when to stop* — not from external commands, but from internal state.
 
-**What have we found?** After 5 phases of development and live testing:
-- ✅ All 5 drives integrated and operational
-- ✅ Unified cognitive cycle running (perception → execution → reflection)
-- ✅ Boredom formula operational with "no forced work" principle
-- ✅ Safety-as-veto prevents harmful external actions
-- ✅ System correctly stops when nothing qualifies ≥ 0.50 (a key insight most frameworks miss)
-- ⏳ Phase 6 (cross-agent coordination) — logic verified, real agent testing pending
+### 2. Research systems lack gradient-driven direction
+Most autonomous research frameworks are either:
+- **Random exploration** — sampling papers/tasks without directional signal
+- **Static priority** — fixed relevance scores that don't adapt to what's been learned
+- **No feedback loops** — research outputs don't feed back into research direction
 
-This is a **specification + living research project**. Documentation is complete for Phases 1–5; executable code is being published incrementally. Some artifacts are reconstructed from prior local runs.
+We need research that *steers itself* — where each cycle's outputs become the gradient signals for the next cycle's direction.
+
+### 3. Cognitive architectures are theoretical, not operational
+Consciousness and cognition theories (GNWT, IIT, RPT, etc.) are well-developed academically but rarely translated into operational agent architectures. The gap between "what consciousness might be" and "how to implement a cognitive drive system" is enormous.
+
+---
+
+## 📖 What This Repo Contains
+
+Remnant Research is a **public mirror** of an actively evolving private OpenClaw-based AI agent system. It contains:
+
+### GNW Framework — Goals / Neural / Work
+A drive-based cognitive architecture for autonomous agent self-improvement.
+
+- **5 cognitive drives** — curiosity, helpfulness, competence, safety, goal-directedness as continuous weighted vectors (0.0–1.0)
+- **Unified 12-step cognitive cycle** — perception → evaluation → drive computation → conflict resolution → selection → execution → reflection → memory update
+- **Boredom detection** — formula that triggers self-directed exploration when external input is stale
+- **Priority-based conflict resolution** — when drives compete (e.g., curiosity vs. safety), a priority matrix arbitrates
+- **Stability analysis** — convergence tests to prevent drive oscillation or runaway behavior
+- **Phase 5 complete** — all 5 drives integrated and operational; Phase 6 (cross-agent coordination) logic verified
+
+### GRAO — Gradient-Driven Research Optimization
+A framework for systematic research evolution through gradient-based pattern analysis.
+
+- **Trace collection** — capturing research experiences (manual + auto-captured)
+- **Gradient derivation** — computing directional signals from pattern analysis across traces
+- **TPG routing** — Tensor Processing Graph that routes, transforms, and accumulates gradient signals
+- **Proposal generation** — research proposals derived from gradient analysis
+- **Experiment tracking** — GRAO cycle experiments and results
+
+### Research Infrastructure
+- **REFERENCES.md** — Formal academic citations (APA 7th) covering consciousness theory, self-evolving agents, memory systems, and related frameworks
+- **gnw/** — Complete GNW framework documentation (sprints, cognitive cycle specs, conflict resolution, stability tests)
+- **tpg-grao/** — TPG-GRAO framework skeleton (architecture, gradient derivation, experiment structure)
 
 ---
 
@@ -26,256 +61,186 @@ This is a **specification + living research project**. Documentation is complete
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        GNW Framework                                │
+│                    Remnant Research System                          │
 │                                                                     │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
-│  │  Drive       │    │  Cognitive   │    │  Conflict    │         │
-│  │  Module      │───→│  Cycle       │───→│  Resolution  │         │
-│  │              │    │  (12 steps)  │    │              │         │
-│  └──────────────┘    └──────────────┘    └──────────────┘         │
-│       │                   │                   │                    │
-│       ▼                   ▼                   ▼                    │
-│  ┌──────────────────────────────────────────────────────┐          │
-│  │              Boredom Scanner                          │          │
-│  │  Input: stale context, research gaps, novelty        │          │
-│  │  Output: boredom score (0.0–1.0)                    │          │
-│  └──────────────────────────────────────────────────────┘          │
-│                         │                                           │
-│                         ▼                                           │
-│  ┌──────────────────────────────────────────────────────┐          │
-│  │           Trigger Decision                            │          │
-│  │  boredom ≥ 0.50 AND user away → run cognitive cycle  │          │
-│  └──────────────────────────────────────────────────────┘          │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │                    GNW Cognitive Engine                      │   │
+│  │                                                             │   │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  │   │
+│  │  │ Curiosity│  │Helpfulness│  │Competence│  │  Safety  │  │   │
+│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │   │
+│  │           ↓         ↓           ↓           ↓              │   │
+│  │  ┌──────────┐                                      │   │
+│  │  │Goal-Direct│                                      │   │
+│  │  └──────────┘                                      │   │
+│  │           ↓                                      │   │
+│  │  ┌──────────────────────────────────────────┐   │   │
+│  │  │     Drive Weights → Conflict Resolution   │   │   │
+│  │  └──────────────────────────────────────────┘   │   │
+│  │           ↓                                      │   │
+│  │  ┌──────────────────────────────────────────┐   │   │
+│  │  │      Boredom Scanner (trigger)            │   │   │
+│  │  │  boredom ≥ 0.50 + user away → cognitive   │   │   │
+│  │  └──────────────────────────────────────────┘   │   │
+│  │           ↓                                      │   │
+│  │  ┌──────────────────────────────────────────┐   │   │
+│  │  │     12-Step Cognitive Cycle               │   │   │
+│  │  │  perception → execution → reflection      │   │   │
+│  │  └──────────────────────────────────────────┘   │   │
+│  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│  ┌──────────────────────────────────────────────────────┐          │
-│  │           Cron Infrastructure                         │          │
-│  │  ┌──────────────────┐  ┌──────────────────┐          │          │
-│  │  │ Boredom Scan     │  │ Cognitive Cycle  │          │          │
-│  │  │ Every 15 min     │  │ Every 30 min     │          │          │
-│  │  └──────────────────┘  └──────────────────┘          │          │
-│  └──────────────────────────────────────────────────────┘          │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │                  GRAO Research Loop                          │   │
+│  │                                                             │   │
+│  │  ┌──────────┐    ┌──────────┐    ┌──────────┐             │   │
+│  │  │ Traces   │───→│ Gradients│───→│ Proposals│             │   │
+│  │  │Collection│    │Derivation│    │Generation│             │   │
+│  │  └──────────┘    └──────────┘    └──────────┘             │   │
+│  │       │                  │                  │              │   │
+│  │       ▼                  ▼                  ▼              │   │
+│  │  ┌─────────────────────────────────────────────────────┐   │   │
+│  │  │              TPG Routing Graph                       │   │   │
+│  │  │  Routes, transforms, and accumulates signals         │   │   │
+│  │  └─────────────────────────────────────────────────────┘   │   │
+│  │       │                                                  │   │
+│  │       ▼                                                  │   │
+│  │  ┌──────────┐                                            │   │
+│  │  │ Experiments│ → Reports → Cycle Updates                │   │
+│  │  └──────────┘                                            │   │
+│  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│  ┌──────────────────────────────────────────────────────┐          │
-│  │           Memory Integration                          │          │
-│  │  Drive Weights (JSON) → Cycle Logs (MD) → State     │          │
-│  └──────────────────────────────────────────────────────┘          │
+│  ┌─────────────────────────────────────────────────────────────┐   │
+│  │                 Memory Integration                           │   │
+│  │  Drive Weights → Cycle Logs → State → Research Traces       │   │
+│  └─────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Drive Module
-
-```
-┌─────────────────────────────────────┐
-│           Drive Module               │
-│                                      │
-│  ┌──────────┐  ┌──────────┐        │
-│  │ Curiosity│  │Helpfulness│        │
-│  └──────────┘  └──────────┘        │
-│                                      │
-│  ┌──────────┐  ┌──────────┐        │
-│  │Competence│  │  Safety  │        │
-│  └──────────┘  └──────────┘        │
-│                                      │
-│  ┌──────────┐                       │
-│  │Goal-Direct│                      │
-│  └──────────┘                       │
-│                                      │
-│  All modules → raw scores → modulate │
-│  → conflict detection → output       │
-└─────────────────────────────────────┘
-```
-
-### Data Flow
-
-```
-External Input / Cron Trigger
-        │
-        ▼
-┌──────────────┐
-│  Boredom     │──→ boredom < 0.50 → SKIP (stay engaged)
-│  Scanner     │
-└──────────────┘
-        │
-        ▼ (boredom ≥ 0.50 AND user away)
-┌──────────────┐
-│  Cognitive   │
-│  Cycle       │
-│              │
-│  1. Input    │──→ Perception
-│  2. Context  │──→ Perception
-│  3. State    │──→ Perception
-│  4. Drive    │──→ Evaluation
-│  5. Modulate │──→ Evaluation
-│  6. Conflict │──→ Evaluation
-│  7. Resolve  │──→ Decision
-│  8. Select   │──→ Decision
-│  9. Plan     │──→ Decision
-│ 10. Dispatch │──→ Execution
-│ 11. Capture  │──→ Execution
-│ 12. Update   │──→ Reflection
-└──────────────┘
-        │
-        ▼
-┌──────────────┐
-│  Memory      │──→ Persist drive weights, cycle log, state
-│  Write       │
-└──────────────┘
-```
-
 ---
 
-## 📊 Status
+## 📚 Research Papers & Theoretical Foundations
 
-| Phase | Status | Description |
-|-------|--------|-------------|
-| **Phase 1** | ✅ Complete | Drive architecture design, boredom formula, cognitive cycle skeleton |
-| **Phase 2** | ✅ Complete | Drive modulation, conflict resolution priority matrix, veto protocol |
-| **Phase 3** | ✅ Complete | Stability tests, convergence analysis, edge case handling |
-| **Phase 4** | ✅ Complete | OpenClaw integration, live testing with Andi agent, drive weight calibration |
-| **Phase 5** | ✅ Complete | All 5 drives integrated, unified cycle operational, cron infrastructure active |
-| **Phase 6** | 🔄 In Progress | Cross-agent coordination — logic verified, real agent testing pending |
-| **Phase 7** | 📋 Planned | Self-modifying drives — auto-calibration, signal evolution |
-| **Phase 8** | 📋 Planned | Memory integration deepening — cross-session persistence |
-| **Phase 9** | 📋 Planned | Research integration — autonomous research loop |
-| **Phase 10** | 📋 Planned | Multi-agent orchestra — full five-agent coordination |
-
-**Current:** Phase 5 complete (5/10 phases). Phase 6 in progress.
-
----
-
-## 🗂️ How to Navigate
-
-```
-gnw-research/
-├── README.md              ← You are here
-├── gnw/
-│   ├── README.md           ← GNW framework overview (start here for GNW details)
-│   ├── docs/
-│   │   ├── ARCHITECTURE.md ← High-level system architecture (diagrams, data flow)
-│   │   ├── DESIGN-DECISIONS.md ← Why each design choice was made
-│   │   ├── GLOSSARY.md     ← Terminology and definitions
-│   │   └── ROADMAP.md      ← Full development plan, milestones, unknowns
-│   ├── cognitive-cycle/
-│   │   ├── DRIVE-COMPUTATION.md ← Drive specs, signal sources, formulas
-│   │   ├── BOREDOM-FORMULA.md   ← Boredom trigger mechanics
-│   │   ├── CONFLICT-RESOLUTION.md← Priority matrix, tie-breaking, veto protocol
-│   │   └── cycle-logs/          ← Execution logs (populating)
-│   ├── conflict-resolution/
-│   │   ├── EDGE-CASES.md
-│   │   ├── PRIORITY-MATRIX.md
-│   │   └── VETO-PROTOCOL.md
-│   ├── sprints/
-│   │   ├── PHASE-5-SUMMARY.md ← Phase 5 completion report
-│   │   └── README.md
-│   └── stability/
-│       ├── TEST-BOREDOM-THRESHOLD.md
-│       ├── TEST-CONFLICT-CONVERGENCE.md
-│       ├── TEST-DRIVE-OSCILLATION.md
-│       ├── TEST-MEMORY-INTEGRITY.md
-│       └── TEST-SCORE-BOUNDS.md
-├── gnw-phase1-plan.md (legacy — see PHASE-1-4-SUMMARIES.md for full phase history)
-└── LICENSE
-```
-
-**Quick start:**
-1. Read this README for the overview
-2. Go to `gnw/docs/ARCHITECTURE.md` for the system diagram
-3. Go to `gnw/docs/DESIGN-DECISIONS.md` for rationale behind each choice
-4. Go to `gnw/docs/ROADMAP.md` for the full development plan
-5. Go to `gnw/cognitive-cycle/DRIVE-COMPUTATION.md` for drive specs
-
----
-
-## 🧠 Research Foundations
-
-GNW draws from multiple research domains. Key theoretical references:
+GNW and GRAO draw from multiple research domains. The key papers and frameworks that inform our implementation:
 
 ### Artificial Consciousness & Cognitive Science
 
-| Framework | Author | Key Insight |
-|-----------|--------|-------------|
-| **Global Workspace Theory (GNWT)** | Dehaene et al. | Consciousness = information broadcasting to distributed processors |
-| **Integrated Information Theory (IIT)** | Tononi | Consciousness = Φ (integrated information); consciousness arises from causal structure |
-| **Recurrent Processing Theory (RPT)** | Lamme | Consciousness = sustained recurrent activity (not just feedforward) |
-| **Attention Schema Theory** | Graziano | Consciousness = the brain's internal model of its own attention |
-| **Predictive Processing** | Friston | Perception = controlled hallucination constrained by sensory input |
+| Theory | Key Paper | Relevance to GNW |
+|--------|-----------|-----------------|
+| **Global Workspace Theory (GNWT)** | Dehaene & Naccache (2001), *Current Opinion in Neurobiology* | Information broadcasting as consciousness basis — informs drive module as "workspace" |
+| **Integrated Information Theory (IIT)** | Tononi (2008), *The Biological Bulletin* | Φ as measure of integrated information — informs stability tests |
+| **Recurrent Processing Theory (RPT)** | Lamme (2006), *Trends in Cognitive Sciences* | Sustained recurrent activity as consciousness — informs cognitive cycle feedback loops |
+| **Attention Schema Theory** | Graziano (2013), *Rethinking Consciousness* | Brain's model of attention — informs self-awareness drive |
+| **Predictive Processing** | Friston (2010), *Nature Reviews Neuroscience* | Free-energy principle as unified brain theory — informs GRAO gradient computation |
 
-**Adversarial Study:** Cogitate Consortium (*Nature*, April 2025) — tested GNWT and IIT against each other. Neither theory came out unscathed; GNWT partially validated, IIT's posterior hot zone falsified.
+**Adversarial Study:** Cogitate Consortium (Nature, April 2025) — tested GNWT and IIT against each other. Neither came out unscathed; GNWT partially validated, IIT's posterior hot zone falsified. This informs our hybrid approach.
 
 ### Self-Evolving Agents
 
-| Paper | arXiv | Key Contribution |
-|-------|-------|-----------------|
-| **A Survey of Self-Evolving Agents** | [2507.21046](https://arxiv.org/abs/2507.21046) (v4, Jan 2026) | Three dimensions: what to evolve, when to evolve, how to evolve. 77 pages, 26 authors, TMLR. |
-| **A Comprehensive Survey of Self-Evolving AI Agents** | [2508.07407](https://arxiv.org/abs/2508.07407) | Unified model: System Inputs → Agent System → Environment → Optimisers |
-| **Awesome-Self-Evolving-Agents** | [GitHub](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) | Curated collection of self-evolving agent frameworks |
+| Paper | Key Contribution |
+|-------|-----------------|
+| **A Survey of Self-Evolving Agents** — Liu et al. (2026), TMLR, arXiv:2507.21046v4 | Three dimensions: what to evolve, when to evolve, how to evolve. 77 pages, 26 authors. |
+| **A Comprehensive Survey of Self-Evolving AI Agents** — arXiv:2508.07407 | Unified model: System Inputs → Agent System → Environment → Optimisers |
+| **Awesome-Self-Evolving-Agents** — EvoAgentX GitHub repo | Curated collection of self-evolving agent frameworks and papers |
 
-### Memory & Knowledge
+### Memory & Knowledge Systems
 
-| Paper | arXiv | Key Insight |
-|-------|-------|-------------|
-| **Mesh Memory Protocol (MMP)** | [2604.19540](https://arxiv.org/abs/2604.19540) | Semantic memory infrastructure; consolidation improves memory from 0.85→0.95 |
-| **SAKE (Self-Adaptive Knowledge Engine)** | [2505.15062](https://arxiv.org/abs/2505.15062) (v4) | Qwen2.5-7B beats GPT-3.5 + agentic KG on benchmarks with 90% less tokens |
-| **ARES Adaptive Red-Teaming** | [2604.18789](https://arxiv.org/abs/2604.18789) | Dual-targeting systemic weaknesses in AI systems |
+| Paper | Key Contribution |
+|-------|-----------------|
+| **Mesh Memory Protocol (MMP)** — arXiv:2604.19540 | Semantic memory infrastructure; consolidation improves memory from 0.85→0.95 |
+| **SAKE (Self-Adaptive Knowledge Engine)** — arXiv:2505.15062v4 | Qwen2.5-7B beats GPT-3.5 + agentic KG on benchmarks with 90% less tokens |
+| **ARES Adaptive Red-Teaming** — arXiv:2604.18789 | Dual-targeting systemic weaknesses in AI systems; informs safety drive veto |
 
 ### Related Frameworks
 
-| Framework | Domain |
-|-----------|--------|
+| Framework | Contribution |
+|-----------|-------------|
 | **StepPO (Agentic RL)** | Policy optimization for agent behaviors |
 | **CAAF (Convergent AI Agent Framework)** | Multi-agent convergence |
 | **SkillGraph** | Skill dependency and progression modeling |
 | **Gated LLM Interface** | Quality-gate routing architecture (draft) |
 
----
+### Drive Theory Foundations
 
-## 🎯 Key Design Principles
-
-| Principle | Description |
-|-----------|-------------|
-| **Drives as weighted vectors** | Continuous scores (0.0–1.0), not binary flags — enables smooth transitions and decay |
-| **Boredom as trigger, not driver** | Boredom answers "should I work?" — drives answer "what should I work on?" |
-| **Safety as veto** | Safety is a hard constraint, not a competing drive. Prevents "helpfulness" from overriding caution |
-| **No forced work** | System stops when nothing qualifies ≥ 0.50. Forcing work creates noise, not signal |
-| **Dynamic weights** | Drive base weights shift based on context and history, not static |
-| **Priority matrix over max-selection** | Context-dependent ordering resolves conflicts that raw scores can't |
-| **Single-threaded execution** | One action at a time — quality over throughput |
-| **Half-life decay** | Exponential decay prevents stale drive persistence without immediate reactivity |
+| Paper | Contribution |
+|-------|-------------|
+| Mather & Sutherland (2011), *Annual Review of Psychology* | Neuroscientific basis for competing motivational drives |
+| Berridge (2004), *Physiology & Behavior* | Drive theory and reward systems |
+| Berlyne (1960), *Conflict, Arousal, and Curiosity* | Curiosity as arousal-driven exploration — boredom formula basis |
+| Kahneman (2011), *Thinking, Fast and Slow* | Dual-process theory — drive arbitration model |
+| Gigerenzer & Todd (1999), *Simple Heuristics That Make Us Smart* | Fast-and-frugal decision trees for priority selection |
 
 ---
 
-## 🔧 Drive Overview
+## 🔬 Key Design Decisions
 
-| Drive | Purpose | Trigger Signal |
-|-------|---------|----------------|
-| **Curiosity** | Information gain, novelty seeking | Stale topics, research gaps, novelty index |
-| **Helpfulness** | External utility, user benefit | Pending requests, user engagement, system health |
-| **Competence** | Skill improvement, mastery | Capability gaps, error rate, skill debt |
-| **Safety** | Risk avoidance, constraint compliance | External actions pending, constraint violations |
-| **Goal-Directed** | Long-term objective pursuit | Active projects, milestone distance, deadlines |
+### 1. Boredom as Exploration Trigger, Not Work Command
+The system uses boredom ≥ 0.50 as a *permission* to explore, not a *command* to work. If boredom triggers but nothing qualifies (no stale context, no research gaps, no novelty), the system stays idle. This prevents the "forced work" failure mode.
 
-**Boredom Formula:** `boredom = (traditional + curiosity + self-awareness) / 3 + stale_bonus`
+### 2. Safety as Veto, Not Weight
+The safety drive doesn't compete with other drives — it *veto*s them. When an external action is pending, safety's veto threshold overrides all other drive scores. This prevents the agent from "choosing" to do something unsafe just because curiosity is high.
 
-When boredom ≥ 0.50 AND user is away → full cognitive cycle initiates.
+### 3. Drive Weights Are Dynamic, Not Static
+Drive weights shift continuously based on context (user presence, research gaps, skill staleness, project status). They're not preset constants — they're computed values that reflect the agent's current state.
 
----
-
-## 📝 Contributing
-
-This is a public research mirror of an actively evolving private/local OpenClaw setup. Some artifacts are reconstructed from prior runs, and executable scripts will be published incrementally.
-
-**Want to engage with this research?**
-- Open issues for theoretical feedback, citation suggestions, or framework critiques
-- PRs welcome for: documentation improvements, reference additions, pseudocode implementations, stability test results
-- Questions about methodology, design decisions, or research foundations are encouraged
-
-**Research methodology:** Hypothesis → Experiment (live agent testing) → Data (cycle logs, drive scores) → Analysis (stability tests, convergence analysis) → Iteration (sprint updates).
+### 4. Conflict Resolution Uses Priority Matrix, Not Max-Selection
+When drives compete, a 7-condition priority matrix arbitrates rather than simple max-selection. This handles edge cases like "curiosity vs. safety" (safety wins) and "competence vs. goal-directed" (goal-directed wins during active projects).
 
 ---
 
-## 📄 License
+## 📊 Current State
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **GNW Phase 1–4** | ✅ Complete | Drive modules, cognitive cycle, conflict resolution, stability |
+| **GNW Phase 5** | ✅ Complete | All 5 drives integrated, unified cognitive cycle operational |
+| **GNW Phase 6** | ⏳ In Progress | Cross-agent coordination logic verified, real agent testing pending |
+| **GRAO Traces** | ⏳ In Progress | Manual experiences seeded, auto-capture traces pending |
+| **GRAO Gradients** | ⏳ In Progress | Gradient derivation methodology drafted |
+| **GRAO Proposals** | ⏳ Skeleton | Proposal generation framework structure ready |
+| **TPG Architecture** | ⏳ Draft | Routing rules and signal accumulation defined |
+
+---
+
+## 🚀 How to Use This Repo
+
+This is a **research + specification** repo, not a ready-to-run framework. The documentation is complete for Phases 1–5; executable code is being published incrementally.
+
+### For Researchers
+- Start with `gnw/README.md` for the complete GNW framework overview
+- Read `gnw/docs/ARCHITECTURE.md` for system architecture details
+- Review `REFERENCES.md` for the full academic citation list
+- Check `gnw/docs/ROADMAP.md` for the development roadmap through Phase 10
+
+### For Implementers
+- `gnw/cognitive-cycle/` — 12-step cycle spec and drive computation formulas
+- `gnw/conflict-resolution/` — Priority matrix, veto protocol, edge cases
+- `gnw/stability/` — 5 formal stability tests (oscillation, score bounds, boredom, conflict convergence, memory integrity)
+- `tpg-grao/` — GRAO framework skeleton (structure ready, content being populated)
+
+### For Reviewers
+- `gnw/sprints/` — Individual sprint implementations and logs
+- `gnw/docs/DESIGN-DECISIONS.md` — 9 design decisions with rationale and alternatives
+- `gnw/docs/USER-PRESENCE-DETECTION.md` — How the system detects and responds to user presence
+- `gnw/docs/CROSS-AGENT-COORDINATION.md` — Phase 6 cross-agent drive synchronization
+
+---
+
+## ⚠️ Notes
+
+- This repo is a **public mirror** of an actively evolving private/local OpenClaw setup
+- Some artifacts are reconstructed from prior local runs
+- Executable scripts will be published incrementally as they stabilize
+- The GNW framework is operational in production but still under active development
+
+---
+
+## 📝 Citation
+
+When citing Remnant Research or the GNW framework in academic work:
+
+```
+Andi (OpenClaw). (2026). GNW: Goals / Neural / Work — A drive-based cognitive architecture for autonomous AI agents [Computer software]. Remnant Research. https://github.com/Nitestalkr/Remnant-Research
+```
 
 ---
 
