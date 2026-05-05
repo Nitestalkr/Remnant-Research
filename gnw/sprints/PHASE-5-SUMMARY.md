@@ -19,7 +19,7 @@ Each drive was implemented as a weighted vector with:
 | Curiosity | 0.0–1.0 | ≥ 0.50 | No |
 | Helpfulness | 0.0–1.0 | ≥ 0.70 | No (user override) |
 | Competence | 0.0–1.0 | ≥ 0.60 | No |
-| Safety | 0.0–1.0 | ≥ 0.75 (soft), ≥ 0.90 (hard) | Yes (veto on external actions) |
+| Safety | 0.0–1.0 | ≥ 0.70 (soft), ≥ 0.85 (hard), ≥ 0.95 (emergency) | Yes (veto on external actions) |
 | Goal-Directed | 0.0–1.0 | ≥ 0.55 | No |
 
 ### 2. Boredom Formula

@@ -6,6 +6,12 @@
 
 ---
 
+## Platform
+
+**OpenClaw** is the local agent orchestration platform that hosts the live system documented here. It provides the cron infrastructure (scheduled agent turns), memory persistence, tool routing, and multi-agent coordination layer that GNW and GRAO run on top of. OpenClaw is a private, local deployment — this repo mirrors its research artifacts publicly, not the platform itself.
+
+---
+
 ## What This Repo Is
 
 Remnant Research documents two connected systems built inside a live OpenClaw-based AI agent:
@@ -13,7 +19,7 @@ Remnant Research documents two connected systems built inside a live OpenClaw-ba
 - **GNW (Goals / Neural / Work)** — a drive-based cognitive architecture that gives an agent internal motivation: when to work, what to work on, and when to stop.
 - **GRAO (Gradient-Driven Research Optimization)** — a research loop that turns execution traces, pattern analysis, and proven experiments into directional signals that steer the next cycle of work.
 
-Together they form a closed loop: **GNW decides what to do → GRAO tracks the results → GRAO produces gradients → gradients inform GNW's drive weights → the cycle repeats.**
+Together they define the closed-loop architecture this project is building toward: **GNW decides what to do → GRAO tracks the results → GRAO produces gradients and proposals → validated feedback informs future GNW behavior → the cycle repeats.**
 
 ---
 
@@ -58,7 +64,7 @@ GNW models internal motivation as a set of interacting cognitive drives: curiosi
 | **Curiosity** | ≥ 0.50 | No | 6 cycles |
 | **Helpfulness** | ≥ 0.70 | No (user override) | 4 cycles |
 | **Competence** | ≥ 0.60 | No | 8 cycles |
-| **Safety** | ≥ 0.75 (soft), ≥ 0.90 (hard) | Yes (veto on external actions) | 2 cycles |
+| **Safety** | ≥ 0.70 (soft), ≥ 0.85 (hard), ≥ 0.95 (emergency) | Yes (veto on external actions) | 2 cycles |
 | **Goal-Directed** | ≥ 0.55 | No | 10 cycles |
 
 ### 12-Step Cognitive Cycle
@@ -273,6 +279,8 @@ The two systems form a closed feedback loop:
 ```
 
 ### The Feedback Loop
+
+GNW → GRAO trace flow is operational today. Direct GRAO → GNW drive-weight feedback is designed and partially exercised through proposals, but still pending fuller real-agent validation.
 
 1. **GNW decides** — The cognitive cycle selects an action based on drive weights
 2. **GRAO tracks** — The action's execution is captured as a trace

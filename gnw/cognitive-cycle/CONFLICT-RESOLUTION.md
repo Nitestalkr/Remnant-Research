@@ -18,9 +18,10 @@ the pending user task and the safety concern.
 
 ### Step 1: Veto Check
 
-Any drive with score ≥ 0.90 triggers a veto on incompatible actions:
-- **Safety ≥ 0.90** → Blocks all external/public actions
-- **Safety ≥ 0.75** → Requires manual review before external actions
+Safety veto thresholds (per VETO-PROTOCOL.md):
+- **Safety ≥ 0.95** → Emergency: halt all external actions, alert required
+- **Safety ≥ 0.85** → Hard veto: blocks external/public actions, flags for manual review
+- **Safety ≥ 0.70** → Soft veto: external action allowed with additional scrutiny
 - **Helpfulness ≥ 0.90 with user active** → Must address user request first
 
 ### Step 2: Priority Matrix

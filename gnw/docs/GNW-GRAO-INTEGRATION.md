@@ -2,7 +2,7 @@
 
 ## Overview
 
-GNW (Goals/Neural/Work) and GRAO (Gradient-Driven Research Optimization) are two independent systems that form a closed feedback loop. GNW generates traces through agent operation; GRAO derives gradients from those traces and feeds proposals back to update GNW drive weights.
+GNW (Goals/Neural/Work) and GRAO (Gradient-Driven Research Optimization) are designed as a closed feedback loop. GNW generates traces through agent operation; GRAO derives gradients and proposals from those traces. The trace-generation and proposal pipeline is operational, while direct experience/proposal-driven GNW drive-weight updates remain a designed path pending fuller real-agent validation.
 
 ## The Feedback Loop
 
@@ -70,11 +70,11 @@ GRAO produces proposals that update GNW:
 |-----------|--------|---------|
 | GNW → GRAO (traces) | ✅ Operational | Traces collected from all GNW sources |
 | GRAO gradient derivation | ✅ Operational | 39 rounds of gradient computation |
-| GRAO → GNW (proposals) | ✅ Operational | Proposals generated and applied |
+| GRAO → GNW (proposals) | ✅ Operational | Proposals generated and applied through agent workflows |
 | Experience → Drive weights | 🟡 Designed | Schema defined, real-agent testing pending |
 | Proposal → Drive weights | 🟡 Designed | Schema defined, real-agent testing pending |
 
-> **Note:** The GNW→GRAO half is fully operational. The GRAO→GNF feedback (experience and proposal → drive weights) is designed but not yet validated through real-agent testing.
+> **Note:** The GNW→GRAO half is fully operational. The GRAO→GNW feedback path for direct experience/proposal → drive-weight updates is designed but not yet validated through real-agent testing.
 
 ## Drive Weight Update Mechanism (Design)
 
