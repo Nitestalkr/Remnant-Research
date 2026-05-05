@@ -61,6 +61,8 @@ Additional boredom added based on time since last context change.
 | 60–120 minutes | 0.15 |
 | > 120 minutes | 0.20 |
 
+> **Note:** The stale bonus is capped at 0.20 regardless of elapsed time; >120 min is the final bracket.
+
 ## Thresholds
 
 | Boredom Score | State | Action |

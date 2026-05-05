@@ -102,6 +102,11 @@ Round 39: 92.7%  ← Significant jump (127/137 success)
 
 The success ratio improved dramatically as GRAO expanded from 3→7 experiences. The current plateau at ~93% suggests **policy saturation** — all strong patterns are codified.
 
+> **Note — metrics glossary:**
+> - **Success ratio** = fraction of traces in a round with positive outcomes (e.g., 92.7% = 127/137 traces succeeded). This measures pipeline health.
+> - **Experiment impact** = % performance improvement from a specific intervention (e.g., "+80%" for the model switch). This measures the effectiveness of individual optimizations.
+> These measure different things and should not be conflated.
+
 ---
 
 ## 🧮 Gradient Computation
