@@ -99,8 +99,8 @@ Every user-driven or self-directed turn passes through the same loop.
 
 ## Implementation Notes
 
-- boredom scan runs every 15 minutes via cron
-- cognitive cycle runs every 30 minutes via cron
+- boredom scan runs every 2 hours via cron
+- cognitive cycle runs every 1 hour via cron
 - drive weights are dynamic, not static
 - conflict resolution uses a priority matrix, not simple max-selection
 - safety is treated as a veto on external action, not just another competing score
