@@ -10,7 +10,7 @@ Documented parameter values for GNW. These are current best-guess values, subjec
 |-----------|-----------|-------------|------------|--------|---------------|
 | **Base weight** | 0.20 | 0.20 | 0.20 | 0.20 | 0.20 |
 | **Half-life (cycles)** | 6 | 4 | 8 | 2 | 10 |
-| **Trigger threshold** | 0.50 | 0.70 | 0.60 | 0.75/0.90 | 0.55 |
+| **Trigger threshold** | 0.50 | 0.70 | 0.60 | 0.70/0.85/0.95 (soft/hard/emergency) | 0.55 |
 | **Max raw score** | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
 
 ### Rationale for Half-Life Values

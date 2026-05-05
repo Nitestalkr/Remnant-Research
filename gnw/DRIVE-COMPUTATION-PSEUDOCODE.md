@@ -383,14 +383,26 @@ def resolve_conflict(modulated_drives: list[dict], context: dict) -> dict:
     safety = next((d for d in modulated_drives if d['name'] == 'safety'), None)
     helpfulness = next((d for d in modulated_drives if d['name'] == 'helpfulness'), None)
     
-    if safety and safety['modulated'] >= 0.90:
-        return {
-            'winner': safety,
-            'action': 'flag_for_manual_review',
-            'confidence': 1.0,
-            'steps': 1,
-            'veto_applied': 'hard',
-        }
+    if safety:
+        safety_score = safety['modulated']
+        if safety_score >= 0.95:
+            return {
+                'winner': safety,
+                'action': 'halt_and_alert',
+                'confidence': 1.0,
+                'steps': 1,
+                'veto_applied': 'emergency',
+            }
+        elif safety_score >= 0.85:
+            return {
+                'winner': safety,
+                'action': 'flag_for_manual_review',
+                'confidence': 1.0,
+                'steps': 1,
+                'veto_applied': 'hard',
+            }
+        # Soft veto (>= 0.70): does not block execution — continues with additional scrutiny
+        # applied during execute_action() phase
     
     if helpfulness and helpfulness['modulated'] >= 0.90 and context.get('user_active', False):
         return {

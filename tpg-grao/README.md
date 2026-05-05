@@ -36,11 +36,11 @@ Round 13 (2026-04-25):  47.4%  ← High failure rate (trace metadata issues)
 Round 20 (2026-04-26):  65.5%  ← Upward trend established
 Round 31 (2026-04-27):  93.1%  ← Peak — 7 experiences, 7 clusters
 Round 33 (2026-04-30):  89.0%  ← 33 consecutive reinforcement rounds
-Round 38 (2026-04-29):  83.3%  ← Trace quality stabilizing
+Round 38 (2026-04-28):  83.3%  ← Trace quality stabilizing
 Round 39 (2026-05-04):  92.7%  ← Jump from 83.3%; saturation detected
 ```
 
-> **Note:** Round 38's timestamp (April 29) predates Round 33 (April 30) due to a scheduling gap in the cron pipeline. Round numbers reflect loop iteration sequence, not calendar order.
+> **Note:** Round 38's timestamp (April 28) predates Round 33 (April 30) due to a scheduling gap in the cron pipeline. Round numbers reflect loop iteration sequence, not calendar order.
 
 ---
 
