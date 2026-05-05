@@ -2,6 +2,8 @@
 
 Conflict resolution records from Phase 5 testing. Each entry documents a drive conflict and its resolution.
 
+> **Note:** This is live data from Phase 5 testing (April 28–29, 2026). It contains 5 real logged entries (3 executed cycles + 2 skipped). New entries are logged during active cycle testing.
+
 ---
 
 ## Resolution 2026-04-28-1430

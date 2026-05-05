@@ -82,6 +82,14 @@ The "10 persistent failure gradients" are **not a single problem** — they are 
 
 Treat the "10 persistent failure gradients" as a **research question** rather than a bug. The investigation above shows they are not a single systemic failure but three distinct phenomena that each have a clear fix path. This analysis turns a known gap into documented research progress.
 
+## Remediation Tracking
+
+| Failure Class | Fix | Status | Reference |
+|---------------|-----|--------|-----------|
+| B: Synthetic traces (2) | Filter `action=unknown` in gradient-deriver.js | Pending | `tpg-grao/scripts/gradient-deriver.js` |
+| C: Insufficient data (2-4) | Add `insufficient_data` gradient category | Pending | `grao/LOOP-SPEC.md` gradient categorization |
+| D: Genuine failures (4-6) | Expand trace-collector.js source rules | Pending | `tpg-grao/scripts/trace-collector.js` |
+
 ---
 
 *Remnant Research — failure gradient analysis for GRAO.*

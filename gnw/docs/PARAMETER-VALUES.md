@@ -2,6 +2,8 @@
 
 Documented parameter values for GNW. These are current best-guess values, subject to calibration from real cycle data.
 
+> **This is the canonical source for all parameter values.** Other files reference these values for context. When in doubt, consult this file.
+
 ---
 
 ## Drive Base Parameters
