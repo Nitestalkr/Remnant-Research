@@ -60,7 +60,7 @@ function parseArgs(argv) {
           if (match) {
             const val = parseInt(match[1]);
             const unit = match[2] || 'd';
-            parsed.windowDays = unit === 'd' ? val : unit === 'h' ? val / 24 : val / 360 / 24;
+            parsed.windowDays = unit === 'd' ? val : unit === 'h' ? val / 24 : unit === 'w' ? val * 7 : val / 360 / 24;
           }
         }
         break;

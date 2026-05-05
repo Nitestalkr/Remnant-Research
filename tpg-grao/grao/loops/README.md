@@ -21,8 +21,8 @@ The GRAO system has evolved through distinct phases:
 - **Bottleneck:** Approaching policy saturation
 
 ### Phase 3: Saturation (Rounds 32–39)
-- **Success ratio:** 89.0% → 92.7% (plateauing)
-- **Experiences:** 6
+- **Success ratio:** 83.3% → 92.7% (plateauing)
+- **Experiences:** 7
 - **Key milestone:** Policy saturation detected (20+ consecutive reinforcement rounds)
 - **Action needed:** Begin exploring NEW optimization areas
 
@@ -54,8 +54,8 @@ Each cycle log contains:
 | 13 | 2026-04-25 | Complete | [JSON](round_13_2026-04-25.json) |
 | 20 | 2026-04-26 | Complete | [JSON](round_20_2026-04-26.json) |
 | 31 | 2026-04-27 | Complete | [JSON](round_31_2026-04-27.json) |
-| 33 | 2026-04-30 | Complete | [JSON](round_33_2026-04-30.json) |
 | 38 | 2026-04-28 | Complete | [JSON](round_38_2026-04-28.json) |
+| 33 | 2026-04-30 | Complete | [JSON](round_33_2026-04-30.json) |
 | 39 | 2026-05-04 | Complete | [JSON](round_39_2026-05-04.json) |
 
 ---

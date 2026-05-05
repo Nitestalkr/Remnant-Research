@@ -1,9 +1,10 @@
-# Cross-Agent Coordination — Phase 6 Stub
+# Cross-Agent Coordination — Phase 6 Design
 
 Drive score sharing and synchronization protocol between agents.
 
-> **Status:** Phase 6 in progress. This document describes the planned architecture.
-> Implementation details will be updated as Phase 6 develops.
+> **Status:** Phase 6 in progress — design documented, real-agent testing pending.
+> This document describes the planned architecture. Implementation details will be
+> updated as Phase 6 develops. No live cross-agent coordination is operational yet.
 
 ---
 
