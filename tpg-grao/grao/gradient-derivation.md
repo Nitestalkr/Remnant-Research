@@ -283,12 +283,12 @@ The GRAO system uses 4 scripts:
 
 | Data | Location | Format |
 |------|----------|--------|
-| Traces | `research/grao/traces/` | JSON |
-| Gradients | `research/grao/monitor/` | JSON (round summaries) |
-| Experiences | `research/grao/experiences/` | JSON |
-| Proposals | `research/grao/proposals/` | JSON |
-| Monitor rounds | `research/grao/monitor/` | JSON |
-| Cycle reports | `research/grao/reports/` | MD |
+| Traces | `tpg-grao/traces/` | JSON |
+| Gradients | `tpg-grao/gradients/` | JSON |
+| Experiences | `tpg-grao/grao/experiments/` | JSON |
+| Proposals | `tpg-grao/proposals/` | JSON |
+| Loop rounds | `tpg-grao/grao/loops/` | JSON |
+| Cycle reports | `tpg-grao/reports/` | JSON |
 
 ### Cron Integration
 

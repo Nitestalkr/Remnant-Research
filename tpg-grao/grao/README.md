@@ -145,20 +145,21 @@ When the system detects:
 
 ```
 tpg-grao/
-├── README.md              # This file
+├── README.md              # TPG-GRAO overview and current status
 ├── grao/                  # GRAO optimization loop
 │   ├── README.md          # ← You are here
+│   ├── LOOP-SPEC.md       # 9-step loop architecture and scheduling
+│   ├── STATE-MANAGEMENT.md     # State schema, update protocol, recovery
+│   ├── EXPERIMENT-FRAMEWORK.md # Experiment types, lifecycle, safety
 │   ├── gradient-derivation.md  # Gradient computation methodology
-│   ├── loops/             # GRAO cycle logs and reports
-│   ├── experiments/       # GRAO experiment results
-│   ├── proposals/         # Research proposals generated
-│   ├── reports/           # GRAO cycle reports
-│   └── scripts/           # GRAO tooling
+│   ├── loops/             # GRAO cycle logs (round_N_YYYY-MM-DD.json)
+│   └── experiments/       # Validated experiment records
 ├── tpg/                   # Tensor Processing Graph
-├── traces/                # Raw research traces
+├── traces/                # Raw research traces (date-partitioned)
 ├── gradients/             # Computed gradients
-├── proposals/             # Research proposals generated
-└── reports/               # GRAO cycle reports
+├── proposals/             # Generated research proposals
+├── reports/               # GRAO cycle trend reports
+└── scripts/               # Pipeline tooling (4 operational scripts)
 ```
 
 ---

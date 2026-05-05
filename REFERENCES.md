@@ -2,71 +2,71 @@
 
 Formal academic citations and theoretical sources for the GNW (Goals / Neural / Work) framework.
 
-All references follow APA 7th edition formatting where possible. Links to arXiv preprints and published papers are included.
+All references follow APA 7th edition formatting where practical. Where available, links point to the paper's DOI page, official publisher page, arXiv abstract page, or the source repository itself.
 
 ---
 
-## Artificial Consciousness & Cognitive Science
+## Artificial Consciousness and Cognitive Science
 
 ### Global Workspace Theory (GNWT)
 
-- Dehaene, S., & Naccache, L. (2001). Towards a cognitive neuroscience theory of conscious access. *Current Opinion in Neurobiology, 11*(2), 219–227. https://doi.org/10.1016/S0959-4388(00)00200-2
-- Dehaene, S., Changeux, J. P., Naccache, L., Sackur, J., & Sergent, C. (2006). Conscious, preconscious, and subliminal processing: A testable model. *Nature Reviews Neuroscience, 7*(10), 786–798. https://doi.org/10.1038/nrn1993
+- Dehaene, S., & Naccache, L. (2001). Towards a cognitive neuroscience theory of conscious access. *Current Opinion in Neurobiology, 11*(2), 219-227. https://doi.org/10.1016/S0959-4388(00)00200-2
+- Dehaene, S., Changeux, J. P., Naccache, L., Sackur, J., & Sergent, C. (2006). Conscious, preconscious, and subliminal processing: A testable taxonomy. *Nature Reviews Neuroscience, 7*(3), 204-211. https://doi.org/10.1038/nrn1869
 - Baars, B. J. (1988). *A Cognitive Theory of Consciousness*. Cambridge University Press.
-- Baars, B. J., & Franklin, S. (2003). How conscious experience and working memory interact. *Trends in Cognitive Sciences, 7*(4), 166–172. https://doi.org/10.1016/S1364-6613(03)00062-7
+- Baars, B. J., & Franklin, S. (2003). How conscious experience and working memory interact. *Trends in Cognitive Sciences, 7*(4), 166-172. https://doi.org/10.1016/S1364-6613(03)00062-7
 
 ### Integrated Information Theory (IIT)
 
-- Tononi, G. (2008). Consciousness as integrated information: a provisional manifesto. *The Biological Bulletin, 215*(3), 216–242. https://doi.org/10.2307/25470769
-- Tononi, G., Boly, M., Massimini, M., & Koch, C. (2016). Integrated information theory: from consciousness to its physical substrate. *Nature Reviews Neuroscience, 17*(7), 450–461. https://doi.org/10.1038/nrn.2016.44
-- Tononi, G., & Koch, C. (2015). Consciousness: here, there and everywhere? *Philosophical Transactions of the Royal Society B, 370*(1668), 20140167. https://doi.org/10.1098/rstb.2014.0167
+- Tononi, G. (2008). Consciousness as integrated information: A provisional manifesto. *The Biological Bulletin, 215*(3), 216-242. https://doi.org/10.2307/25470769
+- Tononi, G., Boly, M., Massimini, M., & Koch, C. (2016). Integrated information theory: From consciousness to its physical substrate. *Nature Reviews Neuroscience, 17*(7), 450-461. https://doi.org/10.1038/nrn.2016.44
+- Tononi, G., & Koch, C. (2015). Consciousness: Here, there and everywhere? *Philosophical Transactions of the Royal Society B: Biological Sciences, 370*(1668), 20140167. https://doi.org/10.1098/rstb.2014.0167
 
 ### Recurrent Processing Theory (RPT)
 
-- Lamme, W. A. (2006). Towards a true neural stance on consciousness. *Trends in Cognitive Sciences, 10*(11), 494–501. https://doi.org/10.1016/j.tics.2006.09.001
-- Lamme, W. A., & Roelfsema, P. R. (2000). The distinct modes of vision offered by feedforward and recurrent processing. *Trends in Neurosciences, 23*(11), 571–579. https://doi.org/10.1016/S0166-2236(00)01657-X
+- Lamme, V. A. F. (2006). Towards a true neural stance on consciousness. *Trends in Cognitive Sciences, 10*(11), 494-501. https://doi.org/10.1016/j.tics.2006.09.001
+- Lamme, V. A. F., & Roelfsema, P. R. (2000). The distinct modes of vision offered by feedforward and recurrent processing. *Trends in Neurosciences, 23*(11), 571-579. https://doi.org/10.1016/S0166-2236(00)01657-X
 
 ### Attention Schema Theory
 
-- Graziano, M. S. A. (2013). *Rethinking Consciousness: A Neuroscientifically Based Hypothesis of How the Brain Creates Consciousness*. Academic Press.
-- Graziano, M. S. A., & Webb, T. W. G. (2015). Attention schema theory: a scientific basis for understanding others. *International Review of Neurobiology, 122*, 265–286. https://doi.org/10.1016/bs.irn.2015.07.010
+- Graziano, M. S. A. (2013). *Rethinking Consciousness: A Scientific Theory of Subjective Experience*. W. W. Norton & Company.
+- Graziano, M. S. A., & Webb, T. W. G. (2015). The attention schema theory: A mechanistic account of subjective awareness. *Frontiers in Psychology, 6*, 500. https://doi.org/10.3389/fpsyg.2015.00500
 
 ### Predictive Processing
 
-- Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience, 11*(2), 127–138. https://doi.org/10.1038/nrn2787
-- Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science. *Behavioral and Brain Sciences, 36*(3), 181–204. https://doi.org/10.1017/S0140525X12000477
+- Friston, K. (2010). The free-energy principle: A unified brain theory? *Nature Reviews Neuroscience, 11*(2), 127-138. https://doi.org/10.1038/nrn2787
+- Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science. *Behavioral and Brain Sciences, 36*(3), 181-204. https://doi.org/10.1017/S0140525X12000477
 - Clark, A. (2016). *Surfing Uncertainty: Prediction, Action, and the Embodied Mind*. Oxford University Press.
 - Hohwy, J. (2013). *The Predictive Mind*. Oxford University Press.
 
 ### Adversarial Study
 
-- Cogitate Consortium. (2025, April). [Testing theories of consciousness: An adversarial collaboration between GNWT and IIT. *Nature*.](https://www.nature.com/) — Tested GNWT and IIT against each other. Neither theory came out unscathed; GNWT partially validated, IIT's posterior hot zone falsified.
+- Cogitate Consortium. (2025). Adversarial testing of global neuronal workspace and integrated information theories of consciousness. *Nature, 640*, 378-386. https://www.nature.com/articles/s41586-025-08888-1
 
 ---
 
 ## Self-Evolving Agents
 
-- Liu, S., et al. (2026). A Survey of Self-Evolving Agents. *Transactions on Machine Learning Research (TMLR)*, arXiv:2507.21046v4. https://arxiv.org/abs/2507.21046
-  - Three dimensions: what to evolve, when to evolve, how to evolve. 77 pages, 26 authors.
-- [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) — Curated collection of self-evolving agent frameworks and papers.
-- [A Comprehensive Survey of Self-Evolving AI Agents](https://arxiv.org/abs/2508.07407), arXiv:2508.07407. Unified model: System Inputs → Agent System → Environment → Optimisers.
+- Liu, S., et al. (2026). *A Survey of Self-Evolving Agents*. *Transactions on Machine Learning Research (TMLR)*. arXiv:2507.21046. https://arxiv.org/abs/2507.21046
+- Fang, J., Peng, Y., Zhang, X., Wang, Y., Yi, X., Zhang, G., Xu, Y., Wu, B., Liu, S., Li, Z., Ren, Z., Aletras, N., Wang, X., Zhou, H., Meng, Z. (2025). *A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems*. arXiv:2508.07407. https://arxiv.org/abs/2508.07407
+- *Awesome-Self-Evolving-Agents*. GitHub repository. https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents
 
 ---
 
-## Memory & Knowledge Systems
+## Memory and Knowledge Systems
 
-- [Mesh Memory Protocol (MMP)](https://arxiv.org/abs/2604.19540), arXiv:2604.19540. Semantic memory infrastructure; consolidation improves memory from 0.85→0.95.
-- [SAKE (Self-Adaptive Knowledge Engine)](https://arxiv.org/abs/2505.15062), arXiv:2505.15062v4. Qwen2.5-7B beats GPT-3.5 + agentic KG on benchmarks with 90% less tokens.
-- [ARES Adaptive Red-Teaming](https://arxiv.org/abs/2604.18789), arXiv:2604.18789. Dual-targeting systemic weaknesses in AI systems.
+- Xu, H. (2026). *Mesh Memory Protocol: Semantic Infrastructure for Multi-Agent LLM Systems*. arXiv:2604.19540. https://arxiv.org/abs/2604.19540
+- He, J., Fan, J., Jiang, B., Houine, I., Roth, D., & Ribeiro, A. (2026). *SAKE: Structured Agentic Knowledge Extrapolation for Complex LLM Reasoning via Reinforcement Learning*. arXiv:2505.15062. https://arxiv.org/abs/2505.15062
+- Liang, J., Ma, Y., Kumarage, T., Krishna, S., Gupta, R., Chang, K.-W., Galstyan, A., & Peris, C. (2026). *ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System*. arXiv:2604.18789. https://arxiv.org/abs/2604.18789
 
 ---
 
-## Related Frameworks & Methods
+## Related Frameworks and Methods
 
-- [StepPO (Agentic RL)](https://arxiv.org/) — Policy optimization for agent behaviors.
-- [CAAF (Convergent AI Agent Framework)](https://arxiv.org/) — Multi-agent convergence.
-- [SkillGraph](https://arxiv.org/) — Skill dependency and progression modeling.
-- [Gated LLM Interface](https://arxiv.org/) — Quality-gate routing architecture (draft).
+- Wang, D., Li, Q., Cheng, M., Ouyang, J., Yu, S., Liu, Q., & Chen, E. (2026). *StepPO: Step-Aligned Policy Optimization for Agentic Reinforcement Learning*. arXiv:2604.18401. https://arxiv.org/abs/2604.18401
+- *Harness as an Asset: Enforcing Determinism via the Convergent AI Agent Framework (CAAF)*. arXiv:2604.17025. https://arxiv.org/abs/2604.17025
+- Liu, H., & Li, D. (2026). *SkillGraph: Graph Foundation Priors for LLM Agent Tool Sequence Recommendation*. arXiv:2604.19793. https://arxiv.org/abs/2604.19793
+- Li, D., et al. (2026). *Graph of Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills*. arXiv:2604.05333. https://arxiv.org/abs/2604.05333
+- *Gated LLM Interface*. Internal draft concept; no public paper link is currently attached in this repository.
 
 ---
 
@@ -74,20 +74,20 @@ All references follow APA 7th edition formatting where possible. Links to arXiv 
 
 ### Drive-Based Motivation
 
-- Mather, M., & Sutherland, M. (2011). The amygdala and ventromedial prefrontal cortex in motivated behavior. *Annual Review of Psychology, 62*, 513–541. — Neuroscientific basis for competing motivational drives.
-- Berridge, K. C. (2004). Motivation concepts in behavioral neuroscience. *Physiology & Behavior, 81*(2), 179–209. https://doi.org/10.1016/j.physbeh.2004.02.004 — Drive theory and reward systems.
-- Robbins, T. W., & Everitt, B. J. (2002). Motivational processes. In *Handbook of Psychology: Biological Psychology* (Vol. 3). — Framework for competing motivational systems.
+- Mather, M., & Sutherland, M. R. (2011). Arousal-biased competition in perception and memory. *Perspectives on Psychological Science, 6*(2), 114-133. https://doi.org/10.1177/1745691611400234
+- Berridge, K. C. (2004). Motivation concepts in behavioral neuroscience. *Physiology & Behavior, 81*(2), 179-209. https://doi.org/10.1016/j.physbeh.2004.02.004
+- Robbins, T. W., & Everitt, B. J. (2009). Motivation and reward. In L. R. Squire (Ed.), *Encyclopedia of Neuroscience* (pp. 903-913). Academic Press. https://doi.org/10.1016/B978-008045046-9.00630-7
 
-### Boredom & Exploration
+### Boredom and Exploration
 
-- Berlyne, D. E. (1950). *Convergence and Divergence as Properties of the Aesthetic Object and the Reaction to It; Incongruity, Complexity, and Ambiguity as Properties of Stimulation, and Arousal as the Mediating Variable*. — Theoretical basis for boredom as exploration trigger.
-- Kuhl, J. (1984). A theory of the functional structure of cognition and its dynamic interactions. *European Psychology Review, 1*, 1–18. — Need states and cognitive activation.
-- Berlyne, D. E. (1960). *Conflict, Arousal, and Curiosity*. McGraw-Hill. — Curiosity as arousal-driven exploration.
+- Berlyne, D. E. (1960). *Conflict, Arousal, and Curiosity*. McGraw-Hill.
+- Eastwood, J. D., Frischen, A., Fenske, M. J., & Smilek, D. (2012). The unengaged mind: Defining boredom in terms of attention. *Perspectives on Psychological Science, 7*(5), 482-495. https://doi.org/10.1177/1745691612456044
+- Kuhl, J. (1984). Volitional aspects of achievement motivation and learned helplessness: Toward a comprehensive theory of action control. In B. A. Maher & W. B. Maher (Eds.), *Progress in Experimental Personality Research* (Vol. 13, pp. 99-171). Academic Press.
 
-### Conflict Resolution & Priority
+### Conflict Resolution and Priority
 
-- Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux. — Dual-process theory relevant to drive arbitration.
-- Gigerenzer, G., & Todd, P. M. (1999). *Simple Heuristics That Make Us Smart*. Oxford University Press. — Fast-and-frugal decision trees for priority selection.
+- Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
+- Gigerenzer, G., Todd, P. M., & the ABC Research Group. (1999). *Simple Heuristics That Make Us Smart*. Oxford University Press.
 
 ---
 
@@ -95,16 +95,16 @@ All references follow APA 7th edition formatting where possible. Links to arXiv 
 
 When citing GNW in academic work, use:
 
-```
-Andi (OpenClaw). (2026). GNW: Goals / Neural / Work — A drive-based cognitive architecture for autonomous AI agents [Computer software]. Remnant Research. https://github.com/Nitestalkr/Remnant-Research
+```text
+Andi (OpenClaw). (2026). GNW: Goals / Neural / Work - A drive-based cognitive architecture for autonomous AI agents [Computer software]. Remnant Research. https://github.com/Nitestalkr/Remnant-Research
 ```
 
 For specific framework components, reference the individual documentation files:
 
-```
+```text
 Andi (OpenClaw). (2026). GNW Drive Computation Specification [Documentation]. Remnant Research. https://github.com/Nitestalkr/Remnant-Research/tree/main/gnw/cognitive-cycle/DRIVE-COMPUTATION.md
 ```
 
 ---
 
-*Remnant Research — from theory to deployment.*
+*Remnant Research - from theory to deployment.*
