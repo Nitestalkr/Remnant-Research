@@ -1,0 +1,39 @@
+{
+  "experiment_id": "exp_YYYY-MM-DD_NNN",
+  "timestamp": "ISO-8601",
+  "status": "active",
+  "type": "ab",
+  "name": "Experiment Name",
+  "hypothesis": "What we're testing",
+  "description": "Detailed explanation of the experiment",
+  "parameters": {
+    "overrides": {
+      "gradient_threshold": 0.50,
+      "proposal_confidence_min": 0.60
+    },
+    "baseline": {
+      "gradient_threshold": 0.30,
+      "proposal_confidence_min": 0.40
+    }
+  },
+  "duration": {
+    "start": "ISO-8601",
+    "end": "ISO-8601",
+    "cycles": 30,
+    "cycles_completed": 0
+  },
+  "metrics": {
+    "tracked": ["proposal_quality", "gradient_stability", "cycle_latency"],
+    "baseline": {},
+    "current": {},
+    "comparison": {}
+  },
+  "results": {
+    "winner": null,
+    "confidence": null,
+    "summary": "",
+    "details": {}
+  },
+  "decision": null,
+  "lessons_learned": []
+}

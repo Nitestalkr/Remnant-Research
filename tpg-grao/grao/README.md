@@ -175,4 +175,28 @@ The current system is stuck in reinforcement-only mode (20+ consecutive rounds).
 
 ---
 
+## 📚 Additional Documentation
+
+- **LOOP-SPEC.md** — Full GRAO loop architecture (9 steps, scheduling, state persistence)
+- **STATE-MANAGEMENT.md** — GRAO loop state schema, update protocol, recovery
+- **EXPERIMENT-FRAMEWORK.md** — Experiment types, lifecycle, safety constraints
+- **gradient-derivation.md** — Gradient computation methodology
+
+---
+
+## 🛠️ Tooling
+
+All GRAO scripts are in `scripts/`:
+
+| Script | Purpose |
+|--------|---------|
+| `trace-collector.js` | Collect/normalize traces from all signal sources |
+| `gradient-deriver.js` | Compute gradients from trace patterns |
+| `proposal-generator.js` | Generate proposals from strong gradients |
+| `grao-retriever.js` | Analyze loop history for trends |
+
+Usage: `node <script>.js --help` for full options.
+
+---
+
 *Remnant Research — GRAO: directional signal for autonomous research.*
