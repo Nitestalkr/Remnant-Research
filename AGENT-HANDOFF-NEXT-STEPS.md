@@ -79,8 +79,9 @@ The artifact's `next_round` is:
 
 This means the immediate implementation priority is:
 
-1. Correct trace-collector source selection so live/public collection paths actually expose the new source types
+1. ✅ trace-collector source selection fixed (all 7 sources exposed in default + --sources all)
 2. Validate exploration behavior over subsequent rounds
+3. Normalize remaining docs to match live state
 3. Normalize logs/docs so repo artifacts match live implementation
 4. Continue failure-gradient remediation with real evidence
 5. Decide whether to move next into GNW Phase 6 or continue deeper GRAO exploration

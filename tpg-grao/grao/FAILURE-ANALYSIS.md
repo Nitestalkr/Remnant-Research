@@ -13,11 +13,10 @@ Across 40 GRAO rounds (13→40), failure gradients were investigated and remedia
 | 31 | 29 | 2 | 6.9% | Metadata compliance 100%; 2 failures from synthetic traces |
 | 33 | 91 | 10 | 11.0% | Trace volume growing, failures stable |
 | 38 | 60 | 6 | 10.0% | Trace quality stabilizing |
-| 40 | 143 | 7 | 4.9% | Remediation implemented: insufficient_data category + synthetic filtering + trace source expansion
-| 40 | 143 | 7 | 4.9% | Remediation implemented: insufficient_data category + synthetic filtering + trace source expansion
 | 39 | 137 | 10 | 7.3% | Large trace volume, failures unchanged |
+| 40 | 143 | 7 | 4.9% | Remediation implemented: insufficient_data category + synthetic filtering + trace source expansion
 
-**Key observation:** The *count* of failures is stable (10) across most rounds, but the *rate* drops as trace volume grows. This suggests the failures are tied to a fixed subset of trace sources, not a systemic degradation.
+**Key observation:** The failure *count* was stable at 10 across most rounds, but the *rate* dropped as trace volume grew (round 39: 7.3%). Round 40 remediation reduced failures from 10 → 7, confirming the failures were tied to trace metadata gaps (insufficient_data + synthetic traces) rather than systemic degradation.
 
 ## Failure Classification
 

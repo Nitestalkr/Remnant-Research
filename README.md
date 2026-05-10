@@ -227,13 +227,15 @@ Experiments run for N cycles against baseline, with safety constraints (max 100 
 
 | Metric | Value |
 |--------|-------|
-| **Phase** | Phase 1 — Operational (pipeline live) |
-| **GRAO Round** | 39 (2026-05-04) |
-| **Success Ratio** | 92.7% (127/137 gradients successful) |
-| **Total Traces** | 137 |
+| **Phase** | Phase 4 — Exploration (implemented) |
+| **GRAO Round** | 40 (2026-05-10) |
+| **Success Ratio** | 90.1% (128 success, 7 failure, 3 insufficient_data, 5 exploration) |
+| **Total Traces** | 142 |
 | **Experiences** | 7 proven patterns |
-| **Loop Rounds** | 6 documented |
-| **Saturation Status** | ⚠️ Policy saturation detected — exploration phase needed |
+| **Loop Rounds** | 7 documented |
+| **Saturation Status** | ✅ Exploration mode active (round 40) |
+| **Failure Count** | 7 (reduced from 10) |
+| **Trace Sources** | 7 types |
 
 ### Success Ratio Progression
 
@@ -245,16 +247,19 @@ Experiments run for N cycles against baseline, with safety constraints (max 100 
 | 33 | 2026-04-30 | 89.0% | 33 consecutive reinforcement rounds |
 | 38 | 2026-04-28 | 83.3% | Trace quality stabilizing |
 | 39 | 2026-05-04 | 92.7% | Jump from 83.3%; saturation detected |
+| 40 | 2026-05-10 | 90.1% | Exploration gradients generated (128 success, 7 failure, 3 insufficient_data, 5 exploration) |
 
-### Next GRAO Phase: Exploration
+### Current GRAO Phase: Exploration (Implemented)
 
-The system is in **policy saturation** (20+ consecutive reinforcement rounds, success ratio plateauing at ~93%). The next phase will:
+Exploration gradients are operational (round 40, 2026-05-10):
 
-1. Detect saturation automatically via consecutive reinforcement round count
-2. Generate **exploration gradients** targeting unexplored TPG paths
-3. Prioritize exploration proposals over reinforcement proposals
-4. Investigate persistent failure gradients present since Round 13
-5. Expand the experience cluster to 8+ for richer cross-cluster discovery
+1. ✅ **Saturation detection** — 15+ rounds, 90%+ ratio, pure reinforcement
+2. ✅ **Exploration gradients** — 5 unexplored areas during saturation
+3. ✅ **Exploration proposal priority** — Exploration=high during saturation
+4. ✅ **Failure remediation** — insufficient_data category + synthetic trace filtering
+5. ✅ **Trace source expansion** — 7 types, 40+ known patterns
+
+**Current status:** Exploration mode active. Failure count reduced 10→7. Next: validate exploration behavior over subsequent rounds (Monday May 11 GRAO run).
 
 ---
 
@@ -427,9 +432,9 @@ For the longer reference list, see [REFERENCES.md](REFERENCES.md).
 | **GNW Phase 6** | 🔄 In Progress | Cross-agent coordination design documented; live multi-agent testing pending |
 | **GNW Safety Threat Model** | ✅ Complete | 3 threat categories, 4 adversarial conditions, 6 safety principles |
 | **GRAO Pipeline** | ✅ Operational | 4 scripts implemented, loop spec, state management, experiment framework |
-| **GRAO Loop Rounds** | ✅ 6 documented | Rounds 13–39, success ratio 47.4% → 92.7% |
+| **GRAO Loop Rounds** | ✅ 7 documented | Rounds 13–40, success ratio 47.4% → 90.1% |
 | **GRAO Experiences** | ✅ 7 proven patterns | Model switch, coordination, stabilization, compliance, etc. |
-| **GRAO Proposals** | 📋 Documented | Structure and generation logic defined; public examples limited |
+| **GRAO Proposals** | ✅ Operational | Saturation-aware exploration priority implemented |
 | **TPG Architecture** | 📋 Draft | Routing rules and signal accumulation defined |
 
 ---
@@ -478,7 +483,7 @@ This is a research and specification repo first, not a polished install-and-run 
 - Some public documents were reconstructed from prior runs, logs, and private artifacts.
 - Public code and scripts will continue to appear incrementally rather than all at once.
 - GNW is the most mature public portion of the repo today; GRAO pipeline scripts are now operational.
-- GRAO is approaching policy saturation — the next phase shifts from reinforcement to exploration.
+- GRAO exploration gradients are operational (round 40). Failure count reduced 10→7. Next: validation over subsequent rounds.
 
 ---
 
