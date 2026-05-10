@@ -50,7 +50,7 @@ goal_directed_raw = f(project_progress, milestone_distance, deadline_pressure)
 | User away | Boost curiosity, damp helpfulness |
 | High risk pending | Boost safety |
 | Active project | Boost goal-directed |
-| Stale context (>30min) | Add stale_bonus to curiosity |
+| Stale context (≥5min) | Add stale_bonus to curiosity (0.02 at 5–15min, growing to 0.20 cap at >120min) |
 | Capability gap detected | Boost competence |
 
 ### Conflict Resolution

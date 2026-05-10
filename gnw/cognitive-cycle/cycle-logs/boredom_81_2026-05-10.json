@@ -1,0 +1,63 @@
+{
+  "scan_number": 81,
+  "timestamp": "2026-05-10T08:08:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "remnant-research/gnw/docs/ROADMAP.md",
+      "hours_stale": 144,
+      "score": 0.504,
+      "breakdown": { "novelty": 0.7, "relevance": 0.8, "goal_alignment": 0.6, "stale_boost": 1.5 }
+    },
+    {
+      "file": "remnant-research/gnw/docs/ARCHITECTURE.md",
+      "hours_stale": 144,
+      "score": 0.405,
+      "breakdown": { "novelty": 0.6, "relevance": 0.9, "goal_alignment": 0.5, "stale_boost": 1.5 }
+    },
+    {
+      "file": "remnant-research/gnw/stability/TEST-DRIVE-OSCILLATION.md",
+      "hours_stale": 144,
+      "score": 0.2625,
+      "breakdown": { "novelty": 0.5, "relevance": 0.7, "goal_alignment": 0.5, "stale_boost": 1.5 }
+    },
+    {
+      "file": "remnant-research/gnw/stability/TEST-CONFLICT-CONVERGENCE.md",
+      "hours_stale": 144,
+      "score": 0.2625,
+      "breakdown": { "novelty": 0.5, "relevance": 0.7, "goal_alignment": 0.5, "stale_boost": 1.5 }
+    },
+    {
+      "file": "Projects/paperclip/docker/docker-compose.yml",
+      "hours_stale": 384,
+      "score": 0.144,
+      "breakdown": { "novelty": 0.4, "relevance": 0.6, "goal_alignment": 0.4, "stale_boost": 1.5 }
+    },
+    {
+      "file": "remnant-research/gnw/stability/README.md",
+      "hours_stale": 144,
+      "score": 0.09,
+      "breakdown": { "novelty": 0.3, "relevance": 0.5, "goal_alignment": 0.4, "stale_boost": 1.5 }
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "remnant-research/gnw/docs/ROADMAP.md",
+    "action": "Stale refresh — added Phase 6 context note and updated timestamp"
+  },
+  "drive_scores": {
+    "curiosity": 0.85,
+    "helpfulness": 0.30,
+    "safety": 0.60,
+    "competence": 0.55,
+    "goal_directed": 0.45
+  },
+  "system_status": {
+    "pending_events": 0,
+    "agent_idle": true,
+    "cycles_since_work": 8,
+    "boredom_history": "1.0 sustained across cycles 73-80"
+  },
+  "notes": "Boredom has been 1.0 for 8 consecutive cycles (73-80). This cycle broke the pattern by actually initiating work on the ROADMAP.md stale refresh. Phase 6 cross-agent coordination sprint targets remain theoretical since multi-agent deployment is not yet confirmed. Paperclip project files are 16 days stale but lower priority (deployment configs, not core logic)."
+}

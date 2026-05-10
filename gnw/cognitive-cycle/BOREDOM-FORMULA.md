@@ -82,6 +82,10 @@ if user_active:
     user_boredom_floor = max(0.30, user_boredom_score)
     effective_boredom  = max(boredom, user_boredom_floor)
 else:
+    user_boredom_floor = 0.0
+```
+
+**user_boredom_score** — optional signal from user engagement tracking; represents the user's assessed engagement level (0.0 = fully engaged, 1.0 = disengaged). Defaults to 0.0 if unavailable, making the effective floor 0.30 when the user is present.
     effective_boredom  = boredom   # no floor — can fall to 0.0
 ```
 
