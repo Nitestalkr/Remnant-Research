@@ -2,7 +2,7 @@
 
 ## Overview
 
-Across 39 GRAO rounds (13→39), exactly **10 failure gradients** persist in every cycle without resolution. This document investigates their root causes, classifies them, and evaluates whether they represent a fundamental limitation or a fixable gap.
+Across 40 GRAO rounds (13→40), failure gradients were investigated and remediation implemented in round 40 (2026-05-10). This document tracks the investigation findings and current remediation status.
 
 ## Data Summary
 
@@ -13,6 +13,7 @@ Across 39 GRAO rounds (13→39), exactly **10 failure gradients** persist in eve
 | 31 | 29 | 2 | 6.9% | Metadata compliance 100%; 2 failures from synthetic traces |
 | 33 | 91 | 10 | 11.0% | Trace volume growing, failures stable |
 | 38 | 60 | 6 | 10.0% | Trace quality stabilizing |
+| 40 | 143 | 7 | 4.9% | Remediation implemented: insufficient_data category + synthetic filtering + trace source expansion
 | 40 | 143 | 7 | 4.9% | Remediation implemented: insufficient_data category + synthetic filtering + trace source expansion
 | 39 | 137 | 10 | 7.3% | Large trace volume, failures unchanged |
 

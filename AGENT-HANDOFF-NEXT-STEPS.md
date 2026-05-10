@@ -18,7 +18,7 @@ Last reviewed: 2026-05-10
   - ✅ trace collector's default and `--sources all` now expose all 7 source types
   - ✅ Round 40 artifact metric labeling clarified (outcome_buckets vs exploration_gradients)
   - ✅ root README updated to Round 40 state
-  - FAILURE-ANALYSIS.md opening line still uses stale absolute claim (see [P3] below)
+  - ✅ FAILURE-ANALYSIS.md opening line corrected (stale absolute claim removed)
 - The current live-run bottleneck is no longer "missing exploration logic." It is:
   - validating that the new exploration behavior holds up across future rounds
   - correcting repo and CLI drift so the public mirror matches live behavior
@@ -49,11 +49,11 @@ These are the next concrete corrections the repo and live implementation should 
    - `--sources all` maps to full source set
    - help text documents all 7 source types
    - 3 new sources documented as placeholder-backed
-2. `tpg-grao/grao/loops/round_40_2026-05-10.json` mixes:
-   - outcome buckets: `success`, `failure`, `insufficient_data`
-   - category/type counts: `exploration`
-   This makes the visible totals look inconsistent unless explicitly labeled.
-3. `README.md` at the repo root still frames GRAO as Round 39 / pre-exploration / approaching saturation even though the deeper GRAO docs now reflect Round 40 and exploration implementation.
+2. ✅ `tpg-grao/grao/loops/round_40_2026-05-10.json` metric labeling fixed:
+   - outcome_buckets: `success`, `failure`, `insufficient_data` (sum = 138 reinforcement)
+   - exploration_gradients: 5 (generated during saturation)
+   - total_gradients: 143 (unambiguous)
+3. ✅ `tpg-grao/README.md` updated to Round 40 state (success ratio progression includes round 40, exploration framed as implemented not next phase).
 4. `tpg-grao/grao/FAILURE-ANALYSIS.md` is mostly updated, but its opening summary still uses older absolute wording that no longer matches the newer state cleanly.
 
 Interpretation:
