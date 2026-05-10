@@ -16,6 +16,7 @@
     "total_gradients": 143,
     "success_ratio": 0.901,
     "note": "outcome_buckets sum = 138 (reinforcement gradients). exploration_gradients = 5 (generated during saturation). total = 143."
+  },
   "experiences_retrieved": 7,
   "experiences": [
     "exp_2026-04-23_doctor_cleanup",
