@@ -10,11 +10,17 @@ Last reviewed: 2026-05-10
 - GNW Phase 6 is the next formal roadmap phase: Cross-Agent Coordination.
 - GRAO pipeline scripts are operational.
 - GRAO exploration logic has now been implemented to break reinforcement-only saturation.
-- GRAO failure handling has partially improved:
+- GRAO failure handling has improved:
   - synthetic cycle-start traces are filtered
   - `insufficient_data` category exists
-  - trace-source detection was expanded
-- The current live-run bottleneck is no longer "missing exploration logic" but validating that the new exploration behavior holds up across future rounds and normalizing repo artifacts/docs to match live behavior.
+  - trace-source detection was expanded in code
+- The public repo still has follow-through gaps:
+  - the trace collector's default and `--sources all` paths do not yet expose all newly added source types
+  - the Round 40 artifact needs clearer metric labeling
+  - the root README still lags behind the newer GRAO state
+- The current live-run bottleneck is no longer "missing exploration logic." It is:
+  - validating that the new exploration behavior holds up across future rounds
+  - correcting repo and CLI drift so the public mirror matches live behavior
 - The strongest ground-truth artifact for current live state is:
   - `tpg-grao/grao/loops/round_40_2026-05-10.json`
 
@@ -29,8 +35,33 @@ The previous handoff's GRAO implementation priorities were largely completed:
 - `insufficient_data` gradient category added
 - trace collector expanded with more source detection
 - new loop artifact written: `round_40_2026-05-10.json`
+- handoff updated to continue GRAO validation rather than jumping into GNW Phase 6
 
 The previous handoff's Phase 6 GNW coordination work was not implemented yet.
+
+## Current Review Findings To Correct First
+
+These are the next concrete corrections the repo and live implementation should address before broadening scope again:
+
+1. `tpg-grao/scripts/trace-collector.js` defines 3 new source types:
+   - `external_api`
+   - `deployment`
+   - `user_interaction`
+   But:
+   - default `CONFIG.sources` still only includes the original four
+   - `--sources all` also resets to only the original four
+   - help text still documents only the old source set
+2. `tpg-grao/grao/loops/round_40_2026-05-10.json` mixes:
+   - outcome buckets: `success`, `failure`, `insufficient_data`
+   - category/type counts: `exploration`
+   This makes the visible totals look inconsistent unless explicitly labeled.
+3. `README.md` at the repo root still frames GRAO as Round 39 / pre-exploration / approaching saturation even though the deeper GRAO docs now reflect Round 40 and exploration implementation.
+4. `tpg-grao/grao/FAILURE-ANALYSIS.md` is mostly updated, but its opening summary still uses older absolute wording that no longer matches the newer state cleanly.
+
+Interpretation:
+
+- The agent completed real implementation work.
+- The next pass should focus on tightening the public mirror and making the live/public paths agree, not starting a new subsystem prematurely.
 
 ## What The Live System Says Is Next
 
@@ -46,18 +77,46 @@ The artifact's `next_round` is:
 
 - Exploration gradient validation
 - insufficient_data monitoring
-- trace-source expansion follow-through
+- trace-source expansion
 
 This means the immediate implementation priority is:
 
-1. Validate exploration behavior over subsequent rounds
-2. Normalize logs/docs so repo artifacts match live implementation
-3. Continue failure-gradient remediation with real evidence
-4. Decide whether to move next into GNW Phase 6 or continue deeper GRAO exploration
+1. Correct trace-collector source selection so live/public collection paths actually expose the new source types
+2. Validate exploration behavior over subsequent rounds
+3. Normalize logs/docs so repo artifacts match live implementation
+4. Continue failure-gradient remediation with real evidence
+5. Decide whether to move next into GNW Phase 6 or continue deeper GRAO exploration
 
 ## Priority Order
 
-### Priority 1 - Validate GRAO Exploration In Live Runs
+### Priority 1 - Fix Trace-Collector Source Wiring
+
+Goal: make the trace-source expansion real in the public/live CLI path instead of only partially present in code.
+
+Primary files:
+
+- `tpg-grao/scripts/trace-collector.js`
+- `tpg-grao/scripts/README.md`
+- `tpg-grao/grao/LOOP-SPEC.md`
+
+Tasks:
+
+1. Update default `CONFIG.sources` to include all supported live source types that are intended to be public.
+2. Update `--sources all` so it maps to the full supported source set, not the original four.
+3. Update help text and docs to match the true supported source list.
+4. Decide whether the 3 new source types are:
+   - fully implemented and enabled by default
+   - experimental and opt-in only
+   - documented but not yet collecting real live data
+5. If any of the new source types are still synthetic or placeholder-backed, say that explicitly in docs instead of implying full live coverage.
+
+Acceptance criteria:
+
+- `--sources all` includes the intended full source set.
+- Help/docs match actual CLI behavior.
+- The repo no longer overclaims trace-source expansion.
+
+### Priority 2 - Validate GRAO Exploration In Live Runs
 
 Goal: confirm that the new exploration logic produces real, repeatable behavior beyond one implementation round.
 
@@ -71,7 +130,7 @@ Primary files:
 
 Tasks:
 
-1. Run and capture additional live rounds after round 40.
+1. Run and capture additional live rounds after Round 40.
 2. Verify exploration gradients continue to appear when saturation conditions hold.
 3. Verify exploration proposals produce actionable outputs, not only structural placeholders.
 4. Check whether exploration decreases saturation or only renames reinforcement behavior.
@@ -84,7 +143,7 @@ Acceptance criteria:
 - Loop/report artifacts clearly distinguish reinforcement vs exploration behavior.
 - Evidence exists that exploration touched genuinely new optimization areas.
 
-### Priority 2 - Normalize Failure Handling And Evidence
+### Priority 3 - Normalize Failure Handling And Evidence
 
 Goal: make the repo's failure-analysis docs, loop artifacts, and runtime categories agree with the new implementation.
 
@@ -97,19 +156,25 @@ Primary files:
 
 Tasks:
 
-1. Update `tpg-grao/grao/FAILURE-ANALYSIS.md` so it no longer says the completed items are still pending.
+1. Update `tpg-grao/grao/FAILURE-ANALYSIS.md` so it no longer uses stale absolute wording.
 2. Reconcile the old "10 persistent failure gradients" language with current round data.
 3. Track whether `insufficient_data` items resolve into success or failure over future rounds.
 4. Continue expanding trace-source rules only where live evidence shows remaining gaps.
+5. Clarify whether `exploration` in round logs is:
+   - an outcome bucket
+   - a gradient type/category
+   - a proposal type downstream of gradients
+6. Update Round 40-style artifacts so totals are unambiguous.
 
 Acceptance criteria:
 
 - Docs match code and current loop artifacts.
 - Synthetic traces are no longer reported as normal unresolved failures.
-- Future loop logs separate failure vs insufficient_data cleanly.
+- Future loop logs separate failure vs `insufficient_data` cleanly.
 - Remaining unresolved failures are tied to specific source-pattern gaps.
+- Round metric blocks cannot be misread at a glance.
 
-### Priority 3 - Strengthen Loop Logs And Public Evidence
+### Priority 4 - Strengthen Loop Logs And Public Evidence
 
 Goal: make cycle logs reflect the live implementation closely enough that the repo can serve as an accurate research mirror.
 
@@ -118,6 +183,7 @@ Primary files:
 - `tpg-grao/grao/README.md`
 - `tpg-grao/grao/loops/README.md`
 - loop JSON artifacts under `tpg-grao/grao/loops/`
+- `README.md`
 
 Tasks:
 
@@ -127,7 +193,7 @@ Tasks:
    - gradients derived
    - success
    - failure
-   - insufficient_data
+   - `insufficient_data`
    - exploration
 3. Make experience counts and cluster counts consistent across:
    - root README
@@ -135,6 +201,10 @@ Tasks:
    - `tpg-grao/grao/README.md`
    - loop JSON artifacts
 4. Keep loop JSONs as the strongest source of truth when prose drifts.
+5. Refresh the root `README.md` so it no longer presents:
+   - Round 39 as the newest state
+   - pre-exploration wording
+   - older loop-round counts if newer public artifacts exist
 
 Acceptance criteria:
 
@@ -142,20 +212,23 @@ Acceptance criteria:
 - Public docs no longer drift from the newest loop artifacts.
 - A reader can tell what changed in a round without cross-referencing multiple files.
 
-### Priority 4 - Next Major Track Decision
+### Priority 5 - Next Major Track Decision
 
-**Decision: Continue GRAO validation (2026-05-10)**
+Decision: Continue GRAO validation first.
 
 Rationale:
-- Round 40 was the first exploration implementation — no subsequent rounds to validate
-- Next GRAO run is Monday May 11 (first validation round)
-- Exploration behavior is still under-evidenced
-- Docs normalized ✅ (FAILURE-ANALYSIS, LOOP-SPEC, all READMEs match live implementation)
 
-**When to move to GNW Phase 6:**
-- After Monday May 11 GRAO run confirms exploration output persists
+- Round 40 was the first exploration implementation, not a stable validation series.
+- Exploration behavior is still under-evidenced.
+- Public mirror normalization is improved but not finished.
+- Trace-collector source coverage still needs to line up with public claims.
+
+When to move to GNW Phase 6:
+
+- After subsequent GRAO runs confirm exploration output persists
 - After 2-3 subsequent rounds show exploration behavior is stable
 - After logs are trustworthy as feedback artifacts
+- After the public CLI/docs accurately reflect the implemented trace-source behavior
 
 If moving to GNW Phase 6, tasks are:
 
@@ -179,10 +252,12 @@ Use these as source-of-truth before older prose summaries:
 - `gnw/cognitive-cycle/cycle-logs/PHASE-5-EXAMPLE-LOGS.md`
 - `tpg-grao/grao/loops/round_40_2026-05-10.json`
 - `tpg-grao/grao/FAILURE-ANALYSIS.md`
+- `tpg-grao/scripts/trace-collector.js`
 
 Rule:
 
 - If prose conflicts with loop JSONs or canonical parameter files, prefer the loop JSONs and canonical parameter files.
+- If the handoff conflicts with current script behavior, prefer the script until the handoff is refreshed again.
 
 ## Important Constraints
 
@@ -191,26 +266,32 @@ Rule:
 - Keep edits narrow and tied to the current implementation target.
 - Prefer real behavioral changes before doc cleanup.
 - If a doc claim is uncertain, soften wording instead of overstating implementation maturity.
+- Do not treat a new source type as "live" unless the collector path and artifact output both support that claim.
 
 ## Recommended Work Sequence
 
 1. Read `tpg-grao/grao/loops/round_40_2026-05-10.json`
-2. Read `tpg-grao/grao/README.md`
-3. Read `tpg-grao/grao/FAILURE-ANALYSIS.md`
-4. Inspect:
+2. Inspect `tpg-grao/scripts/trace-collector.js`
+3. Decide the intended supported source set for the next live/public pass
+4. Fix CLI/default/help/doc drift around source selection
+5. Read `tpg-grao/grao/README.md`
+6. Read `tpg-grao/grao/FAILURE-ANALYSIS.md`
+7. Inspect:
    - `tpg-grao/scripts/gradient-deriver.js`
    - `tpg-grao/scripts/proposal-generator.js`
-   - `tpg-grao/scripts/trace-collector.js`
-5. Verify exploration behavior in subsequent rounds.
-6. Update failure-analysis and loop docs to match actual implementation state.
-7. Continue log normalization so public artifacts track live execution more closely.
-8. Only then decide whether to continue GRAO expansion or move into GNW Phase 6.
+8. Verify exploration behavior in subsequent rounds.
+9. Update failure-analysis and loop docs to match actual implementation state.
+10. Refresh root/public summaries so they match the newest loop artifacts.
+11. Only then decide whether to continue GRAO expansion or move into GNW Phase 6.
 
 ## Definition Of Done For The Next Pass
 
 The next pass should count as successful if it achieves all of the following:
 
+- Trace-collector source selection and docs match the intended live/public behavior.
 - Round 40 behavior is verified by subsequent runs, not treated as a one-off.
-- Failure-analysis docs reflect the implemented changes instead of showing them as pending.
+- Failure-analysis docs reflect the implemented changes and no longer use stale absolute claims.
+- Round metric blocks clearly distinguish outcome counts from exploration/category counts.
+- Root README is aligned with the current GRAO state.
 - Cycle logs and summaries closely match live implementation details.
 - The next major track is explicitly chosen: further GRAO validation or GNW Phase 6.

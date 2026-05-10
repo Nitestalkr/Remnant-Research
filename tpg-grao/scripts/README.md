@@ -10,17 +10,17 @@ Four Node.js scripts that power the TPG-GRAO pipeline: trace collection, gradien
 
 | Script | Status | Last Validated |
 |--------|--------|----------------|
-| `trace-collector.js` | ✅ Operational | Round 39 (2026-05-04) |
-| `gradient-deriver.js` | ✅ Operational | Round 39 (2026-05-04) |
-| `grao-retriever.js` | ✅ Operational | Round 39 (2026-05-04) |
-| `proposal-generator.js` | ✅ Operational | Round 39 (2026-05-04) |
+| `trace-collector.js` | ✅ Operational | Round 40 (2026-05-10) |
+| `gradient-deriver.js` | ✅ Operational | Round 40 (2026-05-10) |
+| `grao-retriever.js` | ✅ Operational | Round 40 (2026-05-10) |
+| `proposal-generator.js` | ✅ Operational | Round 40 (2026-05-10) |
 
 ## Quick Start — Run Full Pipeline
 
 ```bash
 cd tpg-grao/scripts
 
-# Step 1: Collect traces (all sources, 24h window)
+# Step 1: Collect traces (all 7 sources, 24h window)
 node trace-collector.js
 
 # Step 2: Derive gradients from collected traces (7d window)
@@ -36,7 +36,7 @@ node grao-retriever.js
 Or target specific sources / thresholds:
 
 ```bash
-node trace-collector.js --sources agent,stability --window 12h
+node trace-collector.js --sources agent,stability,external_api --window 12h
 node gradient-deriver.js --window 30d --threshold 0.60
 node proposal-generator.js --threshold 0.70 --novelty 60
 node grao-retriever.js --rounds 10 --metrics gradients,health
@@ -50,13 +50,18 @@ node grao-retriever.js --rounds 10 --metrics gradients,health
 
 Collects and normalizes raw traces from all signal sources.
 
-**Usage:** `node trace-collector.js [--sources all|agent|research|stability|experience] [--output traces/] [--window 24h]`
+**Usage:** `node trace-collector.js [--sources all|agent|research|stability|experience|external_api|deployment|user_interaction] [--output traces/] [--window 24h]`
 
 **Input sources:**
 - `agent` — Cron execution logs, tool usage, model calls
 - `research` — arXiv scan results, paper downloads, deep dive outputs
 - `stability` — Memory usage, storage health, gateway status, cron reliability
 - `experience` — Optimized workflows, learned patterns
+- `external_api` — Nostr relay health, Paperclip API status (placeholder-backed)
+- `deployment` — Agent activation events, system restarts (placeholder-backed)
+- `user_interaction` — Telegram/Discord message logs (placeholder-backed)
+
+**Note:** The 3 new source types (`external_api`, `deployment`, `user_interaction`) are implemented in code but currently placeholder-backed. They would read from real data in production.
 
 **Output:** Validated, deduplicated JSON trace files in `traces/YYYY-MM-DD/`
 
