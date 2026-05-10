@@ -98,9 +98,10 @@ Round 31: 93.1%  ← Peak, 7 experiences, 7 pattern clusters
 Round 38: 83.3%  ← Further dip, trace quality bottleneck
 Round 33: 89.0%  ← Slight dip, 33 consecutive reinforcement rounds
 Round 39: 92.7%  ← Significant jump (127/137 success)
+Round 40: 90.1%  ← Exploration gradients generated (128 success, 7 failure, 3 insufficient_data, 5 exploration)
 ```
 
-The success ratio improved dramatically as GRAO expanded from 3→7 experiences. The current plateau at ~93% suggests **policy saturation** — all strong patterns are codified.
+The success ratio improved dramatically as GRAO expanded from 3→7 experiences. The current plateau at ~93% triggered **policy saturation** detection → exploration mode activated in round 40.
 
 > **Note — metrics glossary:**
 > - **Success ratio** = fraction of traces in a round with positive outcomes (e.g., 92.7% = 127/137 traces succeeded). This measures pipeline health.
@@ -134,6 +135,8 @@ gradient_score = (impact × frequency × persistence) / normalization_factor
 | **Failure** | gradient_score > threshold AND outcome negative | Investigate root cause |
 | **Warning** | gradient_score > threshold AND outcome trending negative | Monitor closely |
 | **High-priority** | gradient_score > high_threshold OR impact > critical | Immediate attention |
+| **insufficient_data** | magnitude >= 0.7 AND confidence < 0.4 AND traces < 3 | Unresolved — awaiting pattern history |
+| **exploration** | saturation detected → generate non-reinforcement gradients | Drive toward unexplored optimization areas |
 
 ### Policy Saturation Detection
 
@@ -169,15 +172,17 @@ tpg-grao/
 
 ---
 
-## 🔮 Next Phase: Exploration Gradients
+## 🔮 Current Phase: Exploration Gradients (Implemented)
 
-The current system is stuck in reinforcement-only mode (20+ consecutive rounds). The next phase of GRAO:
+Exploration gradients are now operational (round 40, 2026-05-10). The system:
 
-1. **Detect saturation** — Monitor policy round count and success ratio plateau
-2. **Generate exploration gradients** — Drive toward unexplored TPG paths
-3. **Cross-cluster analysis** — Compare gradients across different TPG clusters
-4. **Richer pattern discovery** — Expand GRAO to 10+ experiences for cross-cluster patterns
-5. **Non-reinforcement proposals** — Test proposals that explore, not just reinforce
+1. **Detects saturation** — 15+ consecutive reinforcement rounds, 90%+ success ratio, pure reinforcement
+2. **Generates exploration gradients** — 5 unexplored areas during saturation
+3. **Prioritizes exploration proposals** — Exploration=high priority during saturation
+4. **Deprioritizes reinforcement** — Reinforcement proposals lowered during saturation
+5. **Distinguishes behavior** — Loop artifacts clearly separate reinforcement vs exploration
+
+**Current status:** Exploration mode activated (round 40). Failure count reduced 10→7. Next: validate exploration behavior over subsequent rounds (Monday May 11 GRAO run).
 
 ---
 
