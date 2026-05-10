@@ -44,6 +44,12 @@ The GRAO (Gradient-Driven Research Optimization) loop is the core optimization c
 - Apply signal weighting from routing rules
 - Compute magnitude from pattern strength and signal count
 - Determine temporal factor (accelerating/stable/decaying)
+- Classify gradient into category:
+  - **success**: magnitude > threshold AND confidence >= 0.5
+  - **failure**: magnitude > threshold AND confidence < 0.5
+  - **insufficient_data**: magnitude >= 0.7 AND confidence < 0.4 AND traces < 3
+  - **exploration**: generated during saturation detection
+- Apply saturation detection: if 15+ consecutive reinforcement rounds OR 90%+ success ratio → generate exploration gradients
 
 ### Step 4: Gradient Storage
 - Store computed gradients in `gradients/`
@@ -107,6 +113,21 @@ GRAO loop state is stored in `grao/` as JSON:
   }
 }
 ```
+
+## Gradient Categories
+
+Gradients are classified into six categories:
+
+| Category | Condition | Purpose |
+|----------|-----------|--------|
+| **success** | magnitude > threshold AND confidence >= 0.5 | Reinforce proven patterns |
+| **failure** | magnitude > threshold AND confidence < 0.5 | Investigate root cause |
+| **warning** | gradient trending negative | Monitor closely |
+| **high_priority** | magnitude > high_threshold OR impact > critical | Immediate attention |
+| **insufficient_data** | magnitude >= 0.7 AND confidence < 0.4 AND traces < 3 | Unresolved — awaiting pattern history |
+| **exploration** | saturation detected | Drive toward unexplored optimization areas |
+
+**Note:** `insufficient_data` replaces forced high-priority classification for ambiguous items. Synthetic traces (action=unknown cycle-start) are filtered before computation.
 
 ## Experiment Integration
 

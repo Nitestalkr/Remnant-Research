@@ -21,13 +21,15 @@
 
 | Metric | Value |
 |--------|-------|
-| **Phase** | Phase 1 — Operational (pipeline live) |
-| **GRAO Round** | 39 (2026-05-04) |
-| **Success Ratio** | 92.7% (127/137 gradients successful) |
-| **Total Traces** | 137 |
+| **Phase** | Phase 4 — Exploration (implemented) |
+| **GRAO Round** | 40 (2026-05-10) |
+| **Success Ratio** | 90.1% (128 success, 7 failure, 3 insufficient_data, 5 exploration) |
+| **Total Traces** | 142 |
 | **Experiences** | 7 proven patterns |
-| **Consecutive Policy Rounds** | 20 |
-| **Saturation Status** | ⚠️ Policy saturation detected — exploration phase needed |
+| **Consecutive Policy Rounds** | 21 → exploration activated |
+| **Saturation Status** | ✅ Exploration mode active (round 40) |
+| **Failure Count** | 7 (reduced from 10) |
+| **Trace Sources** | 7 types (agent, research, stability, experience, external_api, deployment, user_interaction) |
 
 ### Success Ratio Progression (by round number)
 
@@ -38,6 +40,7 @@ Round 31 (2026-04-27):  93.1%  ← Peak — 7 experiences, 7 clusters
 Round 33 (2026-04-30):  89.0%  ← 33 consecutive reinforcement rounds
 Round 38 (2026-04-28):  83.3%  ← Trace quality stabilizing
 Round 39 (2026-05-04):  92.7%  ← Jump from 83.3%; saturation detected
+Round 40 (2026-05-10):  90.1%  ← Exploration gradients generated (128 success, 7 failure, 3 insufficient_data, 5 exploration)
 ```
 
 > **Note:** Round 38's timestamp (April 28) predates Round 33 (April 30) due to a scheduling gap in the cron pipeline. Round numbers reflect loop iteration sequence, not calendar order.
@@ -121,15 +124,17 @@ Raw Traces → Collector → Pattern Analysis → Gradient Derivation
 
 ---
 
-## Next Phase: Exploration
+## Current Phase: Exploration (Implemented)
 
-The system is in **policy saturation** (20 consecutive reinforcement rounds, success ratio plateauing at ~93%). The next GRAO phase will:
+Exploration gradients are now operational (round 40, 2026-05-10):
 
-1. Detect saturation automatically via consecutive reinforcement round count
-2. Generate **exploration gradients** targeting unexplored TPG paths
-3. Prioritize **exploration proposals** over reinforcement proposals
-4. Investigate the **10 persistent failure gradients** present since Round 13
-5. Expand the experience cluster to 8+ for richer cross-cluster discovery
+1. ✅ **Saturation detection** — 15+ rounds, 90%+ ratio, pure reinforcement
+2. ✅ **Exploration gradients** — 5 unexplored areas during saturation
+3. ✅ **Exploration proposal priority** — Exploration=high during saturation
+4. ✅ **Failure remediation** — insufficient_data category + synthetic trace filtering
+5. ✅ **Trace source expansion** — 7 types, 40+ known patterns
+
+**Current status:** Exploration mode active. Failure count reduced 10→7. Next: validate exploration behavior over subsequent rounds (Monday May 11 GRAO run).
 
 ---
 
