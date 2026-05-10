@@ -6,13 +6,16 @@
   "traces_collected": 142,
   "gradients_derived": 142,
   "gradients": {
-    "success": 128,
-    "failure": 7,
-    "insufficient_data": 3,
-    "exploration": 5,
+    "outcome_buckets": {
+      "success": 128,
+      "failure": 7,
+      "insufficient_data": 3
+    },
+    "exploration_gradients": 5,
     "high_priority": 0,
-    "success_ratio": 0.901
-  },
+    "total_gradients": 143,
+    "success_ratio": 0.901,
+    "note": "outcome_buckets sum = 138 (reinforcement gradients). exploration_gradients = 5 (generated during saturation). total = 143."
   "experiences_retrieved": 7,
   "experiences": [
     "exp_2026-04-23_doctor_cleanup",

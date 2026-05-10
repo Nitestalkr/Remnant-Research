@@ -3,7 +3,7 @@
  * trace-collector.js — Collects and normalizes raw traces from all signal sources.
  *
  * Usage:
- *   node trace-collector.js [--sources all|agent|research|stability|experience]
+ *   node trace-collector.js [--sources all|agent|research|stability|experience|external_api|deployment|user_interaction]
  *                           [--output traces/]
  *                           [--window 24h]
  *
@@ -22,7 +22,7 @@ const GRAO_STATE = path.join(BASE_DIR, 'grao', 'grao-state.json');
 
 // Default config
 const CONFIG = {
-  sources: ['agent', 'research', 'stability', 'experience'],
+  sources: ['agent', 'research', 'stability', 'experience', 'external_api', 'deployment', 'user_interaction'],
   outputDir: TRACES_DIR,
   windowHours: 24,
   dedupWindowMs: 60000, // 1 minute — avoid duplicate traces from same source
@@ -113,7 +113,7 @@ function parseArgs(argv) {
         if (i < args.length) {
           const sources = args[i].split(',').map(s => s.trim().toLowerCase());
           if (sources[0] === 'all') {
-            parsed.sources = ['agent', 'research', 'stability', 'experience'];
+            parsed.sources = ['agent', 'research', 'stability', 'experience', 'external_api', 'deployment', 'user_interaction'];
           } else {
             parsed.sources = sources.filter(s => Object.keys(SIGNAL_TYPES).includes(s));
           }
@@ -150,15 +150,15 @@ trace-collector.js — Collect and normalize research traces
 Usage: node trace-collector.js [options]
 
 Options:
-  --sources all|agent,research,stability,experience
+  --sources all|agent,research,stability,experience,external_api,deployment,user_interaction
                         Signal types to collect (default: all)
   --output <path>       Output directory (default: traces/)
   --window <N>[h|m|s]   Time window for trace collection (default: 24h)
   --help                Show this help
 
 Examples:
-  node trace-collector.js                          # collect all sources, 24h window
-  node trace-collector.js --sources agent,stability --window 12h
+  node trace-collector.js                          # collect all 7 sources, 24h window
+  node trace-collector.js --sources agent,stability,external_api --window 12h
   node trace-collector.js --output /tmp/traces
 `);
 }
@@ -380,12 +380,13 @@ function collectExperienceTraces() {
 
 /**
  * Collects external API traces (Nostr relays, Paperclip API, etc).
+ * NOTE: Currently placeholder-backed. Would read from real API health/status data in production.
  */
 function collectExternalAPITraces() {
   const traces = [];
   const now = new Date();
 
-  console.log('Collecting external API traces...');
+  console.log('Collecting external API traces (placeholder-backed)...');
 
   // Nostr relay health
   traces.push({
@@ -432,12 +433,13 @@ function collectExternalAPITraces() {
 
 /**
  * Collects deployment event traces (agent activation, builds, restarts).
+ * NOTE: Currently placeholder-backed. Would read from real deployment event data in production.
  */
 function collectDeploymentTraces() {
   const traces = [];
   const now = new Date();
 
-  console.log('Collecting deployment traces...');
+  console.log('Collecting deployment traces (placeholder-backed)...');
 
   // Agent activation events
   traces.push({
@@ -484,12 +486,13 @@ function collectDeploymentTraces() {
 
 /**
  * Collects user interaction traces (Telegram messages, etc).
+ * NOTE: Currently placeholder-backed. Would read from real message log data in production.
  */
 function collectUserInteractionTraces() {
   const traces = [];
   const now = new Date();
 
-  console.log('Collecting user interaction traces...');
+  console.log('Collecting user interaction traces (placeholder-backed)...');
 
   // Placeholder: would read from Telegram/Discord message logs
   // traces.push({...});
