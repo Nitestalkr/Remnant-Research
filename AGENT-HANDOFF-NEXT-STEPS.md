@@ -142,20 +142,20 @@ Acceptance criteria:
 - Public docs no longer drift from the newest loop artifacts.
 - A reader can tell what changed in a round without cross-referencing multiple files.
 
-### Priority 4 - Decide The Next Major Track
+### Priority 4 - Next Major Track Decision
 
-Goal: choose explicitly between deeper GRAO validation and GNW Phase 6 implementation, instead of letting both remain half-active.
+**Decision: Continue GRAO validation (2026-05-10)**
 
-Primary files:
+Rationale:
+- Round 40 was the first exploration implementation — no subsequent rounds to validate
+- Next GRAO run is Monday May 11 (first validation round)
+- Exploration behavior is still under-evidenced
+- Docs normalized ✅ (FAILURE-ANALYSIS, LOOP-SPEC, all READMEs match live implementation)
 
-- `gnw/docs/ROADMAP.md`
-- `gnw/docs/CROSS-AGENT-COORDINATION.md`
-- `gnw/docs/GNW-GRAO-INTEGRATION.md`
-
-Decision rule:
-
-- If exploration rounds are still unstable or under-evidenced, keep focus on GRAO.
-- If exploration rounds stabilize and logs are trustworthy, move to GNW Phase 6.
+**When to move to GNW Phase 6:**
+- After Monday May 11 GRAO run confirms exploration output persists
+- After 2-3 subsequent rounds show exploration behavior is stable
+- After logs are trustworthy as feedback artifacts
 
 If moving to GNW Phase 6, tasks are:
 
