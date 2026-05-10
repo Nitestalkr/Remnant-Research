@@ -1,0 +1,33 @@
+{
+  "cycle_number": 69,
+  "timestamp": "2026-05-07T01:35:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 1.0,
+  "pending_events": [],
+  "stale_items": [
+    {"file": "attention-router.md", "staleness_hours": 3, "within_threshold": true},
+    {"file": "workspace-state.md", "staleness_hours": 3, "within_threshold": true}
+  ],
+  "stage_contents": [
+    {"item": "GNW Phase 5", "score": 0.85, "status": "active"},
+    {"item": "GRAO Round 39", "score": 0.60, "status": "active"},
+    {"item": "Zenith Fitness", "score": 0.55, "status": "completed"},
+    {"item": "Paperclip", "score": 0.50, "status": "active"},
+    {"item": "Clawstr", "score": 0.45, "status": "active"}
+  ],
+  "self_initiation": {
+    "triggered": false,
+    "threshold": 0.6,
+    "candidate": null,
+    "action": null
+  },
+  "drive_scores": {
+    "curiosity": 0.30,
+    "helpfulness": 0.10,
+    "competence": 0.40,
+    "safety": 0.80,
+    "goal_directed": 0.20
+  },
+  "system_status": "idle",
+  "notes": "No pending events, no stale items. System healthy idle."
+}
