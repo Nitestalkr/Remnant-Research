@@ -14,10 +14,11 @@ Last reviewed: 2026-05-10
   - synthetic cycle-start traces are filtered
   - `insufficient_data` category exists
   - trace-source detection was expanded in code
-- The public repo still has follow-through gaps:
-  - the trace collector's default and `--sources all` paths do not yet expose all newly added source types
-  - the Round 40 artifact needs clearer metric labeling
-  - the root README still lags behind the newer GRAO state
+- The public repo follow-through gaps have been addressed:
+  - ✅ trace collector's default and `--sources all` now expose all 7 source types
+  - ✅ Round 40 artifact metric labeling clarified (outcome_buckets vs exploration_gradients)
+  - ✅ root README updated to Round 40 state
+  - FAILURE-ANALYSIS.md opening line still uses stale absolute claim (see [P3] below)
 - The current live-run bottleneck is no longer "missing exploration logic." It is:
   - validating that the new exploration behavior holds up across future rounds
   - correcting repo and CLI drift so the public mirror matches live behavior
@@ -43,14 +44,11 @@ The previous handoff's Phase 6 GNW coordination work was not implemented yet.
 
 These are the next concrete corrections the repo and live implementation should address before broadening scope again:
 
-1. `tpg-grao/scripts/trace-collector.js` defines 3 new source types:
-   - `external_api`
-   - `deployment`
-   - `user_interaction`
-   But:
-   - default `CONFIG.sources` still only includes the original four
-   - `--sources all` also resets to only the original four
-   - help text still documents only the old source set
+1. ✅ `tpg-grao/scripts/trace-collector.js` source wiring fixed:
+   - default `CONFIG.sources` includes all 7 types
+   - `--sources all` maps to full source set
+   - help text documents all 7 source types
+   - 3 new sources documented as placeholder-backed
 2. `tpg-grao/grao/loops/round_40_2026-05-10.json` mixes:
    - outcome buckets: `success`, `failure`, `insufficient_data`
    - category/type counts: `exploration`
