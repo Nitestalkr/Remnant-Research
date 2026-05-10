@@ -75,13 +75,18 @@ Additional boredom added based on time since last context change.
 
 ## User Presence Modifier
 
-When the user is actively engaged, boredom is suppressed:
+The floor only applies when the user is actively engaged:
 
-`
-effective_boredom = max(boredom, user_boredom_floor)
-`
+```
+if user_active:
+    user_boredom_floor = max(0.30, user_boredom_score)
+    effective_boredom  = max(boredom, user_boredom_floor)
+else:
+    effective_boredom  = boredom   # no floor — can fall to 0.0
+```
 
-Where user_boredom_floor = max(0.30, user_boredom_score).
+- **User active:** boredom is held at a minimum of 0.30 (prevents the agent from reading as completely unengaged mid-conversation)
+- **User away:** no floor — boredom can fall to 0.0 if context is fresh
 
 This prevents the agent from self-directing while the user is in the middle of a conversation.
 

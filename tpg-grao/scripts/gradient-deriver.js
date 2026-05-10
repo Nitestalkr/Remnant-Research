@@ -28,6 +28,13 @@ const CONFIG = {
   windowDays: 7,
   threshold: 0.30,
   decayRate: 0.02, // daily decay for gradients
+  saturationState: {
+    reinforcementRounds: 0,
+    lastRoundSuccessRatio: 0,
+    detected: false,
+    lastDetected: null,
+  },
+  explorationEnabled: false,
 };
 
 // Pattern strength thresholds
@@ -35,6 +42,13 @@ const PATTERN_THRESHOLDS = {
   strong: 0.7,
   moderate: 0.3,
   weak: 0.1,
+};
+
+// Saturation detection thresholds
+const SATURATION_THRESHOLDS = {
+  minReinforcementRounds: 15,
+  plateauRatio: 0.90,
+  minTracesForDetection: 20,
 };
 
 // ── CLI Parsing ────────────────────────────────────────────────────────────
@@ -101,6 +115,7 @@ Examples:
 
 /**
  * Loads all traces from the traces directory within the time window.
+ * Filters synthetic traces (action=unknown) that are artifacts of cycle initialization.
  */
 function loadTraces(tracesDir, windowDays) {
   const allTraces = [];
@@ -128,6 +143,11 @@ function loadTraces(tracesDir, windowDays) {
             const filepath = path.join(entryPath, file);
             try {
               const trace = JSON.parse(fs.readFileSync(filepath, 'utf8'));
+              // Filter synthetic cycle-start traces: action=unknown is an artifact, not a real failure
+              if (trace.action === 'unknown' && trace.signal_type === 'stability' && trace.metric_name === 'cycle_start') {
+                console.log(`  Filtering synthetic trace: ${trace.trace_id}`);
+                continue;
+              }
               allTraces.push(trace);
             } catch (e) {
               console.error(`Failed to parse trace: ${filepath}`);
@@ -254,10 +274,118 @@ function extractConcepts(traces) {
   return sorted.map(([concept, count]) => ({ concept, weight: count }));
 }
 
+// ── Saturation Detection ───────────────────────────────────────────────────
+
+/**
+ * Detects policy saturation from GRAO state and live conditions.
+ * Returns saturation state object.
+ */
+function detectSaturation(gradients, config) {
+  const successCount = gradients.filter(g => g.category === 'success').length;
+  const totalGradients = gradients.length;
+  const successRatio = totalGradients > 0 ? successCount / totalGradients : 0;
+
+  // Check saturation conditions
+  const saturation = {
+    detected: false,
+    reinforcementRounds: config.saturationState.reinforcementRounds,
+    lastRoundSuccessRatio: config.saturationState.lastRoundSuccessRatio,
+    currentSuccessRatio: successRatio,
+    traceCount: totalGradients,
+    reason: null,
+  };
+
+  // Condition 1: 15+ consecutive reinforcement-only rounds
+  if (saturation.reinforcementRounds >= SATURATION_THRESHOLDS.minReinforcementRounds) {
+    saturation.detected = true;
+    saturation.reason = 'consecutive_reinforcement_rounds';
+  }
+
+  // Condition 2: Success ratio plateau near 90%+
+  if (successRatio >= SATURATION_THRESHOLDS.plateauRatio && totalGradients >= SATURATION_THRESHOLDS.minTracesForDetection) {
+    saturation.detected = true;
+    saturation.reason = saturation.reason || 'success_ratio_plateau';
+  }
+
+  // Condition 3: No high-priority or failure gradients (everything is success)
+  const hasNonSuccess = gradients.some(g => g.category !== 'success');
+  if (!hasNonSuccess && totalGradients >= SATURATION_THRESHOLDS.minTracesForDetection) {
+    saturation.detected = true;
+    saturation.reason = saturation.reason || 'pure_reinforcement';
+  }
+
+  if (saturation.detected) {
+    saturation.reinforcementRounds++;
+    saturation.lastDetected = new Date().toISOString();
+    console.log(`  ⚠ SATURATION DETECTED: ${saturation.reason} (${saturation.reinforcementRounds} reinforcement rounds, success ratio: ${successRatio.toFixed(2)})`);
+  } else {
+    // Reset if saturation clears
+    if (config.saturationState.detected && !saturation.detected) {
+      saturation.reinforcementRounds = 0;
+      console.log(`  ✅ Saturation cleared — fresh signal detected`);
+    }
+  }
+
+  return saturation;
+}
+
+// ── Exploration Gradient Generation ─────────────────────────────────────────
+
+/**
+ * Generates exploration gradients when saturation is detected.
+ * These drive toward unexplored TPG paths rather than reinforcing existing ones.
+ */
+function generateExplorationGradients(saturation, config) {
+  if (!saturation.detected) return [];
+
+  console.log(`\n  🧭 Generating exploration gradients (saturation: ${saturation.reason})`);
+
+  // Exploration areas — unexplored TPG paths beyond current policy set
+  const explorationAreas = [
+    { direction: 'cross-cluster-pattern-discovery', magnitude: 0.65, type: 'exploration', hypothesis: 'Cross-cluster gradient comparison reveals optimization patterns not visible within single-cluster analysis' },
+    { direction: 'non-reinforcement-proposal-testing', magnitude: 0.70, type: 'exploration', hypothesis: 'Non-reinforcement proposals (structural changes, new trace sources) may yield higher ROI than continued pattern reinforcement' },
+    { direction: 'trace-source-expansion', magnitude: 0.55, type: 'exploration', hypothesis: 'Adding new trace source types (user-interaction, deployment-events, external-API-responses) increases gradient diversity' },
+    { direction: 'gradient-weight-redistribution', magnitude: 0.50, type: 'exploration', hypothesis: 'Rebalancing impact/frequency/persistence weights may expose previously suppressed optimization areas' },
+    { direction: 'experience-cluster-merging', magnitude: 0.45, type: 'exploration', hypothesis: 'Merging small experience clusters into broader clusters enables cross-cluster pattern discovery' },
+  ];
+
+  const explorationGradients = [];
+  const dateStr = new Date().toISOString().slice(0, 10);
+
+  for (const area of explorationAreas) {
+    const hash = crypto.createHash('sha256')
+      .update(`explore_${area.direction}_${Date.now()}`)
+      .digest('hex').slice(0, 8);
+
+    explorationGradients.push({
+      gradient_id: `grad_${dateStr}_explore_${hash}`,
+      timestamp: new Date().toISOString(),
+      type: 'exploration',
+      direction: area.direction,
+      magnitude: area.magnitude,
+      confidence: 0.40, // Lower confidence — exploration by definition
+      category: 'exploration',
+      pattern_strength: 0.0, // No pattern history yet
+      temporal_factor: 'new',
+      hypothesis: area.hypothesis,
+      contributing_traces: [],
+      contributing_traces_count: 0,
+      top_concepts: [],
+      decay_rate: CONFIG.decayRate,
+      next_computation: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+      exploration_note: `Generated due to saturation (${saturation.reason}). This gradient drives toward unexplored optimization area.`,
+    });
+  }
+
+  console.log(`  Generated ${explorationGradients.length} exploration gradients`);
+  return explorationGradients;
+}
+
 // ── Gradient Computation ───────────────────────────────────────────────────
 
 /**
  * Computes gradients from pattern analysis.
+ * Adds insufficient_data category for high-priority gradients lacking pattern history.
  */
 function computeGradients(clusters) {
   const gradients = [];
@@ -284,6 +412,9 @@ function computeGradients(clusters) {
     }
 
     magnitude = Math.min(Math.max(magnitude, 0), 1);
+
+    // Compute confidence from trace metadata
+    const avgConfidence = traces.reduce((sum, t) => sum + (t.metadata?.confidence || 0), 0) / traces.length;
 
     // Determine gradient type based on signal type
     let gradientType;
@@ -323,12 +454,21 @@ function computeGradients(clusters) {
         direction = type;
     }
 
-    // Compute confidence from trace metadata
-    const avgConfidence = traces.reduce((sum, t) => sum + (t.metadata?.confidence || 0), 0) / traces.length;
+    // Determine category — check for insufficient_data
+    let category;
+    if (magnitude >= 0.7 && avgConfidence < 0.4 && traces.length < 3) {
+      // High magnitude but insufficient pattern data — not a true failure
+      category = 'insufficient_data';
+      console.log(`  → insufficient_data: "${direction}" (magnitude: ${magnitude.toFixed(2)}, conf: ${avgConfidence.toFixed(2)}, traces: ${traces.length})`);
+    } else if (avgConfidence >= 0.5) {
+      category = 'success';
+    } else {
+      category = 'failure';
+    }
 
     // Generate gradient ID
     const hash = crypto.createHash('sha256')
-      .update(`${type}_${patternStrength}`)
+      .update(`${type}_${patternStrength}_${category}`)
       .digest('hex').slice(0, 8);
     const dateStr = new Date().toISOString().slice(0, 10);
 
@@ -341,6 +481,7 @@ function computeGradients(clusters) {
       confidence: parseFloat(avgConfidence.toFixed(3)),
       pattern_strength: parseFloat(patternStrength.toFixed(3)),
       temporal_factor: temporalFactor,
+      category: category,
       contributing_traces: traces.map(t => t.trace_id),
       contributing_traces_count: traces.length,
       top_concepts: concepts,
@@ -439,8 +580,19 @@ function main() {
   const gradients = computeGradients(clusters);
   console.log(`Computed ${gradients.length} gradients`);
 
+  // Detect saturation
+  const saturation = detectSaturation(gradients, config);
+
+  // Generate exploration gradients if saturation detected
+  let allGradients = gradients;
+  if (saturation.detected) {
+    const explorationGradients = generateExplorationGradients(saturation, config);
+    allGradients = [...gradients, ...explorationGradients];
+    console.log(`\n  Total gradients (incl. exploration): ${allGradients.length}`);
+  }
+
   // Store gradients
-  const stored = storeGradients(gradients, config.outputDir);
+  const stored = storeGradients(allGradients, config.outputDir);
   console.log(`Stored ${stored} new gradients`);
 
   // Archive old gradients
@@ -449,15 +601,25 @@ function main() {
     console.log(`Archived ${archived} old gradients`);
   }
 
-  // Summary
+  // Summary by category
+  console.log('\nGradients by category:');
+  const byCategory = {};
+  for (const g of allGradients) {
+    byCategory[g.category] = (byCategory[g.category] || 0) + 1;
+  }
+  for (const [cat, count] of Object.entries(byCategory)) {
+    console.log(`  ${cat}: ${count}`);
+  }
+
   console.log('\nGradients:');
-  for (const g of gradients) {
+  for (const g of allGradients) {
     const magBar = '█'.repeat(Math.round(g.magnitude * 10)) + '░'.repeat(10 - Math.round(g.magnitude * 10));
-    console.log(`  ${g.direction.padEnd(25)} |${magBar}| ${g.magnitude.toFixed(2)} (${g.type})`);
+    const catTag = g.category === 'exploration' ? '🧭' : g.category === 'insufficient_data' ? '⏳' : '';
+    console.log(`  ${catTag} ${g.direction.padEnd(30)} |${magBar}| ${g.magnitude.toFixed(2)} (${g.type}) [${g.category}]`);
   }
 
   // Update GRAO state
-  updateGrAoState(gradients);
+  updateGrAoState(allGradients, saturation);
 
   console.log('\nDone.');
 }
@@ -465,7 +627,7 @@ function main() {
 /**
  * Updates GRAO state with latest gradient computation.
  */
-function updateGrAoState(gradients) {
+function updateGrAoState(gradients, saturation) {
   if (!fs.existsSync(GRAO_STATE)) return;
 
   try {
@@ -476,7 +638,27 @@ function updateGrAoState(gradients) {
       direction: g.direction,
       magnitude: g.magnitude,
       type: g.type,
+      category: g.category,
     }));
+
+    // Update saturation tracking
+    if (saturation) {
+      state.saturation = {
+        detected: saturation.detected,
+        reinforcementRounds: saturation.reinforcementRounds,
+        lastRoundSuccessRatio: saturation.currentSuccessRatio,
+        lastDetected: saturation.lastDetected,
+        reason: saturation.reason,
+      };
+    }
+
+    // Count categories
+    const categoryCounts = {};
+    for (const g of gradients) {
+      categoryCounts[g.category] = (categoryCounts[g.category] || 0) + 1;
+    }
+    state.gradient_categories = categoryCounts;
+
     fs.writeFileSync(GRAO_STATE, JSON.stringify(state, null, 2));
   } catch (e) {
     console.error('Failed to update GRAO state:', e.message);
