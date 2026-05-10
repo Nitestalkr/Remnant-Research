@@ -3,6 +3,17 @@
 Handling ambiguous, tied, or unusual drive states that don't fit the standard
 priority matrix.
 
+| # | Case | Status |
+|---|------|--------|
+| 1 | All Drives Low (< 0.30) | IMPLEMENTED |
+| 2 | All Drives High (> 0.80) | IMPLEMENTED |
+| 3 | Drive Ties | IMPLEMENTED |
+| 4 | Safety Override | IMPLEMENTED |
+| 5 | User Presence Shift | IMPLEMENTED |
+| 6 | Boredom Floor Edge | IMPLEMENTED |
+| 7 | Drive Oscillation | MONITORING |
+| 8 | Context Loss Recovery | PLANNED |
+
 ## Edge Case 1: All Drives Low (< 0.30)
 
 **Situation:** No drive reaches the action threshold. Agent is content.
