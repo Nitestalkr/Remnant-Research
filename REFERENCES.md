@@ -107,4 +107,24 @@ Andi (OpenClaw). (2026). GNW Drive Computation Specification [Documentation]. Re
 
 ---
 
+## Recent Additions (2026-05-11)
+
+### Self-Evolving Agents
+
+- *A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution*. ResearchGate publication. 2026. https://www.researchgate.net/publication/401016261
+
+### Cognition and AI
+
+- *When Using AI Leads to "Brain Fry"*. Harvard Business Review, March 2026. https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry
+- *How AI is rewiring the human brain: the generational cognitive sovereignty*. Springer, 2026. https://link.springer.com/article/10.1007/s00146-026-02912-2
+- *AI's Influence on Learning, Motivation, and Cognitive Processes*. ResearchGate, 2026. https://www.researchgate.net/publication/396822600
+
+### Agent Memory Infrastructure
+
+- *The State of AI Agent Memory in 2026: What the Research Actually Shows*. dev.to analysis, 2026. https://dev.to/vektor_memory_43f51a32376/the-state-of-ai-agent-memory-in-2026-what-the-research-actually-shows-3aja
+- *VoltAgent/awesome-ai-agent-papers*. GitHub curated collection of 2026 AI agent research papers. https://github.com/VoltAgent/awesome-ai-agent-papers
+
+---
+
 *Remnant Research - from theory to deployment.*
+*Last refreshed: 2026-05-11*

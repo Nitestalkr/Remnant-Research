@@ -1,0 +1,30 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-539Z_research_arxiv",
+  "timestamp": "2026-05-11T03:45:25.539Z",
+  "source": "arxiv-monitor",
+  "signal_type": "research",
+  "title": "Recent arXiv Scan",
+  "arxiv_id": "scan_2026-05-11",
+  "authors": [
+    "automated-scan"
+  ],
+  "relevance_score": 0.5,
+  "key_concepts": [
+    "LLM",
+    "agents",
+    "research"
+  ],
+  "domain": "AI-Research",
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "arxiv",
+      "scan"
+    ]
+  },
+  "raw_data": {
+    "papers_scanned": 0,
+    "papers_downloaded": 0,
+    "top_picks": []
+  }
+}

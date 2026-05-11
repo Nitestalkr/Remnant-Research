@@ -4,7 +4,12 @@ Drive score sharing and synchronization protocol between agents.
 
 > **Status:** Phase 6 in progress — design documented, real-agent testing pending.
 > This document describes the planned architecture. Implementation details will be
-> updated as Phase 6 develops. No live cross-agent coordination is operational yet.
+> updated as Phase 6 develops.
+>
+> **Last updated:** 2026-05-10 09:34 AM (Cycle 84 boredom scan)
+> **Current system state:** 5 agents operational (Andi, Randi2, CB, Claude, Zero)
+> **Telegram infrastructure:** All 5 agents configured with Telegram bots, hybrid mode (group + DMs)
+> **Shared workspace:** `workspace-visualmedia/` available for cross-team coordination
 
 ---
 
@@ -151,6 +156,60 @@ When agents' drives **would** oscillate (Agent A wins cycle 1, Agent B wins cycl
 | Drive weight sharing | Sprint 20 | In progress |
 | Two-agent coordination test (Andi + Randi2) | Sprint 21 | Planned |
 | Oscillation prevention across agents | Sprint 21 | Planned |
+| Telegram bot integration for score sharing | Sprint 22 | Planned |
+| Shared workspace drive weight store | Sprint 22 | Planned |
+
+## Current Agent Infrastructure (2026-05-10)
+
+### Agents Available for Cross-Agent Testing
+
+| Agent | Role | Telegram Bot | Workspace |
+|-------|------|-------------|-----------|
+| Andi (this agent) | Orchestrator | @AndiClawSuperBot | D:\.openclaw\workspace |
+| Randi2 | Developer | @randi2_dev_bot | C:\.openclaw\workspace-randi2 |
+| CB | CodeBuff Optimizer | @cb_dev_bot | C:\.openclaw\workspace-cb |
+| Claude | Security Reviewer | @claude_sec_bot | C:\.openclaw\workspace-claude |
+| Zero | Deployment & Monitoring | @zero_deploy_bot | C:\.openclaw\workspace-zero |
+
+### Communication Channels
+
+- **Group Chat ID:** -1003741274242 (all 5 agents as admins)
+- **Mode:** Hybrid — group chat + individual DMs
+- **User ID:** 1747124819
+
+### Shared Projects Directory
+
+`C:\Users\JButt\.openclaw\projects\` — centralized for all agents
+
+### Shared Workspace (Visual Media Team)
+
+`C:\Users\JButt\.openclaw\workspace-visualmedia/` — cross-team coordination
+
+## Implementation Notes
+
+### Drive Score Broadcast via Telegram
+
+The broadcast protocol could be implemented via Telegram messages to a dedicated
+coordination channel or via the shared drive weight store in the shared workspace.
+
+### Drive Weight Store Location Options
+
+1. **Central:** `projects/drive-weights.json` (shared across all agents)
+2. **Per-agent:** Each agent's workspace with periodic sync
+3. **Shared workspace:** `workspace-visualmedia/drive-weights.json`
+
+### Testing Priority
+
+Phase 6 testing should start with Andi + Randi2 (the most established pair),
+then expand to include CB and Claude for code review coordination,
+then Zero for deployment coordination.
+
+## Next Steps (Cycle 84)
+
+1. Define concrete drive score broadcast format for Telegram integration
+2. Create shared drive weight store in projects directory
+3. Implement Andi → Randi2 score sharing prototype
+4. Test oscillation detection across agent boundary
 
 ---
 

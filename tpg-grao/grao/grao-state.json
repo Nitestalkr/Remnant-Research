@@ -1,0 +1,105 @@
+{
+  "loop_id": "grao_state",
+  "last_cycle": "2026-05-11T03:45:22.573Z",
+  "cycle_count": 1,
+  "active_gradients": [
+    {
+      "id": "grad_2026-05-11_agent_e65f5762",
+      "direction": "agent-optimization",
+      "magnitude": 1,
+      "type": "temporal",
+      "category": "success"
+    },
+    {
+      "id": "grad_2026-05-11_research_ea2ddc7c",
+      "direction": "LLM",
+      "magnitude": 1,
+      "type": "directional",
+      "category": "success"
+    },
+    {
+      "id": "grad_2026-05-11_stability_17f620f4",
+      "direction": "system-health",
+      "magnitude": 0.85,
+      "type": "magnitude",
+      "category": "success"
+    },
+    {
+      "id": "grad_2026-05-11_external_api_8062cde9",
+      "direction": "external_api",
+      "magnitude": 1,
+      "type": "directional",
+      "category": "success"
+    },
+    {
+      "id": "grad_2026-05-11_deployment_df8a6a6c",
+      "direction": "deployment",
+      "magnitude": 1,
+      "type": "directional",
+      "category": "success"
+    }
+  ],
+  "research_priorities": [],
+  "health_metrics": {},
+  "configuration": {
+    "gradient_threshold": 0.5,
+    "proposal_confidence_min": 0.6,
+    "trace_retention_days": 90,
+    "gradient_retention_days": 30
+  },
+  "last_trace_collection": "2026-05-11T03:45:25.543Z",
+  "last_gradient_computation": "2026-05-11T03:45:28.186Z",
+  "saturation": {
+    "detected": false,
+    "reinforcementRounds": 0,
+    "lastRoundSuccessRatio": 1,
+    "reason": null
+  },
+  "gradient_categories": {
+    "success": 5
+  },
+  "last_proposal_generation": "2026-05-11T03:45:34.506Z",
+  "new_proposals": [],
+  "proposal_types": {
+    "reinforcement": 6
+  },
+  "active_proposals": [
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T03:46:12.582Z",
+      "tpgTarget": "meta-optimization"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T03:46:12.590Z",
+      "tpgTarget": "meta-optimization"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T03:46:12.590Z",
+      "tpgTarget": "meta-optimization"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T03:46:12.590Z",
+      "tpgTarget": "meta-optimization"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T03:46:12.590Z",
+      "tpgTarget": "meta-optimization"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T03:46:12.590Z",
+      "tpgTarget": "meta-optimization"
+    }
+  ],
+  "last_proposal_application": "2026-05-11T03:46:12.590Z"
+}

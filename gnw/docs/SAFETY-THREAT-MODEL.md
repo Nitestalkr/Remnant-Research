@@ -106,6 +106,32 @@ The safety veto protocol protects against three categories of risk:
 
 ---
 
+## Current Deployment Status (2026-05-10)
+
+The safety veto protocol is active and deployed across all 5 agents:
+
+- **Andi** (main orchestrator) — hard-coded veto at ≥ 0.85, emergency at ≥ 0.95
+- **Randi2** (OpenCode) — Telegram bot configured, veto inherited from gateway agent config
+- **CB** (CodeBuff) — Telegram bot configured, veto inherited
+- **Claude** (Security Reviewer) — Telegram bot configured, veto inherited
+- **Zero** (Deployment) — Telegram bot configured, veto inherited
+
+**Veto mechanism:** Hard-coded thresholds in gateway agent configs (not computed from drive scores). External actions on Discord/Telegram require safety review.
+
+**System state:** Healthy idle. No pending external actions. No constraint violations detected. No instability signals.
+
+---
+
+## Recent Threat Model Calibration
+
+| Date | Change | Rationale |
+|------|--------|-----------|
+| 2026-05-10 | 5-agent Telegram infrastructure | Expanded signal sources: Telegram bot actions now subject to safety veto |
+| 2026-05-10 | No forced work principle | Boredom scans self-initiate only when boredom > 0.6; no external action pressure |
+| 2026-05-08 | Cross-agent coordination doc | Shared workspace (workspace-visualmedia) introduces new privacy signal source |
+
+---
+
 ## Future Safety Work
 
 | Item | Priority | Status |
@@ -115,6 +141,8 @@ The safety veto protocol protects against three categories of risk:
 | Multi-layer safety checks | Medium | Planned |
 | Safety incident logging | Low | In progress (resolution log) |
 | Threat model updates | Ongoing | As new threats identified |
+| Telegram bot safety audit | Medium | Pending — verify all 5 agents inherit veto correctly |
+| Phase 6 real-agent testing | Medium | Expected Q3 2026 |
 
 ---
 

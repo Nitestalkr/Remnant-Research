@@ -1,0 +1,87 @@
+{
+  "scan_number": 84,
+  "timestamp": "2026-05-10T09:34:00-04:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "CROSS-AGENT-COORDINATION.md",
+      "path": "remnant-research/gnw/docs/CROSS-AGENT-COORDINATION.md",
+      "hours_stale": 120,
+      "novelty": 0.9,
+      "relevance": 0.8,
+      "goal_alignment": 0.9,
+      "stale_boost": 1.5,
+      "drive_score": 0.972
+    },
+    {
+      "file": "PHASE-5-SUMMARY.md",
+      "path": "remnant-research/gnw/sprints/PHASE-5-SUMMARY.md",
+      "hours_stale": 120,
+      "novelty": 0.8,
+      "relevance": 0.9,
+      "goal_alignment": 0.8,
+      "stale_boost": 1.5,
+      "drive_score": 0.864
+    },
+    {
+      "file": "SAFETY-THREAT-MODEL.md",
+      "path": "remnant-research/gnw/docs/SAFETY-THREAT-MODEL.md",
+      "hours_stale": 120,
+      "novelty": 0.6,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "stale_boost": 1.5,
+      "drive_score": 0.504
+    },
+    {
+      "file": "DESIGN-DECISIONS.md",
+      "path": "remnant-research/gnw/docs/DESIGN-DECISIONS.md",
+      "hours_stale": 120,
+      "novelty": 0.7,
+      "relevance": 0.8,
+      "goal_alignment": 0.6,
+      "stale_boost": 1.5,
+      "drive_score": 0.504
+    },
+    {
+      "file": "VETO-PROTOCOL.md",
+      "path": "remnant-research/gnw/conflict-resolution/VETO-PROTOCOL.md",
+      "hours_stale": 120,
+      "novelty": 0.5,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "stale_boost": 1.5,
+      "drive_score": 0.315
+    },
+    {
+      "file": "GLOSSARY.md",
+      "path": "remnant-research/gnw/docs/GLOSSARY.md",
+      "hours_stale": 120,
+      "novelty": 0.4,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "stale_boost": 1.5,
+      "drive_score": 0.180
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "CROSS-AGENT-COORDINATION.md",
+    "action": "Added current agent infrastructure (5 agents, Telegram bots, shared workspace), updated Phase 6 milestones, added implementation notes and next steps"
+  },
+  "drive_scores": {
+    "curiosity": 0.9,
+    "helpfulness": 0.3,
+    "competence": 0.5,
+    "safety": 0.4,
+    "goal_directed": 0.7
+  },
+  "system_status": {
+    "agents_operational": 5,
+    "pending_events": 0,
+    "user_active": false,
+    "cron_jobs": "GNW Boredom Scan (15min) + GNW Cognitive Cycle (30min) both running"
+  },
+  "notes": "Cycle 84: CROSS-AGENT-COORDINATION.md won with highest drive score (0.972). Phase 6 design doc was 5 days stale but high novelty because Phase 6 is in progress and design is incomplete. Updated with current agent infrastructure, Telegram bot setup status, shared workspace info, and concrete next steps. No pending user events — system idle."
+}

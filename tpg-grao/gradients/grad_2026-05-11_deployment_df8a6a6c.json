@@ -1,0 +1,40 @@
+{
+  "gradient_id": "grad_2026-05-11_deployment_df8a6a6c",
+  "timestamp": "2026-05-11T03:45:28.184Z",
+  "type": "directional",
+  "direction": "deployment",
+  "magnitude": 1,
+  "confidence": 1,
+  "pattern_strength": 1,
+  "temporal_factor": "stable",
+  "category": "success",
+  "contributing_traces": [
+    "trace_2026-05-11T03-45-25-539Z_deployment_agent",
+    "trace_2026-05-11T03-45-25-539Z_deployment_restart"
+  ],
+  "contributing_traces_count": 2,
+  "top_concepts": [
+    {
+      "concept": "deployment",
+      "weight": 1
+    },
+    {
+      "concept": "agents",
+      "weight": 0.5
+    },
+    {
+      "concept": "activation",
+      "weight": 0.5
+    },
+    {
+      "concept": "restart",
+      "weight": 0.5
+    },
+    {
+      "concept": "gateway",
+      "weight": 0.5
+    }
+  ],
+  "decay_rate": 0.02,
+  "next_computation": "2026-05-18T03:45:28.184Z"
+}

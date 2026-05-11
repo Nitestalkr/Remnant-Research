@@ -1,0 +1,69 @@
+{
+  "scan_number": 96,
+  "timestamp": "2026-05-10T20:39:00-04:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "USER-PRESENCE-DETECTION.md",
+      "hours": 161.4,
+      "score": 0.108
+    },
+    {
+      "file": "TEST-BOREDOM-THRESHOLD.md",
+      "hours": 163.1,
+      "score": 0.090
+    },
+    {
+      "file": "TEST-CONFLICT-CONVERGENCE.md",
+      "hours": 163.1,
+      "score": 0.090
+    },
+    {
+      "file": "TEST-DRIVE-OSCILLATION.md",
+      "hours": 163.1,
+      "score": 0.090
+    },
+    {
+      "file": "TEST-RUNNER-SPEC.md",
+      "hours": 127.0,
+      "score": 0.090
+    },
+    {
+      "file": "GNW-GRAO-INTEGRATION.md",
+      "hours": 122.9,
+      "score": 0.090
+    },
+    {
+      "file": "GLOSSARY.md",
+      "hours": 124.3,
+      "score": 0.036
+    },
+    {
+      "file": "README.md (gnw)",
+      "hours": 126.6,
+      "score": 0.036
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "USER-PRESENCE-DETECTION.md",
+    "action": "Stale refresh — added current system state section with cycle 96 metrics, 5-agent deployment status, idle state, and active detection mechanics"
+  },
+  "drive_scores": {
+    "helpfulness": 1.0,
+    "curiosity": 1.0,
+    "novelty": 1.0,
+    "urgency": 0.0,
+    "goal_alignment": 0.5
+  },
+  "system_status": {
+    "pending_events": 0,
+    "cycles_completed": 96,
+    "agents_deployed": 5,
+    "idle_duration_hours": 24,
+    "model": "lmstudio/qwen/qwen3.6-35b-a3b",
+    "channel": "telegram"
+  },
+  "notes": "Cycle 96 boredom scan — system idle 24h, boredom 1.0 (no suppression). 8 stale items > 6h threshold. USER-PRESENCE-DETECTION.md highest score (0.108) — 161h stale foundational doc. Updated with current deployment state, detection mechanics, and idle metrics. Self-initiation pattern confirmed stable across 96 cycles."
+}

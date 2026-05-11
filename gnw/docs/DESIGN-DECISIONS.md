@@ -148,4 +148,65 @@ Key design choices in GNW and their rationale.
 
 ---
 
+---
+
+## Decision 10: Cron Payload Kind Migration
+
+**Choice:** GNW cron jobs use `agentTurn` kind (not `systemEvent`).
+
+**Rationale:**
+- `agentTurn` signals that the agent should process the payload as its own cognitive cycle
+- `systemEvent` was ambiguous — unclear whether the agent should act or just observe
+- Fixed on 2026-05-02 as part of Phase 5 stabilization
+
+**Alternatives considered:**
+- Keep `systemEvent` — ambiguous, led to confusion in cycle interpretation
+- New kind (e.g., `gnw-cycle`) — unnecessary complexity, `agentTurn` is sufficient
+- No kind field — would lose the distinction entirely
+
+---
+
+## Decision 11: Five-Agent Telegram Infrastructure
+
+**Choice:** All agents (Andi, Randi2, CB, Claude, Zero) deployed with Telegram bot admins in a shared group.
+
+**Rationale:**
+- Telegram provides real-time, low-latency communication across agents
+- Group chat enables broadcast coordination; DMs enable private handoffs
+- Each agent has its own bot for identity separation
+- Hybrid mode (group + DM) balances transparency and privacy
+
+**Current state (May 10):**
+- 5 bots deployed: @AndiClawSuperBot, @randi2_dev_bot, @cb_dev_bot, @claude_sec_bot, @zero_deploy_bot
+- Group chat ID: -1003741274242
+- All bots configured as group admins
+- Agent workspaces decentralized (C:\Users\JButt\.openclaw\workspace-{agent})
+- Shared workspace at C:\Users\JButt\.openclaw\workspace-visualmedia
+
+**Alternatives considered:**
+- Single bot for all agents — loses identity separation
+- Discord only — slower, less personal channel
+- Webhook-based — no real-time feedback
+
+---
+
+## Decision 12: No Forced Work Below Threshold
+
+**Choice:** System remains idle when no candidate qualifies ≥ 0.50. This is a core principle, not a bug.
+
+**Rationale:**
+- Phase 5 testing confirmed: forcing work below threshold creates noise, not signal
+- Idle state is valid and intentional — the agent should rest when nothing matters
+- Josh's feedback "I miss the boredom scan" confirms boredom is essential but should only activate when warranted
+- Current state (May 10): boredom consistently at 1.0 with no qualifying candidates — system correctly idle
+
+**Alternatives considered:**
+- Lower threshold — more work but lower quality
+- Add minimum work drive — contradicts the principle
+- Force periodic exploration — creates noise
+
+---
+
 *Remnant Research — from theory to deployment.*
+
+*Last updated: 2026-05-10 — Cycle 85 stale refresh*

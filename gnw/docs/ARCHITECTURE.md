@@ -168,4 +168,38 @@ External Input / Cron Trigger
 
 ---
 
+## Current System State (2026-05-10)
+
+### Deployed Components
+- **GNW Cognitive Cycle:** 82 cycles logged, active self-initiation
+- **Boredom Scanner:** 15-min cron, threshold 0.60, working with stale-item scoring
+- **Drive Module:** 5 drives (curiosity, helpfulness, competence, safety, goal-directed)
+- **Conflict Resolution:** PRIORITY-MATRIX + VETO-PROTOCOL deployed
+- **TPG-GRAO Integration:** Experiment framework + gradient derivation active
+- **Stability Testing:** 6 test suites (oscillation, memory integrity, score bounds, boredom threshold, conflict convergence, runner spec)
+
+### Agent Infrastructure
+- **Andi (Main):** Orchestrator + CEO Mode (performance, strategy, risk, comms, finance)
+- **Randi2:** Developer agent (OpenCode, Telegram bot @randi2_dev_bot)
+- **CB:** CodeBuff optimizer (Telegram bot @cb_dev_bot)
+- **Claude:** Security reviewer (Telegram bot @claude_sec_bot)
+- **Zero:** Deployment & monitoring (Telegram bot @zero_deploy_bot)
+- **Group Chat:** -1003741274242 (all 5 agents as admins)
+
+### Memory & Persistence
+- **Cycle Logs:** boredom_N_YYYY-MM-DD.json + cycle_N_YYYY-MM-DD.json
+- **Drive Weights:** JSON persistence in gnw/sprints
+- **Architecture:** This doc (refreshed every 6d stale threshold)
+- **Workspace:** D:\.openclaw\workspace (global)
+- **Shared:** C:\Users\JButt\.openclaw\workspace-visualmedia (cross-team)
+
+### Innovation Pipeline
+- **Open-Generative-AI:** ComfyUI alternative (200+ models, agent-native)
+- **AIScreen:** localhost:8766 (live frame capture, OCR monitoring)
+- **Umbrel:** micro machine (localhost:80, Dockerized services)
+
+---
+
 *Remnant Research — from theory to deployment.*
+
+*Last refreshed: 2026-05-10 Cycle 82*

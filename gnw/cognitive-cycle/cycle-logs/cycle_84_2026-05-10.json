@@ -1,0 +1,53 @@
+{
+  "cycle_number": 84,
+  "timestamp": "2026-05-10T13:25:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 0.25,
+  "pending_events": [],
+  "stale_items": [
+    {
+      "file": "DREAMS.md",
+      "staleness_hours": 216,
+      "within_threshold": true
+    },
+    {
+      "file": "fork-tasks.md",
+      "staleness_hours": 168,
+      "within_threshold": true
+    },
+    {
+      "file": "repo_review.md",
+      "staleness_hours": 120,
+      "within_threshold": true
+    },
+    {
+      "file": "DRIVE-COMPUTATION-PSEUDOCODE.md",
+      "staleness_hours": 120,
+      "within_threshold": true
+    }
+  ],
+  "stage_contents": [
+    {"item": "GNW Phase 5", "score": 0.85, "status": "active"},
+    {"item": "GNW Phase 6", "score": 0.75, "status": "active"},
+    {"item": "GRAO Round 40", "score": 0.85, "status": "active"},
+    {"item": "Zenith Fitness", "score": 0.60, "status": "completed"},
+    {"item": "Paperclip", "score": 0.55, "status": "active"},
+    {"item": "Clawstr", "score": 0.45, "status": "active"},
+    {"item": "PhoENIX", "score": 0.50, "status": "active"}
+  ],
+  "self_initiation": {
+    "triggered": false,
+    "threshold": 0.50,
+    "candidate": null,
+    "action": null
+  },
+  "drive_scores": {
+    "curiosity": 0.30,
+    "helpfulness": 0.45,
+    "competence": 0.25,
+    "safety": 0.80,
+    "goal_directed": 0.35
+  },
+  "system_status": "idle",
+  "notes": "Cycle 84 — boredom 0.25, user present. No pending events, no stale items actionable. GNW docs mostly fresh today (5/10 updates). Phase 6 still in progress, cross-agent coordination deferred. System healthy idle."
+}

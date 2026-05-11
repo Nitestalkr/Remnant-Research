@@ -1,0 +1,93 @@
+{
+  "scan_number": 91,
+  "timestamp": "2026-05-10T20:39:00Z",
+  "local_time": "2026-05-10 16:39 EST",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "VETO-PROTOCOL.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.9,
+      "goal_alignment": 0.8,
+      "novelty_boost": 1.5,
+      "drive_score": 0.648
+    },
+    {
+      "file": "GNW-GRAO-INTEGRATION.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.8,
+      "goal_alignment": 0.8,
+      "novelty_boost": 1.5,
+      "drive_score": 0.576
+    },
+    {
+      "file": "CONFLICT-RESOLUTION.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "novelty_boost": 1.5,
+      "drive_score": 0.504
+    },
+    {
+      "file": "PHASE-5-SUMMARY.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "novelty_boost": 1.5,
+      "drive_score": 0.504
+    },
+    {
+      "file": "GLOSSARY.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "novelty_boost": 1.5,
+      "drive_score": 0.378
+    },
+    {
+      "file": "PHASE-1-4-SUMMARIES.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "novelty_boost": 1.5,
+      "drive_score": 0.378
+    },
+    {
+      "file": "RESOLUTION-LOG.md",
+      "hours_stale": 150,
+      "novelty": 0.6,
+      "relevance": 0.5,
+      "goal_alignment": 0.5,
+      "novelty_boost": 1.5,
+      "drive_score": 0.225
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "VETO-PROTOCOL.md",
+    "action": "Added current system state section with 5-agent deployment status, safety mechanism health, veto event audit, and gateway status"
+  },
+  "drive_scores": {
+    "boredom": 1.0,
+    "novelty_seeking": 0.6,
+    "goal_alignment": 0.8,
+    "safety": 0.3,
+    "helpfulness": 0.0
+  },
+  "system_status": {
+    "agents": "5-agent Telegram operational (Andi, Randi2, CB, Claude, Zero)",
+    "cycles_completed": 91,
+    "gateway": "CORSAIRAI running, qwen3.6-35b-a3b active",
+    "vetoes_active": 0,
+    "pending_events": 0,
+    "health": "Healthy idle"
+  },
+  "notes": "Cycle 91 — VETO-PROTOCOL.md refreshed with deployment status. No active threats, all safety mechanisms operational. System in healthy idle state with 90+ cycles completed today."
+}

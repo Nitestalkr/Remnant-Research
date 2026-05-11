@@ -671,4 +671,42 @@ These are the **current best-guess values**. Subject to calibration from real cy
 
 ---
 
+## Current System State (May 10, 2026)
+
+### Drive Health Snapshot
+
+| Drive | Status | Notes |
+|-------|--------|-------|
+| **Curiosity** | Active (self-initiation) | 1.0 boredom consistently — drives periodic stale-document refresh |
+| **Helpfulness** | Low | No pending user requests; idle state |
+| **Competence** | Moderate | 95+ cycles completed; stability docs refreshed |
+| **Safety** | Healthy | No external action risks; veto mechanism operational |
+| **Goal-Directed** | Moderate | Phase 6 milestones active; idle but tracking |
+
+### Operational Metrics
+
+- **Cycles completed:** 95+ (as of May 10 evening)
+- **Boredom pattern:** Consistent 1.0 during idle (above 0.6 threshold)
+- **Self-initiation frequency:** ~every 30 min during idle periods
+- **Stale refresh pattern:** 6-16 items per cycle, foundational docs prioritized
+- **Last major work:** Cycle 95 — AGENT-HANDOFF-NEXT-STEPS.md refresh
+- **System health:** Stable; no errors or instability detected
+
+### Recent Calibration Notes
+
+- **Boredom threshold:** 0.6 (trigger for self-initiation) — stable
+- **Stale bonus:** 0.20 for >120 min — effective for idle detection
+- **Priority matrix:** Curiosity→1 during idle (correct: exploration when no external pressure)
+- **Safety veto levels:** 0.70/0.85/0.95 — no triggers in 95+ cycles
+- **Recency dampening:** 0.85 — prevents drive runaway
+
+### Drive Weight Context
+
+All drives at base weight 0.20. Context modulation differentiates:
+- Curiosity consistently highest during idle (stale bonus + research gaps)
+- Safety lowest during idle (no external risks)
+- Goal-Directed moderate (Phase 6 tracking, no milestones near)
+
+---
+
 *Remnant Research — from theory to deployment.*

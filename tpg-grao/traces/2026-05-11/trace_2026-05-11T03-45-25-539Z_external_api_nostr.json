@@ -1,0 +1,29 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-539Z_external_api_nostr",
+  "timestamp": "2026-05-11T03:45:25.539Z",
+  "source": "nostr-relay",
+  "signal_type": "external_api",
+  "endpoint": "relay-push",
+  "status_code": 200,
+  "latency_ms": 150,
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "nostr",
+      "relay",
+      "external-api"
+    ]
+  },
+  "raw_data": {
+    "relays": [
+      "nos.lol",
+      "nostr.wine",
+      "relay.nostr.info",
+      "nostr-pub.wellorder.net"
+    ],
+    "unreachable": [
+      "relay.damus.io"
+    ],
+    "messages_pushed": 0
+  }
+}

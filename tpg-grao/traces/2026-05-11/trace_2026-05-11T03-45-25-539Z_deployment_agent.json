@@ -1,0 +1,28 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-539Z_deployment_agent",
+  "timestamp": "2026-05-11T03:45:25.539Z",
+  "source": "agent-activation",
+  "signal_type": "deployment",
+  "event_type": "agent-onboard",
+  "target": "dev-team",
+  "status": "active",
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "deployment",
+      "agents",
+      "activation"
+    ]
+  },
+  "raw_data": {
+    "agents": [
+      "randi",
+      "randi2",
+      "claude",
+      "cb",
+      "zero"
+    ],
+    "status": "all_active",
+    "activation_date": "2026-05-07"
+  }
+}

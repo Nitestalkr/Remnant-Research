@@ -1,0 +1,50 @@
+{
+  "proposal_id": "prop_2026-05-11_0420",
+  "timestamp": "2026-05-11T03:45:34.504Z",
+  "status": "pending",
+  "proposal_type": "reinforcement",
+  "source_gradients": [
+    "grad_2026-05-11_stability_17f620f4"
+  ],
+  "hypothesis": "Determining the strength of system has a significant impact on research outcomes.",
+  "research_question": "What is the magnitude of system evolve over the past 2 cycles?",
+  "methodology": [
+    "measurement",
+    "comparison",
+    "benchmark"
+  ],
+  "expected_outcome": "Quantify impact for resource allocation",
+  "confidence": 1,
+  "priority": "high",
+  "resources_needed": [
+    "measurement-tools",
+    "baseline-data",
+    "comparison-framework"
+  ],
+  "timeline": {
+    "start": "2026-05-11T03:45:34.504Z",
+    "estimated_completion": "2026-05-18T03:45:34.504Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.85,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 2,
+    "top_concepts": [
+      {
+        "concept": "system",
+        "weight": 1
+      },
+      {
+        "concept": "memory",
+        "weight": 0.5
+      },
+      {
+        "concept": "storage",
+        "weight": 0.5
+      }
+    ],
+    "saturation_context": null
+  }
+}

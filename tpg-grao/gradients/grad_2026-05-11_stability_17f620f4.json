@@ -1,0 +1,32 @@
+{
+  "gradient_id": "grad_2026-05-11_stability_17f620f4",
+  "timestamp": "2026-05-11T03:45:28.184Z",
+  "type": "magnitude",
+  "direction": "system-health",
+  "magnitude": 0.85,
+  "confidence": 1,
+  "pattern_strength": 0.85,
+  "temporal_factor": "stable",
+  "category": "success",
+  "contributing_traces": [
+    "trace_2026-05-11T03-45-25-539Z_stability_memory",
+    "trace_2026-05-11T03-45-25-539Z_stability_storage"
+  ],
+  "contributing_traces_count": 2,
+  "top_concepts": [
+    {
+      "concept": "system",
+      "weight": 1
+    },
+    {
+      "concept": "memory",
+      "weight": 0.5
+    },
+    {
+      "concept": "storage",
+      "weight": 0.5
+    }
+  ],
+  "decay_rate": 0.02,
+  "next_computation": "2026-05-18T03:45:28.184Z"
+}

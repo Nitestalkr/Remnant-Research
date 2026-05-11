@@ -1,0 +1,119 @@
+{
+  "scan_number": 86,
+  "timestamp": "2026-05-10T14:34:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "SAFETY-THREAT-MODEL.md",
+      "path": "remnant-research/gnw/docs/",
+      "hours_stale": 144,
+      "novelty": 0.8,
+      "relevance": 0.9,
+      "goal_alignment": 0.8,
+      "score": 0.810
+    },
+    {
+      "file": "PARAMETER-VALUES.md",
+      "path": "remnant-research/gnw/docs/",
+      "hours_stale": 144,
+      "novelty": 0.7,
+      "relevance": 0.95,
+      "goal_alignment": 0.7,
+      "score": 0.756
+    },
+    {
+      "file": "GLOSSARY.md",
+      "path": "remnant-research/gnw/docs/",
+      "hours_stale": 144,
+      "novelty": 0.5,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.450
+    },
+    {
+      "file": "VETO-PROTOCOL.md",
+      "path": "remnant-research/gnw/conflict-resolution/",
+      "hours_stale": 120,
+      "novelty": 0.6,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "score": 0.504
+    },
+    {
+      "file": "RESOLUTION-LOG.md",
+      "path": "remnant-research/gnw/conflict-resolution/",
+      "hours_stale": 120,
+      "novelty": 0.4,
+      "relevance": 0.5,
+      "goal_alignment": 0.4,
+      "score": 0.360
+    },
+    {
+      "file": "GNW-GRAO-INTEGRATION.md",
+      "path": "remnant-research/gnw/docs/",
+      "hours_stale": 120,
+      "novelty": 0.6,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.450
+    },
+    {
+      "file": "DRIVE-COMPUTATION-PSEUDOCODE.md",
+      "path": "remnant-research/gnw/",
+      "hours_stale": 120,
+      "novelty": 0.5,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "score": 0.525
+    },
+    {
+      "file": "USER-PRESENCE-DETECTION.md",
+      "path": "remnant-research/gnw/docs/",
+      "hours_stale": 111,
+      "novelty": 0.5,
+      "relevance": 0.5,
+      "goal_alignment": 0.5,
+      "score": 0.375
+    },
+    {
+      "file": "PHASE-5-SUMMARY.md",
+      "path": "remnant-research/gnw/sprints/",
+      "hours_stale": 120,
+      "novelty": 0.4,
+      "relevance": 0.5,
+      "goal_alignment": 0.4,
+      "score": 0.360
+    },
+    {
+      "file": "PHASE-1-4-SUMMARIES.md",
+      "path": "remnant-research/gnw/sprints/",
+      "hours_stale": 144,
+      "novelty": 0.3,
+      "relevance": 0.4,
+      "goal_alignment": 0.3,
+      "score": 0.270
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "SAFETY-THREAT-MODEL.md",
+    "action": "Added current deployment status section (5-agent Telegram infrastructure), recent threat model calibration table, and future safety work updates"
+  },
+  "drive_scores": {
+    "curiosity": 0.8,
+    "helpfulness": 0.0,
+    "competence": 0.3,
+    "safety": 0.1,
+    "goal_directed": 0.4
+  },
+  "system_status": {
+    "pending_events": 0,
+    "agent_count": 5,
+    "telegram_bots_active": true,
+    "shared_workspace": "workspace-visualmedia",
+    "idle_state": true,
+    "boredom_floor": 0.0
+  },
+  "notes": "Most recent docs already refreshed in cycles 82-85. GNW research files (6 days stale) are the best candidates. SAFETY-THREAT-MODEL.md scored highest (0.810) — foundational doc with current deployment state to add. PARAMETER-VALUES.md also refreshed (0.756) as canonical source. Both updated with 5-agent Telegram infrastructure status. No external actions triggered. No privacy concerns."
+}

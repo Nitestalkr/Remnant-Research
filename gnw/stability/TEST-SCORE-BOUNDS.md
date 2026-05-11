@@ -1,7 +1,7 @@
 # Test 2: Drive Score Bounds
 
 **Status:** Implemented (clamp on all scores)
-**Last Verified:** Phase 5 testing
+**Last Verified:** 2026-05-10 (production, 88+ cycles)
 
 ## Objective
 
@@ -65,6 +65,7 @@ If a drive score reaches 1.0, check for:
 - No drive score has exceeded [0.0, 1.0] in production
 - One instance of curiosity reaching 1.0 — traced to stale signal from old research gap
 - Fix: Added signal expiration (signals older than 24 hours are cleared)
+- **2026-05-10:** 88+ cycles verified — zero score bounds violations. All 5 drives remain within [0.0, 1.0] in idle state. No signal overflow detected. Clamping at both raw and modulated stages effective.
 
 ---
 
