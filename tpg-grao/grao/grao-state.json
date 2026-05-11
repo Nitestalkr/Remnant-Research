@@ -94,57 +94,11 @@
     "success": 5,
     "exploration": 5
   },
-  "last_proposal_generation": "2026-05-11T16:00:23.993Z",
-  "new_proposals": [
-    {
-      "id": "exp_2026-05-11_001",
-      "type": "exploration",
-      "target": "cross-cluster-optimization",
-      "direction": "agent-architecture",
-      "confidence": 0.75,
-      "status": "pending",
-      "generatedAt": "2026-05-11T13:06:00Z"
-    },
-    {
-      "id": "exp_2026-05-11_002",
-      "type": "exploration",
-      "target": "research-domain-expansion",
-      "direction": "neuroscience-cognitive",
-      "confidence": 0.65,
-      "status": "pending",
-      "generatedAt": "2026-05-11T13:06:00Z"
-    },
-    {
-      "id": "exp_2026-05-11_003",
-      "type": "exploration",
-      "target": "benchmarking-optimization",
-      "direction": "metric-accuracy",
-      "confidence": 0.70,
-      "status": "pending",
-      "generatedAt": "2026-05-11T13:06:00Z"
-    },
-    {
-      "id": "exp_2026-05-11_004",
-      "type": "exploration",
-      "target": "cron-scheduler-refinement",
-      "direction": "load-balancing",
-      "confidence": 0.60,
-      "status": "pending",
-      "generatedAt": "2026-05-11T13:06:00Z"
-    },
-    {
-      "id": "exp_2026-05-11_005",
-      "type": "exploration",
-      "target": "trace-collection-enhancement",
-      "direction": "channel-coverage",
-      "confidence": 0.55,
-      "status": "pending",
-      "generatedAt": "2026-05-11T13:06:00Z"
-    }
-  ],
+  "last_proposal_generation": "2026-05-11T18:00:00.000Z",
+  "new_proposals": [],
   "proposal_types": {
     "reinforcement": 36,
-    "exploration": 5
+    "exploration": 0
   },
   "active_proposals": [
     {
@@ -1058,9 +1012,255 @@
       "status": "active",
       "appliedAt": "2026-05-11T16:00:31.622Z",
       "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.341Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1a27",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b8f2",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3cb1",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_099b",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_ec3c",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_003",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5673",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_001",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_002",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_004",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_005",
+      "status": "active",
+      "appliedAt": "2026-05-11T18:02:50.349Z",
+      "tpgTarget": "agent-files"
     }
   ],
-  "last_proposal_application": "2026-05-11T16:00:31.622Z",
+  "last_proposal_application": "2026-05-11T18:02:50.349Z",
   "agent_file_changes": [
     {
       "id": "prop_2026-05-11_1e28",

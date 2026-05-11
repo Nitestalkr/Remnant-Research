@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_002",
+  "timestamp": "2026-05-11T14:00:00-04:00",
+  "status": "pending",
+  "type": "exploration",
+  "target": "research-domain-expansion",
+  "source_gradients": ["grad_2026-05-11_exploration_research-domain"],
+  "hypothesis": "Current research domain is narrow (agent optimization + system health). Expansion into neuroscience/cognitive architecture research could inform self-evolution mechanisms.",
+  "research_question": "What cognitive architectures from neuroscience research could inform AI self-evolution?",
+  "methodology": ["literature-review", "concept-mapping", "synthesis"],
+  "expected_outcome": "Identify 3-5 neuroscience concepts applicable to AI self-evolution design",
+  "confidence": 0.65,
+  "priority": "medium",
+  "resources_needed": ["literature-review", "concept-mapping", "cross-domain-analysis"],
+  "timeline": {
+    "start": "2026-05-11T14:00:00-04:00",
+    "estimated_completion": "2026-05-25T14:00:00-04:00"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.7,
+    "temporal_factor": "emerging",
+    "contributing_traces_count": 3,
+    "top_concepts": [
+      { "concept": "neuroscience-cognitive", "weight": 2.2 },
+      { "concept": "self-evolution", "weight": 1.8 }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_005",
+  "timestamp": "2026-05-11T14:00:00-04:00",
+  "status": "pending",
+  "type": "exploration",
+  "target": "trace-collection-enhancement",
+  "source_gradients": ["grad_2026-05-11_exploration_trace-enhancement"],
+  "hypothesis": "Current trace collection covers limited channels (telegram, discord). Expanding to all communication surfaces (AIScreen, node events, workspace activity) would provide richer gradient data.",
+  "research_question": "What additional data surfaces would improve trace collection completeness?",
+  "methodology": ["surface-audit", "trace-design", "integration"],
+  "expected_outcome": "Identify 3-5 additional trace sources and design collection protocol",
+  "confidence": 0.55,
+  "priority": "low",
+  "resources_needed": ["channel-audit", "trace-design", "integration-testing"],
+  "timeline": {
+    "start": "2026-05-11T14:00:00-04:00",
+    "estimated_completion": "2026-05-22T14:00:00-04:00"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.55,
+    "temporal_factor": "emerging",
+    "contributing_traces_count": 2,
+    "top_concepts": [
+      { "concept": "channel-coverage", "weight": 1.6 },
+      { "concept": "trace-completeness", "weight": 1.2 }
+    ]
+  }
+}
