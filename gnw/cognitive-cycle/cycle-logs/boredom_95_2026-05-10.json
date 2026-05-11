@@ -1,0 +1,162 @@
+{
+  "scan_number": 95,
+  "timestamp": "2026-05-10T22:39:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "AGENT-HANDOFF-NEXT-STEPS.md",
+      "hours_stale": 14,
+      "score": 0.936
+    },
+    {
+      "file": "tpg-grao/README.md",
+      "hours_stale": 144,
+      "score": 0.918
+    },
+    {
+      "file": "REFERENCES.md",
+      "hours_stale": 144,
+      "score": 0.864
+    },
+    {
+      "file": "tpg-grao/grao/README.md",
+      "hours_stale": 16,
+      "score": 0.756
+    },
+    {
+      "file": "tpg-grao/grao/LOOP-SPEC.md",
+      "hours_stale": 16,
+      "score": 0.756
+    },
+    {
+      "file": "tpg-grao/grao/loops/README.md",
+      "hours_stale": 16,
+      "score": 0.684
+    },
+    {
+      "file": "tpg-grao/grao/gradient-derivation.md",
+      "hours_stale": 144,
+      "score": 0.576
+    },
+    {
+      "file": "tpg-grao/grao/EXPERIMENT-FRAMEWORK.md",
+      "hours_stale": 144,
+      "score": 0.576
+    },
+    {
+      "file": "tpg-grao/gradients/README.md",
+      "hours_stale": 144,
+      "score": 0.504
+    },
+    {
+      "file": "tpg-grao/traces/README.md",
+      "hours_stale": 144,
+      "score": 0.504
+    },
+    {
+      "file": "tpg-grao/proposals/README.md",
+      "hours_stale": 144,
+      "score": 0.504
+    },
+    {
+      "file": "tpg-grao/reports/README.md",
+      "hours_stale": 144,
+      "score": 0.504
+    },
+    {
+      "file": "tpg-grao/tpg/routing/README.md",
+      "hours_stale": 144,
+      "score": 0.432
+    },
+    {
+      "file": "tpg-grao/tpg/routing/ROUTING-IMPL.md",
+      "hours_stale": 144,
+      "score": 0.432
+    },
+    {
+      "file": "tpg-grao/tpg/architecture.md",
+      "hours_stale": 144,
+      "score": 0.432
+    },
+    {
+      "file": "tpg-grao/tpg/SIGNAL-RECONCILIATION.md",
+      "hours_stale": 144,
+      "score": 0.432
+    },
+    {
+      "file": "tpg-grao/scripts/package.json",
+      "hours_stale": 144,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_33_2026-04-30.json",
+      "hours_stale": 144,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_39_2026-05-04.json",
+      "hours_stale": 144,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_13_2026-04-25.json",
+      "hours_stale": 240,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_20_2026-04-26.json",
+      "hours_stale": 240,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_31_2026-04-27.json",
+      "hours_stale": 240,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_38_2026-04-28.json",
+      "hours_stale": 240,
+      "score": 0.270
+    },
+    {
+      "file": "tpg-grao/grao/experiments/exp_*.json (batch)",
+      "hours_stale": 240,
+      "score": 0.180
+    },
+    {
+      "file": "tpg-grao/grao/gradient-deriver.js",
+      "hours_stale": 18,
+      "score": 0.576
+    },
+    {
+      "file": "tpg-grao/grao/LOOP-SPEC.md",
+      "hours_stale": 16,
+      "score": 0.756
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "AGENT-HANDOFF-NEXT-STEPS.md",
+    "action": "Updated with current system state section (cycle 95, 5-agent infrastructure, shared workspace, GRAO pipeline status, boredom-driven self-initiation pattern)",
+    "drive_scores": {
+      "AGENT-HANDOFF-NEXT-STEPS.md": 0.936,
+      "tpg-grao/README.md": 0.918,
+      "REFERENCES.md": 0.864,
+      "tpg-grao/grao/README.md": 0.756,
+      "tpg-grao/grao/LOOP-SPEC.md": 0.756
+    }
+  },
+  "system_status": {
+    "cycles": 95,
+    "pending_events": 0,
+    "idle_state": true,
+    "boredom": 1.0,
+    "threshold": 0.6,
+    "agents": 5,
+    "telegram_operational": true,
+    "shared_workspace": "workspace-visualmedia",
+    "grao_status": "scripts operational, Round 40 strongest artifact"
+  },
+  "notes": "Most foundational GNW docs already refreshed in cycles 81-94. AGENT-HANDOFF-NEXT-STEPS.md selected as highest practical relevance candidate (0.936 score). Updated with May 10 evening system state. No external pending events — system in healthy idle. Boredom-driven self-initiation pattern continues active."
+}

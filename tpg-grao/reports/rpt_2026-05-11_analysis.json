@@ -1,0 +1,79 @@
+{
+  "report_id": "rpt_2026-05-11_analysis",
+  "cycle_number": 0,
+  "timestamp": "2026-05-11T03:45:31.329Z",
+  "period": {
+    "start": "2026-04-11T03:45:31.329Z",
+    "end": "2026-05-11T03:45:31.329Z"
+  },
+  "summary": {
+    "gradients_analyzed": 6,
+    "unique_directions": 6,
+    "proposals_analyzed": 1,
+    "proposals_pending": 1,
+    "proposals_active": 0,
+    "proposals_completed": 0
+  },
+  "gradient_state": {
+    "top_directions": [
+      {
+        "direction": "agent-optimization",
+        "magnitude": 1,
+        "confidence": 1,
+        "temporal_factor": "stable",
+        "count": 1
+      },
+      {
+        "direction": "LLM",
+        "magnitude": 1,
+        "confidence": 1,
+        "temporal_factor": "stable",
+        "count": 1
+      },
+      {
+        "direction": "external_api",
+        "magnitude": 1,
+        "confidence": 1,
+        "temporal_factor": "stable",
+        "count": 1
+      },
+      {
+        "direction": "deployment",
+        "magnitude": 1,
+        "confidence": 1,
+        "temporal_factor": "stable",
+        "count": 1
+      },
+      {
+        "direction": "system-health",
+        "magnitude": 0.85,
+        "confidence": 1,
+        "temporal_factor": "stable",
+        "count": 1
+      }
+    ],
+    "emerging_patterns": [
+      "knowledge-acquisition"
+    ],
+    "decaying_patterns": []
+  },
+  "system_health": {
+    "cycleCount": 0,
+    "lastCycle": "2026-05-11T03:45:22.573Z",
+    "lastGradientComputation": "2026-05-11T03:45:28.186Z",
+    "activeGradients": 5,
+    "researchPriorities": 0
+  },
+  "key_findings": [
+    "Top gradient direction: \"agent-optimization\" (magnitude: 1.00)",
+    "High gradient diversity: 6 unique directions detected",
+    "Proposal state: 1 pending, 0 active, 0 completed"
+  ],
+  "recommendations": [
+    "Consider consolidating research focus to reduce gradient noise",
+    "High pending-to-active ratio — review and activate or reject pending proposals"
+  ],
+  "next_cycle_focus": [
+    "agent-optimization"
+  ]
+}

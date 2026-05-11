@@ -1,0 +1,22 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-539Z_external_api_paperclip",
+  "timestamp": "2026-05-11T03:45:25.539Z",
+  "source": "paperclip-api",
+  "signal_type": "external_api",
+  "endpoint": "paperclip-health",
+  "status_code": 200,
+  "latency_ms": 80,
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "paperclip",
+      "api",
+      "health"
+    ]
+  },
+  "raw_data": {
+    "url": "http://127.0.0.1:3101",
+    "version": "2026.427.0",
+    "health": "ok"
+  }
+}

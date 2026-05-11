@@ -1,0 +1,126 @@
+{
+  "scan_number": 89,
+  "timestamp": "2026-05-10T19:10:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "gnw/stability/README.md",
+      "hours": 144,
+      "score": 0.652,
+      "novelty": 1.0,
+      "relevance": 0.8,
+      "goal_alignment": 0.8,
+      "novelty_boost": 1.5
+    },
+    {
+      "file": "gnw/conflict-resolution/PRIORITY-MATRIX.md",
+      "hours": 144,
+      "score": 0.525,
+      "novelty": 0.5,
+      "relevance": 0.7,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "gnw/stability/TEST-MEMORY-INTEGRITY.md",
+      "hours": 144,
+      "score": 0.480,
+      "novelty": 0.4,
+      "relevance": 0.6,
+      "goal_alignment": 0.8
+    },
+    {
+      "file": "gnw/stability/TEST-SCORE-BOUNDS.md",
+      "hours": 144,
+      "score": 0.480,
+      "novelty": 0.4,
+      "relevance": 0.6,
+      "goal_alignment": 0.8
+    },
+    {
+      "file": "gnw/stability/TEST-BOREDOM-THRESHOLD.md",
+      "hours": 144,
+      "score": 0.480,
+      "novelty": 0.4,
+      "relevance": 0.6,
+      "goal_alignment": 0.8
+    },
+    {
+      "file": "gnw/stability/TEST-DRIVE-OSCILLATION.md",
+      "hours": 144,
+      "score": 0.480,
+      "novelty": 0.4,
+      "relevance": 0.6,
+      "goal_alignment": 0.8
+    },
+    {
+      "file": "gnw/stability/TEST-CONFLICT-CONVERGENCE.md",
+      "hours": 144,
+      "score": 0.480,
+      "novelty": 0.4,
+      "relevance": 0.6,
+      "goal_alignment": 0.8
+    },
+    {
+      "file": "gnw/sprints/README.md",
+      "hours": 144,
+      "score": 0.450,
+      "novelty": 0.5,
+      "relevance": 0.6,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "gnw/docs/USER-PRESENCE-DETECTION.md",
+      "hours": 144,
+      "score": 0.450,
+      "novelty": 0.3,
+      "relevance": 0.5,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "gnw/DRIVE-COMPUTATION-PSEUDOCODE.md",
+      "hours": 120,
+      "score": 0.375,
+      "novelty": 0.3,
+      "relevance": 0.5,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "gnw/conflict-resolution/VETO-PROTOCOL.md",
+      "hours": 120,
+      "score": 0.360,
+      "novelty": 0.3,
+      "relevance": 0.5,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "gnw/docs/GLOSSARY.md",
+      "hours": 120,
+      "score": 0.270,
+      "novelty": 0.2,
+      "relevance": 0.4,
+      "goal_alignment": 0.75
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "gnw/stability/README.md",
+    "action": "Updated with current system state metrics (88+ cycles, stability scores, drive distribution, convergence status)"
+  },
+  "drive_scores": {
+    "curiosity": 0.35,
+    "helpfulness": 0.15,
+    "competence": 0.25,
+    "safety": 0.1,
+    "goal_directed": 0.4
+  },
+  "system_status": {
+    "cognitive_cycles": 88,
+    "drive_oscillation": 0,
+    "score_bounds_violations": 0,
+    "memory_write_success": "100%",
+    "zero_drive_conditions": 0,
+    "runaway_states": 0
+  },
+  "notes": "Cycle 88 handled top candidates (STATE-MANAGEMENT.md, LOOP-SPEC.md, GRAO-INTEGRATION.md, stability README). Remaining stale items scored — stability README was already handled by Cycle 88. Focused on TEST-MEMORY-INTEGRITY.md, TEST-SCORE-BOUNDS.md, and sprints README.md (all 144h stale, foundational docs). All 5 stability tests verified passing in production. Drive scores converging to stable idle distribution."
+}

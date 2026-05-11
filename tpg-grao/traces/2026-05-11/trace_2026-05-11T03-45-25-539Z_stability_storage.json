@@ -1,0 +1,25 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-539Z_stability_storage",
+  "timestamp": "2026-05-11T03:45:25.539Z",
+  "source": "system-health",
+  "signal_type": "stability",
+  "metric_name": "d_drive_usage",
+  "value": 0.433,
+  "baseline": 0.873,
+  "delta": -0.44,
+  "trend": "improving",
+  "severity": "info",
+  "unit": "percentage",
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "storage",
+      "system"
+    ]
+  },
+  "raw_data": {
+    "total_gb": 500,
+    "used_gb": 216.5,
+    "freed_gb": 218
+  }
+}

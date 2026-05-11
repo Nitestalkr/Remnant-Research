@@ -135,4 +135,26 @@ Before applying the matrix, the agent evaluates these context signals:
 
 ---
 
+## Current System State (2026-05-10)
+
+| Signal | Value |
+|--------|-------|
+| **User Active** | false (idle since ~4 PM) |
+| **User Engagement** | low |
+| **Pending Requests** | 0 |
+| **Active Projects** | paperclip (core dev), GNW research (idle maintenance) |
+| **Deadline Pressure** | none |
+| **Risk Level** | low |
+| **Capability Gap** | none |
+| **Stale Context** | 158h (PRIORITY-MATRIX itself) |
+| **Cycle Count** | 94 |
+| **System Status** | Healthy idle — boredom 1.0, self-initiation active |
+
+**Applied context:** User Away + Stale Context + No Pending Requests.
+**Current priority order:** Curiosity → Competence → Goal-Directed → Safety → Helpfulness.
+
+**Self-initiation pattern:** Boredom scan consistently triggers curiosity-driven stale doc refresh. 93 cycles completed, all self-initiated, all low-impact (doc maintenance). No IGNITION-level items found.
+
+---
+
 *Remnant Research — from theory to deployment.*

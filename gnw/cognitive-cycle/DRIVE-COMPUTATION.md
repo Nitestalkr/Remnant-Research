@@ -175,4 +175,30 @@ Drive weights are not static. They shift based on:
 
 ---
 
+## Current System State (May 10, 2026)
+
+### Drive Health Snapshot
+| Drive | Score | Notes |
+|-------|-------|-------|
+| Curiosity | 1.0 | Boredom 1.0 — idle state triggers novelty seeking |
+| Helpfulness | 0.0 | No pending user requests |
+| Competence | 0.3 | Minor skill debt (agent configs pending restart) |
+| Safety | 0.1 | No external actions pending |
+| Goal-Directed | 0.2 | Phase 6 milestones tracked, no approaching deadlines |
+
+### Active Gradients
+- **Self-initiation cycles:** 89+ cycles running, boredom threshold at 0.6
+- **5-agent Telegram infrastructure:** Deployed, configs written, restart pending
+- **Stability metrics:** Drive oscillation tests, conflict convergence monitoring
+- **Research accumulation:** Research traces (636 files) vs. analyzed (48 reports)
+
+### Recent Calibration
+- Boredom threshold: 0.6 (triggers self-initiation)
+- Stale item threshold: 6 hours
+- Novelty boost multiplier: 1.5x
+- Ignition threshold: 0.8 (high-priority stale items)
+- Drive interaction damping active (prevents runaway curiosity)
+
+---
+
 *Remnant Research — from theory to deployment.*

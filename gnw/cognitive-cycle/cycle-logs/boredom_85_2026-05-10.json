@@ -1,0 +1,141 @@
+{
+  "scan_number": 85,
+  "timestamp": "2026-05-10T14:04:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "DESIGN-DECISIONS.md",
+      "path": "remnant-research/gnw/docs/DESIGN-DECISIONS.md",
+      "hours_stale": 144,
+      "novelty": 0.8,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "score": 0.504
+    },
+    {
+      "file": "SAFETY-THREAT-MODEL.md",
+      "path": "remnant-research/gnw/docs/SAFETY-THREAT-MODEL.md",
+      "hours_stale": 144,
+      "novelty": 0.8,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "score": 0.504
+    },
+    {
+      "file": "PHASE-5-SUMMARY.md",
+      "path": "remnant-research/gnw/sprints/PHASE-5-SUMMARY.md",
+      "hours_stale": 120,
+      "novelty": 0.7,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.315
+    },
+    {
+      "file": "VETO-PROTOCOL.md",
+      "path": "remnant-research/gnw/conflict-resolution/VETO-PROTOCOL.md",
+      "hours_stale": 120,
+      "novelty": 0.7,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.315
+    },
+    {
+      "file": "GLOSSARY.md",
+      "path": "remnant-research/gnw/docs/GLOSSARY.md",
+      "hours_stale": 120,
+      "novelty": 0.7,
+      "relevance": 0.4,
+      "goal_alignment": 0.4,
+      "score": 0.168
+    },
+    {
+      "file": "CONFLICT-RESOLUTION.md",
+      "path": "remnant-research/gnw/conflict-resolution/CONFLICT-RESOLUTION.md",
+      "hours_stale": 120,
+      "novelty": 0.7,
+      "relevance": 0.5,
+      "goal_alignment": 0.5,
+      "score": 0.2625
+    },
+    {
+      "file": "PRIORITY-MATRIX.md",
+      "path": "remnant-research/gnw/conflict-resolution/PRIORITY-MATRIX.md",
+      "hours_stale": 144,
+      "novelty": 0.8,
+      "relevance": 0.5,
+      "goal_alignment": 0.5,
+      "score": 0.300
+    },
+    {
+      "file": "DRIVE-COMPUTATION.md",
+      "path": "remnant-research/gnw/cognitive-cycle/DRIVE-COMPUTATION.md",
+      "hours_stale": 144,
+      "novelty": 0.8,
+      "relevance": 0.5,
+      "goal_alignment": 0.5,
+      "score": 0.300
+    },
+    {
+      "file": "TEST-RUNNER-SPEC.md",
+      "path": "remnant-research/gnw/stability/TEST-RUNNER-SPEC.md",
+      "hours_stale": 120,
+      "novelty": 0.7,
+      "relevance": 0.4,
+      "goal_alignment": 0.4,
+      "score": 0.168
+    },
+    {
+      "file": "ROADMAP.md",
+      "path": "remnant-research/gnw/docs/ROADMAP.md",
+      "hours_stale": 0,
+      "novelty": 0.0,
+      "relevance": 0.6,
+      "goal_alignment": 0.6,
+      "score": 0.0,
+      "note": "within threshold — not stale"
+    },
+    {
+      "file": "ARCHITECTURE.md",
+      "path": "remnant-research/gnw/docs/ARCHITECTURE.md",
+      "hours_stale": 0,
+      "novelty": 0.0,
+      "relevance": 0.6,
+      "goal_alignment": 0.6,
+      "score": 0.0,
+      "note": "within threshold — not stale"
+    },
+    {
+      "file": "CROSS-AGENT-COORDINATION.md",
+      "path": "remnant-research/gnw/docs/CROSS-AGENT-COORDINATION.md",
+      "hours_stale": 0.5,
+      "novelty": 0.0,
+      "relevance": 0.6,
+      "goal_alignment": 0.6,
+      "score": 0.0,
+      "note": "within threshold — not stale"
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "DESIGN-DECISIONS.md",
+    "action": "Stale refresh — added Decision 10 (cron payload migration), Decision 11 (five-agent Telegram infrastructure), Decision 12 (no forced work principle with current idle state note)"
+  },
+  "drive_scores": {
+    "boredom": 1.0,
+    "curiosity": 0.0,
+    "helpfulness": 0.0,
+    "competence": 0.0,
+    "safety": 0.0,
+    "goal_directed": 0.0
+  },
+  "system_status": {
+    "pending_events": 0,
+    "idle": true,
+    "cycles_completed": 84,
+    "current_cycle": 85,
+    "agent_count": 5,
+    "cron_jobs": "GNW Boredom Scan (15min) + GNW Cognitive Cycle (30min) — both running"
+  },
+  "notes": "Boredom 1.0 — no qualifying candidates. DESIGN-DECISIONS.md and SAFETY-THREAT-MODEL.md tied at 0.504. DESIGN-DECISIONS.md selected (core architecture rationale, more actionable for refresh). All Phase 6 docs (ROADMAP, ARCHITECTURE, CROSS-AGENT-COORDINATION) within threshold. System remains correctly idle — no-forced-work principle honored."
+}

@@ -2,7 +2,7 @@
 
 Purpose: continue live Remnant Research implementation without re-deriving project state from scratch.
 
-Last reviewed: 2026-05-10
+Last reviewed: 2026-05-10 18:39 (Cycle 95)
 
 ## Current Project State
 
@@ -37,6 +37,19 @@ The previous handoff's GRAO implementation priorities were largely completed:
 - trace collector expanded with more source detection
 - new loop artifact written: `round_40_2026-05-10.json`
 - handoff updated to continue GRAO validation rather than jumping into GNW Phase 6
+
+### May 10 Evening (Cycle 95) System State
+
+- System is in healthy idle state — no pending external events
+- Boredom-driven self-initiation pattern active (1.0 score, above 0.6 threshold)
+- Cycle count: 95
+- 5-agent Telegram infrastructure operational (Andi, Randi2, CB, Claude, Zero)
+- Shared workspace (`workspace-visualmedia`) established for Dev↔Visual coordination
+- GRAO pipeline scripts operational (gradient-deriver, proposal-generator, trace-collector)
+- GRAO Round 40 artifact remains strongest ground-truth for current live state
+- No new exploration rounds have been run since Round 40
+- Research monitor cross-day thematic synthesis completed (May 1-5 analysis)
+- All foundational GNW docs refreshed with current system state (cycles 81-94)
 
 The previous handoff's Phase 6 GNW coordination work was not implemented yet.
 
@@ -222,6 +235,10 @@ Use these as source-of-truth before older prose summaries:
 - `tpg-grao/grao/loops/round_40_2026-05-10.json`
 - `tpg-grao/grao/FAILURE-ANALYSIS.md`
 - `tpg-grao/scripts/trace-collector.js`
+- `gnw/docs/DRIVE-COMPUTATION.md` (updated cycle 90)
+- `gnw/docs/VETO-PROTOCOL.md` (updated cycle 91)
+- `gnw/docs/EDGE-CASES.md` (updated cycle 92)
+- `gnw/docs/PRIORITY-MATRIX.md` (updated cycle 94)
 
 Rule:
 

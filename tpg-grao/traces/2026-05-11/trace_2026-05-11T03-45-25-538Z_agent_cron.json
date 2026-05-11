@@ -1,0 +1,22 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-538Z_agent_cron",
+  "timestamp": "2026-05-11T03:45:25.538Z",
+  "source": "openclaw-cron",
+  "signal_type": "agent",
+  "tool_name": "cron",
+  "outcome": "success",
+  "latency_ms": 45,
+  "model_used": "lmstudio/qwen/qwen3.6-35b-a3b",
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "cron",
+      "system"
+    ]
+  },
+  "raw_data": {
+    "cron_job": "GNW-Cognitive-Cycle",
+    "duration_ms": 45,
+    "exit_code": 0
+  }
+}

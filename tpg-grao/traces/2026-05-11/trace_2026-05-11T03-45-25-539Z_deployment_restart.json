@@ -1,0 +1,22 @@
+{
+  "trace_id": "trace_2026-05-11T03-45-25-539Z_deployment_restart",
+  "timestamp": "2026-05-11T03:45:25.539Z",
+  "source": "system-restart",
+  "signal_type": "deployment",
+  "event_type": "restart",
+  "target": "gateway",
+  "status": "completed",
+  "metadata": {
+    "confidence": 1,
+    "tags": [
+      "deployment",
+      "restart",
+      "gateway"
+    ]
+  },
+  "raw_data": {
+    "method": "SIGUSR1",
+    "reason": "plugin-config-changes",
+    "duration_ms": 3000
+  }
+}

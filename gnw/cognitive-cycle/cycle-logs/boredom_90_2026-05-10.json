@@ -1,0 +1,67 @@
+{
+  "scan_number": 90,
+  "timestamp": "2026-05-10T19:39:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "PRIORITY-MATRIX.md",
+      "hours": 144,
+      "score": 0.864
+    },
+    {
+      "file": "DRIVE-COMPUTATION.md",
+      "hours": 144,
+      "score": 0.864
+    },
+    {
+      "file": "VETO-PROTOCOL.md",
+      "hours": 120,
+      "score": 0.756
+    },
+    {
+      "file": "USER-PRESENCE-DETECTION.md",
+      "hours": 144,
+      "score": 0.588
+    },
+    {
+      "file": "GNW-GRAO-INTEGRATION.md",
+      "hours": 120,
+      "score": 0.588
+    },
+    {
+      "file": "RESOLUTION-LOG.md",
+      "hours": 120,
+      "score": 0.441
+    },
+    {
+      "file": "CONFLICT-RESOLUTION.md",
+      "hours": 120,
+      "score": 0.504
+    },
+    {
+      "file": "GLOSSARY.md",
+      "hours": 120,
+      "score": 0.378
+    },
+    {
+      "file": "README.md",
+      "hours": 120,
+      "score": 0.188
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "DRIVE-COMPUTATION.md",
+    "action": "Updated with current system state snapshot — drive health, active gradients, recent calibration values"
+  },
+  "drive_scores": {
+    "curiosity": 1.0,
+    "helpfulness": 0.0,
+    "competence": 0.3,
+    "safety": 0.1,
+    "goal_directed": 0.2
+  },
+  "system_status": "Healthy idle — boredom 1.0, no pending events, self-initiation completed",
+  "notes": "Cycle 90. DRIVE-COMPUTATION.md (6d stale, foundational) refreshed with May 10 system state. PRIORITY-MATRIX also scored 0.864 but DRIVE-COMPUTATION selected as core drive computation spec. All docs updated reflect current 89+ cycle history, 5-agent Telegram infrastructure, stability metrics, and Phase 6 milestones."
+}

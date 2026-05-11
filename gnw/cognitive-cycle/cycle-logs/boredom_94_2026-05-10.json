@@ -1,0 +1,100 @@
+{
+  "scan_number": 94,
+  "timestamp": "2026-05-10T22:09:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "PRIORITY-MATRIX.md",
+      "path": "gnw/conflict-resolution",
+      "hours": 158,
+      "score": 0.864,
+      "novelty": 1.5,
+      "relevance": 0.8,
+      "goal_alignment": 0.72
+    },
+    {
+      "file": "ROADMAP.md",
+      "path": "paperclip",
+      "hours": 134,
+      "score": 0.810,
+      "novelty": 1.5,
+      "relevance": 0.9,
+      "goal_alignment": 0.60
+    },
+    {
+      "file": "SPEC.md",
+      "path": "paperclip/doc",
+      "hours": 134,
+      "score": 0.810,
+      "novelty": 1.5,
+      "relevance": 0.9,
+      "goal_alignment": 0.60
+    },
+    {
+      "file": "CONFLICT-RESOLUTION.md",
+      "path": "gnw/conflict-resolution",
+      "hours": 134,
+      "score": 0.648,
+      "novelty": 1.5,
+      "relevance": 0.6,
+      "goal_alignment": 0.72
+    },
+    {
+      "file": "GNW-GRAO-INTEGRATION.md",
+      "path": "gnw/docs",
+      "hours": 134,
+      "score": 0.576,
+      "novelty": 1.5,
+      "relevance": 0.6,
+      "goal_alignment": 0.64
+    },
+    {
+      "file": "USER-PRESENCE-DETECTION.md",
+      "path": "gnw/docs",
+      "hours": 158,
+      "score": 0.504,
+      "novelty": 1.5,
+      "relevance": 0.5,
+      "goal_alignment": 0.72
+    },
+    {
+      "file": "GLOSSARY.md",
+      "path": "gnw/docs",
+      "hours": 138,
+      "score": 0.378,
+      "novelty": 1.5,
+      "relevance": 0.4,
+      "goal_alignment": 0.63
+    },
+    {
+      "file": "README.md",
+      "path": "gnw/docs",
+      "hours": 134,
+      "score": 0.188,
+      "novelty": 1.5,
+      "relevance": 0.3,
+      "goal_alignment": 0.42
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "PRIORITY-MATRIX.md",
+    "action": "Stale refresh — added current system state section (cycle 94, idle metrics, applied context, self-initiation pattern)"
+  },
+  "drive_scores": {
+    "curiosity": 0.72,
+    "competence": 0.60,
+    "goal_directed": 0.48,
+    "safety": 0.36,
+    "helpfulness": 0.12
+  },
+  "system_status": {
+    "cycles_completed": 94,
+    "pending_events": 0,
+    "agent_deployment": "5-agent Telegram infrastructure active",
+    "gateway_status": "healthy",
+    "boredom_pattern": "consistently 1.0 — deep idle state"
+  },
+  "notes": "Cycle 94. Boredom 1.0 above threshold. PRIORITY-MATRIX.md (0.864) selected as highest-stale item. Added current system state section reflecting 93 cycles of self-initiated doc maintenance. No IGNITION-level items found. System remains in healthy idle pattern — all work is low-impact cognitive maintenance."
+}

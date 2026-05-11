@@ -109,4 +109,41 @@ The detection runs as part of the boredom scan, before drive computation.
 
 ---
 
+## Current System State (Cycle 96 — 2026-05-10)
+
+### Deployment Status
+- **5-agent Telegram infrastructure** fully deployed (Andi, Randi2, CB, Claude, Zero)
+- **Hybrid mode**: group chat (-1003741274242) + individual DMs
+- **Detection channel**: Telegram (primary), Discord (secondary)
+- **User ID**: 1747124819
+
+### Active Detection Mechanics
+- **session_status** — checks current session activity (model, thinking, channel)
+- **sessions_list** — checks for recent user messages across sessions with `activeMinutes` filter
+- **Message timestamps** — determines time since last user interaction on Telegram
+- **Boredom scan integration** — detection runs before drive computation in each 30-min cycle
+
+### Current Idle Metrics (Cycle 96)
+- **User activity**: Away (no pending events, idle system)
+- **Engagement level**: None
+- **Boredom floor**: 1.0 (no suppression — user away)
+- **Self-initiation**: Active (boredom > 0.6 threshold)
+- **Stale items detected**: 8 files > 6h untouched
+- **Highest candidate**: USER-PRESENCE-DETECTION.md (0.108) — 161h stale
+
+### Recent Calibration
+- **Helpfulness boost**: +0.20 multiplicative when user high engagement
+- **Curiosity suppression**: -0.25 multiplicative when user high engagement
+- **Both factors independent** — multiplicative, not additive
+- **30-minute away threshold** confirmed stable across 96 cycles
+
+### Integration Notes
+- Detection runs **before** drive computation in boredom scan cycle
+- User presence check feeds into **boredom floor** calculation
+- Active user → boredom floor 0.30, suppression prevents self-directed work
+- Away user → boredom 1.0, self-initiation allowed
+
+---
+
 *Remnant Research — from theory to deployment.*
+*Updated: 2026-05-10 Cycle 96*

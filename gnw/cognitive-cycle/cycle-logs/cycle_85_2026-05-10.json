@@ -1,0 +1,63 @@
+{
+  "cycle_number": 85,
+  "timestamp": "2026-05-10T16:25:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 0.38,
+  "pending_events": [],
+  "stale_items": [
+    {
+      "file": "gnw/DRIVE-COMPUTATION-PSEUDOCODE.md",
+      "staleness_hours": 120,
+      "within_threshold": true
+    },
+    {
+      "file": "gnw/cognitive-cycle/DRIVE-COMPUTATION.md",
+      "staleness_hours": 144,
+      "within_threshold": true
+    },
+    {
+      "file": "gnw/conflict-resolution/PRIORITY-MATRIX.md",
+      "staleness_hours": 144,
+      "within_threshold": true
+    },
+    {
+      "file": "gnw/docs/USER-PRESENCE-DETECTION.md",
+      "staleness_hours": 144,
+      "within_threshold": true
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_39_2026-05-04.json",
+      "staleness_hours": 144,
+      "within_threshold": true
+    },
+    {
+      "file": "tpg-grao/grao/loops/round_38_2026-04-28.json",
+      "staleness_hours": 216,
+      "within_threshold": true
+    }
+  ],
+  "stage_contents": [
+    {"item": "GNW Phase 5", "score": 0.85, "status": "active"},
+    {"item": "GNW Phase 6", "score": 0.75, "status": "active"},
+    {"item": "GRAO Round 40", "score": 0.85, "status": "active"},
+    {"item": "Zenith Fitness", "score": 0.60, "status": "completed"},
+    {"item": "Paperclip", "score": 0.55, "status": "active"},
+    {"item": "Clawstr", "score": 0.45, "status": "active"},
+    {"item": "PhoENIX", "score": 0.50, "status": "active"}
+  ],
+  "self_initiation": {
+    "triggered": false,
+    "threshold": 0.50,
+    "candidate": null,
+    "action": null
+  },
+  "drive_scores": {
+    "curiosity": 0.30,
+    "helpfulness": 0.45,
+    "competence": 0.25,
+    "safety": 0.80,
+    "goal_directed": 0.35
+  },
+  "system_status": "idle",
+  "notes": "Cycle 85 — boredom 0.38 (user present, floor 0.30). No pending events. workspace-state.md and attention-router.md not found (referenced in cycle spec but absent). Stale docs 5-6 days old but non-actionable. GNW docs mostly fresh today. Phase 6 in progress, GRAO Round 40 active. System healthy idle."
+}
