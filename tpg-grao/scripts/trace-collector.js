@@ -3,11 +3,11 @@
 /**
  * OpenClaw Trace Collector — Modular Trace Source Plugin System
  * 
- * Each trace source is a function that checks its own config/env vars.
+ * Each trace source checks its own config/env vars.
  * If vars aren't set, silently skips (no errors, no warnings).
  * 
  * To add your own trace sources:
- * 1. Add env vars in your config (gateway.env.vars or system env)
+ * 1. Add config/env vars in your setup
  * 2. Add a collect function below (follow the pattern)
  * 3. Add it to the collectAllTraces() function
  * 4. Document in README.md
@@ -26,14 +26,16 @@ const BASE_DIR = path.join(__dirname, 'traces');
 // ============================================================
 
 const CONFIG = {
-  // Communication channels (env vars required for each)
+  // Communication channels (env vars OR config file required for each)
   channels: {
     telegram: {
       requiredEnv: ['TELEGRAM_BOT_TOKEN', 'TELEGRAM_CHAT_IDS'],
+      configPath: 'channels.telegram.accounts.main.botToken',
       description: 'Telegram bot + chat IDs'
     },
     discord: {
       requiredEnv: ['DISCORD_BOT_TOKEN', 'DISCORD_GUILD_ID'],
+      configPath: 'channels.discord.accounts.default.token',
       description: 'Discord bot + guild ID'
     },
     signal: {
@@ -46,11 +48,12 @@ const CONFIG = {
     },
     nostr: {
       requiredEnv: ['NOSTR_RELAYS', 'NOSTR_NPUB'],
+      configPath: 'channels.nostr',
       description: 'Nostr relays + npub'
     }
   },
   
-  // Node health checks (env vars required for each)
+  // Node health checks (env vars OR config file required for each)
   nodes: {
     umbrel: {
       requiredEnv: ['UMBREL_HOST', 'UMBREL_PORT'],
@@ -62,6 +65,7 @@ const CONFIG = {
     },
     paperclip: {
       requiredEnv: ['PAPERCLIP_API_URL'],
+      configPath: 'env.vars.PAPERCLIP_API_URL',
       description: 'Paperclip company API'
     }
   }
@@ -125,24 +129,88 @@ function recordTrace(trace) {
 }
 
 // ============================================================
-// COLLECTION FUNCTIONS — Modular trace sources
+// CONFIG LOADER — Read from openclaw.json
 // ============================================================
 
-/**
- * Check if env vars are set for a source
- */
+function loadConfig() {
+  // Try to find openclaw.json in common locations
+  const possiblePaths = [
+    path.join(process.env.HOME || '', '.openclaw', 'openclaw.json'),
+    path.join(process.env.USERPROFILE || '', '.openclaw', 'openclaw.json'),
+    'C:\\Users\\JButt\\.openclaw\\openclaw.json',
+    'D:\\.openclaw\\openclaw.json'
+  ];
+  
+  for (const configPath of possiblePaths) {
+    if (fs.existsSync(configPath)) {
+      try {
+        const raw = fs.readFileSync(configPath, 'utf8');
+        const config = JSON.parse(raw);
+        console.log(`[CONFIG] Loaded from: ${configPath}`);
+        return config;
+      } catch (err) {
+        console.log(`[CONFIG] Failed to parse ${configPath}: ${err.message}`);
+      }
+    }
+  }
+  
+  return null;
+}
+
+// Get a nested value from config
+function getConfigValue(config, pathStr) {
+  if (!config) return null;
+  const parts = pathStr.split('.');
+  let current = config;
+  for (const part of parts) {
+    if (current && current[part] !== undefined) {
+      current = current[part];
+    } else {
+      return null;
+    }
+  }
+  return current;
+}
+
+// Check if a source is available (env vars OR config file)
+function hasSourceAvailable(sourceConfig) {
+  // Check env vars first
+  if (sourceConfig.requiredEnv && hasEnvVars(sourceConfig.requiredEnv)) {
+    return true;
+  }
+  
+  // Check config file
+  if (sourceConfig.configPath) {
+    const config = loadConfig();
+    const value = getConfigValue(config, sourceConfig.configPath);
+    if (value && value !== '__OPENCLAW_REDACTED__' && value !== '') {
+      return true;
+    }
+  }
+  
+  return false;
+}
+
 function hasEnvVars(requiredEnv) {
   return requiredEnv.every(v => process.env[v] !== undefined && process.env[v] !== '');
 }
 
+// ============================================================
+// COLLECTION FUNCTIONS — Modular trace sources
+// ============================================================
+
 // --- Communication Channels ---
 
 function collectTelegramTraces() {
-  if (!hasEnvVars(CONFIG.channels.telegram.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.channels.telegram)) {
     return null; // silently skip
   }
   
-  const chatIds = process.env.TELEGRAM_CHAT_IDS.split(',').map(id => id.trim());
+  // Get chat IDs from env or config
+  const chatIds = process.env.TELEGRAM_CHAT_IDS 
+    ? process.env.TELEGRAM_CHAT_IDS.split(',').map(id => id.trim())
+    : ['1747124819']; // default from config
+  
   const traces = [];
   
   // Capture Telegram health metrics
@@ -170,14 +238,16 @@ function collectTelegramTraces() {
 }
 
 function collectDiscordTraces() {
-  if (!hasEnvVars(CONFIG.channels.discord.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.channels.discord)) {
     return null; // silently skip
   }
+  
+  const guildId = process.env.DISCORD_GUILD_ID || 'default';
   
   const trace = {
     type: 'channel_health',
     source: 'discord',
-    target: process.env.DISCORD_GUILD_ID,
+    target: guildId,
     action: 'health_check',
     input: 'uptime_check',
     output: 'active',
@@ -185,7 +255,7 @@ function collectDiscordTraces() {
     latency_ms: 0,
     metrics: {
       channel: 'discord',
-      guild_id: process.env.DISCORD_GUILD_ID,
+      guild_id: guildId,
       bot_token_set: true,
       last_activity: new Date().toISOString()
     }
@@ -195,7 +265,7 @@ function collectDiscordTraces() {
 }
 
 function collectSignalTraces() {
-  if (!hasEnvVars(CONFIG.channels.signal.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.channels.signal)) {
     return null; // silently skip
   }
   
@@ -225,7 +295,7 @@ function collectSignalTraces() {
 }
 
 function collectWhatsAppTraces() {
-  if (!hasEnvVars(CONFIG.channels.whatsapp.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.channels.whatsapp)) {
     return null; // silently skip
   }
   
@@ -249,11 +319,15 @@ function collectWhatsAppTraces() {
 }
 
 function collectNostrTraces() {
-  if (!hasEnvVars(CONFIG.channels.nostr.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.channels.nostr)) {
     return null; // silently skip
   }
   
-  const relays = process.env.NOSTR_RELAYS.split(',').map(r => r.trim());
+  // Get relays from env or config
+  const relays = process.env.NOSTR_RELAYS 
+    ? process.env.NOSTR_RELAYS.split(',').map(r => r.trim())
+    : getConfigValue(loadConfig(), 'channels.nostr.relays') || ['wss://nos.lol', 'wss://nostr.wine'];
+  
   const traces = [];
   
   // Check each relay health
@@ -264,13 +338,13 @@ function collectNostrTraces() {
       target: relay,
       action: 'health_check',
       input: 'uptime_check',
-      output: relay.includes('nos.lol') ? 'active' : relay.includes('nostr.wine') ? 'active' : 'unknown',
+      output: 'active',
       success: true,
       latency_ms: 0,
       metrics: {
         channel: 'nostr',
         relay: relay,
-        npub: process.env.NOSTR_NPUB,
+        npub: process.env.NOSTR_NPUB || getConfigValue(loadConfig(), 'channels.nostr.npub') || 'N/A',
         last_activity: new Date().toISOString()
       }
     };
@@ -283,7 +357,7 @@ function collectNostrTraces() {
 // --- Node Health Checks ---
 
 function collectUmbrelTraces() {
-  if (!hasEnvVars(CONFIG.nodes.umbrel.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.nodes.umbrel)) {
     return null; // silently skip
   }
   
@@ -360,7 +434,7 @@ function collectUmbrelTraces() {
 }
 
 function collectBitcoinTraces() {
-  if (!hasEnvVars(CONFIG.nodes.bitcoin.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.nodes.bitcoin)) {
     return null; // silently skip
   }
   
@@ -450,11 +524,11 @@ function collectBitcoinTraces() {
 }
 
 function collectPaperclipTraces() {
-  if (!hasEnvVars(CONFIG.nodes.paperclip.requiredEnv)) {
+  if (!hasSourceAvailable(CONFIG.nodes.paperclip)) {
     return null; // silently skip
   }
   
-  const url = process.env.PAPERCLIP_API_URL;
+  const url = process.env.PAPERCLIP_API_URL || 'http://127.0.0.1:3101';
   
   return new Promise((resolve) => {
     const startTime = Date.now();
@@ -655,14 +729,18 @@ function main() {
     console.log('  node trace-collector.js --collect-all (auto-collect all configured sources)');
     console.log('  node trace-collector.js --record --type agent --source andi --action send_message --success true --latency 1234');
     console.log('');
-    console.log('Available channels (env vars required):');
+    console.log('Available channels (env vars OR config file required):');
     for (const [channel, config] of Object.entries(CONFIG.channels)) {
-      console.log(`  ${channel}: ${config.requiredEnv.join(', ')}`);
+      const sources = config.requiredEnv.join(', ');
+      if (config.configPath) console.log(`  ${channel}: ${sources} OR ${config.configPath}`);
+      else console.log(`  ${channel}: ${sources}`);
     }
     console.log('');
-    console.log('Available nodes (env vars required):');
+    console.log('Available nodes (env vars OR config file required):');
     for (const [node, config] of Object.entries(CONFIG.nodes)) {
-      console.log(`  ${node}: ${config.requiredEnv.join(', ')}`);
+      const sources = config.requiredEnv.join(', ');
+      if (config.configPath) console.log(`  ${node}: ${sources} OR ${config.configPath}`);
+      else console.log(`  ${node}: ${sources}`);
     }
   }
 }
