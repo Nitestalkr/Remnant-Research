@@ -2,9 +2,11 @@
 
 ## Overview
 
-The trace-collector.js script has a **modular trace source plugin system**. Each trace source checks its own environment variables, silently skips if unavailable, and records traces if available.
+The trace-collector.js script has a **modular trace source plugin system**. Each trace source checks its own environment variables OR config file, silently skips if unavailable, and records traces if available.
 
 **Key design:** No errors or warnings when a channel/node isn't configured. Just silently skipped.
+
+**Config file fallback:** When env vars aren't set, the script reads from `openclaw.json` in common locations (HOME/.openclaw/openclaw.json, USERPROFILE/.openclaw/openclaw.json, C:\Users\JButt\.openclaw\openclaw.json, D:\.openclaw\openclaw.json). This makes it adaptable to any setup without requiring env vars.
 
 ## Adding Your Own Trace Sources
 
@@ -188,21 +190,21 @@ export UMBREL_PORT="80"
 
 ### Communication Channels
 
-| Channel | Env Vars | Description |
-|---------|----------|-------------|
-| telegram | TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_IDS | Telegram bot + chat IDs |
-| discord | DISCORD_BOT_TOKEN, DISCORD_GUILD_ID | Discord bot + guild ID |
+| Channel | Env Vars OR Config | Description |
+|---------|-------------------|-------------|
+| telegram | TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_IDS OR channels.telegram.accounts.main.botToken | Telegram bot + chat IDs |
+| discord | DISCORD_BOT_TOKEN, DISCORD_GUILD_ID OR channels.discord.accounts.default.token | Discord bot + guild ID |
 | signal | SIGNAL_CONTACT_LIST | Signal contacts |
 | whatsapp | WHATSAPP_SESSION_PATH | WhatsApp session file |
-| nostr | NOSTR_RELAYS, NOSTR_NPUB | Nostr relays + npub |
+| nostr | NOSTR_RELAYS, NOSTR_NPUB OR channels.nostr.relays | Nostr relays + npub |
 
 ### Node Health Checks
 
-| Node | Env Vars | Description |
-|------|----------|-------------|
+| Node | Env Vars OR Config | Description |
+|------|-------------------|-------------|
 | umbrel | UMBREL_HOST, UMBREL_PORT | Umbrel micro node (Docker service) |
 | bitcoin | BITCOIN_RPC_HOST, BITCOIN_RPC_PORT, BITCOIN_RPC_AUTH | Bitcoin node (RPC endpoint) |
-| paperclip | PAPERCLIP_API_URL | Paperclip company API |
+| paperclip | PAPERCLIP_API_URL OR env.vars.PAPERCLIP_API_URL | Paperclip company API |
 
 ## Trace Types
 
@@ -234,11 +236,13 @@ node trace-collector.js --collect
 
 ## Customization Tips
 
-1. **Don't hardcode values** — use env vars so others can adapt
-2. **Silent skip** — if env vars aren't set, return null (no errors)
+1. **Don't hardcode values** — use env vars OR config file so others can adapt
+2. **Silent skip** — if env vars AND config file aren't set, return null (no errors)
 3. **Generic patterns** — use standard health check patterns (HTTP endpoint, Docker status, RPC call)
 4. **Metrics-rich traces** — include response_time, host, port, etc. for meaningful cluster diversity
 5. **Document your setup** — add to this README so others know how to adapt
+6. **Config file fallback** — sources with configPath will read from openclaw.json when env vars aren't set
+7. **Test your sources** — run `node trace-collector.js --collect-all` to see what's collected/skipped
 
 ## Cluster Diversity
 
