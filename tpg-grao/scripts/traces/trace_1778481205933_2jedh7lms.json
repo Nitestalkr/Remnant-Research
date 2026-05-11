@@ -1,0 +1,19 @@
+{
+  "trace_id": "trace_1778481205933_2jedh7lms",
+  "timestamp": "2026-05-11T06:33:25.933Z",
+  "type": "external_api",
+  "source": "nostr",
+  "target": "wss://nostr.wine",
+  "action": "health_check",
+  "input": "uptime_check",
+  "output": "active",
+  "success": true,
+  "latency_ms": 0,
+  "error": "",
+  "metrics": {
+    "channel": "nostr",
+    "relay": "wss://nostr.wine",
+    "npub": "N/A",
+    "last_activity": "2026-05-11T06:33:25.933Z"
+  }
+}

@@ -95,7 +95,7 @@ Vetos are not permanent. They decay based on:
 
 ### Deployment Status
 - Telegram bots: all 5 agents configured and active
-- Shared workspace: `workspace-visualmedia/` operational for cross-team coordination
+- Shared workspace: `workspace-shared/` operational for cross-team coordination
 - Cron system: 30-min boredom scan cycle active (90+ cycles completed)
 - Gateway: running on CORSAIRAI, model: qwen3.6-35b-a3b
 

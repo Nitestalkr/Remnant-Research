@@ -1,0 +1,19 @@
+{
+  "trace_id": "trace_1778515211815_328cqyfm8",
+  "timestamp": "2026-05-11T16:00:11.815Z",
+  "type": "external_api",
+  "source": "nostr",
+  "target": "wss://nos.lol",
+  "action": "health_check",
+  "input": "uptime_check",
+  "output": "active",
+  "success": true,
+  "latency_ms": 0,
+  "error": "",
+  "metrics": {
+    "channel": "nostr",
+    "relay": "wss://nos.lol",
+    "npub": "N/A",
+    "last_activity": "2026-05-11T16:00:11.815Z"
+  }
+}

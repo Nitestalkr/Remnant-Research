@@ -210,4 +210,68 @@ Usage: `node <script>.js --help` for full options.
 
 ---
 
+## 📊 Current System State (Cycle 105 — 2026-05-11)
+
+### GRAO Pipeline Health
+
+- **Active cycles:** 105+ GNW boredom scan cycles
+- **Loop rounds:** 42 active (round_41, round_42 from May 11)
+- **Success ratio:** ~93% plateau → exploration mode active (round 40+)
+- **Gradients computed:** 5 active gradient categories (deployment, research, agent, external_api, stability)
+- **Proposals generated:** 20+ proposals from May 11 traces
+- **Traces collected:** 6 trace types active (agent cron, research arxiv, deployment restart, deployment agent, stability storage, stability memory, external_api paperclip, external_api nostr)
+
+### Integration with GNW Boredom Scan
+
+The GRAO pipeline feeds the GNW boredom scan's stale-item scoring:
+
+- **Research traces** → novelty scoring for stale docs
+- **Agent traces** → system health gradient computation
+- **Deployment traces** → infrastructure gradient signals
+- **Stability traces** → drive health gradient computation
+- **External API traces** → paperclip/nostr gradient signals
+
+### Active Gradients (May 11)
+
+| Gradient | Source | Status |
+|----------|--------|--------|
+| deployment | grad_2026-05-11_deployment | Active |
+| research | grad_2026-05-11_research | Active |
+| agent | grad_2026-05-11_agent | Active |
+| external_api | grad_2026-05-11_external_api | Active |
+| stability | grad_2026-05-11_stability | Active |
+
+### GRAO Loop Configuration
+
+- **Loop schedule:** 30-min cycle (boredom scan)
+- **Saturation threshold:** 15+ consecutive reinforcement rounds
+- **Exploration trigger:** 90%+ success ratio plateau
+- **Gradient formula:** (impact × frequency × persistence) / normalization
+- **Policy saturation detection:** Active (round 40+)
+- **Exploration mode:** Active (round 40+)
+
+### Recent GRAO Activity (Cycles 97-105)
+
+- **Cycle 97:** 8 new research citations added (REFERENCES.md)
+- **Cycle 98:** paperclip/doc/SPEC.md updated with current system state
+- **Cycle 99:** TEST-DRIVE-OSCILLATION.md updated with 10-cycle drive history
+- **Cycle 100:** OPENCLAW_AGENT_PROTOCOL updated with 5-agent deployment state
+- **Cycle 101:** PHASE-1-4-SUMMARIES.md updated with Phase 6 context
+- **Cycle 102:** attention-router.md updated with cycle 102 stale scan
+- **Cycle 103:** TEST-CONFLICT-CONVERGENCE.md updated with 103+ cycle convergence history
+- **Cycle 104:** SAFETY-THREAT-MODEL.md updated with 0-veto-event audit (103 cycles)
+- **Cycle 105:** tpg/README.md updated with current system state section
+
+### Key Design Decisions
+
+1. **Exploration mode** activated at round 40 (policy saturation detected)
+2. **5-agent Telegram infrastructure** operational (Andi, Randi2, CB, Claude, Zero)
+3. **Dual comms** (Discord + Telegram) for all agents
+4. **Self-initiation pattern** dominant (boredom 1.0 → stale doc refresh)
+5. **No forced work** principle maintained (idle system, no user requests)
+6. **GRAO traces** partitioned by date for clean analysis
+7. **Gradient categories** expanded to 5 (deployment, research, agent, external_api, stability)
+
+---
+
 *Remnant Research — GRAO: directional signal for autonomous research.*

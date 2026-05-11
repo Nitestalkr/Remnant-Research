@@ -87,4 +87,44 @@ flipping back and forth with no context change.
 
 ---
 
+## Current System State (Cycle 98 — 2026-05-11)
+
+### Oscillation Monitoring Status
+
+**Active cycles:** 98+ | **Current state:** Healthy idle
+
+### Recent Drive History (last 10 cycles)
+
+| Cycle | Time | Winning Drive | Score | Notes |
+|-------|------|---------------|-------|-------|
+| 98 | 12:44 AM | paperclip SPEC.md | 0.972 | Doc stale refresh |
+| 97 | 12:14 AM | REFERENCES.md | 0.84 | Doc stale refresh |
+| 96 | 8:39 PM | USER-PRESENCE-DETECTION.md | 0.108 | Doc stale refresh |
+| 95 | 8:39 PM | AGENT-HANDOFF-NEXT-STEPS.md | 0.936 | Doc stale refresh |
+| 94 | 6:09 PM | PRIORITY-MATRIX.md | 0.864 | Doc stale refresh |
+| 93 | 5:39 PM | conflict-resolution README.md | 0.972 | Doc stale refresh |
+| 92 | 5:09 PM | EDGE-CASES.md | 0.972 | Doc stale refresh |
+| 91 | 4:39 PM | VETO-PROTOCOL.md | 0.648 | Doc stale refresh |
+| 90 | 3:39 PM | DRIVE-COMPUTATION.md | 0.864 | Doc stale refresh |
+| 89 | 3:10 PM | stability README.md | 0.652 | Doc stale refresh |
+
+### Oscillation Analysis
+
+**No sustained oscillation detected.** Recent winner pattern shows diversity across multiple drives (paperclip docs, GNW foundational docs, stability tests, coordination docs). This reflects healthy multi-drive competition rather than oscillation between two specific drives.
+
+**Pattern:** The boredom scan consistently triggers self-initiation (boredom = 1.0, no pending events), and stale items are scored by novelty × relevance × goal_alignment with 1.5x novelty boost. Winners vary based on which documents have been most stale and most relevant to current system state.
+
+### Drive Health
+
+- **Boredom drive:** Persistent at 1.0 (no external events) — expected idle state
+- **Stale-document drive:** Active, processing 5-25 stale items per cycle
+- **Innovation drive:** Low (no new research proposals in active phase)
+- **System health:** Stable, 98 cycles completed, all self-initiation cycles
+
+### Remediation Events
+
+**None.** No oscillation detected in 98-cycle history. Drive competition is healthy and diverse.
+
+---
+
 *Remnant Research — from theory to deployment.*

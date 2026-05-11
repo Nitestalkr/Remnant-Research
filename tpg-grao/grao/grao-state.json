@@ -1,7 +1,7 @@
 {
   "loop_id": "grao_state",
   "last_cycle": "2026-05-11T03:45:22.573Z",
-  "cycle_count": 1,
+  "cycle_count": 2,
   "active_gradients": [
     {
       "id": "grad_2026-05-11_agent_e65f5762",
@@ -48,7 +48,7 @@
     "gradient_retention_days": 30
   },
   "last_trace_collection": "2026-05-11T03:45:25.543Z",
-  "last_gradient_computation": "2026-05-11T03:45:28.186Z",
+  "last_gradient_computation": "2026-05-11T16:00:15.678Z",
   "saturation": {
     "detected": false,
     "reinforcementRounds": 0,
@@ -58,10 +58,11 @@
   "gradient_categories": {
     "success": 5
   },
-  "last_proposal_generation": "2026-05-11T03:45:34.506Z",
+  "last_proposal_generation": "2026-05-11T16:00:23.993Z",
   "new_proposals": [],
   "proposal_types": {
-    "reinforcement": 6
+    "reinforcement": 36,
+    "exploration": 0
   },
   "active_proposals": [
     {
@@ -99,7 +100,903 @@
       "status": "active",
       "appliedAt": "2026-05-11T03:46:12.590Z",
       "tpgTarget": "meta-optimization"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T05:06:13.757Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T05:06:13.757Z",
+      "tpgTarget": "knowledge-acquisition"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T05:06:13.757Z",
+      "tpgTarget": "knowledge-acquisition"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T05:06:13.757Z",
+      "tpgTarget": "external-api"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T05:06:13.757Z",
+      "tpgTarget": "deployment"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T05:06:13.757Z",
+      "tpgTarget": "agent-optimization"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "status": "active",
+      "appliedAt": "2026-05-11T06:57:49.363Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T06:59:15.058Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T12:00:37.492Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T12:00:37.492Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T12:00:37.492Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T12:00:37.492Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T12:00:37.492Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T12:00:37.492Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.163Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T15:05:45.164Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5673",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1a27",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b8f2",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3cb1",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_099b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_ec3c",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:28.289Z",
+      "tpgTarget": "system-health"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1a27",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b8f2",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3cb1",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_099b",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_ec3c",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5673",
+      "status": "active",
+      "appliedAt": "2026-05-11T16:00:31.622Z",
+      "tpgTarget": "agent-files"
     }
   ],
-  "last_proposal_application": "2026-05-11T03:46:12.590Z"
+  "last_proposal_application": "2026-05-11T16:00:31.622Z",
+  "agent_file_changes": [
+    {
+      "id": "prop_2026-05-11_1e28",
+      "file": "SOUL.md",
+      "status": "applied",
+      "changes": 2
+    },
+    {
+      "id": "prop_2026-05-11_cfbf",
+      "file": "SOUL.md",
+      "status": "applied",
+      "changes": 1
+    },
+    {
+      "id": "prop_2026-05-11_0420",
+      "file": "SOUL.md",
+      "status": "applied",
+      "changes": 1
+    }
+  ]
 }

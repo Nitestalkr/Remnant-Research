@@ -1,0 +1,46 @@
+{
+  "proposal_id": "prop_2026-05-11_3d62",
+  "timestamp": "2026-05-11T12:00:33.872Z",
+  "status": "pending",
+  "proposal_type": "reinforcement",
+  "source_gradients": [
+    "grad_2026-05-11_agent_e65f5762"
+  ],
+  "hypothesis": "Tracking the evolution of cron has a significant impact on research outcomes.",
+  "research_question": "How has cron evolve over the past 1 cycles?",
+  "methodology": [
+    "longitudinal-analysis",
+    "trend-extraction",
+    "forecasting"
+  ],
+  "expected_outcome": "Identify trajectory for proactive adjustment",
+  "confidence": 1,
+  "priority": "high",
+  "resources_needed": [
+    "time-series-analysis",
+    "trend-extraction",
+    "forecasting-model"
+  ],
+  "timeline": {
+    "start": "2026-05-11T12:00:33.872Z",
+    "estimated_completion": "2026-06-01T12:00:33.872Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 1,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 1,
+    "top_concepts": [
+      {
+        "concept": "cron",
+        "weight": 0.5
+      },
+      {
+        "concept": "system",
+        "weight": 0.5
+      }
+    ],
+    "saturation_context": null
+  }
+}

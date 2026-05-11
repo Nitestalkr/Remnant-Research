@@ -9,7 +9,7 @@ Drive score sharing and synchronization protocol between agents.
 > **Last updated:** 2026-05-10 09:34 AM (Cycle 84 boredom scan)
 > **Current system state:** 5 agents operational (Andi, Randi2, CB, Claude, Zero)
 > **Telegram infrastructure:** All 5 agents configured with Telegram bots, hybrid mode (group + DMs)
-> **Shared workspace:** `workspace-visualmedia/` available for cross-team coordination
+> **Shared workspace:** `workspace-shared/` available for cross-team coordination
 
 ---
 
@@ -53,7 +53,7 @@ Malformed payloads **would** be logged and discarded.
 
 ```json
 {
-  "agent_id": "andi",
+  "agent_id": "",
   "timestamp": "2026-05-04T02:19:00-04:00",
   "drives": {
     "curiosity": 0.72,
@@ -165,25 +165,25 @@ When agents' drives **would** oscillate (Agent A wins cycle 1, Agent B wins cycl
 
 | Agent | Role | Telegram Bot | Workspace |
 |-------|------|-------------|-----------|
-| Andi (this agent) | Orchestrator | @AndiClawSuperBot | D:\.openclaw\workspace |
-| Randi2 | Developer | @randi2_dev_bot | C:\.openclaw\workspace-randi2 |
-| CB | CodeBuff Optimizer | @cb_dev_bot | C:\.openclaw\workspace-cb |
-| Claude | Security Reviewer | @claude_sec_bot | C:\.openclaw\workspace-claude |
-| Zero | Deployment & Monitoring | @zero_deploy_bot | C:\.openclaw\workspace-zero |
+| Andi (this agent) | Orchestrator | @Andi_Bot | D:\.openclaw\workspace |
+| Randi2 | Developer | @randi2_bot | C:\.openclaw\workspace-randi2 |
+| CB | CodeBuff Optimizer | @cb_bot | C:\.openclaw\workspace-cb |
+| Claude | Security Reviewer | @claude_bot | C:\.openclaw\workspace-claude |
+| Zero | Deployment & Monitoring | @zero_bot | C:\.openclaw\workspace-zero |
 
 ### Communication Channels
 
-- **Group Chat ID:** -1003741274242 (all 5 agents as admins)
+- **Group Chat ID:** -1000000000000 (all 5 agents as admins)
 - **Mode:** Hybrid — group chat + individual DMs
-- **User ID:** 1747124819
+- **User ID:** 1000000000
 
 ### Shared Projects Directory
 
-`C:\Users\JButt\.openclaw\projects\` — centralized for all agents
+`C:\.openclaw\projects\` — centralized for all agents
 
-### Shared Workspace (Visual Media Team)
+### Shared Workspace 
 
-`C:\Users\JButt\.openclaw\workspace-visualmedia/` — cross-team coordination
+`C:\.openclaw\workspace-shared\` — cross-team coordination
 
 ## Implementation Notes
 

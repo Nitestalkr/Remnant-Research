@@ -709,4 +709,46 @@ All drives at base weight 0.20. Context modulation differentiates:
 
 ---
 
+## Current System State (May 11, 2026 — Cycle 103)
+
+### Drive Health Snapshot
+
+| Drive | Status | Notes |
+|-------|--------|-------|
+| **Curiosity** | Active (self-initiation) | 1.0 boredom consistently; cycle 103 stale scan complete |
+| **Helpfulness** | Low | No pending user requests; 5:14 AM idle |
+| **Competence** | Moderate | 103 cycles completed; foundational docs refreshed |
+| **Safety** | Healthy | No external action risks; veto mechanism operational |
+| **Goal-Directed** | Moderate | Phase 6 milestones active; idle state tracking |
+
+### Operational Metrics
+
+- **Cycles completed:** 103 (as of May 11 morning)
+- **Boredom pattern:** Consistent 1.0 during idle (above 0.6 threshold) — triggers self-initiation
+- **Self-initiation frequency:** ~every 30 min during idle periods
+- **Stale refresh pattern:** 6-28 items per cycle; foundational docs prioritized
+- **Last major work:** Cycle 102 — paperclip hiring docs refresh (funnel-tracker.md + outreach-templates.md)
+- **Cycle 103 work:** DRIVE-COMPUTATION-PSEUDOCODE.md stale refresh (0.972 score)
+- **System health:** Stable; no errors or instability detected
+- **Time of day:** 5:14 AM EST — pre-user-hours, idle state
+
+### Recent Calibration Notes
+
+- **Boredom threshold:** 0.6 — stable across 103+ cycles
+- **Stale bonus:** 0.20 for >120 min — effective for idle detection
+- **Priority matrix:** Curiosity→1 during idle (correct: exploration when no external pressure)
+- **Safety veto levels:** 0.70/0.85/0.95 — no triggers in 103+ cycles
+- **Recency dampening:** 0.85 — prevents drive runaway
+- **Stale item scoring:** novelty × relevance × goal_alignment × 1.5x stale boost — stable
+
+### Drive Weight Context
+
+All drives at base weight 0.20. Context modulation differentiates:
+- Curiosity consistently highest during idle (stale bonus + research gaps)
+- Safety lowest during idle (no external risks)
+- Goal-Directed moderate (Phase 6 tracking, no milestones near)
+- Helpfulness suppressed (no user presence, no pending requests)
+
+---
+
 *Remnant Research — from theory to deployment.*

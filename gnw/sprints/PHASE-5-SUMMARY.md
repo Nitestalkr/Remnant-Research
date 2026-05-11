@@ -28,7 +28,7 @@ Each drive was implemented as a weighted vector with:
 boredom = (traditional + curiosity + self-awareness) / 3 + stale_bonus
 `
 
-- Runs every 15 minutes via cron
+- Runs every 15 minutes via cron(adjust as needed, recommended 3-6 hours)
 - Triggers full cognitive cycle when ≥ 0.50 (activation threshold)
 - Suppressed when user is active (floor = 0.30, meaning boredom never drops below this while user is present)
 - **Key insight:** System correctly stops forcing work when nothing qualifies ≥ 0.50

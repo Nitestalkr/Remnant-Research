@@ -180,18 +180,18 @@ External Input / Cron Trigger
 
 ### Agent Infrastructure
 - **Andi (Main):** Orchestrator + CEO Mode (performance, strategy, risk, comms, finance)
-- **Randi2:** Developer agent (OpenCode, Telegram bot @randi2_dev_bot)
-- **CB:** CodeBuff optimizer (Telegram bot @cb_dev_bot)
-- **Claude:** Security reviewer (Telegram bot @claude_sec_bot)
-- **Zero:** Deployment & monitoring (Telegram bot @zero_deploy_bot)
-- **Group Chat:** -1003741274242 (all 5 agents as admins)
+- **Randi2:** Developer agent (OpenCode, Telegram bot @randi2_bot)
+- **CB:** CodeBuff optimizer (Telegram bot @cb_bot)
+- **Claude:** Security reviewer (Telegram bot @claude_bot)
+- **Zero:** Deployment & monitoring (Telegram bot @zero_bot)
+- **Group Chat:** -100000000000 (all 5 agents as admins)
 
 ### Memory & Persistence
 - **Cycle Logs:** boredom_N_YYYY-MM-DD.json + cycle_N_YYYY-MM-DD.json
 - **Drive Weights:** JSON persistence in gnw/sprints
 - **Architecture:** This doc (refreshed every 6d stale threshold)
 - **Workspace:** D:\.openclaw\workspace (global)
-- **Shared:** C:\Users\JButt\.openclaw\workspace-visualmedia (cross-team)
+- **Shared:** C:\.openclaw\workspace-shared (cross-team)
 
 ### Innovation Pipeline
 - **Open-Generative-AI:** ComfyUI alternative (200+ models, agent-native)

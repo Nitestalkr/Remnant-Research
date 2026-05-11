@@ -1,0 +1,77 @@
+{
+  "scan_number": 104,
+  "timestamp": "2026-05-11T10:44:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "tpg-grao/grao/LOOP-SPEC.md",
+      "hours": 1224,
+      "score": 0.972
+    },
+    {
+      "file": "tpg-grao/grao/STATE-MANAGEMENT.md",
+      "hours": 744,
+      "score": 0.675
+    },
+    {
+      "file": "tpg-grao/README.md",
+      "hours": 744,
+      "score": 0.450
+    },
+    {
+      "file": "tpg-grao/grao/README.md",
+      "hours": 744,
+      "score": 0.450
+    },
+    {
+      "file": "tpg-grao/grao/EXPERIMENT-FRAMEWORK.md",
+      "hours": 744,
+      "score": 0.360
+    },
+    {
+      "file": "tpg-grao/grao/gradient-derivation.md",
+      "hours": 744,
+      "score": 0.360
+    },
+    {
+      "file": "tpg-grao/grao/FAILURE-ANALYSIS.md",
+      "hours": 744,
+      "score": 0.360
+    },
+    {
+      "file": "remnant-research/REFERENCES.md",
+      "hours": 120,
+      "score": 0.315
+    },
+    {
+      "file": "remnant-research/AGENT-HANDOFF-NEXT-STEPS.md",
+      "hours": 120,
+      "score": 0.270
+    },
+    {
+      "file": "workspace-state.md",
+      "hours": 30,
+      "score": 0.036
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "LOOP-SPEC.md",
+    "action": "Added Current System State section (cycle 104, loop health, infrastructure, configuration)"
+  },
+  "drive_scores": {
+    "LOOP-SPEC.md": 0.972,
+    "STATE-MANAGEMENT.md": 0.675,
+    "tpg-grao README.md": 0.450,
+    "grao README.md": 0.450
+  },
+  "system_status": {
+    "pending_events": 0,
+    "agent_deployment": "5-agent Telegram infrastructure",
+    "communication": "Dual Discord+Telegram",
+    "cycle_count": 104,
+    "health": "Healthy idle"
+  },
+  "notes": "LOOP-SPEC.md 1224h stale (51d), foundational GRAO loop spec. Added comprehensive system state section covering loop health, recent activity, infrastructure, and configuration. No IGNITION items in research docs — LOOP-SPEC exceeded threshold via novelty boost."
+}

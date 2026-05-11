@@ -68,13 +68,25 @@ GRAO produces proposals that update GNW:
 
 | Direction | Status | Details |
 |-----------|--------|---------|
-| GNW → GRAO (traces) | ✅ Operational | Traces collected from all GNW sources |
-| GRAO gradient derivation | ✅ Operational | 39 rounds of gradient computation |
-| GRAO → GNW (proposals) | ✅ Operational | Proposals generated and applied through agent workflows |
-| Experience → Drive weights | 🟡 Designed | Schema defined, real-agent testing pending |
-| Proposal → Drive weights | 🟡 Designed | Schema defined, real-agent testing pending |
+| GNW → GRAO (traces) | ✅ Operational | Traces collected from all GNW sources (cron, tool calls, drive decisions, user interactions, system health) |
+| GRAO gradient derivation | ✅ Operational | 42 rounds of gradient computation (r13→r42), ~93% plateau success ratio |
+| GRAO → GNW (proposals) | ✅ Operational | Proposals generated via cron payload, applied through agent workflows |
+| Experience → Drive weights | 🟡 Designed | Schema defined, real-agent testing in progress (5-agent deployment provides richer trace data) |
+| Proposal → Drive weights | 🟡 Designed | Schema defined, real-agent testing in progress |
+| GRAO pipeline health | ✅ Healthy | 42+ rounds, reinforcement-only mode active, policy saturation concern monitored |
 
-> **Note:** The GNW→GRAO half is fully operational. The GRAO→GNW feedback path for direct experience/proposal → drive-weight updates is designed but not yet validated through real-agent testing.
+> **Note:** The GNW→GRAO half is fully operational with 108+ cycles of trace data. The GRAO→GNW feedback path for direct experience/proposal → drive-weight updates is designed but not yet validated through real-agent testing. Current 5-agent deployment with dual comms (Discord+Telegram) provides richer trace diversity for future validation.
+
+### GRAO Progression (r39→r42)
+
+| Round | Success Ratio | Mode | Key Finding |
+|-------|--------------|------|-------------|
+| r39 | 83.3% | Mixed | 10 failure gradients identified |
+| r40 | 92.7% | Reinforcement-only | Policy saturation concern |
+| r41 | 100% | Reinforcement-only | Stable plateau |
+| r42 | 100% | Reinforcement-only | Consistent |
+
+> Policy saturation (pure reinforcement, no exploration) detected in r40+. This is a known risk — the loop may converge to suboptimal fixed point without exploration pressure.
 
 ## Drive Weight Update Mechanism (Design)
 

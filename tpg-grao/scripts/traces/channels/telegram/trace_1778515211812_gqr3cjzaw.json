@@ -1,0 +1,19 @@
+{
+  "trace_id": "trace_1778515211812_gqr3cjzaw",
+  "timestamp": "2026-05-11T16:00:11.812Z",
+  "type": "channel_health",
+  "source": "telegram",
+  "target": "1747124819",
+  "action": "health_check",
+  "input": "uptime_check",
+  "output": "active",
+  "success": true,
+  "latency_ms": 0,
+  "error": "",
+  "metrics": {
+    "channel": "telegram",
+    "chat_id": "1747124819",
+    "bot_token_set": true,
+    "last_activity": "2026-05-11T16:00:11.804Z"
+  }
+}

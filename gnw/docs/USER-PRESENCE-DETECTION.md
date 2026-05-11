@@ -113,9 +113,9 @@ The detection runs as part of the boredom scan, before drive computation.
 
 ### Deployment Status
 - **5-agent Telegram infrastructure** fully deployed (Andi, Randi2, CB, Claude, Zero)
-- **Hybrid mode**: group chat (-1003741274242) + individual DMs
+- **Hybrid mode**: group chat (-1000000000000) + individual DMs
 - **Detection channel**: Telegram (primary), Discord (secondary)
-- **User ID**: 1747124819
+- **User ID**: 1000000000
 
 ### Active Detection Mechanics
 - **session_status** — checks current session activity (model, thinking, channel)

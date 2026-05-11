@@ -20,7 +20,31 @@ This folder holds the higher-level explanatory material for GNW:
 - `PARAMETER-VALUES.md` - current working parameter values and calibration notes
 - `ROADMAP.md` - future development plan and milestones
 - `USER-PRESENCE-DETECTION.md` - engagement detection and modulation behavior
-- `CROSS-AGENT-COORDINATION.md` - Phase 6 coordination design stub
+- `CROSS-AGENT-COORDINATION.md` - Phase 6 cross-agent coordination design
+- `SAFETY-THREAT-MODEL.md` - safety mechanisms, veto protocols, threat analysis
+- `GNW-GRAO-INTEGRATION.md` - GRAO pipeline integration with GNW drives
+
+## Current System State (Cycle 110)
+
+**Deployment:** 5-agent infrastructure active (Andi, Randi2, CB, Claude, Zero)
+**Comms:** Dual channel (Discord + Telegram bots)
+**GRAO Pipeline:** 42+ rounds, ~93% plateau rate, policy saturation concern active
+**GNW Boredom Scan:** 110+ cycles, healthy idle pattern, self-initiation threshold at 0.6
+**Drive Health:** All drives stable, no veto events in 110 cycles
+**Key Patterns:**
+- Self-initiation when boredom > 0.6 → stale doc refresh or research analysis
+- GRAO rounds run on cron schedule, feed proposals to GNW
+- Research traces collected daily, analyzed periodically
+- Cycle logs maintained in gnw/cognitive-cycle/cycle-logs/
+
+**Recent Activity (Cycles 107-110):**
+- paperclip README refreshed (cycle 107)
+- round_39 context bridge added (cycle 108)
+- GNW-GRAO-INTEGRATION updated (cycle 109)
+- LOOP-SPEC refreshed (cycle 104)
+- SAFETY-THREAT-MODEL updated (cycle 104)
+- tpg/README refreshed (cycle 105)
+- tpg-grao/grao/README updated (cycle 106)
 
 ## Architecture Overview
 
@@ -37,8 +61,17 @@ GNW consists of five main components:
 |             Cron Infrastructure                     |
 |                                                     |
 |              Memory Integration                     |
+|                                                     |
+|       GRAO Pipeline Integration                     |
 +-----------------------------------------------------+
 ```
+
+**Integration with GRAO:**
+- GRAO runs as a parallel loop, generating proposals
+- GNW boredom scan selects work based on stale items
+- GRAO round data feeds into stability tests
+- Proposals are reviewed and applied via cron
+- Current: GRAO r42, 100% success ratio (r39→r40→r41→r42 progression)
 
 ## Key Design Principles
 
@@ -59,3 +92,7 @@ GNW consists of five main components:
 ---
 
 *Remnant Research - from theory to deployment.*
+
+**Last updated:** Cycle 110 (2026-05-11 10:44 AM EDT)
+**Doc count:** 9 files in this directory
+**Stale items:** 1 (this file itself — 144h stale)

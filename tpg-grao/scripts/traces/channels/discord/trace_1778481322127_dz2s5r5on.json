@@ -1,0 +1,19 @@
+{
+  "trace_id": "trace_1778481322127_dz2s5r5on",
+  "timestamp": "2026-05-11T06:35:22.127Z",
+  "type": "channel_health",
+  "source": "discord",
+  "target": "default",
+  "action": "health_check",
+  "input": "uptime_check",
+  "output": "active",
+  "success": true,
+  "latency_ms": 0,
+  "error": "",
+  "metrics": {
+    "channel": "discord",
+    "guild_id": "default",
+    "bot_token_set": true,
+    "last_activity": "2026-05-11T06:35:22.127Z"
+  }
+}

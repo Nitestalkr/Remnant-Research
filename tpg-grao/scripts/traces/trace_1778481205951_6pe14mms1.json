@@ -1,0 +1,19 @@
+{
+  "trace_id": "trace_1778481205951_6pe14mms1",
+  "timestamp": "2026-05-11T06:33:25.951Z",
+  "type": "external_api",
+  "source": "paperclip",
+  "target": "http://127.0.0.1:3101",
+  "action": "health_check",
+  "input": "uptime_check",
+  "output": "active",
+  "success": true,
+  "latency_ms": 16,
+  "error": "",
+  "metrics": {
+    "node": "paperclip",
+    "url": "http://127.0.0.1:3101",
+    "response_time": 16,
+    "last_activity": "2026-05-11T06:33:25.951Z"
+  }
+}

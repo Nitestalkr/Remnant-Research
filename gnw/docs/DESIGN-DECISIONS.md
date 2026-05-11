@@ -177,11 +177,11 @@ Key design choices in GNW and their rationale.
 - Hybrid mode (group + DM) balances transparency and privacy
 
 **Current state (May 10):**
-- 5 bots deployed: @AndiClawSuperBot, @randi2_dev_bot, @cb_dev_bot, @claude_sec_bot, @zero_deploy_bot
-- Group chat ID: -1003741274242
+- 5 bots deployed: @Andi_Bot, @randi2_bot, @cb_bot, @claude_bot, @zero_bot
+- Group chat ID: -1000000000000
 - All bots configured as group admins
-- Agent workspaces decentralized (C:\Users\JButt\.openclaw\workspace-{agent})
-- Shared workspace at C:\Users\JButt\.openclaw\workspace-visualmedia
+- Agent workspaces decentralized (C:\.openclaw\workspace-{agent})
+- Shared workspace at C:\.openclaw\workspace-shared
 
 **Alternatives considered:**
 - Single bot for all agents — loses identity separation
@@ -197,7 +197,7 @@ Key design choices in GNW and their rationale.
 **Rationale:**
 - Phase 5 testing confirmed: forcing work below threshold creates noise, not signal
 - Idle state is valid and intentional — the agent should rest when nothing matters
-- Josh's feedback "I miss the boredom scan" confirms boredom is essential but should only activate when warranted
+- User's feedback confirms boredom is essential but should only activate when warranted
 - Current state (May 10): boredom consistently at 1.0 with no qualifying candidates — system correctly idle
 
 **Alternatives considered:**

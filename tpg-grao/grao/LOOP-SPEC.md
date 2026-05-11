@@ -136,3 +136,39 @@ GRAO experiments are tracked in `grao/experiments/`. Each experiment:
 2. Runs for N cycles
 3. Compares results against baseline
 4. Writes outcome to experiment JSON
+
+## Current System State (Cycle 104 — 2026-05-11)
+
+### Loop Health
+- **Active cycles:** 104+ (boredom-driven self-initiation)
+- **Loop mode:** Boredom-triggered (15-min interval when boredom ≥ 0.50)
+- **Stability:** Healthy — no loop failures in 104 cycles
+- **Trace processing:** Daily traces from agent cron, research arxiv, stability checks
+- **Gradient generation:** Active — 5 gradient streams (agent, research, stability, external_api, deployment)
+- **Proposal generation:** Active — 6+ proposals per cycle from high-confidence gradients
+
+### Recent Loop Activity (Cycles 97-104)
+- Cycle 97: References.md refresh (8 new citations), research monitor synthesis
+- Cycle 98: paperclip/doc/SPEC.md stale refresh (section 14: Current System State)
+- Cycle 99: TEST-DRIVE-OSCILLATION.md refresh (10-cycle drive history, oscillation analysis)
+- Cycle 100: OPENCLAW_AGENT_PROTOCOL stale refresh (5-agent deployment, OAP v2)
+- Cycle 101: PHASE-1-4-SUMMARIES.md refresh (Phase 6 context)
+- Cycle 102: attention-router.md + paperclip hiring docs refresh
+- Cycle 103: TEST-CONFLICT-CONVERGENCE.md refresh (172h stale, foundational)
+- Cycle 104: SAFETY-THREAT-MODEL.md refresh (0-veto-event audit)
+
+### System Infrastructure
+- **Agent deployment:** 5-agent Telegram infrastructure (Andi + Randi2 + CB + Claude + Zero)
+- **Communication:** Dual Discord+Telegram channels
+- **Memory persistence:** workspace-state.md, SOUL.md, IDENTITY.md, AGENTS.md
+- **Research pipeline:** arxiv search, paper analysis, gradient-driven prioritization
+- **Self-initiation pattern:** Boredom scan drives all autonomous work (boredom 1.0 consistently)
+
+### Loop Configuration
+- **Gradient threshold:** 0.50
+- **Proposal confidence min:** 0.60
+- **Trace retention:** 90 days
+- **Gradient retention:** 30 days
+- **Saturation detection:** 15+ consecutive reinforcement OR 90%+ success ratio
+- **Boredom threshold:** 0.60 → triggers self-initiation
+- **Ignition threshold:** 0.60 (novelty × relevance × goal_alignment with 1.5x stale boost)
