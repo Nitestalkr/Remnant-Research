@@ -1,0 +1,47 @@
+{
+  "experience_id": "exp_2026-05-11_002",
+  "timestamp": "2026-05-11T01:00:00Z",
+  "status": "active",
+  "type": "pattern",
+  "category": "deployment_lifecycle",
+  "name": "Deployment Lifecycle Pattern Cluster",
+  "hypothesis": "Agent activation/deactivation events and gateway restart patterns produce meaningful gradients for deployment health monitoring",
+  "description": "Captures deployment lifecycle events (agent status, gateway restarts, cron stability, deployment health) to create a deployment cluster in GRAO. This cluster distinguishes between healthy deployment state and degraded deployment, producing gradients that steer toward deployment recovery when needed.",
+  "metrics": {
+    "tracked": ["agent_status", "gateway_restarts", "cron_stability", "deployment_health"],
+    "baseline": {
+      "agent_status_avg": 0,
+      "gateway_restarts": 0,
+      "cron_stability": 0,
+      "deployment_health": 0
+    },
+    "current": {
+      "agent_status_avg": 0,
+      "gateway_restarts": 0,
+      "cron_stability": 0,
+      "deployment_health": 0
+    }
+  },
+  "lessons_learned": [
+    "Agent activation status traces produce meaningful deployment health patterns",
+    "Gateway restart effects create distinct cluster from system maintenance experiences",
+    "Cron stability metrics (consecutive errors, success ratio) produce deployment degradation gradients"
+  ],
+  "customization": {
+    "how_to_add": "To add your own deployment lifecycle cluster:\n1. Track agent activation/deactivation events via cron logs or gateway status\n2. Record gateway restart events (SIGUSR1, manual restarts)\n3. Track cron job stability (consecutive errors, success ratio)\n4. Record deployment health metrics (agent status, system uptime)\n5. Add to GRAO experience store with this schema\n6. Track deployment degradation patterns to produce recovery gradients",
+    "env_vars_required": ["PAPERCLIP_API_URL", "UMBREL_HOST", "UMBREL_PORT"],
+    "deployment_events": ["agent_activation", "agent_deactivation", "gateway_restart", "cron_failure", "system_health"],
+    "generic_pattern": "Each deployment event produces a trace with agent_status, uptime, health metrics. These traces cluster together in GRAO as 'deployment lifecycle' patterns, distinct from 'user interaction' patterns."
+  },
+  "our_implementation": {
+    "agents": ["andi", "randi2", "cb", "claude", "zero"],
+    "gateway": {
+      "restarts": "SIGUSR1, manual restarts tracked",
+      "uptime": "N/A"
+    },
+    "cron": {
+      "stability": "GNW-Boredom-Scan (5 consecutive timeouts), GNW-Cognitive-Cycle (running)",
+      "success_ratio": "0.901"
+    }
+  }
+}
