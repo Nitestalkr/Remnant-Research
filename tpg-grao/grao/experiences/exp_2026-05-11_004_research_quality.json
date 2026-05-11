@@ -1,0 +1,53 @@
+{
+  "experience_id": "exp_2026-05-11_004",
+  "timestamp": "2026-05-11T01:00:00Z",
+  "status": "active",
+  "type": "pattern",
+  "category": "research_quality",
+  "name": "Research Quality Pattern Cluster",
+  "hypothesis": "Research activity metrics (paper relevance scoring, download success, thematic analysis) produce meaningful gradients for research direction optimization",
+  "description": "Captures research quality metrics (arXiv paper relevance scoring, download success rate, thematic analysis quality) to create a research cluster in GRAO. This cluster distinguishes between high-quality research output and degraded research, producing gradients that steer toward research improvement when needed.",
+  "metrics": {
+    "tracked": ["paper_relevance", "download_success_ratio", "thematic_analysis_quality", "cluster_diversity"],
+    "baseline": {
+      "paper_relevance_avg": 0,
+      "download_success_ratio": 0,
+      "thematic_analysis_quality": 0,
+      "cluster_diversity": 0
+    },
+    "current": {
+      "paper_relevance_avg": 0,
+      "download_success_ratio": 0,
+      "thematic_analysis_quality": 0,
+      "cluster_diversity": 0
+    }
+  },
+  "lessons_learned": [
+    "Research activity traces produce meaningful quality patterns",
+    "Paper relevance scoring creates distinct cluster from system maintenance experiences",
+    "Thematic analysis success metrics produce research direction gradients"
+  ],
+  "customization": {
+    "how_to_add": "To add your own research quality cluster:\n1. Track arXiv/HuggingFace paper relevance scoring\n2. Record paper download success rates\n3. Track thematic analysis quality (cross-day analysis, pattern detection)\n4. Record research output metrics (papers downloaded, recommendations, top picks)\n5. Add to GRAO experience store with this schema\n6. Track research degradation patterns to produce improvement gradients",
+    "env_vars_required": ["PAPERCLIP_API_URL"],
+    "research_sources": ["arxiv", "huggingface", "researchgate", "springer", "custom"],
+    "generic_pattern": "Each research activity produces a trace with relevance_score, download_success, quality metrics. These traces cluster together in GRAO as 'research quality' patterns, distinct from 'external API health' patterns."
+  },
+  "our_implementation": {
+    "sources": ["arxiv", "huggingface"],
+    "arxiv": {
+      "url": "https://arxiv.org/list/cs/recent",
+      "monitoring": "daily (cron 0 6 * * * America/New_York)",
+      "keywords": 109,
+      "daily_output": "~900-2000 papers, 100 recommended, 15 downloaded"
+    },
+    "huggingface": {
+      "url": "https://huggingface.co/papers/trending",
+      "monitoring": "daily (cron 0 6 * * * America/New_York)"
+    },
+    "research_quality": {
+      "thematic_analysis": "cross-day analysis (May 1-5 research monitor)",
+      "key_themes": ["multi-agent systems dominant", "agent safety accelerating", "MoE+long context paradigm shift", "KV cache breakthroughs", "autonomous coding competitive landscape"]
+    }
+  }
+}

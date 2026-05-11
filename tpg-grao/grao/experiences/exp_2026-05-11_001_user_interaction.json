@@ -1,0 +1,46 @@
+{
+  "experience_id": "exp_2026-05-11_001",
+  "timestamp": "2026-05-11T01:00:00Z",
+  "status": "active",
+  "type": "pattern",
+  "category": "user_interaction",
+  "name": "User Interaction Pattern Cluster",
+  "hypothesis": "Telegram/communication channel response latency patterns produce meaningful gradients for idle vs active detection",
+  "description": "Captures communication channel health metrics (response time, uptime, activity patterns) to create a user interaction cluster in GRAO. This cluster distinguishes between idle system state and active user engagement, producing gradients that steer toward self-initiation when idle.",
+  "metrics": {
+    "tracked": ["response_time", "success_ratio", "cluster_diversity", "idle_vs_active_ratio"],
+    "baseline": {
+      "response_time_avg": 0,
+      "success_ratio": 0,
+      "cluster_diversity": 0
+    },
+    "current": {
+      "response_time_avg": 0,
+      "success_ratio": 0,
+      "cluster_diversity": 0
+    }
+  },
+  "lessons_learned": [
+    "Communication channel health traces produce meaningful idle vs active detection patterns",
+    "Response latency metrics create distinct cluster from system maintenance experiences",
+    "Channel diversity (Telegram, Discord, Signal, WhatsApp, Nostr) increases cluster richness"
+  ],
+  "customization": {
+    "how_to_add": "To add your own user interaction cluster:\n1. Set env vars for your communication channels (TELEGRAM_BOT_TOKEN, DISCORD_BOT_TOKEN, etc.)\n2. Configure collect functions in trace-collector.js to check your channel's health\n3. Record response latency, uptime, activity patterns\n4. Add to GRAO experience store with this schema\n5. Track idle vs active ratio to produce self-initiation gradients",
+    "env_vars_required": ["TELEGRAM_BOT_TOKEN", "DISCORD_BOT_TOKEN", "SIGNAL_CONTACT_LIST", "WHATSAPP_SESSION_PATH", "NOSTR_RELAYS"],
+    "channel_types": ["telegram", "discord", "signal", "whatsapp", "nostr"],
+    "generic_pattern": "Each channel health check produces a trace with response_time, success, uptime metrics. These traces cluster together in GRAO as 'user interaction' patterns, distinct from 'system maintenance' patterns."
+  },
+  "our_implementation": {
+    "channels": ["telegram", "nostr"],
+    "telegram": {
+      "bot": "@AndiClawSuperBot",
+      "chat_id": "1747124819",
+      "response_time": "N/A (channel health check)"
+    },
+    "nostr": {
+      "relays": ["nos.lol", "nostr.wine", "relay.nostr.info", "nostr-pub.wellorder.net"],
+      "npub": "npub1lrfd22u7sc93vr58h55zmp574lusluyr6yx8ymucx9cx64jlthmsvy3vth"
+    }
+  }
+}

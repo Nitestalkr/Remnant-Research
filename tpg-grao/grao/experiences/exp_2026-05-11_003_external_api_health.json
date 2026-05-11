@@ -1,0 +1,56 @@
+{
+  "experience_id": "exp_2026-05-11_003",
+  "timestamp": "2026-05-11T01:00:00Z",
+  "status": "active",
+  "type": "pattern",
+  "category": "external_api_health",
+  "name": "External API Health Pattern Cluster",
+  "hypothesis": "External API endpoint health checks (HTTP uptime, response time) produce meaningful gradients for service reliability monitoring",
+  "description": "Captures external API health metrics (HTTP endpoint uptime, response time, success ratio) to create an external API cluster in GRAO. This cluster distinguishes between healthy API service and degraded service, producing gradients that steer toward API recovery or fallback when needed.",
+  "metrics": {
+    "tracked": ["uptime", "response_time", "success_ratio", "cluster_diversity"],
+    "baseline": {
+      "uptime_avg": 0,
+      "response_time_avg": 0,
+      "success_ratio": 0,
+      "cluster_diversity": 0
+    },
+    "current": {
+      "uptime_avg": 0,
+      "response_time_avg": 0,
+      "success_ratio": 0,
+      "cluster_diversity": 0
+    }
+  },
+  "lessons_learned": [
+    "HTTP endpoint health traces produce meaningful service reliability patterns",
+    "Response latency metrics create distinct cluster from system maintenance experiences",
+    "API diversity (Paperclip, Nostr, arXiv, Bitcoin) increases cluster richness"
+  ],
+  "customization": {
+    "how_to_add": "To add your own external API health cluster:\n1. Set env vars for your API endpoints (PAPERCLIP_API_URL, etc.)\n2. Configure HTTP health checks in trace-collector.js\n3. Record uptime, response time, success metrics\n4. Add to GRAO experience store with this schema\n5. Track API degradation patterns to produce recovery gradients",
+    "env_vars_required": ["PAPERCLIP_API_URL", "BITCOIN_RPC_HOST", "BITCOIN_RPC_PORT", "BITCOIN_RPC_AUTH"],
+    "api_types": ["paperclip", "bitcoin", "arxiv", "huggingface", "custom"],
+    "generic_pattern": "Each API health check produces a trace with uptime, response_time, success metrics. These traces cluster together in GRAO as 'external API health' patterns, distinct from 'deployment lifecycle' patterns."
+  },
+  "our_implementation": {
+    "apis": ["paperclip", "bitcoin", "arxiv", "huggingface"],
+    "paperclip": {
+      "url": "http://127.0.0.1:3101",
+      "health": "ok",
+      "version": "2026.427.0"
+    },
+    "bitcoin": {
+      "status": "not_running",
+      "env_vars": "BITCOIN_RPC_HOST, BITCOIN_RPC_PORT, BITCOIN_RPC_AUTH"
+    },
+    "arxiv": {
+      "url": "https://arxiv.org/list/cs/recent",
+      "monitoring": "daily"
+    },
+    "huggingface": {
+      "url": "https://huggingface.co/papers/trending",
+      "monitoring": "daily"
+    }
+  }
+}
