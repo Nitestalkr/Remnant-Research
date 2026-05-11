@@ -37,6 +37,41 @@
       "magnitude": 1,
       "type": "directional",
       "category": "success"
+    },
+    {
+      "id": "grad_2026-05-11_exploration_cross-cluster",
+      "direction": "cross-cluster-optimization",
+      "magnitude": 0.8,
+      "type": "exploration",
+      "category": "exploration"
+    },
+    {
+      "id": "grad_2026-05-11_exploration_research-domain",
+      "direction": "research-domain-expansion",
+      "magnitude": 0.7,
+      "type": "exploration",
+      "category": "exploration"
+    },
+    {
+      "id": "grad_2026-05-11_exploration_benchmarking",
+      "direction": "benchmarking-optimization",
+      "magnitude": 0.75,
+      "type": "exploration",
+      "category": "exploration"
+    },
+    {
+      "id": "grad_2026-05-11_exploration_cron-refinement",
+      "direction": "cron-scheduler-refinement",
+      "magnitude": 0.6,
+      "type": "exploration",
+      "category": "exploration"
+    },
+    {
+      "id": "grad_2026-05-11_exploration_trace-enhancement",
+      "direction": "trace-collection-enhancement",
+      "magnitude": 0.55,
+      "type": "exploration",
+      "category": "exploration"
     }
   ],
   "research_priorities": [],
@@ -50,19 +85,66 @@
   "last_trace_collection": "2026-05-11T03:45:25.543Z",
   "last_gradient_computation": "2026-05-11T16:00:15.678Z",
   "saturation": {
-    "detected": false,
-    "reinforcementRounds": 0,
+    "detected": true,
+    "reinforcementRounds": 36,
     "lastRoundSuccessRatio": 1,
-    "reason": null
+    "reason": "36 consecutive reinforcement proposals, 0 exploration — saturation detected"
   },
   "gradient_categories": {
-    "success": 5
+    "success": 5,
+    "exploration": 5
   },
   "last_proposal_generation": "2026-05-11T16:00:23.993Z",
-  "new_proposals": [],
+  "new_proposals": [
+    {
+      "id": "exp_2026-05-11_001",
+      "type": "exploration",
+      "target": "cross-cluster-optimization",
+      "direction": "agent-architecture",
+      "confidence": 0.75,
+      "status": "pending",
+      "generatedAt": "2026-05-11T13:06:00Z"
+    },
+    {
+      "id": "exp_2026-05-11_002",
+      "type": "exploration",
+      "target": "research-domain-expansion",
+      "direction": "neuroscience-cognitive",
+      "confidence": 0.65,
+      "status": "pending",
+      "generatedAt": "2026-05-11T13:06:00Z"
+    },
+    {
+      "id": "exp_2026-05-11_003",
+      "type": "exploration",
+      "target": "benchmarking-optimization",
+      "direction": "metric-accuracy",
+      "confidence": 0.70,
+      "status": "pending",
+      "generatedAt": "2026-05-11T13:06:00Z"
+    },
+    {
+      "id": "exp_2026-05-11_004",
+      "type": "exploration",
+      "target": "cron-scheduler-refinement",
+      "direction": "load-balancing",
+      "confidence": 0.60,
+      "status": "pending",
+      "generatedAt": "2026-05-11T13:06:00Z"
+    },
+    {
+      "id": "exp_2026-05-11_005",
+      "type": "exploration",
+      "target": "trace-collection-enhancement",
+      "direction": "channel-coverage",
+      "confidence": 0.55,
+      "status": "pending",
+      "generatedAt": "2026-05-11T13:06:00Z"
+    }
+  ],
   "proposal_types": {
     "reinforcement": 36,
-    "exploration": 0
+    "exploration": 5
   },
   "active_proposals": [
     {

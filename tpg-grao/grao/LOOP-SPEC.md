@@ -50,6 +50,9 @@ The GRAO (Gradient-Driven Research Optimization) loop is the core optimization c
   - **insufficient_data**: magnitude >= 0.7 AND confidence < 0.4 AND traces < 3
   - **exploration**: generated during saturation detection
 - Apply saturation detection: if 15+ consecutive reinforcement rounds OR 90%+ success ratio → generate exploration gradients
+- **Fixed:** Saturation detection now properly tracks reinforcement proposal count (not just cycle count)
+- **Fixed:** Reinforcement rounds counter resets only when exploration proposals generated
+- **Fixed:** Saturation detection triggers exploration gradient generation immediately when threshold crossed
 
 ### Step 4: Gradient Storage
 - Store computed gradients in `gradients/`
