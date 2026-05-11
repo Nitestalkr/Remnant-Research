@@ -129,16 +129,16 @@ If state file is corrupted:
 
 ---
 
-## Current System State (2026-05-10)
+## Current System State (2026-05-11)
 
 ### Health Metrics Snapshot
 
 | Metric | Value | Notes |
 |--------|-------|-------|
-| memory_integrity | 1.0 | 87 cognitive cycles complete, zero data loss |
-| cron_stability | 1.0 | All cron jobs operational, no runaway states |
-| agent_performance | 0.7 | 5-agent Telegram infrastructure deployed |
-| research_quality | 0.6 | 39 GRAO rounds completed, integration half operational |
+| memory_integrity | 1.0 | 110 cognitive cycles complete, zero data loss |
+| cron_stability | 1.0 | All cron jobs operational, boredom scan cycle active |
+| agent_performance | 0.7 | 5-agent Telegram infrastructure deployed (Andi, Randi2, CB, Claude, Zero) |
+| research_quality | 0.65 | 42 GRAO rounds completed, integration improving |
 
 ### Active Gradients
 
@@ -147,6 +147,7 @@ If state file is corrupted:
 - **MoE+long context** — magnitude ~0.30 (stable)
 - **KV cache breakthroughs** — magnitude ~0.25 (decaying)
 - **autonomous coding** — magnitude ~0.20 (stable)
+- **self-evolution mechanisms** — magnitude ~0.15 (new, emerging)
 
 ### Research Priorities
 
@@ -157,10 +158,13 @@ If state file is corrupted:
 
 ### Cycle History Summary
 
-- Total GRAO rounds: 39 (round_39_2026-05-04 is latest)
-- Latest trace collection: 2026-05-10
-- Latest gradient computation: 2026-05-04
-- Proposals generated: ongoing via proposal-generator.js
+- Total GRAO rounds: 42 (round_42_2026-05-11 is latest)
+- GRAO progression: r39→r42 (success ratio 83.3%→92.7%→100%)
+- Policy saturation concern still active (cycles 97-109)
+- Reinforcement-only mode detected in recent rounds
+- Latest trace collection: 2026-05-11
+- Latest gradient computation: 2026-05-11
+- Proposals generated: 10+ today (prop_2026-05-11 series)
 - Proposals activated: via agent workflow integration
 
 ### Configuration Notes
@@ -174,9 +178,22 @@ If state file is corrupted:
 
 ### Integration Status
 
-GNW→GRAO traces: ✅ operational (87 cycles of trace data)
+GNW→GRAO traces: ✅ operational (110 cycles of trace data)
 GRAO→GNW drive updates: 🟡 designed, pending real-agent validation
 GRAO→GNW cron config: ✅ operational (proposal-generator.js active)
+GRAO loop health: ✅ healthy (42 rounds, ~93% plateau)
+
+### Stale Data Inventory
+
+- round_13 (17d stale): early loop data, low relevance
+- round_20 (15d stale): early loop data, low relevance
+- round_38 (13d stale): intermediate loop data
+- round_33 (11d stale): intermediate loop data
+- exp_2026-04-23 series (18d stale): early experiments
+- EXPERIMENT-FRAMEWORK.md (6d stale): foundational doc
+- SIGNAL-RECONCILIATION.md (6d stale): TPG foundational
+- architecture.md (6d stale): TPG foundational
+- gradient-derivation.md (6d stale): GRAO foundational
 
 ---
 

@@ -1,0 +1,44 @@
+{
+  "scan_number": 101,
+  "timestamp": "2026-05-11T07:14:00-04:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    { "file": "gnw/stability/TEST-CONFLICT-CONVERGENCE.md", "hours": 168, "score": 0.648 },
+    { "file": "gnw/sprints/PHASE-1-4-SUMMARIES.md", "hours": 165, "score": 0.810 },
+    { "file": "gnw/stability/TEST-RUNNER-SPEC.md", "hours": 142, "score": 0.540 },
+    { "file": "gnw/docs/README.md", "hours": 140, "score": 0.468 },
+    { "file": "gnw/docs/GNW-GRAO-INTEGRATION.md", "hours": 140, "score": 0.576 },
+    { "file": "gnw/conflict-resolution/CONFLICT-RESOLUTION.md", "hours": 138, "score": 0.576 },
+    { "file": "gnw/conflict-resolution/RESOLUTION-LOG.md", "hours": 138, "score": 0.441 },
+    { "file": "tpg-grao/tpg/README.md", "hours": 165, "score": 0.396 },
+    { "file": "tpg-grao/tpg/routing/ROUTING-IMPL.md", "hours": 140, "score": 0.540 },
+    { "file": "tpg-grao/grao/gradient-derivation.md", "hours": 140, "score": 0.468 },
+    { "file": "tpg-grao/grao/architecture.md", "hours": 140, "score": 0.468 },
+    { "file": "tpg-grao/grao/loops/round_13_2026-04-25.json", "hours": 405, "score": 0.675 },
+    { "file": "tpg-grao/grao/loops/round_20_2026-04-26.json", "hours": 357, "score": 0.675 }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "gnw/sprints/PHASE-1-4-SUMMARIES.md",
+    "action": "Added Phase 6 current system state section with cycle 100+ metrics, 5-agent deployment status, OAP evolution, GRAO integration, self-initiation pattern, and updated architecture evolution diagram"
+  },
+  "drive_scores": {
+    "curiosity": 0.720,
+    "helpfulness": 0.300,
+    "competence": 0.540,
+    "safety": 0.200,
+    "goal-directed": 0.480,
+    "weighted_total": 0.522
+  },
+  "system_status": {
+    "cycles_completed": 100,
+    "pending_events": 0,
+    "idle_state": true,
+    "agent_deployment": "5-agent (Andi, Randi2, CB, Claude, Zero)",
+    "comms": "Discord + Telegram",
+    "drive_health": "oscillation diversity healthy, no remediation events",
+    "safety_veto_events": "0 emergency/hard, soft vetoes operating"
+  },
+  "notes": "Cycle 101: PHASE-1-4-SUMMARIES.md was 7 days stale (165h), foundational research doc. Added Phase 6 context covering cross-agent coordination, OAP v2, shared workspace, GRAO integration, self-initiation pattern, and current operational metrics. Score 0.810 highest among stale items."
+}

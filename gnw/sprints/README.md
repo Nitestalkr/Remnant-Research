@@ -12,7 +12,7 @@ Each sprint folder contains:
 - SPEC.md — Sprint objective, scope, and success criteria
 - LOG.md — Daily/step-by-step development log
 - RESULTS.md — Outcomes, metrics, and lessons learned
-- rtifacts/ — Code, configs, and other deliverables
+- artifacts/ — Code, configs, and other deliverables
 
 ## Sprint History
 

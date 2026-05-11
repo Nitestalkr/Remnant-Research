@@ -1,0 +1,40 @@
+{
+  "scan_number": 105,
+  "timestamp": "2026-05-11T11:14:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0,
+  "stale_items_scanned": [
+    { "file": "tpg/README.md", "hours": 162.2, "score": 0.1215 },
+    { "file": "tpg/routing/README.md", "hours": 137.6, "score": 0.091 },
+    { "file": "tpg/routing/ROUTING-IMPL.md", "hours": 137.6, "score": 0.091 },
+    { "file": "tpg/SIGNAL-RECONCILIATION.md", "hours": 136.5, "score": 0.081 },
+    { "file": "tpg/architecture.md", "hours": 134.3, "score": 0.081 },
+    { "file": "grao/experiments/README.md", "hours": 152.2, "score": 0.091 },
+    { "file": "grao/EXPERIMENT-FRAMEWORK.md", "hours": 137.3, "score": 0.091 },
+    { "file": "grao/gradient-derivation.md", "hours": 134.9, "score": 0.091 },
+    { "file": "grao/README.md", "hours": 29.0, "score": 0.036 },
+    { "file": "grao/loops/README.md", "hours": 28.9, "score": 0.036 },
+    { "file": "grao/FAILURE-ANALYSIS.md", "hours": 27.5, "score": 0.036 },
+    { "file": "grao/STATE-MANAGEMENT.md", "hours": 16.6, "score": 0.036 },
+    { "file": "gnw/docs/README.md", "hours": 119.7, "score": 0.036 },
+    { "file": "gnw/stability/README.md", "hours": 16.0, "score": 0.036 },
+    { "file": "gnw/cognitive-cycle/README.md", "hours": 114.2, "score": 0.036 }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "tpg/README.md",
+    "action": "stale refresh — added Current System State section with cycle 105 context, 5-agent deployment status, dual comms channels, self-initiation pattern, operational metrics"
+  },
+  "drive_scores": {
+    "tpg/README.md": 0.1215,
+    "tpg/routing/README.md": 0.091,
+    "tpg/routing/ROUTING-IMPL.md": 0.091,
+    "tpg/SIGNAL-RECONCILIATION.md": 0.081,
+    "tpg/architecture.md": 0.081,
+    "grao/experiments/README.md": 0.091,
+    "grao/EXPERIMENT-FRAMEWORK.md": 0.091,
+    "grao/gradient-derivation.md": 0.091
+  },
+  "system_status": "Healthy idle — self-initiation cycle complete",
+  "notes": "tpg/README.md (162h stale) highest score candidate. Foundational TPG routing doc refreshed with operational context. 15 stale items scanned, 11 already refreshed in recent cycles (86-104). Remaining unrefreshed tpg/grao docs queued for next cycle."
+}

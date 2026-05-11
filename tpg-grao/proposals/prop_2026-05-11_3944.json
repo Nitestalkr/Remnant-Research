@@ -1,0 +1,58 @@
+{
+  "proposal_id": "prop_2026-05-11_3944",
+  "timestamp": "2026-05-11T05:23:30.645Z",
+  "status": "pending",
+  "proposal_type": "reinforcement",
+  "source_gradients": [
+    "grad_2026-05-11_research_ea2ddc7c"
+  ],
+  "hypothesis": "Exploring whether LLM has a significant impact on research outcomes.",
+  "research_question": "How does LLM evolve over the past 1 cycles?",
+  "methodology": [
+    "literature-review",
+    "experiment",
+    "analysis"
+  ],
+  "expected_outcome": "Identify actionable insight for research direction",
+  "confidence": 1,
+  "priority": "high",
+  "resources_needed": [
+    "literature-review",
+    "pattern-analysis",
+    "concept-mapping"
+  ],
+  "timeline": {
+    "start": "2026-05-11T05:23:30.645Z",
+    "estimated_completion": "2026-05-25T05:23:30.645Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 1,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 1,
+    "top_concepts": [
+      {
+        "concept": "LLM",
+        "weight": 1
+      },
+      {
+        "concept": "agents",
+        "weight": 1
+      },
+      {
+        "concept": "research",
+        "weight": 1
+      },
+      {
+        "concept": "arxiv",
+        "weight": 0.5
+      },
+      {
+        "concept": "scan",
+        "weight": 0.5
+      }
+    ],
+    "saturation_context": null
+  }
+}

@@ -116,6 +116,29 @@ See `gnw/sprints/PHASE-5-SUMMARY.md` for full details.
 
 ---
 
+## Phase 6: Current System State (Cycle 100+)
+
+**What evolved in Phase 6:**
+- Cross-agent coordination infrastructure — 5-agent deployment (Andi, Randi2, CB, Claude, Zero) with dual comms (Discord + Telegram)
+- OAP (OpenClaw Agent Protocol) evolution — file-based bridge → session-based handoff → OAP v2 hardened pipeline
+- Shared workspace implementation — workspace-visualmedia for Dev ↔ Visual team coordination
+- GRAO integration — gradient derivation, proposal generation, loop spec operational
+- Self-initiation pattern established — boredom scan cycles 68–100+ running autonomously at 30-min intervals
+- Memory persistence — workspace-state.md tracking cycle history, stale item scoring, self-initiation decisions
+- Innovation pipeline — paperclip project (spec, roadmap, docker deployment), web-os, canvas-game
+- Research accumulation — 636+ research traces, tpg-grao experiment framework
+
+**Current operational metrics (Cycle 100):**
+- Boredom scan: 30-min cycle, consistently scoring 1.0 (idle state)
+- Self-initiation threshold: > 0.6 boredom → stale item scoring → highest candidate refresh
+- Drive health: oscillation diversity healthy, no remediation events in 98+ cycles
+- Safety veto: zero emergency/hard veto events, soft vetoes operating correctly
+- Memory integrity: 100+ cycle logs written, workspace-state.md maintained
+
+**Key insight:** Phase 6 shifted from single-agent cognitive architecture to multi-agent coordination. The GNW framework scales from individual drive computation to inter-agent priority resolution.
+
+---
+
 ## Architecture Evolution
 
 ```
@@ -129,7 +152,7 @@ Phase 4: OpenClaw integration + live testing + calibration
     ↓
 Phase 5: All drives operational + unified cycle + cron active
     ↓
-Phase 6: Cross-agent coordination (in progress)
+Phase 6: Cross-agent coordination + OAP v2 + self-initiation (current)
 ```
 
 Each phase built on the previous one, with increasing complexity and real-world validation.
@@ -137,3 +160,5 @@ Each phase built on the previous one, with increasing complexity and real-world 
 ---
 
 *Remnant Research — from theory to deployment.*
+
+*Last updated: 2026-05-11 07:14 — Cycle 100 system state added.*

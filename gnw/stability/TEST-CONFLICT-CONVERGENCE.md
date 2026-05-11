@@ -77,6 +77,31 @@ def test_convergence():
 - Half-life tie-breaking adds useful urgency sensing
 - Base weight tie-breaking is the final fallback (rarely used)
 
+## Current System State (Cycle 103 — 2026-05-11)
+
+### Deployment
+- 5-agent infrastructure active: Andi (main), Randi2 (OpenCode), CB (CodeBuff), Claude (Security), Zero (Deployment)
+- Dual comms: Discord + Telegram bots operational
+- All agents configured with agent.yaml gateway configs
+
+### Conflict Resolution in Production
+- Boredom scan cycle (this cycle) — idle state, no pending events, no conflicts to resolve
+- Self-initiation pattern: boredom > 0.6 → stale scan → highest candidate refresh
+- 102+ cognitive cycles, all converged without ambiguity
+- Drive health: curiosity dominant (idle state), helpfulness baseline, safety always active
+
+### Stability Metrics
+- Drive oscillation: healthy diversity (idle state drives curiosity to 0.8+)
+- Score bounds: all drives within [0.0, 1.0]
+- Memory integrity: workspace-state.md persists across cycles
+- Conflict resolution: 0 ambiguous outcomes in 102+ cycles
+
+### Recent Calibration
+- Stale threshold: 6h (items > 6h get 1.5x novelty boost)
+- Boredom threshold: 0.6
+- Priority matrix: curiosity > goal-directed > helpfulness > competence > safety (idle state)
+- Safety veto: always active, no external actions without review
+
 ---
 
 *Remnant Research — from theory to deployment.*

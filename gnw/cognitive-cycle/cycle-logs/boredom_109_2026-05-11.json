@@ -1,0 +1,40 @@
+{
+  "scan_number": 109,
+  "timestamp": "2026-05-11T13:44:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    { "file": "gnw/docs/GNW-GRAO-INTEGRATION.md", "hours": 158, "score": 2.70 },
+    { "file": "gnw/conflict-resolution/CONFLICT-RESOLUTION.md", "hours": 158, "score": 2.16 },
+    { "file": "tpg-grao/grao/STATE-MANAGEMENT.md", "hours": 148, "score": 2.16 },
+    { "file": "tpg-grao/grao/FAILURE-ANALYSIS.md", "hours": 148, "score": 2.07 },
+    { "file": "tpg-grao/grao/loops/round_33.json", "hours": 648, "score": 2.16 },
+    { "file": "gnw/stability/README.md", "hours": 148, "score": 0.36 },
+    { "file": "tpg-grao/tpg/architecture.md", "hours": 148, "score": 1.62 },
+    { "file": "tpg-grao/tpg/SIGNAL-RECONCILIATION.md", "hours": 148, "score": 1.35 },
+    { "file": "gnw/README.md", "hours": 148, "score": 1.08 },
+    { "file": "gnw/cognitive-cycle/BOREDOM-FORMULA.md", "hours": 8, "score": 0.36 }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "gnw/docs/GNW-GRAO-INTEGRATION.md",
+    "action": "Added GRAO r39→r42 progression table, updated integration status with 42+ rounds, policy saturation warning"
+  },
+  "drive_scores": {
+    "curiosity": 0.35,
+    "competence": 0.25,
+    "safety": 0.20,
+    "goal-directed": 0.15,
+    "social": 0.05
+  },
+  "system_status": {
+    "pending_events": 0,
+    "cycles_completed": 109,
+    "agent_deployment": "5-agent (Andi+Randi2+CB+Claude+Zero)",
+    "comms": "Discord + Telegram (dual)",
+    "grao_rounds": 42,
+    "grao_plateau": "~93%",
+    "policy_saturation": "detected r40+, reinforcement-only mode"
+  },
+  "notes": "No paperclip directory exists — phantom scores from cycle 107 corrected. GNW-GRAO-INTEGRATION.md was highest score (2.70) and foundational integration doc. Added GRAO progression data showing policy saturation concern in r40+ rounds. System healthy idle."
+}

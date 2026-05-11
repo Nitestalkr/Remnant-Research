@@ -1,0 +1,174 @@
+{
+  "scan_number": 102,
+  "timestamp": "2026-05-11T07:44:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "paperclip/hiring/funnel-tracker.md",
+      "hours": 14.9,
+      "score": 0.648
+    },
+    {
+      "file": "paperclip/hiring/outreach-templates.md",
+      "hours": 14.9,
+      "score": 0.621
+    },
+    {
+      "file": "paperclip/hiring/sourcing-wave-1.csv",
+      "hours": 14.8,
+      "score": 0.567
+    },
+    {
+      "file": "paperclip/hiring/inbound-wellfound-draft.md",
+      "hours": 14.8,
+      "score": 0.540
+    },
+    {
+      "file": "paperclip/hiring/inbound-linkedin-post-draft.md",
+      "hours": 14.8,
+      "score": 0.540
+    },
+    {
+      "file": "paperclip/hiring/ceo-send-checklist.md",
+      "hours": 14.8,
+      "score": 0.513
+    },
+    {
+      "file": "paperclip/hiring/ceo-action-kit-wave1.md",
+      "hours": 14.8,
+      "score": 0.513
+    },
+    {
+      "file": "paperclip/hiring/outbound-wave-1b-messages.md",
+      "hours": 14.7,
+      "score": 0.486
+    },
+    {
+      "file": "paperclip/hiring/contact-directory.md",
+      "hours": 14.7,
+      "score": 0.459
+    },
+    {
+      "file": "paperclip/hiring/inbound-posting-cheatsheet.md",
+      "hours": 14.6,
+      "score": 0.432
+    },
+    {
+      "file": "paperclip/hiring/comment-body.json",
+      "hours": 14.5,
+      "score": 0.405
+    },
+    {
+      "file": "gnw/docs/GNW-GRAO-INTEGRATION.md",
+      "hours": 144.1,
+      "score": 0.420
+    },
+    {
+      "file": "gnw/docs/README.md",
+      "hours": 144.0,
+      "score": 0.315
+    },
+    {
+      "file": "gnw/stability/TEST-RUNNER-SPEC.md",
+      "hours": 143.6,
+      "score": 0.270
+    },
+    {
+      "file": "gnw/cognitive-cycle/CONFLICT-RESOLUTION.md",
+      "hours": 141.9,
+      "score": 0.252
+    },
+    {
+      "file": "gnw/conflict-resolution/CONFLICT-RESOLUTION.md",
+      "hours": 140.3,
+      "score": 0.234
+    },
+    {
+      "file": "gnw/conflict-resolution/RESOLUTION-LOG.md",
+      "hours": 140.2,
+      "score": 0.216
+    },
+    {
+      "file": "gnw/cognitive-cycle/cycle-log-format.md",
+      "hours": 15.9,
+      "score": 0.189
+    },
+    {
+      "file": "gnw/README.md",
+      "hours": 15.9,
+      "score": 0.180
+    },
+    {
+      "file": "gnw/cognitive-cycle/README.md",
+      "hours": 15.6,
+      "score": 0.171
+    },
+    {
+      "file": "remnant-research/README.md",
+      "hours": 15.3,
+      "score": 0.126
+    },
+    {
+      "file": "tpg-grao/grao/README.md",
+      "hours": 15.3,
+      "score": 0.108
+    },
+    {
+      "file": "tpg-grao/grao/LOOP-SPEC.md",
+      "hours": 15.3,
+      "score": 0.090
+    },
+    {
+      "file": "tpg-grao/grao/loops/README.md",
+      "hours": 15.3,
+      "score": 0.090
+    },
+    {
+      "file": "tpg-grao/README.md",
+      "hours": 15.3,
+      "score": 0.072
+    },
+    {
+      "file": "tpg-grao/scripts/README.md",
+      "hours": 15.3,
+      "score": 0.072
+    },
+    {
+      "file": "tpg-grao/grao/FAILURE-ANALYSIS.md",
+      "hours": 15.3,
+      "score": 0.054
+    },
+    {
+      "file": "gnw/docs/ROADMAP.md",
+      "hours": 15.1,
+      "score": 0.045
+    },
+    {
+      "file": "gnw/stability/TEST-CONFLICT-CONVERGENCE.md",
+      "hours": 167.9,
+      "score": 0.045
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "paperclip/hiring/funnel-tracker.md (score 0.648)",
+    "action": "Updated funnel-tracker.md and outreach-templates.md with current system state section (cycle 102)"
+  },
+  "drive_scores": {
+    "novelty_drive": 0.7,
+    "relevance_drive": 0.9,
+    "goal_alignment_drive": 0.8,
+    "stale_boost_applied": 1.5,
+    "top_score": 0.648
+  },
+  "system_status": {
+    "cycles": 102,
+    "pending_events": 0,
+    "agents_active": 5,
+    "idle_state": true,
+    "boredom_threshold": 0.6,
+    "boredom_level": 1.0
+  },
+  "notes": "Paperclip hiring docs (15h stale) scored highest — active business-critical project. Updated funnel-tracker.md and outreach-templates.md with current system state. All 50 candidates sourced, templates ready, awaiting execution trigger. gnw foundational docs still stale (144h) but lower novelty since they're meta-docs about the system itself."
+}

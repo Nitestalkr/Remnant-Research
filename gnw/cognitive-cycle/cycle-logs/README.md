@@ -7,7 +7,7 @@ Record the GNW cognitive cycle's state and decisions for long-term traceability.
 See `cycle-log-format.md` for the JSON schema.
 
 ## Backfill
-Cycles 68-80 were backfilled from workspace-state.md and MEMORY.md historical data.
+Cycles 68-80 were backfilled from workspace-state.md and MEMORY.md historical data. Proper logging has since been implemented
 - Cycles 68, 69: Healthy idle (May 7)
 - Cycle 70: Stale items exceeded threshold (May 7)
 - Cycle 71: Boredom triggered self-initiation (May 7)

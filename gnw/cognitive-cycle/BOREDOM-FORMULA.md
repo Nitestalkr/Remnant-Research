@@ -105,7 +105,7 @@ In OpenClaw:
 
 - The formula was refined through multiple iterations during GNW Phase 5
 - Key insight: the system correctly stops forcing work when nothing qualifies ≥ 0.50
-- Josh's feedback: "I miss the boredom scan" — confirmed it's essential and should stay active
+- User's feedback:  confirmed it's essential and should stay active
 
 ---
 

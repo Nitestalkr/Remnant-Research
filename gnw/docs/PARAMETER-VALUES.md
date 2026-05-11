@@ -142,12 +142,15 @@ These values were determined through:
 operated correctly across 100+ cycles with no drive oscillation, no score-bound violations,
 and correct boredom triggering behavior.
 
-**Phase 6 Status (2026-05-10):**
+**Phase 6 Status (2026-05-11):**
 - 5-agent Telegram infrastructure deployed (Andi, Randi2, CB, Claude, Zero)
 - Cross-agent coordination via hybrid group chat + individual DMs
 - Shared workspace (workspace-visualmedia) for Dev ↔ Visual coordination
-- Boredom scan cycles 68-85 active, all scoring correctly
+- Boredom scan cycles 68-108 active, all scoring correctly
+- 103+ formal cycles verified, no drive oscillation, no score-bound violations
 - No forced work principle confirmed: self-initiation only when boredom > 0.6
+- Drive weight drift investigation: new Phase 6 open question
+- GRAO integration docs operational
 
 **Subject to calibration from:**
 
@@ -168,6 +171,7 @@ and correct boredom triggering behavior.
 | 2026-05-10 | Safety veto (hard) | Confirmed ≥ 0.85 | Telegram bot actions now subject to safety review |
 | 2026-05-10 | Boredom trigger | Confirmed ≥ 0.6 | Self-initiation threshold for idle state |
 | 2026-05-08 | Signal sources | Added Telegram bot actions | 5 agents now have Telegram bot interfaces |
+| 2026-05-11 | Drive weight drift | New open question | Drive scores showing drift pattern in cycles 100+; requires analysis |
 
 ---
 

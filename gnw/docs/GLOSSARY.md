@@ -52,7 +52,7 @@ Terminology and definitions for the GNW framework.
 
 | Term | Definition |
 |------|------------|
-| **qwen3.6** | Qwen 3.6 35B-A3B (multimodal local model, free via LM Studio). The top GRAO win: switching to qwen3.6 yielded +80% impact (Round 31). Josh's preferred model. |
+| **qwen3.6** | Qwen 3.6 35B-A3B (multimodal local model, free via LM Studio). The top GRAO win: switching to qwen3.6 yielded +80% impact (Round 31). User preferred model. |
 | **qwen3.5-9b** | Qwen 3.5 9B — smaller fallback model used when rate limits hit. |
 
 ## Thresholds

@@ -115,7 +115,7 @@
 
 ## Note
 - This is a valid and expected outcome. The system correctly identified that no work qualified ≥ 0.50.
-- Josh's feedback: "I miss the boredom scan" — this is the scan working correctly by NOT triggering.
+- User's feedback: this is the scan working correctly by NOT triggering.
 
 ---
 
@@ -178,7 +178,7 @@
 
 ## Trigger
 - Boredom scan: 0.35 (< 0.50 → SKIP)
-- User active: True (Josh sent message at 11:45)
+- User active: True (User sent message at 11:45)
 - Time since last context change: 90 minutes
 
 ## Decision

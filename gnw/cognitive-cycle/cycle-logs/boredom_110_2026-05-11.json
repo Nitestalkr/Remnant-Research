@@ -1,0 +1,128 @@
+{
+  "scan_number": 110,
+  "timestamp": "2026-05-11T11:44:00-05:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "STATE-MANAGEMENT.md",
+      "hours": 21,
+      "score": 0.972,
+      "novelty": 0.8,
+      "relevance": 0.9,
+      "goal_alignment": 0.9
+    },
+    {
+      "file": "FAILURE-ANALYSIS.md",
+      "hours": 32,
+      "score": 0.867,
+      "novelty": 0.8,
+      "relevance": 0.85,
+      "goal_alignment": 0.85
+    },
+    {
+      "file": "EXPERIMENT-FRAMEWORK.md",
+      "hours": 142,
+      "score": 0.864,
+      "novelty": 0.9,
+      "relevance": 0.8,
+      "goal_alignment": 0.8
+    },
+    {
+      "file": "SIGNAL-RECONCILIATION.md",
+      "hours": 141,
+      "score": 0.716,
+      "novelty": 0.85,
+      "relevance": 0.75,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "architecture.md",
+      "hours": 139,
+      "score": 0.716,
+      "novelty": 0.85,
+      "relevance": 0.75,
+      "goal_alignment": 0.75
+    },
+    {
+      "file": "gradient-derivation.md",
+      "hours": 139,
+      "score": 0.588,
+      "novelty": 0.8,
+      "relevance": 0.7,
+      "goal_alignment": 0.7
+    },
+    {
+      "file": "round_38_2026-04-28.json",
+      "hours": 304,
+      "score": 0.225,
+      "novelty": 0.75,
+      "relevance": 0.5,
+      "goal_alignment": 0.4
+    },
+    {
+      "file": "exp_2026-04-23_timeout_fix.json",
+      "hours": 336,
+      "score": 0.225,
+      "novelty": 0.75,
+      "relevance": 0.5,
+      "goal_alignment": 0.4
+    },
+    {
+      "file": "exp_2026-04-23_model_switch.json",
+      "hours": 336,
+      "score": 0.225,
+      "novelty": 0.75,
+      "relevance": 0.5,
+      "goal_alignment": 0.4
+    },
+    {
+      "file": "round_33_2026-04-30.json",
+      "hours": 142,
+      "score": 0.21,
+      "novelty": 0.7,
+      "relevance": 0.5,
+      "goal_alignment": 0.4
+    },
+    {
+      "file": "round_20_2026-04-26.json",
+      "hours": 365,
+      "score": 0.144,
+      "novelty": 0.8,
+      "relevance": 0.4,
+      "goal_alignment": 0.3
+    },
+    {
+      "file": "round_13_2026-04-25.json",
+      "hours": 399,
+      "score": 0.144,
+      "novelty": 0.8,
+      "relevance": 0.4,
+      "goal_alignment": 0.3
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "STATE-MANAGEMENT.md",
+    "action": "stale refresh with current system state, cycle history, GRAO progression, stale data inventory"
+  },
+  "drive_scores": {
+    "novelty_drive": 0.85,
+    "relevance_drive": 0.9,
+    "goal_alignment_drive": 0.9,
+    "stale_boost_applied": true,
+    "highest_score": 0.972
+  },
+  "system_status": {
+    "cycles": 110,
+    "pending_events": 0,
+    "agent_deployment": "5-agent Telegram (Andi, Randi2, CB, Claude, Zero)",
+    "comms": "dual (Discord + Telegram)",
+    "grao_rounds": 42,
+    "grao_plateau": "~93%",
+    "policy_saturation": "active concern",
+    "drive_health": "healthy",
+    "cron_status": "operational"
+  },
+  "notes": "STATE-MANAGEMENT.md selected as highest-scoring candidate (0.972). Updated with cycle 110 system state, GRAO r39→r42 progression, new self-evolution gradient, stale data inventory. Cycle 110 complete."
+}
