@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-05-11_13-01",
+  "bucket": "stability",
+  "metrics": {
+    "os_memory": {
+      "free_gb": 8.5,
+      "total_gb": 63.6,
+      "percent_free": 13.4
+    },
+    "drives": [
+      { "drive": "C", "used_gb": 1514.7, "total_gb": 1906.6, "percent_used": 79.4 },
+      { "drive": "F", "used_gb": 3238.4, "total_gb": 4657.5, "percent_used": 69.5 },
+      { "drive": "D", "used_gb": 503.7, "total_gb": 953.8, "percent_used": 52.8 }
+    ],
+    "gateway_status": "running",
+    "cron_health": 0.75,
+    "crash_frequency": "benign only (elephant-alpha)",
+    "plugin_health": "Telegram/Discord operational, Nostr uninstalled"
+  },
+  "baseline_comparison": {
+    "os_memory": { "baseline": 15.8, "current": 13.4, "change": -2.4, "flag": true },
+    "drives": { "D": { "baseline": 43.3, "current": 52.8, "change": +9.5 } },
+    "cron_health": { "baseline": 0.75, "current": 0.75, "change": 0.0 }
+  },
+  "flags": [
+    "OS memory declining (15.8% → 13.4%) — monitor trend"
+  ]
+}
