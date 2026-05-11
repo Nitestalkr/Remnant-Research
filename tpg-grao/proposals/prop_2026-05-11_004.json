@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_004",
+  "timestamp": "2026-05-11T14:00:00-04:00",
+  "status": "pending",
+  "type": "exploration",
+  "target": "cron-scheduler-refinement",
+  "source_gradients": ["grad_2026-05-11_exploration_cron-refinement"],
+  "hypothesis": "Current cron scheduling is static (fixed intervals). Dynamic load-balancing scheduling could reduce idle time and improve task distribution across agents.",
+  "research_question": "How can cron scheduling be optimized for dynamic load balancing across the agent team?",
+  "methodology": ["load-analysis", "scheduling-model", "experiment"],
+  "expected_outcome": "Design dynamic scheduling algorithm with load-aware intervals",
+  "confidence": 0.60,
+  "priority": "medium",
+  "resources_needed": ["scheduling-analysis", "load-balancing-model", "cron-config"],
+  "timeline": {
+    "start": "2026-05-11T14:00:00-04:00",
+    "estimated_completion": "2026-05-18T14:00:00-04:00"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.6,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 2,
+    "top_concepts": [
+      { "concept": "load-balancing", "weight": 1.8 },
+      { "concept": "scheduling", "weight": 1.5 }
+    ]
+  }
+}

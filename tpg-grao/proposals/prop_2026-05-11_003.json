@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_003",
+  "timestamp": "2026-05-11T14:00:00-04:00",
+  "status": "pending",
+  "type": "exploration",
+  "target": "benchmarking-optimization",
+  "source_gradients": ["grad_2026-05-11_exploration_benchmarking"],
+  "hypothesis": "Current benchmarking metrics are coarse (success/failure binary). Granular metrics (latency, token efficiency, quality scores) would enable more precise gradient computation.",
+  "research_question": "What granular metrics would improve GRAO gradient computation accuracy?",
+  "methodology": ["metric-analysis", "experiment", "comparison"],
+  "expected_outcome": "Define 5-8 granular benchmarking metrics for GRAO system",
+  "confidence": 0.70,
+  "priority": "high",
+  "resources_needed": ["metric-design", "benchmarking-tooling", "data-analysis"],
+  "timeline": {
+    "start": "2026-05-11T14:00:00-04:00",
+    "estimated_completion": "2026-05-20T14:00:00-04:00"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.75,
+    "temporal_factor": "accelerating",
+    "contributing_traces_count": 4,
+    "top_concepts": [
+      { "concept": "metric-accuracy", "weight": 2.0 },
+      { "concept": "benchmarking", "weight": 1.5 }
+    ]
+  }
+}
