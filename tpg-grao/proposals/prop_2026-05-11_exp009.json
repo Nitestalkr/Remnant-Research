@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_exp009",
+  "type": "exploration",
+  "timestamp": "2026-05-11T22:01:03.000Z",
+  "hypothesis": "Cron-scheduler refinement through adaptive cycle intervals (shorter during high-gradient periods, longer during stable periods) can optimize TPG energy expenditure and reduce redundant reinforcement cycles.",
+  "gradient_direction": "cron-scheduler-refinement",
+  "confidence": 0.65,
+  "priority": "low",
+  "expected_improvement": 0.10,
+  "impact": "Reduce reinforcement cycle frequency by 40% during stable periods while maintaining exploration trigger responsiveness.",
+  "metadata": {
+    "top_concepts": [
+      {"concept": "cron-scheduler-refinement", "weight": 0.9},
+      {"concept": "adaptive-intervals", "weight": 0.7},
+      {"concept": "gradient-responsive", "weight": 0.6},
+      {"concept": "energy-optimization", "weight": 0.5}
+    ],
+    "source": "saturation-exploration-cycle",
+    "related_gradients": [
+      "grad_2026-05-11_exploration_cron-refinement",
+      "grad_2026-05-11_agent_e65f5762"
+    ]
+  },
+  "status": "pending",
+  "tpg_target": "meta-optimization",
+  "actionable_files": ["SOUL.md"],
+  "proposed_changes": {
+    "SOUL.md": "Add adaptive cron scheduling as a core operational principle"
+  }
+}

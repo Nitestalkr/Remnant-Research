@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_exp008",
+  "type": "exploration",
+  "timestamp": "2026-05-11T22:01:02.000Z",
+  "hypothesis": "Benchmarking optimization through structured TPG cycle metrics (completion rates, token efficiency, proposal success ratios) can provide actionable gradient feedback instead of raw state tracking.",
+  "gradient_direction": "benchmarking-optimization",
+  "confidence": 0.68,
+  "priority": "low",
+  "expected_improvement": 0.12,
+  "impact": "Enable quantitative TPG evaluation — identify which proposal types yield highest ROI and which gradients are most actionable.",
+  "metadata": {
+    "top_concepts": [
+      {"concept": "benchmarking-optimization", "weight": 0.9},
+      {"concept": "TPG-metrics", "weight": 0.7},
+      {"concept": "ROI-analysis", "weight": 0.6},
+      {"concept": "cycle-evaluation", "weight": 0.5}
+    ],
+    "source": "saturation-exploration-cycle",
+    "related_gradients": [
+      "grad_2026-05-11_exploration_benchmarking",
+      "grad_2026-05-11_stability_17f620f4"
+    ]
+  },
+  "status": "pending",
+  "tpg_target": "system-health",
+  "actionable_files": ["grao-state.json"],
+  "proposed_changes": {
+    "grao-state.json": "Add benchmarking_metrics section with cycle-level KPIs"
+  }
+}

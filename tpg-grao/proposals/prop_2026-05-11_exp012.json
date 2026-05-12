@@ -1,0 +1,33 @@
+{
+  "proposal_id": "prop_2026-05-11_exp012",
+  "timestamp": "2026-05-12T00:00:00.000Z",
+  "status": "pending",
+  "proposal_type": "exploration",
+  "hypothesis": "Research domain expansion should be driven by gradient anomaly detection — when a gradient fires in an unexpected direction (e.g., system-health gradient with high magnitude during a coding task), it indicates an untapped research domain. By systematically mapping these anomalies to research topics, we can discover high-value exploration areas that current priorities miss.",
+  "research_question": "Can gradient anomaly patterns predict high-value research domains that are not covered by existing research priorities?",
+  "methodology": ["anomaly-pattern-mapping", "gradient-direction-analysis", "domain-hypothesis-generation"],
+  "expected_outcome": "Establish a gradient-anomaly-to-research-domain mapping protocol that identifies 3-5 high-value research areas per saturation cycle",
+  "confidence": 0.76,
+  "priority": "medium",
+  "resources_needed": ["gradient-data-analysis", "research-domain-catalog", "anomaly-detection-framework"],
+  "timeline": {
+    "start": "2026-05-12T00:00:00Z",
+    "estimated_completion": "2026-05-19T00:00:00Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.68,
+    "temporal_factor": "emerging",
+    "contributing_traces_count": 8,
+    "top_concepts": [
+      { "concept": "gradient-anomaly-detection", "weight": 3.0 },
+      { "concept": "research-domain-discovery", "weight": 2.5 },
+      { "concept": "directional-tilt-analysis", "weight": 1.8 },
+      { "concept": "untapped-potential", "weight": 1.2 }
+    ],
+    "related_proposals": ["prop_2026-05-11_research_ea2ddc7c"],
+    "exploration_target": "research-domain-expansion",
+    "source": "saturation-exploration-cycle"
+  }
+}

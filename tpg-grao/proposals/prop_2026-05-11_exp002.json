@@ -1,0 +1,31 @@
+{
+  "proposal_id": "prop_2026-05-11_exp002",
+  "timestamp": "2026-05-11T20:00:00Z",
+  "status": "pending",
+  "proposal_type": "exploration",
+  "source_gradients": ["grad_2026-05-11_exploration_research-domain"],
+  "hypothesis": "Research-domain expansion through external knowledge acquisition — the current GRAO loop is confined to internal workspace analysis. Introducing structured external research (GitHub repos, papers, community skills) as input to gradient computation would broaden the concept space and generate novel gradient directions that internal-only analysis cannot produce.",
+  "research_question": "How does external knowledge injection affect GRAO gradient diversity and proposal quality?",
+  "methodology": ["external-data-injection", "gradient-diversity-measurement", "proposal-quality-comparison"],
+  "expected_outcome": "Establish a protocol for periodic external research integration into GRAO cycles",
+  "confidence": 0.75,
+  "priority": "medium",
+  "resources_needed": ["web-fetch", "github-api", "knowledge-structuring"],
+  "timeline": {
+    "start": "2026-05-11T20:00:00Z",
+    "estimated_completion": "2026-05-20T20:00:00Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.65,
+    "temporal_factor": "accelerating",
+    "contributing_traces_count": 8,
+    "top_concepts": [
+      { "concept": "external-knowledge-injection", "weight": 3.2 },
+      { "concept": "gradient-diversity", "weight": 2.0 },
+      { "concept": "research-domain-expansion", "weight": 1.5 }
+    ],
+    "exploration_target": "research-domain-expansion"
+  }
+}

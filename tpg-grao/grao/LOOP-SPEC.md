@@ -88,6 +88,15 @@ The GRAO (Gradient-Driven Research Optimization) loop is the core optimization c
 - Compress archived data
 - Update retention metadata
 
+### Step 10: Stale Data Refresh (Exploration Trigger)
+- **When:** Exploration proposals generated (saturation detected)
+- **Purpose:** Ensure GNW Boredom Scan reads current GRAO state, not stale snapshots
+- **Action:** Update all stale round files with current `grao-state.json` saturation status
+- **Output:** `current_vs_stale_YYYY-MM-DD.json` in `loops/` comparing current vs stale values
+- **Rule:** Every exploration trigger MUST refresh stale round files
+- **Previous Issue:** Stale round files (round_31, 14d stale) created false saturation signals in boredom scan
+- **Fixed:** TPG-GRAO now refreshes stale files on every exploration trigger
+
 ## Loop Scheduling
 
 | Mode | Interval | Trigger |

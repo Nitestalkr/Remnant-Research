@@ -1,0 +1,30 @@
+{
+  "proposal_id": "prop_2026-05-11_exp010",
+  "type": "exploration",
+  "timestamp": "2026-05-11T22:01:04.000Z",
+  "hypothesis": "Trace-collection enhancement through structured event logging (agent handoff outcomes, tool call success rates, cron cycle completions) can provide richer gradient computation inputs and reduce trace sparsity.",
+  "gradient_direction": "trace-collection-enhancement",
+  "confidence": 0.60,
+  "priority": "low",
+  "expected_improvement": 0.08,
+  "impact": "Increase trace density by 50% — more data points for gradient computation, fewer blind spots in TPG evaluation.",
+  "metadata": {
+    "top_concepts": [
+      {"concept": "trace-collection-enhancement", "weight": 0.9},
+      {"concept": "structured-events", "weight": 0.7},
+      {"concept": "gradient-inputs", "weight": 0.6},
+      {"concept": "trace-density", "weight": 0.5}
+    ],
+    "source": "saturation-exploration-cycle",
+    "related_gradients": [
+      "grad_2026-05-11_exploration_trace-enhancement",
+      "grad_2026-05-11_stability_17f620f4"
+    ]
+  },
+  "status": "pending",
+  "tpg_target": "system-health",
+  "actionable_files": ["grao-state.json"],
+  "proposed_changes": {
+    "grao-state.json": "Add trace_collection_schema with structured event categories"
+  }
+}

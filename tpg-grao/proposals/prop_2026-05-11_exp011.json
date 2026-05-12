@@ -1,0 +1,33 @@
+{
+  "proposal_id": "prop_2026-05-11_exp011",
+  "timestamp": "2026-05-12T00:00:00.000Z",
+  "status": "pending",
+  "proposal_type": "exploration",
+  "hypothesis": "Cross-cluster gradient routing through capability-aware task decomposition — instead of routing whole tasks to single agents, decompose tasks into sub-components matched to each agent's strongest gradient cluster, then reassemble results. This creates cross-cluster gradient amplification without redundant overlap.",
+  "research_question": "Can task decomposition into agent-specific sub-components produce higher evolution signal than whole-task routing to a single agent?",
+  "methodology": ["task-decomposition-experiment", "gradient-cluster-mapping", "reassembly-comparison"],
+  "expected_outcome": "Establish a capability-aware decomposition protocol that maximizes cross-cluster gradient amplification while minimizing redundant agent cycles",
+  "confidence": 0.82,
+  "priority": "medium",
+  "resources_needed": ["agent-capability-profiles", "task-decomposition-framework", "gradient-measurement"],
+  "timeline": {
+    "start": "2026-05-12T00:00:00Z",
+    "estimated_completion": "2026-05-19T00:00:00Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.75,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 18,
+    "top_concepts": [
+      { "concept": "capability-aware-decomposition", "weight": 3.2 },
+      { "concept": "cross-cluster-routing", "weight": 2.8 },
+      { "concept": "gradient-amplification", "weight": 2.1 },
+      { "concept": "redundancy-reduction", "weight": 1.5 }
+    ],
+    "related_proposals": ["prop_2026-05-11_exp001", "prop_2026-05-11_exp006"],
+    "exploration_target": "cross-cluster-optimization",
+    "source": "saturation-exploration-cycle"
+  }
+}
