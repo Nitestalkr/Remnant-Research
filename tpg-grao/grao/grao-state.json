@@ -88,17 +88,19 @@
     "detected": true,
     "reinforcementRounds": 36,
     "lastRoundSuccessRatio": 1,
-    "reason": "36 consecutive reinforcement proposals, 0 exploration — saturation detected"
+    "reason": "36 consecutive reinforcement proposals, 0 exploration — saturation triggered exploration cycle",
+    "exploration_triggered": true,
+    "exploration_count": 10
   },
   "gradient_categories": {
     "success": 5,
     "exploration": 5
   },
-  "last_proposal_generation": "2026-05-11T18:00:00.000Z",
+  "last_proposal_generation": "2026-05-12T00:00:00.000Z",
   "new_proposals": [],
   "proposal_types": {
     "reinforcement": 36,
-    "exploration": 0
+    "exploration": 10
   },
   "active_proposals": [
     {
@@ -1258,9 +1260,927 @@
       "status": "active",
       "appliedAt": "2026-05-11T18:02:50.349Z",
       "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.378Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1a27",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b8f2",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3cb1",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_099b",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_ec3c",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp003",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_003",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5673",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp001",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_001",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp002",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp004",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp005",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_002",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_004",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_005",
+      "status": "active",
+      "appliedAt": "2026-05-11T20:03:05.386Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.449Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1a27",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b8f2",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3cb1",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_099b",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_ec3c",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp003",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_003",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5673",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp001",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp006",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_001",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp002",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp004",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp007",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp005",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_002",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_004",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp008",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp009",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp010",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_005",
+      "status": "active",
+      "appliedAt": "2026-05-11T22:03:37.459Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1e28",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.740Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_cfbf",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0420",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2ee5",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_d8c3",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b052",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_7539",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8256",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_0df3",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_406e",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1eb3",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3944",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b6d9",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_c9df",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5ba3",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_749f",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_db0b",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b497",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_09a0",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_6658",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3d62",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_8a3b",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_804b",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_2502",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_31cc",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1a27",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b8f2",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_3cb1",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_099b",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_ec3c",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp003",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_003",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5983",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_4ab7",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_b705",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_1ccd",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_944d",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_5673",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp011",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp015",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp013",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp014",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp001",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp006",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp012",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_001",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp002",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp004",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp007",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp005",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_002",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_004",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp008",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp009",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp010",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
+    },
+    {
+      "proposalId": "prop_2026-05-11_005",
+      "status": "active",
+      "appliedAt": "2026-05-12T00:05:40.751Z",
+      "tpgTarget": "agent-files"
     }
   ],
-  "last_proposal_application": "2026-05-11T18:02:50.349Z",
+  "last_proposal_application": "2026-05-12T00:05:40.751Z",
   "agent_file_changes": [
     {
       "id": "prop_2026-05-11_1e28",
@@ -1269,14 +2189,32 @@
       "changes": 2
     },
     {
+      "id": "prop_2026-05-11_1e28",
+      "file": "MEMORY.md",
+      "status": "applied",
+      "changes": 1
+    },
+    {
       "id": "prop_2026-05-11_cfbf",
       "file": "SOUL.md",
       "status": "applied",
       "changes": 1
     },
     {
+      "id": "prop_2026-05-11_cfbf",
+      "file": "MEMORY.md",
+      "status": "applied",
+      "changes": 1
+    },
+    {
       "id": "prop_2026-05-11_0420",
       "file": "SOUL.md",
+      "status": "applied",
+      "changes": 1
+    },
+    {
+      "id": "prop_2026-05-11_0420",
+      "file": "MEMORY.md",
       "status": "applied",
       "changes": 1
     }

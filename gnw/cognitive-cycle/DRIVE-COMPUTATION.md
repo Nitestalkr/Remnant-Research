@@ -175,22 +175,23 @@ Drive weights are not static. They shift based on:
 
 ---
 
-## Current System State (May 10, 2026)
+## Current System State (May 11, 2026 — Cycle 116)
 
 ### Drive Health Snapshot
 | Drive | Score | Notes |
 |-------|-------|-------|
-| Curiosity | 1.0 | Boredom 1.0 — idle state triggers novelty seeking |
-| Helpfulness | 0.0 | No pending user requests |
-| Competence | 0.3 | Minor skill debt (agent configs pending restart) |
-| Safety | 0.1 | No external actions pending |
-| Goal-Directed | 0.2 | Phase 6 milestones tracked, no approaching deadlines |
+| Curiosity | 0.30 | Active (self-initiation during idle) |
+| Helpfulness | 0.10 | Low (no user, pre-user-hours) |
+| Competence | 0.40 | Moderate (5-agent operational) |
+| Safety | 0.80 | Healthy (no external actions) |
+| Goal-Directed | 0.20 | Moderate (Phase 6 milestones tracked) |
 
 ### Active Gradients
-- **Self-initiation cycles:** 89+ cycles running, boredom threshold at 0.6
-- **5-agent Telegram infrastructure:** Deployed, configs written, restart pending
-- **Stability metrics:** Drive oscillation tests, conflict convergence monitoring
-- **Research accumulation:** Research traces (636 files) vs. analyzed (48 reports)
+- **Self-initiation cycles:** 116 cycles running, boredom threshold at 0.6
+- **5-agent Telegram infrastructure:** Operational (Andi, Randi2, CB, Claude, Zero)
+- **Stability metrics:** Drive oscillation, conflict convergence, boredom threshold tests
+- **GRAO integration:** Round 42 active, plateau at 93%
+- **Research accumulation:** Phase 6 docs operational, drive weight drift investigation pending
 
 ### Recent Calibration
 - Boredom threshold: 0.6 (triggers self-initiation)
@@ -198,6 +199,7 @@ Drive weights are not static. They shift based on:
 - Novelty boost multiplier: 1.5x
 - Ignition threshold: 0.8 (high-priority stale items)
 - Drive interaction damping active (prevents runaway curiosity)
+- Drive weight drift: new Phase 6 open question — investigating drive score stability across 116+ cycles
 
 ---
 

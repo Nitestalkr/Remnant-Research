@@ -96,4 +96,47 @@ Action: Flag for manual review, continue internal work
 
 ---
 
+## Current System State (Cycle 113+)
+
+### Drive Conflict Audit (109-113 cycles)
+
+| Cycle | Primary Drive | Runner-up | Resolution Type | Confidence |
+|-------|---------------|-----------|----------------|------------|
+| 109 | Curiosity (2.70) | Competence (2.16) | Stale scan → GNW-GRAO-INTEGRATION.md | High |
+| 110 | Curiosity (0.972) | Competence (0.867) | Stale scan → STATE-MANAGEMENT.md | High |
+| 111 | Curiosity (0.315) | Competence (0.315) | Tie-break → attention-router.md | Medium |
+| 112 | Curiosity (1.44) | Competence (0.81) | Stale scan → paperclip README.md | High |
+| 113 | Curiosity (0.205) | Competence (0.205) | Tie-break → attention-router.md | Medium |
+
+### Observations
+
+- **Curiosity dominance**: In all 5 cycles, Curiosity drive won as primary. This is expected during idle state (user away, stale context).
+- **No Safety vetos**: 0 veto events across 113+ cycles. Safety drive consistently low during idle.
+- **Tie-breaking pattern**: Cycles 111 and 113 both hit tie-break (drives within 0.05). Recency bias resolved to attention-router.md (least recently dominant).
+- **No drive suppression events**: No suppression triggered across 113+ cycles. User engagement suppression never activated.
+- **Partial execution**: No split-work events. Resolution always clean.
+
+### Context State Summary
+
+- **User presence**: Away (idle system)
+- **Pending events**: 0
+- **Stale inventory**: 20+ items across gnw/docs, gnw/conflict-resolution, gnw/stability, tpg-grao
+- **Active gradients**: 5 (stability, research, agent, deployment, external_api)
+- **GRAO pipeline**: 42 rounds, ~93% plateau, policy saturation concern
+- **Boredom scan**: 113+ cycles, healthy oscillation
+
+### Conflict Resolution Pattern
+
+During idle state, the system follows a predictable pattern:
+1. Boredom scan triggers (boredom = 1.0)
+2. Stale scan identifies items
+3. Curiosity drive scores items (novelty boost for stale)
+4. Highest-scoring stale item wins
+5. Item refreshed with current system state
+6. Cycle complete, boredom resets
+
+This pattern is stable and healthy. No intervention needed.
+
+---
+
 *Remnant Research — from theory to deployment.*
