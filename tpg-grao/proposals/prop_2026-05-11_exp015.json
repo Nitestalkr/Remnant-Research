@@ -1,0 +1,33 @@
+{
+  "proposal_id": "prop_2026-05-11_exp015",
+  "timestamp": "2026-05-12T00:00:00.000Z",
+  "status": "pending",
+  "proposal_type": "exploration",
+  "hypothesis": "Trace collection enhancement through multi-modal signal capture — current traces capture only text-based interactions. By adding system state snapshots (memory wiki status, agent availability, cron cycle timing, model usage metrics) as trace metadata, we enrich gradient computation with environmental context. This allows gradients to account for system state, not just interaction content.",
+  "research_question": "Does enriched trace metadata (system state + interaction content) produce more accurate and actionable gradients than content-only traces?",
+  "methodology": ["multi-modal-trace-collection", "system-state-snapshot-integration", "gradient-enrichment-comparison"],
+  "expected_outcome": "Establish a multi-modal trace collection protocol that improves gradient accuracy by 25% through environmental context enrichment",
+  "confidence": 0.81,
+  "priority": "medium",
+  "resources_needed": ["trace-collection-framework", "system-state-capture-tools", "enrichment-analysis"],
+  "timeline": {
+    "start": "2026-05-12T00:00:00Z",
+    "estimated_completion": "2026-05-19T00:00:00Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.70,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 10,
+    "top_concepts": [
+      { "concept": "multi-modal-trace-collection", "weight": 3.1 },
+      { "concept": "system-state-enrichment", "weight": 2.5 },
+      { "concept": "gradient-accuracy-improvement", "weight": 2.0 },
+      { "concept": "environmental-context", "weight": 1.5 }
+    ],
+    "related_proposals": ["prop_2026-05-11_exploration_trace-enhancement"],
+    "exploration_target": "trace-collection-enhancement",
+    "source": "saturation-exploration-cycle"
+  }
+}

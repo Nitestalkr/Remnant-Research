@@ -1,0 +1,31 @@
+{
+  "proposal_id": "prop_2026-05-11_exp005",
+  "timestamp": "2026-05-11T20:00:00Z",
+  "status": "pending",
+  "proposal_type": "exploration",
+  "source_gradients": ["grad_2026-05-11_exploration_trace-enhancement"],
+  "hypothesis": "Trace-collection enhancement — current GRAO traces are sparse and capture only high-level events. Expanding trace granularity to include tool call patterns, response quality metrics, agent interaction data, and workspace file change deltas would provide richer gradient computation input and enable more precise evolution direction calculation.",
+  "research_question": "What additional data sources and granularity levels would materially improve GRAO gradient computation accuracy?",
+  "methodology": ["trace-audit", "data-source-expansion", "gradient-comparison"],
+  "expected_outcome": "Define an enhanced trace collection protocol covering tool calls, responses, and workspace changes",
+  "confidence": 0.70,
+  "priority": "medium",
+  "resources_needed": ["trace-audit", "data-collection-framework", "gradient-comparison"],
+  "timeline": {
+    "start": "2026-05-11T20:00:00Z",
+    "estimated_completion": "2026-05-19T20:00:00Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.55,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 4,
+    "top_concepts": [
+      { "concept": "trace-granularity", "weight": 3.0 },
+      { "concept": "tool-call-patterns", "weight": 2.5 },
+      { "concept": "workspace-delta-tracking", "weight": 1.8 }
+    ],
+    "exploration_target": "trace-collection-enhancement"
+  }
+}

@@ -50,6 +50,16 @@ Record the GNW cognitive cycle's state and decisions for long-term traceability.
     "safety": 0.0-1.0,
     "goal_directed": 0.0-1.0
   },
+  "graos_saturation": {
+    "detected": true/false,
+    "source": "grao-state.json|stale_round_files",
+    "reinforcementRounds": N,
+    "exploration_triggered": true/false,
+    "exploration_count": N,
+    "last_exploration_timestamp": "ISO-8601 or null",
+    "data_freshness": "fresh|stale",
+    "notes": "brief description"
+  },
   "system_status": "idle|active|self-initiation|user-present",
   "notes": "brief summary"
 }

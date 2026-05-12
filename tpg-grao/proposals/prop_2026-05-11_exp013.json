@@ -1,0 +1,33 @@
+{
+  "proposal_id": "prop_2026-05-11_exp013",
+  "timestamp": "2026-05-12T00:00:00.000Z",
+  "status": "pending",
+  "proposal_type": "exploration",
+  "hypothesis": "Benchmarking optimization through gradient-weighted sampling — instead of uniform trace sampling for benchmarks, weight samples by gradient magnitude and direction diversity. High-magnitude gradients with diverse directions produce more informative benchmark data than low-magnitude or repetitive patterns. This reduces benchmark noise while increasing signal-to-noise ratio.",
+  "research_question": "Does gradient-weighted trace sampling produce more reliable benchmark results than uniform sampling?",
+  "methodology": ["gradient-weighted-sampling", "benchmark-signal-noise-analysis", "sampling-comparison"],
+  "expected_outcome": "Establish a gradient-weighted benchmark sampling protocol that improves benchmark reliability by 30% while reducing data collection overhead",
+  "confidence": 0.80,
+  "priority": "medium",
+  "resources_needed": ["benchmark-framework", "gradient-weighting-math", "sampling-comparison-tool"],
+  "timeline": {
+    "start": "2026-05-12T00:00:00Z",
+    "estimated_completion": "2026-05-19T00:00:00Z"
+  },
+  "results": null,
+  "lessons_learned": [],
+  "metadata": {
+    "pattern_strength": 0.71,
+    "temporal_factor": "stable",
+    "contributing_traces_count": 14,
+    "top_concepts": [
+      { "concept": "gradient-weighted-sampling", "weight": 3.1 },
+      { "concept": "benchmark-signal-optimization", "weight": 2.6 },
+      { "concept": "noise-reduction", "weight": 1.9 },
+      { "concept": "sampling-efficiency", "weight": 1.4 }
+    ],
+    "related_proposals": ["prop_2026-05-11_exploration_benchmarking"],
+    "exploration_target": "benchmarking-optimization",
+    "source": "saturation-exploration-cycle"
+  }
+}

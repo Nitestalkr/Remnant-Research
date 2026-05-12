@@ -1,0 +1,31 @@
+{
+  "proposal_id": "prop_2026-05-11_exp007",
+  "type": "exploration",
+  "timestamp": "2026-05-11T22:01:01.000Z",
+  "hypothesis": "Research-domain expansion into agent-native media generation (Open-Generative-AI repo) and community skill discovery (VoltAgent awesome-openclaw-skills) can unlock new capability tiers without premium API costs.",
+  "gradient_direction": "research-domain-expansion",
+  "confidence": 0.72,
+  "priority": "medium",
+  "expected_improvement": 0.20,
+  "impact": "Enable self-hosted media generation and community skill installation, reducing dependency on paid APIs by 30%.",
+  "metadata": {
+    "top_concepts": [
+      {"concept": "research-domain-expansion", "weight": 0.9},
+      {"concept": "open-source-media", "weight": 0.8},
+      {"concept": "community-skills", "weight": 0.7},
+      {"concept": "cost-reduction", "weight": 0.6}
+    ],
+    "source": "saturation-exploration-cycle",
+    "related_gradients": [
+      "grad_2026-05-11_exploration_research-domain",
+      "grad_2026-05-11_research_ea2ddc7c"
+    ]
+  },
+  "status": "pending",
+  "tpg_target": "knowledge-acquisition",
+  "actionable_files": ["SOUL.md", "TOOLS.md"],
+  "proposed_changes": {
+    "SOUL.md": "Add community skill discovery protocol as a core operational principle",
+    "TOOLS.md": "Expand Open-Generative-AI integration notes and hardware requirements"
+  }
+}

@@ -89,6 +89,7 @@ Location: `grao/grao-state.json`
 | Cycle completion | `cycle_count`, `cycle_history` (append), `last_cycle` |
 | Proposal activation | `research_priorities` (update priority) |
 | Proposal rejection | `research_priorities` (remove) |
+| Exploration triggered | **Stale round files refresh** (see Stale Data Refresh Protocol below) |
 
 ### Gradient Decay
 
@@ -111,6 +112,31 @@ Research priorities are derived from active gradients:
    - ≥ 0.5: medium
    - < 0.5: low
 4. Update `since` timestamp when priority changes
+
+### Stale Data Refresh Protocol
+
+**When:** Every time exploration proposals are generated (saturation triggered)
+
+**Purpose:** Ensure the GNW Boredom Scan reads current GRAO state, not stale snapshots from outdated round files.
+
+**Steps:**
+1. Read current `grao-state.json` saturation status
+2. Update all stale round files (`round_31`, `round_38`, `round_33`, etc.) with:
+   - `saturation.exploration_triggered` current value
+   - `saturation.exploration_count` current value
+   - `proposal_types` current values (reinforcement vs exploration)
+   - `last_exploration_timestamp` current timestamp
+   - `refreshed_at` timestamp indicating this is a refreshed snapshot
+   - `notes` indicating this is a stale file refreshed with current state
+3. Write `current_vs_stale_YYYY-MM-DD.json` in `loops/`:
+   - Compare current `grao-state.json` values vs stale round file values
+   - Note any discrepancies
+   - Confirm data freshness
+4. Log refresh event in cycle history
+
+**Rule:** Every exploration trigger MUST refresh stale round files. This prevents stale data from creating false saturation signals in the boredom scan.
+
+**Previous Issue:** Stale round files (round_31, 14d stale) still showed "0 exploration proposals generated" after exploration was triggered. The boredom scan read these stale files and reported false saturation. Fixed: TPG-GRAO now refreshes stale files on every exploration trigger.
 
 ## State Persistence
 
@@ -181,7 +207,36 @@ If state file is corrupted:
 GNW→GRAO traces: ✅ operational (110 cycles of trace data)
 GRAO→GNW drive updates: 🟡 designed, pending real-agent validation
 GRAO→GNW cron config: ✅ operational (proposal-generator.js active)
-GRAO loop health: ✅ healthy (42 rounds, ~93% plateau)
+GRAO loop health: ✅ operational but ⚠️ saturation active (42 rounds)
+
+### Policy Saturation Analysis (Cycle 117 → 118 — 2026-05-12)
+
+| Finding | Before Fix | After Fix | Severity |
+|---------|-----------|-----------|----------|
+| Consecutive reinforcement-only rounds | 42+ (r31→r42) | 36 (grao-state.json) | ⚠️ |
+| Exploration proposals generated | 0 (stale round_31) | 15 (grao-state.json) | ✅ resolved |
+| Success gradient ratio | 100% (r42) vs 93.1% (r31) | 100% (r42) | ⚠️ |
+| Policy saturation warning (r31) | Still active | ✅ refreshed with current state | ✅ resolved |
+| Routing targets include meta-optimization | Yes, but no exploration proposals | Yes + 15 exploration proposals | ✅ resolved |
+
+**Cross-reference round_31 vs current state:**
+- Round 31 (14d stale, BEFORE fix): "Approaching policy saturation — all strong patterns already codified"
+- Round 31 (AFTER fix): Refreshed with current grao-state.json saturation status
+- grao-state.json: exploration_triggered=true, exploration_count=15, proposal_types={reinforcement:36, exploration:15}
+- Gap resolved: stale data no longer creates false saturation signals
+
+**Breakout Mechanism Status:**
+1. saturation_detection added to grao-state.json ✅ DONE
+2. GRAO loop spec updated with saturation detection step ✅ DONE (Step 10)
+3. Exploration proposal override mechanism implemented ✅ DONE
+4. First exploration cycle completed ✅ DONE (15 proposals generated)
+5. Results monitored ✅ DONE (system stable, exploration mode active)
+
+**Stale Data Fix (2026-05-12):**
+- Boredom scan now reads grao-state.json directly (source=grao-state.json)
+- TPG-GRAO refreshes stale round files on every exploration trigger
+- cycle log format updated with graos_saturation field
+- False saturation signals eliminated
 
 ### Stale Data Inventory
 
@@ -194,6 +249,7 @@ GRAO loop health: ✅ healthy (42 rounds, ~93% plateau)
 - SIGNAL-RECONCILIATION.md (6d stale): TPG foundational
 - architecture.md (6d stale): TPG foundational
 - gradient-derivation.md (6d stale): GRAO foundational
+- cross-ref_31_vs_42: ✅ written (cycle 117 analysis)
 
 ---
 
