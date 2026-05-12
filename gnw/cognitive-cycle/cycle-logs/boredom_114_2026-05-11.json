@@ -1,0 +1,46 @@
+{
+  "scan_number": 114,
+  "timestamp": "2026-05-11T17:55:00-04:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    { "file": "CONFLICT-RESOLUTION.md", "hours": 142.6, "score": 1.215 },
+    { "file": "TEST-RUNNER-SPEC.md", "hours": 148.3, "score": 1.0125 },
+    { "file": "tpg-grao READMEs (6 files)", "hours": 208.5, "score": 0.810 },
+    { "file": "round_13_2026-04-25.json", "hours": 346.2, "score": 0.810 },
+    { "file": "round_20_2026-04-26.json", "hours": 290.6, "score": 0.765 },
+    { "file": "round_31_2026-04-27.json", "hours": 263.0, "score": 0.630 },
+    { "file": "SIGNAL-RECONCILIATION.md", "hours": 208.6, "score": 0.756 },
+    { "file": "EDGE-CASES.md", "hours": 24.7, "score": 0.178 },
+    { "file": "PRIORITY-MATRIX.md", "hours": 23.7, "score": 0.164 },
+    { "file": "DRIVE-COMPUTATION.md", "hours": 16.2, "score": 0.21 },
+    { "file": "stability READMEs (3 files)", "hours": 26.8, "score": 0.207 },
+    { "file": "SAFETY-THREAT-MODEL.md", "hours": 11.7, "score": 0.27 },
+    { "file": "PARAMETER-VALUES.md", "hours": 8.5, "score": 0.27 }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "CONFLICT-RESOLUTION.md",
+    "action": "Stale refresh — added drive conflict audit (109-113 cycles), resolution patterns, context state summary, idle system behavior analysis"
+  },
+  "drive_scores": {
+    "Curiosity": 1.44,
+    "Competence": 0.81,
+    "Goal-Directed": 0.36,
+    "Safety": 0.27,
+    "Helpfulness": 0.18
+  },
+  "system_status": {
+    "pending_events": 0,
+    "user_presence": "away",
+    "cycles_total": 114,
+    "GRAO_rounds": 42,
+    "GRAO_plateau": "~93%",
+    "policy_saturation": "active (42+ consecutive reinforcement-only rounds)",
+    "active_gradients": 5,
+    "drive_veto_events": 0,
+    "drive_suppression_events": 0,
+    "partial_execution_events": 0
+  },
+  "notes": "CONFLICT-RESOLUTION.md was foundational doc never refreshed in recent cycles (142.6h stale). Added comprehensive drive conflict audit showing predictable idle-state pattern: boredom triggers → stale scan → Curiosity wins → highest-stale item refreshed → cycle complete. No intervention needed — pattern stable and healthy."
+}

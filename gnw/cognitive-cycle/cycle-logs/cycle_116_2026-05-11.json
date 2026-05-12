@@ -1,0 +1,72 @@
+{
+  "cycle_number": 116,
+  "timestamp": "2026-05-11T22:29:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 1.0,
+  "pending_events": [],
+  "stale_items": [
+    {
+      "file": "gnw/stability/TEST-MEMORY-INTEGRITY.md",
+      "staleness_hours": 26.5,
+      "score": 0.800,
+      "reason": "Stability test spec, last modified May 10"
+    },
+    {
+      "file": "gnw/stability/TEST-SCORE-BOUNDS.md",
+      "staleness_hours": 26.4,
+      "score": 0.800,
+      "reason": "Stability test spec, last modified May 10"
+    },
+    {
+      "file": "gnw/docs/DESIGN-DECISIONS.md",
+      "staleness_hours": 16.0,
+      "score": 0.600,
+      "reason": "GNW architecture docs"
+    },
+    {
+      "file": "gnw/docs/SAFETY-THREAT-MODEL.md",
+      "staleness_hours": 11.2,
+      "score": 0.400,
+      "reason": "Safety model docs"
+    },
+    {
+      "file": "gnw/docs/ROADMAP.md",
+      "staleness_hours": 11.0,
+      "score": 0.400,
+      "reason": "GNW roadmap"
+    },
+    {
+      "file": "gnw/docs/PARAMETER-VALUES.md",
+      "staleness_hours": 8.0,
+      "score": 0.900,
+      "reason": "GNW parameter values"
+    },
+    {
+      "file": "gnw/docs/GNW-GRAO-INTEGRATION.md",
+      "staleness_hours": 7.5,
+      "score": 0.500,
+      "reason": "GRAO integration docs"
+    }
+  ],
+  "stage_contents": [
+    {"item": "GNW Phase 6", "score": 0.75, "status": "active"},
+    {"item": "GRAO Round 42", "score": 0.85, "status": "active"},
+    {"item": "Drive weight drift investigation", "score": 0.55, "status": "pending"},
+    {"item": "5-agent Telegram deployment", "score": 0.80, "status": "active"}
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "threshold": 0.6,
+    "candidate": "gnw/cognitive-cycle/DRIVE-COMPUTATION.md",
+    "action": "Stale refresh (25.8h) — updated drive health snapshot to cycle 116 state, added GRAO integration status, added drive weight drift investigation note"
+  },
+  "drive_scores": {
+    "curiosity": 0.30,
+    "helpfulness": 0.10,
+    "competence": 0.40,
+    "safety": 0.80,
+    "goal_directed": 0.20
+  },
+  "system_status": "self-initiation",
+  "notes": "Boredom 1.0, no pending events. Self-initiation: DRIVE-COMPUTATION.md stale refresh (25.8h). Previous boredom_115 scan triggered paperclip hiring data analysis (wave-2 targeting strategy). 5-agent infrastructure operational. GRAO plateau at 93%. 116 cycles completed. Drive weight drift investigation remains open Phase 6 question."
+}

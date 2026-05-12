@@ -1,0 +1,80 @@
+{
+  "scan_number": 115,
+  "timestamp": "2026-05-11T22:25:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    {
+      "file": "paperclip/hiring/sourcing-wave-1.csv",
+      "hours": 23.6,
+      "score": 0.300
+    },
+    {
+      "file": "paperclip/hiring/contact-directory.md",
+      "hours": 23.5,
+      "score": 0.300
+    },
+    {
+      "file": "paperclip/hiring/outreach-templates.md",
+      "hours": 8.7,
+      "score": 0.135
+    },
+    {
+      "file": "paperclip/hiring/funnel-tracker.md",
+      "hours": 8.7,
+      "score": 0.135
+    },
+    {
+      "file": "paperclip/hiring/ceo-send-checklist.md",
+      "hours": 8.7,
+      "score": 0.135
+    },
+    {
+      "file": "paperclip/hiring/inbound-wellfound-draft.md",
+      "hours": 23.5,
+      "score": 0.180
+    },
+    {
+      "file": "paperclip/hiring/inbound-linkedin-post-draft.md",
+      "hours": 23.6,
+      "score": 0.180
+    },
+    {
+      "file": "gnw/stability/.gitkeep",
+      "hours": 144.0,
+      "score": 0.0
+    },
+    {
+      "file": "gnw/docs/.gitkeep",
+      "hours": 144.0,
+      "score": 0.0
+    },
+    {
+      "file": "tpg-grao/grao/loops/.gitkeep",
+      "hours": 144.0,
+      "score": 0.0
+    }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "paperclip hiring data analysis",
+    "action": "Generated wave-2-analysis.md with 5 gap analysis, 30 new target categories, funnel metrics update. Updated funnel-tracker.md with cycle 115 state and bottleneck identification. Break from doc-refresh pattern — actual data analysis work."
+  },
+  "drive_scores": {
+    "novelty_drive": 0.3,
+    "relevance_drive": 0.8,
+    "goal_alignment_drive": 0.5,
+    "stale_boost": 1.5,
+    "combined": 0.300
+  },
+  "system_status": {
+    "cycles_run": 115,
+    "pending_events": 0,
+    "idle_duration": "continuous",
+    "drive_health": "healthy — boredom 1.0, self-initiation active",
+    "agent_deployment": "5-agent active (Andi, Randi2, CB, Claude, Zero)",
+    "comms_channels": "Discord + Telegram",
+    "model": "lmstudio/qwen/qwen3.6-35b-a3b"
+  },
+  "notes": "Cycle 115 breaks from 114-cycle doc-refresh pattern. Instead of refreshing stale paperclip docs, performed actual data analysis: wave-2 targeting strategy with 5 critical gaps identified (inbound not active, warm referral data missing, mid-level engineering underrepresented, no academic pipeline, no international beyond Europe). Generated wave-2-analysis.md with 30 new target categories. Updated funnel-tracker.md with bottleneck identification. Key insight: inbound channel activation is critical bottleneck before expanding wave 2 outreach."
+}

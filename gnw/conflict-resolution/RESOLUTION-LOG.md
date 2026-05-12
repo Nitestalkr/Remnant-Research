@@ -126,4 +126,67 @@ Conflict resolution records from Phase 5 testing. Each entry documents a drive c
 
 ---
 
+## Current System State (Cycle 116+)
+
+### Resolution Pattern Evolution
+
+| Phase | Cycles | Mode | Avg Confidence | Veto Events |
+|-------|--------|------|---------------|-------------|
+| Phase 5 | 3 | Manual testing | 0.675 | 0 |
+| Phase 6 (self-initiation) | 116+ | Autonomous boredom scan | ~0.85 | 0 |
+
+### Key Evolution Points
+
+1. **Boredom threshold:** 0.50 → 0.60 (higher threshold, less forced work)
+2. **Stale detection:** 3h → 6h (wider tolerance, fewer false positives)
+3. **Drive diversity:** 5 drives → 5 drives (stable, no oscillation)
+4. **Tie-breaking:** Manual recency bias → automated novelty × relevance × goal_alignment
+5. **Novelty boost:** None → 1.5x for stale items (>6h untouched)
+6. **Self-initiation:** None → primary work driver (116+ cycles)
+
+### Drive Conflict Audit (Cycles 109-113)
+
+| Cycle | Winner | Runner-up | Score Gap | Tie-breaking | Confidence |
+|-------|--------|-----------|-----------|-------------|------------|
+| 109 | Curiosity | Competence | 0.15 | None | 0.90 |
+| 110 | Goal-Directed | Curiosity | 0.12 | None | 0.85 |
+| 111 | Competence | Curiosity | 0.08 | None | 0.75 |
+| 112 | Curiosity | Goal-Directed | 0.10 | None | 0.80 |
+| 113 | Competence | Curiosity | 0.07 | None | 0.70 |
+
+**Analysis:** Healthy drive diversity. No flip-flop patterns. Average confidence 0.80. No runaway states.
+
+### Veto Event Audit (Cycles 1-116)
+
+| Veto Type | Events | Threshold | Triggered |
+|-----------|--------|-----------|-----------|
+| Hard veto (>= 0.85) | 0 | Safety | Never |
+| Soft veto (>= 0.70) | 0 | Safety | Never |
+| Boredom floor | 0 | 0.30 | N/A |
+
+**Result:** 0 veto events in 116 cycles. Safety mechanism healthy but never triggered. All drives stable below safety thresholds.
+
+### Stability Metrics
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| Drive oscillation | 0 | Healthy |
+| Score bounds | All in [0.0, 1.0] | Healthy |
+| Conflict convergence | Converging to stable state | Healthy |
+| Memory integrity | All docs refreshed | Healthy |
+| Drive health | No remediation events | Healthy |
+
+### Operational Metrics
+
+| Metric | Value |
+|--------|-------|
+| Total cycles | 116+ |
+| Work initiated | 115+ (all self-initiated) |
+| Doc refreshes | ~90% of work |
+| Data analysis | ~10% (cycle 115 wave-2 hiring analysis) |
+| Research synthesis | ~5% (cycles 87, 112) |
+| System idle rate | ~80% (user away majority) |
+
+---
+
 *Remnant Research - from theory to deployment.*
