@@ -39,7 +39,7 @@
     "changes": [
       "Model config: confirmed lmstudio/qwen/qwen3.6-35b-a3b as primary (stable since 2026-04-23)",
       "Timeout config: 900s adequate for TPG-GRAO cron",
-      "GNW integration: Phase 6 cross-agent coordination active",
+      "GNW integration: Phase 6 infrastructure deployed (5-agent Telegram setup complete); cross-agent coordination protocol not yet implemented",
       "Self-initiation: Nighttime productivity pattern established (5 actions/2hr baseline)",
       "Trace system: 60 traces in system, 83% success rate (50/60)"
     ]
