@@ -405,186 +405,6 @@
       "expected_improvement": 0
     },
     {
-      "proposalId": "prop_2026-05-11_b705",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.284Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether self-evolving-agents has a significant impact on research outcomes.",
-      "confidence": 0.85,
-      "priority": "medium",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_1eb3",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.285Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Tracking the evolution of cron has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_3944",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.285Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether LLM has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_b6d9",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.285Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Determining the strength of system has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_c9df",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.285Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether nostr has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_5ba3",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.285Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether deployment has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_1ccd",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.286Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether self-evolving-agents has a significant impact on research outcomes.",
-      "confidence": 0.85,
-      "priority": "medium",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_749f",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.286Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Tracking the evolution of cron has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_db0b",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.286Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether LLM has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_b497",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.286Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Determining the strength of system has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_09a0",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.287Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether nostr has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_6658",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.287Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether deployment has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_944d",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.287Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether self-evolving-agents has a significant impact on research outcomes.",
-      "confidence": 0.85,
-      "priority": "medium",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_3d62",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.287Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Tracking the evolution of cron has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_8a3b",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.288Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether LLM has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_804b",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.288Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Determining the strength of system has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_2502",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.288Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether nostr has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
-      "proposalId": "prop_2026-05-11_31cc",
-      "status": "active",
-      "appliedAt": "2026-05-11T16:00:28.288Z",
-      "tpgTarget": "system-health",
-      "hypothesis": "Exploring whether deployment has a significant impact on research outcomes.",
-      "confidence": 1,
-      "priority": "high",
-      "expected_improvement": 0
-    },
-    {
       "proposalId": "prop_2026-05-11_5673",
       "status": "active",
       "appliedAt": "2026-05-11T16:00:28.288Z",
@@ -643,7 +463,167 @@
       "confidence": 1,
       "priority": "high",
       "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_001",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.704Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Cross-cluster agent coordination patterns show diminishing returns from reinforcement-only approach. Exploration of inter-agent architecture optimization could yield 15-30% efficiency gains.",
+      "confidence": 0.75,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_003",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.704Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Current benchmarking metrics are coarse (success/failure binary). Granular metrics (latency, token efficiency, quality scores) would enable more precise gradient computation.",
+      "confidence": 0.7,
+      "priority": "high",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_004",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.704Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Current cron scheduling is static (fixed intervals). Dynamic load-balancing scheduling could reduce idle time and improve task distribution across agents.",
+      "confidence": 0.6,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_002",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.705Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Current research domain is narrow (agent optimization + system health). Expansion into neuroscience/cognitive architecture research could inform self-evolution mechanisms.",
+      "confidence": 0.65,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp005",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.705Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Trace-collection enhancement — current GRAO traces are sparse and capture only high-level events. Expanding trace granularity to include tool call patterns, response quality metrics, agent interaction data, and workspace file change deltas would provide richer gradient computation input and enable more precise evolution direction calculation.",
+      "confidence": 0.7,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp001",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.705Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Cross-cluster gradient coupling — when agent-optimization and system-health gradients fire simultaneously, their combined effect exceeds individual magnitudes. By routing tasks that activate both clusters (e.g., agent-file changes + system-health checks), we can amplify evolution signal and reduce redundant cycles.",
+      "confidence": 0.78,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp002",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.706Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Research-domain expansion through external knowledge acquisition — the current GRAO loop is confined to internal workspace analysis. Introducing structured external research (GitHub repos, papers, community skills) as input to gradient computation would broaden the concept space and generate novel gradient directions that internal-only analysis cannot produce.",
+      "confidence": 0.75,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp004",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.706Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Cron-scheduler refinement — the current TPG-GRAO cron fires at fixed intervals regardless of gradient state. Implementing a state-aware scheduler that adjusts cycle frequency based on gradient magnitude, saturation level, and exploration needs would optimize evolution pacing: faster cycles during high-gradient periods, slower during saturation, and dedicated exploration cycles when reinforcement is exhausted.",
+      "confidence": 0.72,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp003",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.706Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Benchmarking-optimization — the current GRAO system lacks quantitative performance metrics for evolution quality. Adding structured benchmarks (proposal adoption rate, agent-file change effectiveness, gradient-to-outcome mapping) would enable comparative evaluation across cycles and guide proposal quality thresholds.",
+      "confidence": 0.8,
+      "priority": "high",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp008",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.707Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Benchmarking optimization through structured TPG cycle metrics (completion rates, token efficiency, proposal success ratios) can provide actionable gradient feedback instead of raw state tracking.",
+      "confidence": 0.68,
+      "priority": "low",
+      "expected_improvement": 0.12
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp010",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.707Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Trace-collection enhancement through structured event logging (agent handoff outcomes, tool call success rates, cron cycle completions) can provide richer gradient computation inputs and reduce trace sparsity.",
+      "confidence": 0.6,
+      "priority": "low",
+      "expected_improvement": 0.08
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp011",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.708Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Cross-cluster gradient routing through capability-aware task decomposition — instead of routing whole tasks to single agents, decompose tasks into sub-components matched to each agent's strongest gradient cluster, then reassemble results. This creates cross-cluster gradient amplification without redundant overlap.",
+      "confidence": 0.82,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp012",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.708Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Research domain expansion should be driven by gradient anomaly detection — when a gradient fires in an unexpected direction (e.g., system-health gradient with high magnitude during a coding task), it indicates an untapped research domain. By systematically mapping these anomalies to research topics, we can discover high-value exploration areas that current priorities miss.",
+      "confidence": 0.76,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp013",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.708Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Benchmarking optimization through gradient-weighted sampling — instead of uniform trace sampling for benchmarks, weight samples by gradient magnitude and direction diversity. High-magnitude gradients with diverse directions produce more informative benchmark data than low-magnitude or repetitive patterns. This reduces benchmark noise while increasing signal-to-noise ratio.",
+      "confidence": 0.8,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp014",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.709Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Cron scheduler refinement through gradient-driven scheduling — instead of fixed-interval cron cycles, use gradient magnitude and direction stability to dynamically adjust cycle frequency. When gradients are stable and low-magnitude, extend intervals (reducing overhead). When gradients spike or show directional shifts, compress intervals (increasing responsiveness). This creates an adaptive evolution rhythm that matches system state.",
+      "confidence": 0.79,
+      "priority": "medium",
+      "expected_improvement": 0
+    },
+    {
+      "proposalId": "prop_2026-05-11_exp015",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.709Z",
+      "tpgTarget": "system-health",
+      "hypothesis": "Trace collection enhancement through multi-modal signal capture — current traces capture only text-based interactions. By adding system state snapshots (memory wiki status, agent availability, cron cycle timing, model usage metrics) as trace metadata, we enrich gradient computation with environmental context. This allows gradients to account for system state, not just interaction content.",
+      "confidence": 0.81,
+      "priority": "medium",
+      "expected_improvement": 0
     }
   ],
-  "last_updated": "2026-05-11T16:00:28.289Z"
+  "last_updated": "2026-05-13T00:12:27.182Z"
 }
