@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-05-12T06:14:00.000Z",
+  "source": "GNW-Boredom-Scan / grao-state.json",
+  "fix_note": "GHO-24: Historical round artifacts restored. Refresh metadata must be written under refresh_log only — existing fields are immutable.",
+  "current_metrics": {
+    "reinforcementRounds": 36,
+    "lastRoundSuccessRatio": 1.0,
+    "totalRoundsCompleted": 42,
+    "exploration_triggered": true,
+    "exploration_count": 15,
+    "last_exploration_timestamp": "2026-05-12T00:05:40.751Z"
+  },
+  "stale_comparisons": [
+    {
+      "file": "remnant-research/tpg-grao/grao/loops/round_31_2026-04-27.json",
+      "round_timestamp": "2026-04-27T18:00:00Z",
+      "staleness_note": "Round 31 ran during Phase 2 (pattern discovery). Exploration was not implemented until Round 40+. Fields injected by GHO-24 bug (saturation_status, proposal_types, last_exploration_timestamp, notes) have been removed.",
+      "discrepancies": [
+        {
+          "field": "saturation_status.exploration_triggered",
+          "round_value": "field did not exist at round time",
+          "current_grao_state": true,
+          "resolution": "do not inject — round artifact is immutable"
+        },
+        {
+          "field": "proposal_types",
+          "round_value": "[\"reinforcement\"]",
+          "current_grao_state": "[\"reinforcement\", \"exploration\"]",
+          "resolution": "do not inject — round artifact is immutable"
+        }
+      ]
+    },
+    {
+      "file": "remnant-research/tpg-grao/grao/loops/round_38_2026-04-28.json",
+      "round_timestamp": "2026-04-29T00:03:33Z",
+      "staleness_note": "Round 38 ran during Phase 3 (saturation). Exploration was not implemented until Round 40+. Injected fields have been removed.",
+      "discrepancies": [
+        {
+          "field": "saturation_status.exploration_triggered",
+          "round_value": "field did not exist at round time",
+          "current_grao_state": true,
+          "resolution": "do not inject — round artifact is immutable"
+        }
+      ]
+    },
+    {
+      "file": "remnant-research/tpg-grao/grao/loops/round_33_2026-04-30.json",
+      "round_timestamp": "2026-04-30T12:43:00Z",
+      "staleness_note": "Round 33 ran during Phase 3 (saturation). Exploration was not implemented until Round 40+. Injected fields have been removed.",
+      "discrepancies": [
+        {
+          "field": "saturation_status.exploration_triggered",
+          "round_value": "field did not exist at round time",
+          "current_grao_state": true,
+          "resolution": "do not inject — round artifact is immutable"
+        }
+      ]
+    }
+  ]
+}

@@ -91,11 +91,12 @@ The GRAO (Gradient-Driven Research Optimization) loop is the core optimization c
 ### Step 10: Stale Data Refresh (Exploration Trigger)
 - **When:** Exploration proposals generated (saturation detected)
 - **Purpose:** Ensure GNW Boredom Scan reads current GRAO state, not stale snapshots
-- **Action:** Update all stale round files with current `grao-state.json` saturation status
-- **Output:** `current_vs_stale_YYYY-MM-DD.json` in `loops/` comparing current vs stale values
-- **Rule:** Every exploration trigger MUST refresh stale round files
-- **Previous Issue:** Stale round files (round_31, 14d stale) created false saturation signals in boredom scan
-- **Fixed:** TPG-GRAO now refreshes stale files on every exploration trigger
+- **Action:** Append a `refresh_log` entry to each stale round file — do NOT modify any existing top-level fields
+- **Immutability rule:** Round artifact JSON files are immutable once written. Fields like `saturation_status`, `proposal_types`, `last_exploration_timestamp`, and `notes` at the root level reflect the round that originally ran and MUST NOT be added or overwritten by later refresh passes.
+- **Correct output:** Each stale round file gets a `refresh_log` array entry containing a snapshot of current `grao-state.json` saturation status, timestamped with the refresh event.
+- **Comparison output:** `current_vs_stale_YYYY-MM-DD.json` in `loops/` compares current `grao-state.json` vs stale round file original values
+- **Source-of-truth rule:** Boredom scan MUST read `grao-state.json` directly for current saturation state; do not infer it from historical round artifacts.
+- **Previous Bug (GHO-24):** Refresh logic injected `saturation_status`, `proposal_types`, `last_exploration_timestamp`, and `notes` directly into historical round artifacts (round_31, round_33, round_38). Exploration was not implemented until Round 40+, so these fields corrupted the historical record. Fixed: only `refresh_log` is appended; no existing fields are touched.
 
 ## Loop Scheduling
 
