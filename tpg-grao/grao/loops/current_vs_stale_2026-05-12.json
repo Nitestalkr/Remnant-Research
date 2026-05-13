@@ -2,12 +2,24 @@
   "generated_at": "2026-05-12T06:14:00.000Z",
   "source": "GNW-Boredom-Scan / grao-state.json",
   "fix_note": "GHO-24: Historical round artifacts restored. Refresh metadata must be written under refresh_log only — existing fields are immutable.",
+  "detection_meta": {
+    "schema_paths": {
+      "reinforcementRounds": "saturation.reinforcementRounds",
+      "lastRoundSuccessRatio": "saturation.lastRoundSuccessRatio",
+      "totalRoundsCompleted": "derived: max(round) across loops/round_*.json",
+      "exploration_triggered": "saturation.exploration_triggered",
+      "exploration_count": "saturation.exploration_count",
+      "last_exploration_timestamp": "active_proposals[first exploration batch].appliedAt"
+    },
+    "null_sentinel": "Any null field in current_metrics indicates a read failure — check grao-state.json schema alignment before trusting empty discrepancies arrays.",
+    "error": null
+  },
   "current_metrics": {
     "reinforcementRounds": 36,
     "lastRoundSuccessRatio": 1.0,
     "totalRoundsCompleted": 42,
     "exploration_triggered": true,
-    "exploration_count": 15,
+    "exploration_count": 10,
     "last_exploration_timestamp": "2026-05-12T00:05:40.751Z"
   },
   "stale_comparisons": [
