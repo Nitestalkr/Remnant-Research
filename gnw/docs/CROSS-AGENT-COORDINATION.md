@@ -2,14 +2,15 @@
 
 Drive score sharing and synchronization protocol between agents.
 
-> **Status:** Phase 6 in progress — design documented, real-agent testing pending.
-> This document describes the planned architecture. Implementation details will be
-> updated as Phase 6 develops.
+> **Status:** Phase 6 Sprint 19 complete — shared store, broadcast protocol, and arbitration implemented.
+> Sprint 20 (drive weight sync cron jobs) pending other agents' harness activation.
 >
-> **Last updated:** 2026-05-10 09:34 AM (Cycle 84 boredom scan)
+> **Last updated:** 2026-05-13 (Sprint 19 implementation — GHO-36)
 > **Current system state:** 5 agents operational (Andi, Randi2, CB, Claude, Zero)
 > **Telegram infrastructure:** All 5 agents configured with Telegram bots, hybrid mode (group + DMs)
-> **Shared workspace:** `workspace-shared/` available for cross-team coordination
+> **Shared store:** `gnw/phase6/drive-weight-store.json` — live, broadcast protocol active
+> **Broadcast script:** `gnw/phase6/broadcast-protocol.js` — validates and writes per-agent drive scores
+> **Arbitration script:** `gnw/phase6/arbitration.js` — cross-agent conflict resolution with safety veto + oscillation detection
 
 ---
 
@@ -68,12 +69,14 @@ Malformed payloads **would** be logged and discarded.
 }
 ```
 
-### Sync Mechanism (design)
+### Sync Mechanism ✅ IMPLEMENTED
 
-- **Frequency:** At the end of each cognitive cycle
-- **Channel:** Shared drive weight store (JSON file or OpenClaw memory)
-- **Format:** JSON broadcast, parsed by receiving agents
-- **Validation:** Score bounds check (0.0–1.0) before accepting
+- **Frequency:** At the end of each cognitive cycle (Step 10a)
+- **Channel:** `gnw/phase6/drive-weight-store.json` — shared JSON store
+- **Format:** JSON broadcast, validated before write (`broadcast-protocol.js`)
+- **Validation:** Score bounds check (0.0–1.0); unknown drive or agent names rejected
+
+Each agent invokes `broadcast-protocol.js --agent <name> --scores <json>` after Task Dispatch.
 
 ---
 
@@ -103,15 +106,15 @@ All agents **would** read from and write to a shared drive weight store:
 }
 ```
 
-### Weight Synchronization Protocol (design)
+### Weight Synchronization Protocol ✅ IMPLEMENTED (Sprint 19)
 
 1. Agent computes its drive scores locally
-2. Agent broadcasts scores to shared store
-3. Receiving agents update their local context with sender's scores
+2. Agent broadcasts scores to shared store via `broadcast-protocol.js`
+3. Receiving agents read updated store at their next cycle start
 4. Context-modulated drives account for other agents' states
-5. Conflict resolution considers cross-agent drive states
+5. Conflict resolution runs via `arbitration.js` after all active agents broadcast
 
-> **Status:** Protocol designed. Implementation pending Phase 6 real-agent testing.
+> **Status:** Protocol implemented in Sprint 19. Per-agent sync cron jobs are Sprint 20 (pending harness activation for Randi2, CB, Zero).
 
 ---
 
@@ -151,13 +154,15 @@ When agents' drives **would** oscillate (Agent A wins cycle 1, Agent B wins cycl
 
 | Milestone | Sprint | Status |
 |-----------|--------|--------|
-| Drive score broadcast protocol | Sprint 19 | In progress |
-| Cross-agent priority arbitration | Sprint 20 | In progress |
-| Drive weight sharing | Sprint 20 | In progress |
-| Two-agent coordination test (Andi + Randi2) | Sprint 21 | Planned |
-| Oscillation prevention across agents | Sprint 21 | Planned |
-| Telegram bot integration for score sharing | Sprint 22 | Planned |
-| Shared workspace drive weight store | Sprint 22 | Planned |
+| Drive score broadcast protocol | Sprint 19 | ✅ Done — `broadcast-protocol.js` |
+| Shared drive weight store | Sprint 19 | ✅ Done — `drive-weight-store.json` |
+| Cross-agent priority arbitration | Sprint 19 | ✅ Done — `arbitration.js` |
+| Oscillation detection/dampening | Sprint 19 | ✅ Done — window=6, threshold=4, 20% dampening |
+| Per-agent sync cron jobs | Sprint 20 | ⏳ Pending harness activation |
+| Drive weight synchronization (peer context) | Sprint 20 | ⏳ Planned |
+| Two-agent coordination test (Andi + Randi2) | Sprint 21 | ⏳ Planned |
+| Full 5-agent coordination test | Sprint 21 | ⏳ Planned |
+| Telegram bot integration for score sharing | Sprint 22 | ⏳ Planned |
 
 ## Current Agent Infrastructure (2026-05-10)
 
