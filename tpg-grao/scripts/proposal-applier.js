@@ -350,12 +350,11 @@ function applyAgentProposals() {
   }
 
   // Update grao-state
-  state.active_proposals = [...state.active_proposals, ...pending.map(p => ({
-    proposalId: p.proposal_id || p.id,
-    status: 'active',
-    appliedAt: new Date().toISOString(),
-    tpgTarget: 'agent-files'
-  }))];
+  const existingAgentIds = new Set(state.active_proposals.map(p => p.proposalId));
+  const newAgentStateEntries = pending
+    .map(p => ({ proposalId: p.proposal_id || p.id, status: 'active', appliedAt: new Date().toISOString(), tpgTarget: 'agent-files' }))
+    .filter(p => !existingAgentIds.has(p.proposalId));
+  state.active_proposals = [...state.active_proposals, ...newAgentStateEntries];
   state.new_proposals = [];
   state.last_proposal_application = new Date().toISOString();
   state.proposal_types = {
@@ -413,6 +412,11 @@ function applyProposalToNode(proposal) {
 
   if (nodeConfig) {
     if (!nodeConfig.active_proposals) nodeConfig.active_proposals = [];
+    const alreadyApplied = nodeConfig.active_proposals.some(p => p.proposalId === id);
+    if (alreadyApplied) {
+      console.log(`[APPLIER] SKIPPED (already applied): ${id} → ${target}`);
+      return { status: 'skipped', reason: 'already_applied' };
+    }
     nodeConfig.active_proposals.push(applied);
     nodeConfig.last_updated = new Date().toISOString();
     fs.writeFileSync(nodePath, JSON.stringify(nodeConfig, null, 2));
@@ -443,15 +447,14 @@ function applyAllProposals() {
     results.push(result);
   }
 
-  state.active_proposals = [...state.active_proposals, ...pending.map(p => ({
-    proposalId: p.proposal_id || p.id,
-    status: 'active',
-    appliedAt: new Date().toISOString(),
-    tpgTarget: 'system-health'
-  }))];
+  const existingIds = new Set(state.active_proposals.map(p => p.proposalId));
+  const newStateEntries = pending
+    .map(p => ({ proposalId: p.proposal_id || p.id, status: 'active', appliedAt: new Date().toISOString(), tpgTarget: 'system-health' }))
+    .filter(p => !existingIds.has(p.proposalId));
+  state.active_proposals = [...state.active_proposals, ...newStateEntries];
   state.new_proposals = [];
   state.last_proposal_application = new Date().toISOString();
-  
+
   saveGraoState(state);
   
   console.log(`\n[APPLIER] Results: ${results.filter(r => r.status === 'applied').length} applied, ${results.filter(r => r.status === 'rejected').length} rejected`);
