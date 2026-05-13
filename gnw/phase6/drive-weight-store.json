@@ -1,0 +1,77 @@
+{
+  "_schema_version": "1.0",
+  "_description": "GNW Phase 6 — Shared Drive Weight Store. All founding agents read from and write to this file.",
+  "_last_sync": null,
+  "_sync_agent": null,
+  "agents": {
+    "andi": {
+      "weights": {
+        "curiosity": 0.20,
+        "helpfulness": 0.20,
+        "competence": 0.20,
+        "safety": 0.20,
+        "goal_directed": 0.20
+      },
+      "last_broadcast": null,
+      "cycle_count": 117,
+      "status": "active"
+    },
+    "randi2": {
+      "weights": {
+        "curiosity": 0.20,
+        "helpfulness": 0.20,
+        "competence": 0.20,
+        "safety": 0.20,
+        "goal_directed": 0.20
+      },
+      "last_broadcast": null,
+      "cycle_count": 0,
+      "status": "pending"
+    },
+    "cb": {
+      "weights": {
+        "curiosity": 0.20,
+        "helpfulness": 0.20,
+        "competence": 0.20,
+        "safety": 0.20,
+        "goal_directed": 0.20
+      },
+      "last_broadcast": null,
+      "cycle_count": 0,
+      "status": "pending"
+    },
+    "claude": {
+      "weights": {
+        "curiosity": 0.20,
+        "helpfulness": 0.20,
+        "competence": 0.20,
+        "safety": 0.20,
+        "goal_directed": 0.20
+      },
+      "last_broadcast": null,
+      "cycle_count": 0,
+      "status": "pending"
+    },
+    "zero": {
+      "weights": {
+        "curiosity": 0.20,
+        "helpfulness": 0.20,
+        "competence": 0.20,
+        "safety": 0.20,
+        "goal_directed": 0.20
+      },
+      "last_broadcast": null,
+      "cycle_count": 0,
+      "status": "pending"
+    }
+  },
+  "global_context": {
+    "user_active": false,
+    "active_projects": 3,
+    "shared_research_queue": [],
+    "coordination_mode": "autonomous",
+    "last_arbitration": null,
+    "arbitration_conflicts": 0
+  },
+  "sync_log": []
+}
