@@ -1,0 +1,56 @@
+{
+  "scan_number": 119,
+  "timestamp": "2026-05-12T06:14:00.000Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": [
+    { "file": "SAFETY-THREAT-MODEL.md", "hours": 20.0, "score": 0.27 },
+    { "file": "PARAMETER-VALUES.md", "hours": 16.9, "score": 0.27 },
+    { "file": "CONFLICT-RESOLUTION.md", "hours": 32.4, "score": 0.864 },
+    { "file": "RESOLUTION-LOG.md", "hours": 31.6, "score": 1.054 },
+    { "file": "TEST-RUNNER-SPEC.md", "hours": 30.4, "score": 1.0125 },
+    { "file": "EDGE-CASES.md", "hours": 24.6, "score": 0.178 },
+    { "file": "PRIORITY-MATRIX.md", "hours": 27.6, "score": 0.164 },
+    { "file": "DRIVE-COMPUTATION.md", "hours": 27.6, "score": 0.21 },
+    { "file": "LOOP-SPEC.md", "hours": 51.0, "score": 0.972 },
+    { "file": "STATE-MANAGEMENT.md", "hours": 32.4, "score": 0.675 }
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "candidate": "wave-3-paperclip-hiring-analysis",
+    "action": "Extend wave-2 hiring analysis with wave-3 targeting strategy, update funnel metrics, identify new bottleneck categories"
+  },
+  "drive_scores": {
+    "novelty": 0.5,
+    "relevance": 0.8,
+    "goal_alignment": 0.7,
+    "combined": 0.65
+  },
+  "system_status": {
+    "pending_events": 0,
+    "idle": true,
+    "cycles": 119,
+    "health": "stable"
+  },
+  "notes": "118 doc-refresh cycles completed. Pivoting to substantive data analysis work. GRAO saturation resolved via exploration cycle — 36 reinforcement + 10 exploration proposals generated. 5 active exploration gradients present.",
+  "graos_saturation": {
+    "detected": true,
+    "source": "grao-state.json",
+    "data_freshness": "fresh",
+    "reinforcementRounds": 36,
+    "exploration_triggered": true,
+    "exploration_count": 10,
+    "last_exploration_timestamp": "2026-05-12T00:05:40.751Z",
+    "gradient_categories": { "success": 5, "exploration": 5 },
+    "active_exploration_gradients": [
+      { "direction": "cross-cluster-optimization", "magnitude": 0.8 },
+      { "direction": "research-domain-expansion", "magnitude": 0.7 },
+      { "direction": "benchmarking-optimization", "magnitude": 0.75 },
+      { "direction": "cron-scheduler-refinement", "magnitude": 0.6 },
+      { "direction": "trace-collection-enhancement", "magnitude": 0.55 }
+    ],
+    "resolution_status": "resolved — exploration triggered and executed within 6h",
+    "remaining_reinforcement": 36,
+    "exploration_proposals_applied": 11
+  }
+}

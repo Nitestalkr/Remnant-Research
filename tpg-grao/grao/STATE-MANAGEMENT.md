@@ -117,26 +117,36 @@ Research priorities are derived from active gradients:
 
 **When:** Every time exploration proposals are generated (saturation triggered)
 
-**Purpose:** Ensure the GNW Boredom Scan reads current GRAO state, not stale snapshots from outdated round files.
+**Purpose:** Ensure the GNW Boredom Scan has a current comparison artifact without corrupting historical round records.
+
+**INVARIANT: Round artifact JSON files are immutable once written. Existing fields MUST NEVER be modified.**
 
 **Steps:**
 1. Read current `grao-state.json` saturation status
-2. Update all stale round files (`round_31`, `round_38`, `round_33`, etc.) with:
-   - `saturation.exploration_triggered` current value
-   - `saturation.exploration_count` current value
-   - `proposal_types` current values (reinforcement vs exploration)
-   - `last_exploration_timestamp` current timestamp
-   - `refreshed_at` timestamp indicating this is a refreshed snapshot
-   - `notes` indicating this is a stale file refreshed with current state
+2. For each stale round file that needs a freshness marker, append a `refresh_log` entry ONLY — do not touch any existing top-level fields:
+   ```json
+   "refresh_log": [
+     {
+       "timestamp": "<ISO-8601 current time>",
+       "source": "boredom-scan",
+       "grao_state_snapshot": {
+         "exploration_triggered": <current value from grao-state.json>,
+         "exploration_count": <current value from grao-state.json>,
+         "last_exploration_timestamp": <current value from grao-state.json>
+       }
+     }
+   ]
+   ```
+   Fields like `saturation_status`, `proposal_types`, `last_exploration_timestamp`, and `notes` at the root level belong to the round that originally ran and MUST NOT be added or changed.
 3. Write `current_vs_stale_YYYY-MM-DD.json` in `loops/`:
    - Compare current `grao-state.json` values vs stale round file values
    - Note any discrepancies
    - Confirm data freshness
 4. Log refresh event in cycle history
 
-**Rule:** Every exploration trigger MUST refresh stale round files. This prevents stale data from creating false saturation signals in the boredom scan.
+**Rule:** The boredom scan MUST read `grao-state.json` directly for current saturation state, not infer it from historical round artifacts.
 
-**Previous Issue:** Stale round files (round_31, 14d stale) still showed "0 exploration proposals generated" after exploration was triggered. The boredom scan read these stale files and reported false saturation. Fixed: TPG-GRAO now refreshes stale files on every exploration trigger.
+**Previous Issue (fixed 2026-05-12, GHO-24):** The refresh protocol incorrectly injected top-level fields (`saturation_status`, `proposal_types`, `last_exploration_timestamp`, `notes`) into historical round artifacts (round_31, round_33, round_38). These fields did not exist when those rounds ran (exploration was not implemented until Round 40+), corrupting the authoritative source of truth. Fixed: refresh metadata now appends to `refresh_log` only; existing fields are never modified.
 
 ## State Persistence
 
