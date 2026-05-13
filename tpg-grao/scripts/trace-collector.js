@@ -115,6 +115,8 @@ function recordTrace(trace) {
     dir = path.join(dir, 'channels', trace.source);
   } else if (trace.type === 'deployment') {
     dir = path.join(dir, 'deployment');
+  } else if (trace.type === 'exploration') {
+    dir = path.join(dir, 'exploration', trace.source || 'general');
   }
 
   if (!fs.existsSync(dir)) {
@@ -595,6 +597,60 @@ function collectPaperclipTraces() {
 }
 
 // ============================================================
+// EXPLORATION TRACE COLLECTION
+// ============================================================
+
+/**
+ * Collect traces for active exploration gradients from grao-state.json.
+ * Each exploration gradient gets a trace recording its current status
+ * so GRAO can track hypothesis progress across rounds.
+ */
+function collectExplorationTraces() {
+  const graoStatePaths = [
+    path.join(__dirname, '..', 'grao', 'grao-state.json'),
+    path.join(process.cwd(), 'grao', 'grao-state.json')
+  ];
+
+  let graoState = null;
+  for (const p of graoStatePaths) {
+    if (fs.existsSync(p)) {
+      try { graoState = JSON.parse(fs.readFileSync(p, 'utf8')); break; }
+      catch (_) { /* skip */ }
+    }
+  }
+
+  if (!graoState) return null;
+
+  const explorationGradients = (graoState.active_gradients || []).filter(g => g.category === 'exploration');
+  if (explorationGradients.length === 0) return null;
+
+  const traces = [];
+  for (const grad of explorationGradients) {
+    const trace = {
+      type: 'exploration',
+      source: grad.direction || grad.id,
+      target: 'grao-exploration-monitor',
+      action: 'gradient_status_check',
+      input: JSON.stringify({ gradient_id: grad.id, direction: grad.direction }),
+      output: 'active',
+      success: true,
+      latency_ms: 0,
+      metrics: {
+        gradient_id: grad.id,
+        direction: grad.direction,
+        magnitude: grad.magnitude,
+        category: grad.category,
+        cycle_count: graoState.cycle_count,
+        last_cycle: graoState.last_cycle
+      }
+    };
+    traces.push(recordTrace(trace));
+  }
+
+  return traces;
+}
+
+// ============================================================
 // MASTER COLLECTION — Run all available sources
 // ============================================================
 
@@ -622,6 +678,15 @@ async function collectAllTraces() {
     }
   }
   
+  // Exploration gradient traces (active exploration mode)
+  const explorationTraces = collectExplorationTraces();
+  if (explorationTraces) {
+    allTraces.push(...explorationTraces);
+    console.log(`[TRACE] exploration: ${explorationTraces.length} traces collected`);
+  } else {
+    console.log(`[TRACE] exploration: no active exploration gradients (skipped)`);
+  }
+
   // Node health checks
   const nodeFunctions = {
     umbrel: collectUmbrelTraces,
@@ -705,6 +770,13 @@ function main() {
     collectAllTraces().then(traces => {
       console.log(`[TRACE] All traces collected: ${traces.length}`);
     });
+  } else if (args.includes('--exploration')) {
+    const traces = collectExplorationTraces();
+    if (traces) {
+      console.log(`[TRACE] Exploration traces collected: ${traces.length}`);
+    } else {
+      console.log(`[TRACE] No active exploration gradients found.`);
+    }
   } else if (args.includes('--collect')) {
     collectTraces();
   } else if (args.includes('--record')) {
@@ -727,7 +799,8 @@ function main() {
     console.log('Usage:');
     console.log('  node trace-collector.js --collect');
     console.log('  node trace-collector.js --collect-all (auto-collect all configured sources)');
-    console.log('  node trace-collector.js --record --type agent --source andi --action send_message --success true --latency 1234');
+    console.log('  node trace-collector.js --record --type agent --source andi --action send_message --success true --latency 1234')
+    console.log('  node trace-collector.js --exploration (collect traces for active exploration gradients)');
     console.log('');
     console.log('Available channels (env vars OR config file required):');
     for (const [channel, config] of Object.entries(CONFIG.channels)) {

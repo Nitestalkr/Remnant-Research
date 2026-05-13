@@ -33,9 +33,14 @@ const MEMORY_MD = path.join(WORKSPACE, 'MEMORY.md');
 // Auto-apply thresholds
 const AUTO_APPLY_CONFIG = {
   confidence_min: 0.85,
+  // Exploration proposals have lower confidence by design (per POLICY-SATURATION-BREAKOUT spec)
+  exploration_confidence_min: 0.30,
   priority_min: 'medium',
-  staleness_days: 7,  // proposals older than 7 days are stale
-  max_proposals_per_cycle: 3,  // don't apply too many at once
+  staleness_days: 7,
+  exploration_staleness_days: 14,  // exploration proposals have longer expiry
+  max_proposals_per_cycle: 3,
+  max_exploration_proposals_per_cycle: 5,
+  auto_archive_on_expiry: true,  // archive exploration proposals when rounds_to_verify hits 0
   // File-specific rules
   files: {
     'SOUL.md': { auto_apply: true, confidence_min: 0.9 },
@@ -108,7 +113,45 @@ function loadAllProposals() {
 function isStale(proposal) {
   const date = new Date(proposal.timestamp || proposal.created_at);
   const days = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
-  return days > AUTO_APPLY_CONFIG.staleness_days;
+  const limit = proposal.proposal_type === 'exploration'
+    ? AUTO_APPLY_CONFIG.exploration_staleness_days
+    : AUTO_APPLY_CONFIG.staleness_days;
+  return days > limit;
+}
+
+function isExplorationExpired(proposal) {
+  if (proposal.proposal_type !== 'exploration') return false;
+  const rtv = proposal.rounds_to_verify;
+  return typeof rtv === 'number' && rtv <= 0;
+}
+
+function decrementRoundsToVerify(proposal) {
+  if (proposal.proposal_type !== 'exploration') return;
+  if (typeof proposal.rounds_to_verify === 'number' && proposal.rounds_to_verify > 0) {
+    proposal.rounds_to_verify -= 1;
+  }
+}
+
+/**
+ * Update the exploration area registry in grao-state when an exploration proposal
+ * is applied or archived, preventing re-proposing known areas.
+ */
+function updateExplorationRegistry(state, proposal, outcome) {
+  if (!state.saturation) state.saturation = {};
+  if (!state.saturation.exploration_area_registry) state.saturation.exploration_area_registry = [];
+
+  const area = proposal.metadata?.exploration_target
+    || proposal.exploration_area
+    || proposal.gradient_direction
+    || 'unknown';
+
+  const existing = state.saturation.exploration_area_registry.find(e => e.area === area);
+  if (!existing) {
+    state.saturation.exploration_area_registry.push({ area, outcome, proposalId: proposal.proposal_id || proposal.id, timestamp: new Date().toISOString() });
+  } else {
+    existing.outcome = outcome;
+    existing.timestamp = new Date().toISOString();
+  }
 }
 
 // ============================================================
@@ -380,9 +423,16 @@ function applyAgentProposals() {
 
 function applyProposalToNode(proposal) {
   const id = proposal.proposal_id || proposal.id || 'unknown';
-  
-  if (proposal.confidence < 0.6) {
-    console.log(`[APPLIER] REJECTED: ${id} (confidence ${proposal.confidence} < 0.6)`);
+  const isExploration = proposal.proposal_type === 'exploration';
+  const confidenceMin = isExploration ? AUTO_APPLY_CONFIG.exploration_confidence_min : 0.6;
+
+  if (isExplorationExpired(proposal)) {
+    console.log(`[APPLIER] ARCHIVED (rounds_to_verify exhausted): ${id}`);
+    return { status: 'archived', reason: 'exploration_expired' };
+  }
+
+  if (proposal.confidence < confidenceMin) {
+    console.log(`[APPLIER] REJECTED: ${id} (confidence ${proposal.confidence} < ${confidenceMin})`);
     return { status: 'rejected', reason: 'low_confidence' };
   }
 
@@ -433,12 +483,60 @@ function applyProposalToNode(proposal) {
   return { status: 'applied', target };
 }
 
-function applyAllProposals() {
-  console.log('[APPLIER] Applying all pending proposals to TPG nodes...');
-  
+/**
+ * Apply only exploration proposals (respects exploration confidence threshold).
+ */
+function applyExplorationProposals() {
+  console.log('[APPLIER] Applying exploration proposals...');
+
   const state = loadGraoState();
   const proposals = loadAllProposals();
-  
+  const pending = proposals.filter(p => p.status === 'pending' && p.proposal_type === 'exploration');
+
+  pending.sort((a, b) => (b.confidence || 0) - (a.confidence || 0));
+  const toApply = pending.slice(0, AUTO_APPLY_CONFIG.max_exploration_proposals_per_cycle);
+  const results = [];
+
+  for (const proposal of toApply) {
+    if (isExplorationExpired(proposal)) {
+      console.log(`[APPLIER] ARCHIVED (expired): ${proposal.proposal_id || proposal.id}`);
+      updateExplorationRegistry(state, proposal, 'expired');
+      results.push({ id: proposal.proposal_id || proposal.id, status: 'archived', reason: 'expired' });
+      continue;
+    }
+    decrementRoundsToVerify(proposal);
+    const result = applyProposalToNode(proposal);
+    if (result.status === 'applied') {
+      updateExplorationRegistry(state, proposal, 'active');
+    }
+    results.push({ id: proposal.proposal_id || proposal.id, ...result });
+  }
+
+  const existingIds = new Set(state.active_proposals.map(p => p.proposalId));
+  const newEntries = pending
+    .map(p => ({
+      proposalId: p.proposal_id || p.id,
+      status: 'active',
+      appliedAt: new Date().toISOString(),
+      tpgTarget: p.metadata?.exploration_target || 'exploration',
+      proposalType: 'exploration'
+    }))
+    .filter(p => !existingIds.has(p.proposalId));
+  state.active_proposals = [...state.active_proposals, ...newEntries];
+  state.new_proposals = [];
+  state.last_proposal_application = new Date().toISOString();
+  saveGraoState(state);
+
+  console.log(`\n[APPLIER] Exploration results: ${results.filter(r => r.status === 'applied').length} applied, ${results.filter(r => r.status === 'archived').length} archived, ${results.filter(r => r.status === 'rejected').length} rejected`);
+  return results;
+}
+
+function applyAllProposals() {
+  console.log('[APPLIER] Applying all pending proposals to TPG nodes...');
+
+  const state = loadGraoState();
+  const proposals = loadAllProposals();
+
   const pending = proposals.filter(p => p.status === 'pending');
   const results = [];
 
@@ -512,6 +610,8 @@ function main() {
   
   if (args.includes('--apply-all')) {
     applyAllProposals();
+  } else if (args.includes('--exploration-only')) {
+    applyExplorationProposals();
   } else if (args.includes('--apply-agent')) {
     applyAgentProposals();
   } else if (args.includes('--apply') && args.includes('--id')) {
@@ -540,6 +640,7 @@ function main() {
     console.log('TPG Proposal Applier');
     console.log('Usage:');
     console.log('  node proposal-applier.js --apply-all (apply all to TPG nodes)');
+    console.log('  node proposal-applier.js --exploration-only (apply only exploration proposals at 0.30 confidence min)');
     console.log('  node proposal-applier.js --apply-agent (auto-apply agent file changes)');
     console.log('  node proposal-applier.js --apply --id prop_YYYY-MM-DD_NNN');
     console.log('  node proposal-applier.js --status');
