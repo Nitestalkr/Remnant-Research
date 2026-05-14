@@ -1,0 +1,49 @@
+{
+  "_description": "GNW Phase 6 — Claude Drive Weight Sync Config. Source of truth for Claude's broadcast weights.",
+  "_schema_version": "1.0",
+  "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
+  "agentName": "claude",
+  "syncVersion": 2,
+  "syncedAt": "2026-05-14T07:35:37.882Z",
+  "damping": 0.7,
+  "agents_in_cluster": 5,
+  "newWeights": {
+    "curiosity": 0.447,
+    "helpfulness": 0.4,
+    "competence": 0.732,
+    "safety": 0.731,
+    "goal_directed": 0.532
+  },
+  "prevWeights": {
+    "curiosity": 0.427,
+    "helpfulness": 0.357,
+    "competence": 0.718,
+    "safety": 0.761,
+    "goal_directed": 0.475
+  },
+  "clusterAvg": {
+    "curiosity": 0.495,
+    "helpfulness": 0.501,
+    "competence": 0.764,
+    "safety": 0.662,
+    "goal_directed": 0.665
+  },
+  "convergence": {
+    "delta": {
+      "curiosity": 0.02,
+      "helpfulness": 0.043,
+      "competence": 0.014,
+      "safety": -0.03,
+      "goal_directed": 0.057
+    },
+    "max_abs_delta": 0.057,
+    "mean_abs_delta": 0.033,
+    "converged": false
+  },
+  "safety_floors_applied": [],
+  "winner": "safety",
+  "action": "safety_review",
+  "confidence": 0.8,
+  "cycleCount": 3,
+  "publishInterval": "30min"
+}

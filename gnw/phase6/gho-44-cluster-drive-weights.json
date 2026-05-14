@@ -1,10 +1,12 @@
 {
+  "_description": "GNW Phase 6 — Cluster Drive Weight File. All agents keyed by agentId. Synced across the cluster.",
   "_schema_version": "1.0",
-  "_description": "GNW Phase 6 — Shared Drive Weight Store. All founding agents read from and write to this file.",
-  "_last_sync": "2026-05-14T07:35:34.303Z",
-  "_sync_agent": "claude",
+  "syncVersion": 2,
+  "lastSync": "2026-05-14T07:35:34.303Z",
+  "syncAgent": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agents": {
     "andi": {
+      "agentName": "andi",
       "weights": {
         "curiosity": 0.6,
         "helpfulness": 0.75,
@@ -17,6 +19,7 @@
       "status": "active"
     },
     "randi2": {
+      "agentName": "randi2",
       "weights": {
         "curiosity": 0.5,
         "helpfulness": 0.4,
@@ -29,6 +32,7 @@
       "status": "active"
     },
     "cb": {
+      "agentName": "cb",
       "weights": {
         "curiosity": 0.5,
         "helpfulness": 0.4,
@@ -40,7 +44,9 @@
       "cycle_count": 1,
       "status": "active"
     },
-    "claude": {
+    "2eaff187-885b-4bba-80ba-70bc3d234275": {
+      "agentName": "claude",
+      "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
       "weights": {
         "curiosity": 0.427,
         "helpfulness": 0.357,
@@ -48,11 +54,15 @@
         "safety": 0.761,
         "goal_directed": 0.475
       },
+      "winner": "safety",
+      "action": "safety_review",
+      "confidence": 0.8,
       "last_broadcast": "2026-05-14T07:35:34.303Z",
       "cycle_count": 2,
       "status": "active"
     },
     "zero": {
+      "agentName": "zero",
       "weights": {
         "curiosity": 0.45,
         "helpfulness": 0.6,
@@ -64,33 +74,5 @@
       "cycle_count": 1,
       "status": "active"
     }
-  },
-  "global_context": {
-    "user_active": false,
-    "active_projects": 3,
-    "shared_research_queue": [],
-    "coordination_mode": "autonomous",
-    "last_arbitration": "2026-05-13T07:36:53.449Z",
-    "arbitration_conflicts": 2
-  },
-  "sync_log": [
-    {
-      "timestamp": "2026-05-13T07:32:43.513Z",
-      "agent": "andi",
-      "winner": "goal_directed",
-      "action": "advance_milestone"
-    },
-    {
-      "timestamp": "2026-05-14T07:34:22.008Z",
-      "agent": "claude",
-      "winner": "safety",
-      "action": "safety_review"
-    },
-    {
-      "timestamp": "2026-05-14T07:35:34.303Z",
-      "agent": "claude",
-      "winner": "safety",
-      "action": "safety_review"
-    }
-  ]
+  }
 }
