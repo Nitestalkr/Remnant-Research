@@ -1,0 +1,11 @@
+{
+  "proposal_id": "exp_prop_20260512_03",
+  "timestamp": "2026-05-12T16:00:00Z",
+  "type": "exploration",
+  "priority": "medium",
+  "confidence": 0.9,
+  "domain": "benchmarking-optimization",
+  "hypothesis": "Refine internal benchmarking protocols to increase sensitivity in low-variance performance improvements.",
+  "expected_improvement": "+10% precision in metric detection",
+  "status": "pending"
+}

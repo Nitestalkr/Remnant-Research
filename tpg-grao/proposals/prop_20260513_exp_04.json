@@ -1,0 +1,8 @@
+{
+  "id": "exp_prop_20260513_04",
+  "timestamp": "2026-05-13T20:00:00Z",
+  "type": "exploration",
+  "domain": "cron-scheduler-refinement",
+  "description": "Optimize the cron-driven self-initiation cycle to align task triggers with detected system idle windows and peak cognitive capacity.",
+  "expected_improvement": "-5% resource overhead"
+}

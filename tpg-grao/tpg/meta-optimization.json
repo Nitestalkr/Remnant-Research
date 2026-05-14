@@ -1,0 +1,17 @@
+{
+  "node": "meta-optimization",
+  "type": "tpg_node",
+  "active_proposals": [
+    {
+      "proposalId": "prop_2026-05-11_exp009",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.707Z",
+      "tpgTarget": "meta-optimization",
+      "hypothesis": "Cron-scheduler refinement through adaptive cycle intervals (shorter during high-gradient periods, longer during stable periods) can optimize TPG energy expenditure and reduce redundant reinforcement cycles.",
+      "confidence": 0.65,
+      "priority": "low",
+      "expected_improvement": 0.1
+    }
+  ],
+  "last_updated": "2026-05-12T18:10:31.707Z"
+}

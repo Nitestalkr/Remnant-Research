@@ -1,0 +1,60 @@
+{
+  "testRun": "c6352a49-2a6d-4633-8366-cd5edc04a248",
+  "timestamp": "2026-05-13T07:36:53.449Z",
+  "issueId": "53e7e21f-0d85-4611-9341-973245cc1c56",
+  "identifier": "GHO-44",
+  "sprint": "Sprint 19: Multi-Agent Drive Synchronization",
+  "tests": {
+    "broadcast_protocol": {
+      "status": "pass",
+      "agent": "andi",
+      "weights": { curiosity: 0.6, helpfulness: 0.75, competence: 0.85, safety: 0.7, goal_directed: 0.85 },
+      "last_broadcast": "2026-05-13T07:32:43.513Z"
+    },
+    "arbitration_single_agent": {
+      "status": "pass",
+      "allocations": 1,
+      "conflicts": 0,
+      "vetoes": 0
+    },
+    "arbitration_multi_agent": {
+      "status": "pass",
+      "agents": 5,
+      "allocations": {
+        "andi": { winning_drive: "competence", score: 0.85, action: "skill_improvement" },
+        "cb": { winning_drive: "competence", score: 0.8, action: "continue_current" },
+        "randi2": { winning_drive: "competence", score: 0.7, action: "continue_current" },
+        "zero": { winning_drive: "safety", score: 0.85, action: "safety_review", external_blocked: true },
+        "claude": { winning_drive: "safety", score: 0.8, action: "safety_review" }
+      },
+      "conflicts_resolved": 2,
+      "vetoes": 1,
+      "oscillating": 0
+    }
+  },
+  "cron_jobs_status": {
+    "andi_publish": { "id": "40f8e14d-d3e2-4139-bda6-f91ce35eb51d", "enabled": true, "status": "ok", "interval": "30min" },
+    "andi_sync": { "id": "c3159a00-6a02-45ec-98af-5df63178e416", "enabled": true, "status": "ok", "interval": "30min" },
+    "codex_sync": { "id": "437c03fe-ce8f-4c0a-8883-ee03ab5cac27", "enabled": true, "status": "ok", "interval": "30min" },
+    "claude_publish": { "id": "2c788726-3161-4360-8c6e-ac0f9c4bcfc4", "enabled": true, "status": "error", "interval": "30min", "error": "No credentials for anthropic:claude-cli" },
+    "claude_sync": { "id": "d0941a44-d0c9-42d1-88ed-3c8c208d79f0", "enabled": true, "status": "error", "interval": "30min", "error": "No credentials for anthropic:claude-cli" },
+    "zero_publish": { "id": "7b400860-ff8d-48e1-afa0-3c11f738e616", "enabled": true, "status": "ok", "interval": "30min" },
+    "zero_sync": { "id": "23ca4794-d343-4e1b-ab81-8399dadc0e88", "enabled": true, "status": "ok", "interval": "30min" }
+  },
+  "protocol_files": [
+    "drive-weight-store.json",
+    "broadcast-protocol.js",
+    "arbitration.js"
+  ],
+  "cluster_file": "gho-44-cluster-drive-weights.json",
+  "convergence_status": {
+    "baseline": "2026-05-13T05:30:00Z",
+    "agents_active": 5,
+    "weights_distributed": true,
+    "arbitration_operational": true,
+    "sync_crons_active": 5,
+    "sync_crons_error": 2,
+    "error_agent": "claude",
+    "unblock_action": "Configure anthropic credentials for Claude workspace"
+  }
+}

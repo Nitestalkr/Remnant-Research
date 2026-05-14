@@ -1,0 +1,11 @@
+{
+  "proposal_id": "exp_prop_20260512_04",
+  "timestamp": "2026-05-12T16:00:00Z",
+  "type": "exploration",
+  "priority": "medium",
+  "confidence": 0.9,
+  "domain": "cron-scheduler-refinement",
+  "hypothesis": "Optimize the cron-driven self-initiation cycle to better align with peak cognitive load and system idle windows.",
+  "expected_improvement": "-5% resource overhead during active cycles",
+  "status": "pending"
+}

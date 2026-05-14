@@ -1,0 +1,8 @@
+{
+  "id": "exp_prop_20260513_03",
+  "timestamp": "2026-05-13T20:00:00Z",
+  "type": "exploration",
+  "domain": "benchmarking-optimization",
+  "description": "Refine high-frequency metric sampling protocols to increase detection sensitivity for low-variance performance improvements.",
+  "expected_improvement": "+10% benchmark precision"
+}
