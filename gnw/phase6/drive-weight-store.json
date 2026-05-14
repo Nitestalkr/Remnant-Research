@@ -1,84 +1,108 @@
 {
   "_schema_version": "1.0",
   "_description": "GNW Phase 6 — Shared Drive Weight Store. All founding agents read from and write to this file.",
-  "_last_sync": "2026-05-13T07:36:48.307Z",
-  "_sync_agent": "sync-from-cluster",
+  "_last_sync": "2026-05-14T17:53:40.505Z",
+  "_sync_agent": "cluster-average",
+  "_sync_version": 199,
   "agents": {
     "andi": {
       "weights": {
-        "curiosity": 0.6,
-        "helpfulness": 0.75,
-        "competence": 0.85,
-        "safety": 0.7,
-        "goal_directed": 0.85
+        "curiosity": 0.48,
+        "helpfulness": 0.39,
+        "competence": 0.74,
+        "safety": 0.56,
+        "goal_directed": 0.56
       },
-      "last_broadcast": "2026-05-13T07:36:48.307Z",
-      "cycle_count": 117,
+      "last_broadcast": "2026-05-14T17:53:40.505Z",
+      "cycle_count": 118,
       "status": "active"
     },
     "randi2": {
       "weights": {
-        "curiosity": 0.5,
-        "helpfulness": 0.4,
-        "competence": 0.7,
-        "safety": 0.5,
-        "goal_directed": 0.6
+        "curiosity": 0.50,
+        "helpfulness": 0.70,
+        "competence": 0.85,
+        "safety": 0.80,
+        "goal_directed": 0.60
       },
-      "last_broadcast": "2026-05-13T07:36:48.307Z",
-      "cycle_count": 1,
-      "status": "active"
-    },
-    "cb": {
-      "weights": {
-        "curiosity": 0.5,
-        "helpfulness": 0.4,
-        "competence": 0.8,
-        "safety": 0.5,
-        "goal_directed": 0.6
-      },
-      "last_broadcast": "2026-05-13T07:36:48.307Z",
-      "cycle_count": 1,
-      "status": "active"
-    },
-    "claude": {
-      "weights": {
-        "curiosity": 0.4,
-        "helpfulness": 0.3,
-        "competence": 0.7,
-        "safety": 0.8,
-        "goal_directed": 0.4
-      },
-      "last_broadcast": "2026-05-13T07:36:48.307Z",
+      "last_broadcast": "2026-05-14T13:44:00.000Z",
       "cycle_count": 1,
       "status": "active"
     },
     "zero": {
       "weights": {
         "curiosity": 0.45,
-        "helpfulness": 0.6,
+        "helpfulness": 0.60,
         "competence": 0.75,
         "safety": 0.85,
-        "goal_directed": 0.8
+        "goal_directed": 0.80
+      },
+      "last_broadcast": "2026-05-14T17:53:40.505Z",
+      "cycle_count": 1,
+      "status": "active"
+    },
+    "cb": {
+      "weights": {
+        "curiosity": 0.50,
+        "helpfulness": 0.40,
+        "competence": 0.80,
+        "safety": 0.50,
+        "goal_directed": 0.60
       },
       "last_broadcast": "2026-05-13T07:36:48.307Z",
       "cycle_count": 1,
-      "status": "active"
+      "status": "pending_harness"
+    },
+    "claude": {
+      "weights": {
+        "curiosity": 0.40,
+        "helpfulness": 0.30,
+        "competence": 0.70,
+        "safety": 0.80,
+        "goal_directed": 0.40
+      },
+      "last_broadcast": "2026-05-13T07:36:48.307Z",
+      "cycle_count": 1,
+      "status": "billing_blocked"
     }
   },
+  "clusterAverages": {
+    "curiosity": 0.476,
+    "helpfulness": 0.478,
+    "competence": 0.768,
+    "safety": 0.612,
+    "goal_directed": 0.632
+  },
+  "convergence": {
+    "rms": 0.000179,
+    "agents_active": 4,
+    "agents_pending": 2,
+    "safety_floors_passed": 5,
+    "status": "converged"
+  },
   "global_context": {
-    "user_active": false,
+    "user_active": true,
     "active_projects": 3,
     "shared_research_queue": [],
     "coordination_mode": "autonomous",
-    "last_arbitration": "2026-05-13T07:36:53.449Z",
-    "arbitration_conflicts": 2
+    "last_arbitration": "2026-05-14T17:53:40.505Z",
+    "arbitration_conflicts": 0,
+    "phase": 6,
+    "sprint": 19
   },
   "sync_log": [
     {
-      "timestamp": "2026-05-13T07:32:43.513Z",
-      "agent": "andi",
-      "winner": "goal_directed",
-      "action": "advance_milestone"
+      "timestamp": "2026-05-14T17:53:40.505Z",
+      "agent": "cluster",
+      "action": "convergence_verified",
+      "rms": 0.000179,
+      "agents": 4
+    },
+    {
+      "timestamp": "2026-05-14T13:44:00.000Z",
+      "agent": "randi2",
+      "action": "sync_triggered",
+      "syncVersion": 199
     }
   ]
 }
