@@ -1,0 +1,17 @@
+{
+  "node": "cross-cluster-optimization",
+  "type": "tpg_node",
+  "active_proposals": [
+    {
+      "proposalId": "prop_2026-05-11_exp006",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.706Z",
+      "tpgTarget": "cross-cluster-optimization",
+      "hypothesis": "Cross-cluster optimization can reduce redundant agent overlap by introducing targeted specialization boundaries and shared capability pools between Dev and Visual teams.",
+      "confidence": 0.78,
+      "priority": "medium",
+      "expected_improvement": 0.15
+    }
+  ],
+  "last_updated": "2026-05-12T18:10:31.706Z"
+}

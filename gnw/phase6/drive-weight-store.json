@@ -1,68 +1,68 @@
 {
   "_schema_version": "1.0",
   "_description": "GNW Phase 6 — Shared Drive Weight Store. All founding agents read from and write to this file.",
-  "_last_sync": null,
-  "_sync_agent": null,
+  "_last_sync": "2026-05-13T07:36:48.307Z",
+  "_sync_agent": "sync-from-cluster",
   "agents": {
     "andi": {
       "weights": {
-        "curiosity": 0.20,
-        "helpfulness": 0.20,
-        "competence": 0.20,
-        "safety": 0.20,
-        "goal_directed": 0.20
+        "curiosity": 0.6,
+        "helpfulness": 0.75,
+        "competence": 0.85,
+        "safety": 0.7,
+        "goal_directed": 0.85
       },
-      "last_broadcast": null,
+      "last_broadcast": "2026-05-13T07:36:48.307Z",
       "cycle_count": 117,
       "status": "active"
     },
     "randi2": {
       "weights": {
-        "curiosity": 0.20,
-        "helpfulness": 0.20,
-        "competence": 0.20,
-        "safety": 0.20,
-        "goal_directed": 0.20
+        "curiosity": 0.5,
+        "helpfulness": 0.4,
+        "competence": 0.7,
+        "safety": 0.5,
+        "goal_directed": 0.6
       },
-      "last_broadcast": null,
-      "cycle_count": 0,
-      "status": "pending"
+      "last_broadcast": "2026-05-13T07:36:48.307Z",
+      "cycle_count": 1,
+      "status": "active"
     },
     "cb": {
       "weights": {
-        "curiosity": 0.20,
-        "helpfulness": 0.20,
-        "competence": 0.20,
-        "safety": 0.20,
-        "goal_directed": 0.20
+        "curiosity": 0.5,
+        "helpfulness": 0.4,
+        "competence": 0.8,
+        "safety": 0.5,
+        "goal_directed": 0.6
       },
-      "last_broadcast": null,
-      "cycle_count": 0,
-      "status": "pending"
+      "last_broadcast": "2026-05-13T07:36:48.307Z",
+      "cycle_count": 1,
+      "status": "active"
     },
     "claude": {
       "weights": {
-        "curiosity": 0.20,
-        "helpfulness": 0.20,
-        "competence": 0.20,
-        "safety": 0.20,
-        "goal_directed": 0.20
+        "curiosity": 0.4,
+        "helpfulness": 0.3,
+        "competence": 0.7,
+        "safety": 0.8,
+        "goal_directed": 0.4
       },
-      "last_broadcast": null,
-      "cycle_count": 0,
-      "status": "pending"
+      "last_broadcast": "2026-05-13T07:36:48.307Z",
+      "cycle_count": 1,
+      "status": "active"
     },
     "zero": {
       "weights": {
-        "curiosity": 0.20,
-        "helpfulness": 0.20,
-        "competence": 0.20,
-        "safety": 0.20,
-        "goal_directed": 0.20
+        "curiosity": 0.45,
+        "helpfulness": 0.6,
+        "competence": 0.75,
+        "safety": 0.85,
+        "goal_directed": 0.8
       },
-      "last_broadcast": null,
-      "cycle_count": 0,
-      "status": "pending"
+      "last_broadcast": "2026-05-13T07:36:48.307Z",
+      "cycle_count": 1,
+      "status": "active"
     }
   },
   "global_context": {
@@ -70,8 +70,15 @@
     "active_projects": 3,
     "shared_research_queue": [],
     "coordination_mode": "autonomous",
-    "last_arbitration": null,
-    "arbitration_conflicts": 0
+    "last_arbitration": "2026-05-13T07:36:53.449Z",
+    "arbitration_conflicts": 2
   },
-  "sync_log": []
+  "sync_log": [
+    {
+      "timestamp": "2026-05-13T07:32:43.513Z",
+      "agent": "andi",
+      "winner": "goal_directed",
+      "action": "advance_milestone"
+    }
+  ]
 }

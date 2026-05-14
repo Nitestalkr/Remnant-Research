@@ -1,0 +1,11 @@
+{
+  "proposal_id": "exp_prop_20260512_02",
+  "timestamp": "2026-05-12T16:00:00Z",
+  "type": "exploration",
+  "priority": "medium",
+  "confidence": 0.9,
+  "domain": "research-domain-expansion",
+  "hypothesis": "Broaden GRAO search parameters into novel research domains including edge-case cognitive architectures and hybrid neural-symbolic reasoning.",
+  "expected_improvement": "+25% discovery breadth",
+  "status": "pending"
+}

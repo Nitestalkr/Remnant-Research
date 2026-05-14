@@ -1,0 +1,8 @@
+{
+  "id": "exp_prop_20260513_05",
+  "timestamp": "2026-05-13T20:00:00Z",
+  "type": "exploration",
+  "domain": "trace-collection-enhancement",
+  "description": "Implement enhanced multi-agent trace granularity to facilitate rapid root-cause analysis during complex reasoning handoffs.",
+  "expected_improvement": "+20% diagnostic accuracy"
+}

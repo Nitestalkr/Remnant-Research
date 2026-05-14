@@ -1,0 +1,45 @@
+{
+  "cycle_number": 114,
+  "timestamp": "2026-05-13T09:15:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 1.0,
+  "pending_events": [],
+  "stale_items": [
+    {
+      "file": "attention-router.md",
+      "staleness_hours": 37.8,
+      "within_threshold": false
+    },
+    {
+      "file": "workspace-state.md",
+      "staleness_hours": 37.8,
+      "within_threshold": false
+    }
+  ],
+  "stage_contents": [],
+  "self_initiation": {
+    "triggered": true,
+    "threshold": 0.6,
+    "candidate": "attention-router.md",
+    "action": "Refreshed stale scan table and updated timestamp."
+  },
+  "drive_scores": {
+    "curiosity": 0.7,
+    "helpfulness": 0.8,
+    "competence": 0.9,
+    "safety": 0.9,
+    "goal_directed": 0.6
+  },
+  "graos_saturation": {
+    "detected": true,
+    "source": "cycle history",
+    "reinforcementRounds": 42,
+    "exploration_triggered": false,
+    "exploration_count": 0,
+    "last_exploration_timestamp": null,
+    "data_freshness": "stale",
+    "notes": "Policy saturation observed in previous cycles (r31-r42)."
+  },
+  "system_status": "self-initiation",
+  "notes": "System idle. Boredom threshold exceeded. Initiated stale refresh of foundational documents."
+}

@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-05-13T07:36:53.449Z",
+  "allocations": {
+    "andi": {
+      "winning_drive": "competence",
+      "score": 0.85,
+      "action": "skill_improvement",
+      "external_blocked": false
+    },
+    "cb": {
+      "winning_drive": "competence",
+      "score": 0.8,
+      "action": "continue_current",
+      "external_blocked": false
+    },
+    "randi2": {
+      "winning_drive": "competence",
+      "score": 0.7,
+      "action": "continue_current",
+      "external_blocked": false
+    },
+    "zero": {
+      "winning_drive": "safety",
+      "score": 0.85,
+      "action": "safety_review",
+      "external_blocked": true
+    },
+    "claude": {
+      "winning_drive": "safety",
+      "score": 0.8,
+      "action": "safety_review",
+      "external_blocked": true
+    }
+  },
+  "vetoes": [
+    {
+      "agent": "zero",
+      "safety_score": 0.85,
+      "effect": "external_actions_blocked"
+    }
+  ],
+  "conflicts": [
+    {
+      "drive": "competence",
+      "resolved_by": "score_priority",
+      "winner": "andi",
+      "others": [
+        "cb",
+        "randi2"
+      ]
+    },
+    {
+      "drive": "safety",
+      "resolved_by": "safety_first",
+      "winner": "all_safety_review",
+      "others": []
+    }
+  ],
+  "oscillating": [],
+  "notes": ""
+}

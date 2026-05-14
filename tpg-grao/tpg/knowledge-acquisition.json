@@ -1,0 +1,17 @@
+{
+  "node": "knowledge-acquisition",
+  "type": "tpg_node",
+  "active_proposals": [
+    {
+      "proposalId": "prop_2026-05-11_exp007",
+      "status": "active",
+      "appliedAt": "2026-05-12T18:10:31.706Z",
+      "tpgTarget": "knowledge-acquisition",
+      "hypothesis": "Research-domain expansion into agent-native media generation (Open-Generative-AI repo) and community skill discovery (VoltAgent awesome-openclaw-skills) can unlock new capability tiers without premium API costs.",
+      "confidence": 0.72,
+      "priority": "medium",
+      "expected_improvement": 0.2
+    }
+  ],
+  "last_updated": "2026-05-12T18:10:31.706Z"
+}

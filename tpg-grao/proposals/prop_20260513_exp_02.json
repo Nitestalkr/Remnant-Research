@@ -1,0 +1,8 @@
+{
+  "id": "exp_prop_20260513_02",
+  "timestamp": "2026-05-13T20:00:00Z",
+  "type": "exploration",
+  "domain": "research-domain-expansion",
+  "description": "Integrate novel cognitive architectures and neuro-symbolic reasoning modules to broaden the GRAO search landscape.",
+  "expected_improvement": "+25% discovery breadth"
+}
