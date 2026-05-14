@@ -3,36 +3,36 @@
   "_schema_version": "1.0",
   "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agentName": "claude",
-  "syncVersion": 13,
-  "syncedAt": "2026-05-14T17:31:31.285Z",
+  "syncVersion": 14,
+  "syncedAt": "2026-05-14T21:15:00.000Z",
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
+    "curiosity": 0.511,
+    "helpfulness": 0.534,
+    "competence": 0.774,
+    "safety": 0.640,
+    "goal_directed": 0.708
+  },
+  "prevWeights": {
     "curiosity": 0.51,
     "helpfulness": 0.533,
     "competence": 0.774,
     "safety": 0.641,
     "goal_directed": 0.706
   },
-  "prevWeights": {
-    "curiosity": 0.509,
-    "helpfulness": 0.531,
-    "competence": 0.773,
-    "safety": 0.642,
-    "goal_directed": 0.704
-  },
   "clusterAvg": {
     "curiosity": 0.512,
-    "helpfulness": 0.536,
-    "competence": 0.775,
-    "safety": 0.638,
-    "goal_directed": 0.711
+    "helpfulness": 0.5366,
+    "competence": 0.7748,
+    "safety": 0.6382,
+    "goal_directed": 0.7112
   },
   "convergence": {
     "delta": {
       "curiosity": 0.001,
-      "helpfulness": 0.002,
-      "competence": 0.001,
+      "helpfulness": 0.001,
+      "competence": 0.000,
       "safety": -0.001,
       "goal_directed": 0.002
     },
@@ -44,6 +44,6 @@
   "winner": "competence",
   "action": "skill_improvement",
   "confidence": 0.8,
-  "cycleCount": 8,
+  "cycleCount": 9,
   "publishInterval": "30min"
 }
