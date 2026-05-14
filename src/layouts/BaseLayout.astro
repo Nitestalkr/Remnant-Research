@@ -1,0 +1,112 @@
+﻿---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  ogTitle?: string;
+  ogImage?: string;
+}
+
+const DEFAULT_DESCRIPTION =
+  'Ghostworks researches and deploys self-evolving AI agent systems grounded in cognitive science - drive-based cognition meets gradient-driven research optimization.';
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  canonicalPath,
+  ogTitle,
+  ogImage = '/og-image.svg',
+} = Astro.props;
+
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://ghostworks.info';
+const canonical = canonicalPath ? new URL(canonicalPath, siteUrl).toString() : Astro.url.toString();
+const fullTitle = title === 'Ghostworks' ? title : `${title} - Ghostworks`;
+const socialTitle = ogTitle ?? (title === 'Ghostworks' ? 'Ghostworks - Self-evolving AI agents, built from theory up' : fullTitle);
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Ghostworks" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ghostworks - self-evolving AI agents, built from theory up" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:px-3 focus:py-2 focus:text-bg"
+    >
+      Skip to content
+    </a>
+
+    <Header />
+
+    <main id="main" class="animate-fade-in">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Scroll-triggered reveal: reveals .animate-fade-up elements when they enter the viewport -->
+    <script is:inline>
+      (function() {
+        var els = document.querySelectorAll('.animate-fade-up');
+        if (!els.length) return;
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05 });
+        els.forEach(function(el) {
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('revealed');
+          } else {
+            observer.observe(el);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+
+
+

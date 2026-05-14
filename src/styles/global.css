@@ -1,0 +1,139 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    @apply bg-bg text-fg;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply min-h-screen font-sans;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(103, 232, 249, 0.08), transparent 55%),
+      radial-gradient(1000px 500px at 90% 0%, rgba(34, 211, 238, 0.07), transparent 60%),
+      #0a0a0a;
+  }
+
+  ::selection {
+    @apply bg-accent text-bg;
+  }
+
+  /* Heading defaults - kept tight; pages can override */
+  h1, h2, h3, h4 {
+    @apply font-medium tracking-tight text-fg;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Ensure scroll-revealed elements are fully visible when motion is reduced */
+    .animate-fade-up {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8;
+  }
+
+  .link-accent {
+    @apply text-accent transition-colors hover:text-fg;
+  }
+
+  .link-underline {
+    @apply border-b border-border text-fg transition-colors hover:border-accent hover:text-accent;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-elevated px-2.5 py-0.5 font-mono text-2xs uppercase tracking-wider text-fg-muted;
+  }
+
+  .badge-dot {
+    @apply h-1.5 w-1.5 rounded-full bg-accent;
+  }
+
+  .card {
+    @apply rounded-lg border border-border bg-bg-subtle p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-[0_16px_40px_rgba(14,116,144,0.18)];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn border-accent bg-accent text-bg hover:bg-accent-muted hover:border-accent-muted;
+  }
+
+  .btn-secondary {
+    @apply btn border-border text-fg hover:border-accent hover:text-accent;
+  }
+
+  .nav-link {
+    @apply rounded px-3 py-1.5 text-fg-muted transition-all duration-200 hover:bg-bg-elevated/70 hover:text-fg;
+  }
+
+  .nav-link-active {
+    @apply bg-bg-elevated/60 text-accent;
+  }
+
+  .surface-glow {
+    background-image:
+      radial-gradient(700px 240px at 10% -50%, rgba(103, 232, 249, 0.08), transparent 65%),
+      radial-gradient(600px 240px at 100% 0%, rgba(34, 211, 238, 0.08), transparent 70%);
+  }
+
+  .table-row {
+    @apply transition-colors duration-200 hover:bg-bg-subtle/50;
+  }
+
+  /* Scroll-triggered reveal — hidden until IntersectionObserver adds .revealed */
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-fade-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stagger-1 {
+    transition-delay: 100ms;
+  }
+
+  .stagger-2 {
+    transition-delay: 200ms;
+  }
+
+  .stagger-3 {
+    transition-delay: 350ms;
+  }
+}
+
+@layer utilities {
+  /* Page entrance — fires once on mount, not scroll-dependent */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+}
+
+
+
+

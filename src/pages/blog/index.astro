@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BaseLayout
+  title="Blog"
+  description="Updates from the Ghostworks research effort — architecture breakdowns, stability results, and development notes."
+  canonicalPath="/blog"
+>
+  <Hero
+    eyebrow="Blog"
+    title="Development notes and updates."
+    subtitle="Architecture breakdowns, stability results, parameter discussions, and progress reports from the Ghostworks research effort."
+  />
+
+  <section class="container-content pb-24 animate-fade-up">
+    {
+      allPosts.length === 0 ? (
+        <p class="text-fg-muted">No posts yet. Check back soon.</p>
+      ) : (
+        <div class="grid gap-4">
+          {
+            allPosts.map((post, i) => (
+              <a
+                href={`/blog/${post.slug}`}
+                class={`card flex flex-col gap-2 stagger-${i + 1} animate-fade-up`}
+              >
+                <div class="flex items-center gap-3 text-xs text-fg-subtle">
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {post.data.pubDate.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  {
+                    post.data.tags && post.data.tags.length > 0 && (
+                      <span class="flex flex-wrap gap-1.5">
+                        {post.data.tags.map((tag: string) => (
+                          <span class="badge">{tag}</span>
+                        ))}
+                      </span>
+                    )
+                  }
+                </div>
+                <h2 class="text-lg font-medium tracking-tight">{post.data.title}</h2>
+                <p class="text-sm text-fg-muted">{post.data.description}</p>
+                <span class="mt-1 text-xs text-accent">Read more -></span>
+              </a>
+            ))
+          }
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+type Props = {
+  post: CollectionEntry<'blog'>;
+};
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as Props;
+const { Content } = await post.render();
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalPath={`/blog/${post.slug}`}
+  ogImage={post.data.ogImage}
+>
+  <article class="container-content pt-24 pb-24 animate-fade-up">
+    <div class="mx-auto max-w-2xl">
+      <div class="mb-10 space-y-4">
+        <div class="flex items-center gap-3 text-xs text-fg-subtle">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          {
+            post.data.tags && post.data.tags.length > 0 && (
+              <span class="flex flex-wrap gap-1.5">
+                {post.data.tags.map((tag: string) => (
+                  <span class="badge">{tag}</span>
+                ))}
+              </span>
+            )
+          }
+        </div>
+
+        <h1 class="text-3xl font-medium leading-tight tracking-tight sm:text-4xl">
+          {post.data.title}
+        </h1>
+
+        <p class="text-lg text-fg-muted">{post.data.description}</p>
+      </div>
+
+      <div class="prose-custom">
+        <Content />
+      </div>
+
+      <div class="mt-16 border-t border-border pt-8">
+        <a href="/blog" class="btn-secondary">&larr; Back to blog</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .prose-custom {
+    @apply text-fg-muted leading-relaxed;
+  }
+  .prose-custom h2 {
+    @apply mt-10 mb-4 text-xl font-medium tracking-tight text-fg;
+  }
+  .prose-custom h3 {
+    @apply mt-8 mb-3 text-lg font-medium tracking-tight text-fg;
+  }
+  .prose-custom p {
+    @apply mb-4;
+  }
+  .prose-custom ul {
+    @apply mb-4 list-disc pl-6 space-y-1.5;
+  }
+  .prose-custom ol {
+    @apply mb-4 list-decimal pl-6 space-y-1.5;
+  }
+  .prose-custom li {
+    @apply text-fg-muted;
+  }
+  .prose-custom a {
+    @apply text-accent transition-colors hover:text-fg;
+  }
+  .prose-custom strong {
+    @apply text-fg font-medium;
+  }
+  .prose-custom code {
+    @apply font-mono text-sm text-accent bg-bg-elevated px-1.5 py-0.5 rounded;
+  }
+  .prose-custom pre {
+    @apply my-6 rounded-lg border border-border bg-bg p-4 overflow-x-auto;
+  }
+  .prose-custom pre code {
+    @apply bg-transparent p-0 text-fg;
+  }
+  .prose-custom blockquote {
+    @apply border-l-2 border-accent pl-4 italic text-fg-muted my-6;
+  }
+  .prose-custom hr {
+    @apply my-10 border-border;
+  }
+</style>
