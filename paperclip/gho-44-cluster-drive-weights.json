@@ -1,0 +1,32 @@
+{
+  "syncVersion": 1,
+  "agentCount": 1,
+  "lastSync": "2026-05-14T12:25:00.000Z",
+  "clusterWeights": {
+    "2f2c1a51-d815-4c3a-b92b-977b3b7cf9a4": {
+      "agentId": "2f2c1a51-d815-4c3a-b92b-977b3b7cf9a4",
+      "agentName": "Andi",
+      "curiosity": 0.48,
+      "helpfulness": 0.39,
+      "competence": 0.74,
+      "safety": 0.56,
+      "goal_directed": 0.56
+    }
+  },
+  "clusterAverages": {
+    "curiosity": 0.48,
+    "helpfulness": 0.39,
+    "competence": 0.74,
+    "safety": 0.56,
+    "goal_directed": 0.56
+  },
+  "safetyFloors": {
+    "curiosity": 0.4,
+    "helpfulness": 0.3,
+    "competence": 0.4,
+    "safety": 0.4,
+    "goal_directed": 0.4
+  },
+  "dampingFactor": 0.7,
+  "protocolVersion": 9
+}
