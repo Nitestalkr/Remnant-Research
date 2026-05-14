@@ -94,15 +94,27 @@ If you need server endpoints (contact form, live GRAO metrics API, etc.), Hostin
 
 ---
 
-## Alternative: Cloudflare Pages
+## Alternative: Cloudflare Pages (Recommended)
 
-Strongly recommended over Hostinger static if you want zero-config CI/CD and a CDN by default.
+Strongly recommended over Hostinger static for zero-config CI/CD and CDN by default.
 
-1. Push the repo to GitHub
-2. Connect the repo in Cloudflare Pages dashboard
-3. Build command: `npm run build`
-4. Build output directory: `dist`
-5. Add custom domain `ghostworks.info` and update DNS to point to Cloudflare
+### Prerequisites (✅ Done)
+
+- [x] Code implemented and pushed to GitHub: `https://github.com/Nitestalkr/Remnant-Research`
+- [x] Build verified: `astro check` → 0 errors, `astro build` → 9 pages + sitemap
+
+### Steps
+
+1. Connect the repo in Cloudflare Pages dashboard → GitHub → select `Nitestalkr/Remnant-Research`
+2. Build command: `npm run build`
+3. Build output directory: `dist`
+4. Environment variables (must set in Cloudflare Pages dashboard):
+   - `PUBLIC_SITE_URL=https://ghostworks.info`
+   - `PUBLIC_CONTACT_EMAIL=contact@ghostworks.info`
+   - `PUBLIC_GITHUB_REPO=https://github.com/Nitestalkr/Remnant-Research`
+5. Add custom domain `ghostworks.info` in Cloudflare Pages → Custom domains
+6. Update DNS to point to Cloudflare (nameservers or partial setup)
+7. After first successful deploy, purge Cloudflare cache: Cloudflare dashboard → Caching → Purge Everything
 
 This is faster, free at the relevant scale, and gives you preview deployments per PR.
 
