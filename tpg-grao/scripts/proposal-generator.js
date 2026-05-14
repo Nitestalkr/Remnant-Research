@@ -26,6 +26,7 @@ const CONFIG = {
   outputDir: PROPOSALS_DIR,
   threshold: 0.50,
   noveltyWindowDays: 30,
+  identityNoveltyDays: 90,  // identity-level proposals persist longer
 };
 
 // Proposal templates by gradient type
@@ -146,11 +147,11 @@ function loadGradients(gradientsDir) {
 /**
  * Checks if a gradient direction has been investigated recently.
  */
-function checkNovelty(direction, proposalsDir, windowDays) {
+function checkNovelty(direction, proposalsDir, windowDays, isIdentity = false) {
   if (!fs.existsSync(proposalsDir)) return true;
 
   const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - windowDays);
+  cutoff.setDate(cutoff.getDate() - (isIdentity ? CONFIG.identityNoveltyDays : windowDays));
 
   // Check active proposals
   const activeProposals = loadProposals(proposalsDir, 'active');
@@ -345,6 +346,8 @@ function generateProposal(gradient, saturationState) {
         reason: saturationState.reason,
         priority_adjustment: proposalType === 'reinforcement' ? 'deprioritized' : 'elevated',
       } : null,
+      // Target file for applier routing
+      target_file: null,
     },
   };
 }
@@ -362,48 +365,51 @@ function generateProposals(gradients, config, saturationState) {
   if (saturationState.detected) {
     explorationGradients = gradients.filter(g => g.type === 'exploration');
     reinforcementGradients = gradients.filter(g => g.type !== 'exploration');
-    console.log(`\n  🧭 Saturation mode: exploration priority active`);
-    console.log(`  Exploration gradients: ${explorationGradients.length}`);
-    console.log(`  Reinforcement gradients: ${reinforcementGradients.length}`);
-  } else {
-    explorationGradients = [];
-    reinforcementGradients = gradients;
+    // Apply saturation rules
+    for (const gradient of explorationGradients) {
+      if (gradient.magnitude < config.threshold) continue;
+      const direction = gradient.direction || gradient.top_concepts?.[0]?.concept || 'unknown';
+      const isIdentity = ['self-evolving', 'system health', 'model selection', 'cron', 'identity'].some(k => direction.includes(k) || direction.toLowerCase().includes(k));
+      if (!checkNovelty(direction, config.outputDir, config.noveltyWindowDays, isIdentity)) {
+        console.log(`  ✗ Novelty check failed for exploration gradient: ${direction}`);
+        continue;
+      }
+      const proposal = generateProposal(gradient, saturationState);
+      // Set target_file for identity proposals
+      if (isIdentity) {
+        proposal.metadata.target_file = 'SOUL.md';
+      }
+      proposals.push(proposal);
+    }
+    for (const gradient of reinforcementGradients) {
+      if (gradient.magnitude < config.threshold) continue;
+      // Deprioritize reinforcement during saturation
+      const deprioritizedMagnitude = gradient.magnitude * 0.7;
+      if (deprioritizedMagnitude < config.threshold) continue;
+      const direction = gradient.direction || gradient.top_concepts?.[0]?.concept || 'unknown';
+      if (!checkNovelty(direction, config.outputDir, config.noveltyWindowDays)) {
+        console.log(`  ✗ Novelty check failed for reinforcement gradient: ${direction}`);
+        continue;
+      }
+      const proposal = generateProposal(gradient, saturationState);
+      proposals.push(proposal);
+    }
+    return proposals;
   }
 
-  // Generate exploration proposals first (during saturation)
-  for (const gradient of explorationGradients) {
-    if (gradient.magnitude < config.threshold && !saturationState.detected) {
+  // Normal mode (no saturation)
+  for (const gradient of gradients) {
+    if (gradient.magnitude < config.threshold) continue;
+    const direction = gradient.direction || gradient.top_concepts?.[0]?.concept || 'unknown';
+    const isIdentity = ['self-evolving', 'system health', 'model selection', 'cron', 'identity'].some(k => direction.includes(k) || direction.toLowerCase().includes(k));
+    if (!checkNovelty(direction, config.outputDir, config.noveltyWindowDays, isIdentity)) {
+      console.log(`  ✗ Novelty check failed for gradient: ${direction}`);
       continue;
     }
-
-    const isNovel = checkNovelty(gradient.direction, config.outputDir, config.noveltyWindowDays);
-    if (!isNovel) {
-      console.log(`  Skipping: "${gradient.direction}" — recently investigated`);
-      continue;
-    }
-
     const proposal = generateProposal(gradient, saturationState);
-    proposals.push(proposal);
-  }
-
-  // Generate reinforcement proposals (after exploration during saturation)
-  for (const gradient of reinforcementGradients) {
-    if (gradient.magnitude < config.threshold) {
-      continue;
+    if (isIdentity) {
+      proposal.metadata.target_file = 'SOUL.md';
     }
-
-    const isNovel = checkNovelty(gradient.direction, config.outputDir, config.noveltyWindowDays);
-    if (!isNovel) {
-      console.log(`  Skipping: "${gradient.direction}" — recently investigated`);
-      continue;
-    }
-
-    if (gradient.confidence < 0.3) {
-      console.log(`  Skipping: low confidence (${gradient.confidence}) for "${gradient.direction}"`);
-      continue;
-    }
-
-    const proposal = generateProposal(gradient, saturationState);
     proposals.push(proposal);
   }
 
