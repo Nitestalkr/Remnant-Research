@@ -1,0 +1,50 @@
+﻿---
+const nav = [
+  { href: '/research', label: 'Research' },
+  { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="sticky top-0 z-40 border-b border-border bg-bg/80 backdrop-blur">
+  <div class="container-content flex h-16 items-center justify-between">
+    <a href="/" class="group flex items-center gap-2.5 text-fg transition-colors hover:text-accent">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true" class="transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
+        <path d="M 25 16 A 9 9 0 1 1 16 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <rect x="14" y="14" width="4" height="4" rx="0.5" fill="currentColor" transform="rotate(45 16 16)"/>
+      </svg>
+      <span class="font-medium tracking-tight">ghostworks</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="flex items-center gap-1 text-sm">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'nav-link',
+                  isActive(item.href) ? 'nav-link-active' : '',
+                ]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+

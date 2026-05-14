@@ -1,0 +1,37 @@
+﻿---
+const githubRepo = import.meta.env.PUBLIC_GITHUB_REPO ?? 'https://github.com/Nitestalkr/Remnant-Research';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-border">
+  <div class="container-content grid gap-8 py-12 sm:grid-cols-2 sm:items-end">
+    <div class="space-y-2">
+      <p class="font-mono text-xs uppercase tracking-wider text-fg-subtle">Ghostworks</p>
+      <p class="max-w-prose text-sm text-fg-muted">
+        Research and deployment of self-evolving AI agent systems grounded in cognitive science.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-start gap-4 text-sm text-fg-muted sm:justify-end">
+      <a href="/research" class="transition-colors hover:text-accent">Research</a>
+      <a href="/services" class="transition-colors hover:text-accent">Services</a>
+      <a href="/blog" class="transition-colors hover:text-accent">Blog</a>
+      <a href="/about" class="transition-colors hover:text-accent">About</a>
+      <a href="/contact" class="transition-colors hover:text-accent">Contact</a>
+      <a href={githubRepo} class="transition-colors hover:text-accent" target="_blank" rel="noopener noreferrer">
+        GitHub ->
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-border-subtle">
+    <div class="container-content flex h-12 items-center justify-between text-xs text-fg-subtle">
+      <span>(c) {year} Ghostworks</span>
+      <span class="font-mono">from theory to deployment</span>
+    </div>
+  </div>
+</footer>
+
+
+
+

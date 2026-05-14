@@ -1,0 +1,120 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+
+const githubRepo = import.meta.env.PUBLIC_GITHUB_REPO ?? 'https://github.com/Nitestalkr/Remnant-Research';
+---
+
+<BaseLayout title="Ghostworks" canonicalPath="/">
+  <Hero
+    eyebrow="Active research / Phase 6 in progress"
+    title="Self-evolving AI agents, built from cognitive science up."
+    subtitle="Ghostworks is the research and deployment surface for two interconnected frameworks: a drive-based cognitive architecture for autonomous agents, and a gradient-driven research loop that lets them improve themselves."
+  >
+    <div class="flex flex-wrap items-center gap-3 pt-4 animate-fade-up stagger-3">
+      <a href="/research" class="btn-primary">Explore the research</a>
+      <a href={githubRepo} class="btn-secondary" target="_blank" rel="noopener noreferrer">
+        View on GitHub ->
+      </a>
+    </div>
+  </Hero>
+
+  <section class="container-content pb-16 animate-fade-up">
+    <div class="mb-10 space-y-2">
+      <p class="font-mono text-2xs uppercase tracking-wider text-fg-subtle">Frameworks</p>
+      <h2 class="text-2xl font-medium tracking-tight sm:text-3xl">Two systems, one closed loop.</h2>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="stagger-1 animate-fade-up">
+        <ResearchCard
+          tag="GNW"
+          title="Goals / Neural / Work"
+          description="A drive-based cognitive architecture. Five continuous drives - curiosity, helpfulness, competence, safety, goal-directedness - compete and decay in real time, giving agents principled internal motivation."
+          href="/research/gnw"
+          metrics={[
+            { label: 'Phase', value: '6 in progress' },
+            { label: 'Drives', value: '5 operational' },
+            { label: 'Cycle steps', value: '12' },
+            { label: 'Stability tests', value: '5 passing' },
+          ]}
+        />
+      </div>
+
+      <div class="stagger-2 animate-fade-up">
+        <ResearchCard
+          tag="TPG / GRAO"
+          title="Gradient-Driven Research Optimization"
+          description="A self-improving research loop that treats research direction like gradient descent. Execution traces feed pattern analysis, gradients steer proposals, and validated patterns enter the experience store."
+          href="/research/grao"
+          metrics={[
+            { label: 'Latest round', value: '39' },
+            { label: 'Success ratio', value: '92.7%' },
+            { label: 'Experiences', value: '7 proven' },
+            { label: 'Status', value: 'Saturation detected' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="container-content pb-16 animate-fade-up stagger-1">
+    <div class="surface-glow rounded-lg border border-border bg-bg-subtle p-8 sm:p-10">
+      <div class="grid gap-8 sm:grid-cols-[1fr_2fr] sm:gap-12">
+        <div class="space-y-2">
+          <p class="font-mono text-2xs uppercase tracking-wider text-fg-subtle">The Loop</p>
+          <h2 class="text-2xl font-medium tracking-tight">How GNW and GRAO work together</h2>
+        </div>
+
+        <div class="space-y-4 text-fg-muted">
+          <p>
+            <span class="text-fg">GNW decides</span> what action to take based on the current
+            balance of cognitive drives.
+          </p>
+          <p>
+            <span class="text-fg">GRAO records</span> the outcome, computes a directional gradient
+            from the pattern of traces, and generates a proposal for the next iteration.
+          </p>
+          <p>
+            <span class="text-fg">Validated patterns</span> enter the experience store, where they
+            inform future drive weights, and the cycle repeats with richer data.
+          </p>
+          <p class="border-l-2 border-accent pl-4 font-mono text-sm text-fg">
+            from theory to deployment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-content pb-24 animate-fade-up stagger-2">
+    <div class="mb-8 space-y-2">
+      <p class="font-mono text-2xs uppercase tracking-wider text-fg-subtle">Principles</p>
+      <h2 class="text-2xl font-medium tracking-tight sm:text-3xl">Design commitments.</h2>
+    </div>
+
+    <dl class="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
+      <div class="bg-bg-subtle p-6 transition-colors hover:bg-bg-elevated/60">
+        <dt class="font-mono text-2xs uppercase tracking-wider text-accent">Boredom is a trigger, not a command</dt>
+        <dd class="mt-2 text-sm text-fg-muted">If nothing qualifies above threshold, staying idle is correct. Forced work breaks the model.</dd>
+      </div>
+      <div class="bg-bg-subtle p-6 transition-colors hover:bg-bg-elevated/60">
+        <dt class="font-mono text-2xs uppercase tracking-wider text-accent">Safety is a veto, not a score</dt>
+        <dd class="mt-2 text-sm text-fg-muted">Safety blocks external actions regardless of other drive strength. Not a competing weight, a hard gate.</dd>
+      </div>
+      <div class="bg-bg-subtle p-6 transition-colors hover:bg-bg-elevated/60">
+        <dt class="font-mono text-2xs uppercase tracking-wider text-accent">Gradients guide, don't dictate</dt>
+        <dd class="mt-2 text-sm text-fg-muted">GRAO produces directional signals. GNW decides whether to act on them. Suggestion, not mandate.</dd>
+      </div>
+      <div class="bg-bg-subtle p-6 transition-colors hover:bg-bg-elevated/60">
+        <dt class="font-mono text-2xs uppercase tracking-wider text-accent">Experiences compound</dt>
+        <dd class="mt-2 text-sm text-fg-muted">Each validated pattern makes future decisions more accurate. The system gets sharper over time, not noisier.</dd>
+      </div>
+    </dl>
+  </section>
+</BaseLayout>
+
+
+
+

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#67e8f9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1c1c1c" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.6"/>
+  <circle cx="900" cy="315" r="400" fill="url(#glow)"/>
+
+  <!-- Top accent bar -->
+  <rect x="80" y="80" width="40" height="2" fill="#67e8f9"/>
+
+  <!-- Wordmark with logo -->
+  <g transform="translate(80, 110)">
+    <path d="M 24 14 A 10 10 0 1 1 14 24" fill="none" stroke="#67e8f9" stroke-width="2" stroke-linecap="round"/>
+    <rect x="12" y="12" width="4" height="4" rx="0.5" fill="#67e8f9" transform="rotate(45 14 14)"/>
+    <text x="40" y="22" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#fafafa" letter-spacing="-0.3">
+      ghostworks
+    </text>
+  </g>
+
+  <!-- Main headline -->
+  <g transform="translate(80, 240)">
+    <text font-family="Inter, system-ui, sans-serif" font-size="68" font-weight="500" fill="#fafafa" letter-spacing="-2">
+      <tspan x="0" y="0">Self-evolving AI agents,</tspan>
+      <tspan x="0" y="80">built from theory up.</tspan>
+    </text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="80" y="450" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#a1a1aa" letter-spacing="-0.3">
+    Drive-based cognition. Gradient-driven optimization. Open research.
+  </text>
+
+  <!-- Footer row -->
+  <g transform="translate(80, 540)">
+    <text font-family="JetBrains Mono, monospace" font-size="13" font-weight="500" fill="#71717a" letter-spacing="1.5">
+      <tspan>GNW</tspan>
+      <tspan dx="20" fill="#262626">·</tspan>
+      <tspan dx="20">TPG · GRAO</tspan>
+      <tspan dx="20" fill="#262626">·</tspan>
+      <tspan dx="20">FROM THEORY TO DEPLOYMENT</tspan>
+    </text>
+  </g>
+
+  <!-- Domain -->
+  <text x="1120" y="555" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="14" font-weight="500" fill="#67e8f9" letter-spacing="0.5">
+    ghostworks.info
+  </text>
+</svg>
