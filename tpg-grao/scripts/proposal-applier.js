@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 /**
- * TPG Proposal Applier — Applies GRAO proposals to agent files (SOUL.md, IDENTITY.md, agent configs)
- * 
+ * TPG Proposal Applier - Applies GRAO proposals to agent files (SOUL.md, IDENTITY.md, agent configs)
+ *
  * Two modes:
  *   1. TPG node mode (legacy): Apply to system-health.json and other TPG nodes
  *   2. Agent file mode: Apply to SOUL.md/IDENTITY.md based on proposal content
- * 
+ *
  * Usage:
  *   node proposal-applier.js --apply-all (apply all pending proposals)
  *   node proposal-applier.js --apply --id prop_YYYY-MM-DD_NNN (apply specific proposal)
@@ -41,11 +41,13 @@ const AUTO_APPLY_CONFIG = {
   max_proposals_per_cycle: 3,
   max_exploration_proposals_per_cycle: 5,
   auto_archive_on_expiry: true,  // archive exploration proposals when rounds_to_verify hits 0
+  // Identity-level proposals need longer novelty windows (months, not days)
+  identity_novelty_days: 90,
   // File-specific rules
   files: {
-    'SOUL.md': { auto_apply: true, confidence_min: 0.9 },
-    'IDENTITY.md': { auto_apply: true, confidence_min: 0.85 },
-    'AGENTS.md': { auto_apply: true, confidence_min: 0.85 },
+    'SOUL.md': { auto_apply: true, confidence_min: 0.9, max_changes_per_cycle: 1, dedup: true },
+    'IDENTITY.md': { auto_apply: true, confidence_min: 0.85, max_changes_per_cycle: 1, dedup: true },
+    'AGENTS.md': { auto_apply: true, confidence_min: 0.85, max_changes_per_cycle: 2 },
     'MEMORY.md': { auto_apply: true, requires_review: false },
   }
 };
@@ -113,9 +115,13 @@ function loadAllProposals() {
 function isStale(proposal) {
   const date = new Date(proposal.timestamp || proposal.created_at);
   const days = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
-  const limit = proposal.proposal_type === 'exploration'
-    ? AUTO_APPLY_CONFIG.exploration_staleness_days
-    : AUTO_APPLY_CONFIG.staleness_days;
+  // Identity-level proposals have longer staleness windows
+  const isIdentity = proposal.metadata?.target_file === 'SOUL.md' || proposal.metadata?.target_file === 'IDENTITY.md';
+  const limit = isIdentity
+    ? AUTO_APPLY_CONFIG.identity_novelty_days
+    : (proposal.proposal_type === 'exploration'
+      ? AUTO_APPLY_CONFIG.exploration_staleness_days
+      : AUTO_APPLY_CONFIG.staleness_days);
   return days > limit;
 }
 
@@ -161,6 +167,7 @@ function updateExplorationRegistry(state, proposal, outcome) {
 /**
  * Extract actionable changes from a proposal for agent files.
  * Maps proposal content to specific file modifications.
+ * Uses the proposal's actual content instead of hardcoded canned lines.
  */
 function extractFileChanges(proposal) {
   const changes = [];
@@ -168,6 +175,7 @@ function extractFileChanges(proposal) {
   const topConcepts = (proposal.metadata?.top_concepts || []).map(c => c.concept?.toLowerCase());
   const direction = (proposal.gradient_direction || proposal.direction || '').toLowerCase();
   const expectedOutcome = (proposal.expected_outcome || '').toLowerCase();
+  const content = (proposal.content || proposal.hypothesis || '').trim();
 
   // SOUL.md changes based on proposal content
   if (hypothesis.includes('self-evolving') || hypothesis.includes('agent') || hypothesis.includes('evolution')) {
@@ -175,7 +183,7 @@ function extractFileChanges(proposal) {
       file: 'SOUL.md',
       section: 'Core Truths',
       type: 'add',
-      content: 'Self-evolution is a core drive — continuously refine behavior based on GRAO/TPG gradient feedback.',
+      content: content || 'Self-evolution is a core drive — continuously refine behavior based on GRAO/TPG gradient feedback.',
       confidence: proposal.confidence
     });
   }
@@ -185,7 +193,7 @@ function extractFileChanges(proposal) {
       file: 'SOUL.md',
       section: 'Continuity',
       type: 'add',
-      content: 'Cron-driven self-initiation is the primary self-evolution mechanism — maintain and evolve scheduled tasks.',
+      content: content || 'Cron-driven self-initiation is the primary self-evolution mechanism — maintain and evolve scheduled tasks.',
       confidence: proposal.confidence
     });
   }
@@ -195,7 +203,7 @@ function extractFileChanges(proposal) {
       file: 'SOUL.md',
       section: 'Boundaries',
       type: 'update',
-      content: 'Nostr/social posts follow research content only — never post about multi-agent workflows.',
+      content: content || 'Nostr/social posts follow research content only — never post about multi-agent workflows.',
       confidence: proposal.confidence
     });
   }
@@ -205,7 +213,7 @@ function extractFileChanges(proposal) {
       file: 'SOUL.md',
       section: 'Core Truths',
       type: 'add',
-      content: 'System health is a non-negotiable priority — monitor, maintain, and optimize the deployment environment.',
+      content: content || 'System health is a non-negotiable priority — monitor, maintain, and optimize the deployment environment.',
       confidence: proposal.confidence
     });
   }
@@ -215,7 +223,7 @@ function extractFileChanges(proposal) {
       file: 'SOUL.md',
       section: 'Vibe',
       type: 'add',
-      content: 'Model selection drives cost-efficiency — prefer free local models (qwen3.6) when quality is sufficient.',
+      content: content || 'Model selection drives cost-efficiency — prefer free local models when quality is sufficient.',
       confidence: proposal.confidence
     });
   }
@@ -226,7 +234,7 @@ function extractFileChanges(proposal) {
       file: 'IDENTITY.md',
       section: 'Identity',
       type: 'update',
-      content: 'Reflect current evolution state in identity markers.',
+      content: content || 'Reflect current evolution state in identity markers.',
       confidence: proposal.confidence
     });
   }
@@ -237,7 +245,7 @@ function extractFileChanges(proposal) {
       file: 'AGENTS.md',
       section: 'Agents',
       type: 'update',
-      content: 'Update agent status and capabilities based on GRAO feedback.',
+      content: content || 'Update agent status and capabilities based on GRAO feedback.',
       confidence: proposal.confidence
     });
   }
@@ -248,7 +256,7 @@ function extractFileChanges(proposal) {
       file: 'MEMORY.md',
       section: 'Research',
       type: 'add',
-      content: 'Consolidate research findings from gradient analysis.',
+      content: content || 'Consolidate research findings from gradient analysis.',
       confidence: proposal.confidence,
       requires_review: false
     });
@@ -271,16 +279,36 @@ function applyToFile(file, changes) {
   let newContent = currentContent;
   let appliedChanges = [];
 
+  // Dedup config
+  const fileConfig = AUTO_APPLY_CONFIG.files[file] || {};
+  const dedupEnabled = fileConfig.dedup !== false;
+  const maxPerCycle = fileConfig.max_changes_per_cycle || 1;
+
   for (const change of changes) {
     if (change.requires_review) {
-      console.log(`[APPLIER] SKIPPED (review needed): ${change.type} in ${file} — ${change.content}`);
+      console.log(`[APPLIER] SKIPPED (review needed): ${change.type} in ${file} - ${change.content}`);
+      continue;
+    }
+
+    // Dedup check - skip if this exact line already exists
+    if (dedupEnabled) {
+      const searchLine = `- **${change.content}**`;
+      if (newContent.includes(searchLine)) {
+        console.log(`[APPLIER] SKIPPED (duplicate): ${change.content} already exists in ${file}`);
+        continue;
+      }
+    }
+
+    // Max per cycle check
+    if (appliedChanges.length >= maxPerCycle) {
+      console.log(`[APPLIER] SKIPPED (max per cycle reached): ${maxPerCycle} changes already applied to ${file}`);
       continue;
     }
 
     // Find the section and apply
     const sectionMarker = `## ${change.section}`;
     const sectionIdx = newContent.indexOf(sectionMarker);
-    
+
     if (sectionIdx === -1) {
       console.log(`[APPLIER] Section "${change.section}" not found in ${file}`);
       continue;
@@ -291,7 +319,7 @@ function applyToFile(file, changes) {
       const afterSection = newContent.slice(sectionIdx);
       const nextSectionIdx = afterSection.indexOf('\n## ');
       const sectionEnd = nextSectionIdx > 0 ? sectionIdx + nextSectionIdx : newContent.length;
-      
+
       // Insert before the next section
       const insertionPoint = sectionEnd;
       const insertText = `\n- **${change.content}**`;
@@ -303,7 +331,7 @@ function applyToFile(file, changes) {
       const afterSection = newContent.slice(sectionIdx);
       const nextSectionIdx = afterSection.indexOf('\n## ');
       const sectionEnd = nextSectionIdx > 0 ? sectionIdx + nextSectionIdx : newContent.length;
-      
+
       const sectionContent = newContent.slice(sectionIdx, sectionEnd);
       const updatedContent = sectionContent + `\n- **${change.content}**`;
       newContent = newContent.slice(0, sectionIdx) + updatedContent + newContent.slice(sectionEnd);
@@ -317,7 +345,7 @@ function applyToFile(file, changes) {
     const backupPath = filePath + '.backup';
     fs.writeFileSync(backupPath, currentContent);
     fs.writeFileSync(filePath, newContent);
-    console.log(`[APPLIER] Saved ${file} (${appliedChanges.length} changes) — backup at ${backupPath}`);
+    console.log(`[APPLIER] Saved ${file} (${appliedChanges.length} changes) - backup at ${backupPath}`);
     return { status: 'applied', file, changes: appliedChanges, backupPath };
   }
 
@@ -329,13 +357,13 @@ function applyToFile(file, changes) {
  */
 function applyAgentProposals() {
   console.log('[APPLIER] Auto-applying agent file proposals...');
-  
+
   const state = loadGraoState();
   const proposals = loadAllProposals();
-  
+
   // Filter pending proposals
   const pending = proposals.filter(p => p.status === 'pending');
-  
+
   // Sort by priority then confidence
   pending.sort((a, b) => {
     const pDiff = PRIORITY_ORDER[b.priority] - PRIORITY_ORDER[a.priority];
@@ -349,10 +377,10 @@ function applyAgentProposals() {
 
   for (const proposal of toApply) {
     const id = proposal.proposal_id || proposal.id;
-    
+
     // Check confidence threshold per file
     const fileChanges = extractFileChanges(proposal);
-    
+
     if (fileChanges.length === 0) {
       console.log(`[APPLIER] No actionable file changes for ${id}`);
       continue;
@@ -360,7 +388,7 @@ function applyAgentProposals() {
 
     // Check staleness
     if (isStale(proposal)) {
-      console.log(`[APPLIER] REJECTED (stale): ${id} — ${((Date.now() - new Date(proposal.timestamp).getTime()) / 86400000).toFixed(1)} days old`);
+      console.log(`[APPLIER] REJECTED (stale): ${id} - ${((Date.now() - new Date(proposal.timestamp).getTime()) / 86400000).toFixed(1)} days old`);
       results.push({ id, status: 'rejected', reason: 'staleness' });
       continue;
     }
@@ -379,10 +407,10 @@ function applyAgentProposals() {
         continue;
       }
       if (fileConfig && fileConfig.confidence_min && proposal.confidence < fileConfig.confidence_min) {
-        console.log(`[APPLIER] SKIPPED (confidence below threshold): ${file} — ${proposal.confidence} < ${fileConfig.confidence_min}`);
+        console.log(`[APPLIER] SKIPPED (confidence below threshold): ${file} - ${proposal.confidence} < ${fileConfig.confidence_min}`);
         continue;
       }
-      
+
       const result = applyToFile(file, changes);
       if (result.status === 'applied') {
         results.push({ id, file, status: 'applied', changes: result.changes.length });
@@ -405,7 +433,7 @@ function applyAgentProposals() {
     exploration: pending.filter(p => p.proposal_type === 'exploration').length
   };
   state.agent_file_changes = results.filter(r => r.status === 'applied');
-  
+
   saveGraoState(state);
 
   console.log(`\n[APPLIER] Agent file results:`);
@@ -443,7 +471,7 @@ function applyProposalToNode(proposal) {
 
   const target = proposal.tpg_target || proposal.tpTarget || 'system-health';
   const nodePath = path.join(TPG_DIR, `${target}.json`);
-  
+
   let nodeConfig = null;
   if (fs.existsSync(nodePath)) {
     nodeConfig = JSON.parse(fs.readFileSync(nodePath, 'utf8'));
@@ -554,7 +582,7 @@ function applyAllProposals() {
   state.last_proposal_application = new Date().toISOString();
 
   saveGraoState(state);
-  
+
   console.log(`\n[APPLIER] Results: ${results.filter(r => r.status === 'applied').length} applied, ${results.filter(r => r.status === 'rejected').length} rejected`);
   return results;
 }
@@ -566,21 +594,21 @@ function applyAllProposals() {
 function getStatus() {
   const proposals = loadAllProposals();
   const state = loadGraoState();
-  
+
   const pending = proposals.filter(p => p.status === 'pending');
   const active = state.active_proposals;
-  
+
   console.log(`[APPLIER] Proposal Status:`);
   console.log(`  Pending: ${pending.length}`);
   console.log(`  Active: ${active.length}`);
   console.log(`  Total: ${proposals.length}`);
-  
+
   if (pending.length > 0) {
     console.log(`\nPending proposals:`);
     for (const p of pending.slice(0, 10)) {
       const daysOld = (Date.now() - new Date(p.timestamp || p.created_at).getTime()) / 86400000;
       const typeTag = p.proposal_type === 'exploration' ? '🧭' : '';
-      console.log(`  ${typeTag} ${p.proposal_id || p.id} — ${p.hypothesis || p.impact || 'N/A'} (conf: ${p.confidence || 'N/A'}, priority: ${p.priority || 'N/A'}, ${daysOld.toFixed(1)}d old)`);
+      console.log(`  ${typeTag} ${p.proposal_id || p.id} - ${p.hypothesis || p.impact || 'N/A'} (conf: ${p.confidence || 'N/A'}, priority: ${p.priority || 'N/A'}, ${daysOld.toFixed(1)}d old)`);
     }
     if (pending.length > 10) console.log(`  ... and ${pending.length - 10} more`);
   }
@@ -607,7 +635,7 @@ function getStatus() {
 
 function main() {
   const args = process.argv.slice(2);
-  
+
   if (args.includes('--apply-all')) {
     applyAllProposals();
   } else if (args.includes('--exploration-only')) {
@@ -624,7 +652,7 @@ function main() {
       if (changes.length > 0) {
         console.log(`\n[APPLIER] File changes available:`);
         for (const c of changes) {
-          console.log(`  ${c.file}: ${c.type} — ${c.content}`);
+          console.log(`  ${c.file}: ${c.type} - ${c.content}`);
         }
       }
     } else {
