@@ -3,23 +3,23 @@
   "_schema_version": "1.0",
   "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agentName": "claude",
-  "syncVersion": 2,
-  "syncedAt": "2026-05-14T07:35:37.882Z",
+  "syncVersion": 3,
+  "syncedAt": "2026-05-14T11:15:57.741Z",
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
+    "curiosity": 0.461,
+    "helpfulness": 0.43,
+    "competence": 0.742,
+    "safety": 0.71,
+    "goal_directed": 0.572
+  },
+  "prevWeights": {
     "curiosity": 0.447,
     "helpfulness": 0.4,
     "competence": 0.732,
     "safety": 0.731,
     "goal_directed": 0.532
-  },
-  "prevWeights": {
-    "curiosity": 0.427,
-    "helpfulness": 0.357,
-    "competence": 0.718,
-    "safety": 0.761,
-    "goal_directed": 0.475
   },
   "clusterAvg": {
     "curiosity": 0.495,
@@ -30,14 +30,14 @@
   },
   "convergence": {
     "delta": {
-      "curiosity": 0.02,
-      "helpfulness": 0.043,
-      "competence": 0.014,
-      "safety": -0.03,
-      "goal_directed": 0.057
+      "curiosity": 0.014,
+      "helpfulness": 0.03,
+      "competence": 0.01,
+      "safety": -0.021,
+      "goal_directed": 0.04
     },
-    "max_abs_delta": 0.057,
-    "mean_abs_delta": 0.033,
+    "max_abs_delta": 0.04,
+    "mean_abs_delta": 0.023,
     "converged": false
   },
   "safety_floors_applied": [],
