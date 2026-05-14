@@ -3,8 +3,8 @@
   "_schema_version": "1.0",
   "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agentName": "claude",
-  "syncVersion": 7,
-  "syncedAt": "2026-05-14T13:01:07.578Z",
+  "syncVersion": 8,
+  "syncedAt": "2026-05-14T13:30:57.526Z",
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
