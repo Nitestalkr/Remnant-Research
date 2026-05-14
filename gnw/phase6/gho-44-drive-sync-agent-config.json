@@ -3,8 +3,8 @@
   "_schema_version": "1.0",
   "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agentName": "claude",
-  "syncVersion": 16,
-  "syncedAt": "2026-05-14T22:00:30.000Z",
+  "syncVersion": 17,
+  "syncedAt": "2026-05-14T22:02:59.663Z",
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
@@ -12,14 +12,14 @@
     "helpfulness": 0.536,
     "competence": 0.774,
     "safety": 0.639,
-    "goal_directed": 0.710
+    "goal_directed": 0.711
   },
   "prevWeights": {
     "curiosity": 0.511,
-    "helpfulness": 0.535,
+    "helpfulness": 0.536,
     "competence": 0.774,
     "safety": 0.639,
-    "goal_directed": 0.709
+    "goal_directed": 0.71
   },
   "clusterAvg": {
     "curiosity": 0.512,
@@ -30,20 +30,20 @@
   },
   "convergence": {
     "delta": {
-      "curiosity": 0.000,
-      "helpfulness": 0.001,
-      "competence": 0.000,
-      "safety": 0.000,
+      "curiosity": 0,
+      "helpfulness": 0,
+      "competence": 0,
+      "safety": 0,
       "goal_directed": 0.001
     },
     "max_abs_delta": 0.001,
-    "mean_abs_delta": 0.000,
+    "mean_abs_delta": 0,
     "converged": true
   },
   "safety_floors_applied": [],
   "winner": "competence",
   "action": "skill_improvement",
   "confidence": 0.8,
-  "cycleCount": 11,
+  "cycleCount": 12,
   "publishInterval": "30min"
 }
