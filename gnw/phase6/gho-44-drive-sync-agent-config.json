@@ -8,11 +8,11 @@
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
-    "curiosity": 0.5123,
-    "helpfulness": 0.5373,
+    "curiosity": 0.5124,
+    "helpfulness": 0.5374,
     "competence": 0.7749,
-    "safety": 0.6377,
-    "goal_directed": 0.7123
+    "safety": 0.6376,
+    "goal_directed": 0.7124
   },
   "prevWeights": {
     "curiosity": 0.5123,
@@ -30,20 +30,20 @@
   },
   "convergence": {
     "delta": {
-      "curiosity": 0.0002,
-      "helpfulness": 0.0002,
-      "competence": 0.0002,
-      "safety": -0.0002,
-      "goal_directed": 0.0002
+      "curiosity": 0.0001,
+      "helpfulness": 0.0001,
+      "competence": 0.0,
+      "safety": -0.0001,
+      "goal_directed": 0.0001
     },
-    "max_abs_delta": 0.0002,
-    "mean_abs_delta": 0.0002,
+    "max_abs_delta": 0.0001,
+    "mean_abs_delta": 0.00008,
     "converged": true
   },
   "safety_floors_applied": [],
   "winner": "competence",
   "action": "skill_improvement",
   "confidence": 0.8,
-  "cycleCount": 24,
+  "cycleCount": 25,
   "publishInterval": "30min"
 }
