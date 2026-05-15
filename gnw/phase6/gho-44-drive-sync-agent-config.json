@@ -3,8 +3,8 @@
   "_schema_version": "1.0",
   "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agentName": "claude",
-  "syncVersion": 27,
-  "syncedAt": "2026-05-15T08:30:30.000Z",
+  "syncVersion": 28,
+  "syncedAt": "2026-05-15T09:00:30.000Z",
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
@@ -15,11 +15,11 @@
     "goal_directed": 0.7123
   },
   "prevWeights": {
-    "curiosity": 0.5121,
-    "helpfulness": 0.5371,
-    "competence": 0.7747,
-    "safety": 0.6379,
-    "goal_directed": 0.7121
+    "curiosity": 0.5123,
+    "helpfulness": 0.5373,
+    "competence": 0.7749,
+    "safety": 0.6377,
+    "goal_directed": 0.7123
   },
   "clusterAvg": {
     "curiosity": 0.51242,
