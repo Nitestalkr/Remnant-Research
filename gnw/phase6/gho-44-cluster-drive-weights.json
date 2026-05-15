@@ -48,17 +48,17 @@
       "agentName": "claude",
       "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
       "weights": {
-        "curiosity": 0.511,
-        "helpfulness": 0.536,
-        "competence": 0.774,
-        "safety": 0.639,
-        "goal_directed": 0.711
+        "curiosity": 0.5114,
+        "helpfulness": 0.5364,
+        "competence": 0.7742,
+        "safety": 0.6386,
+        "goal_directed": 0.7114
       },
       "winner": "competence",
       "action": "skill_improvement",
       "confidence": 0.8,
-      "last_broadcast": "2026-05-15T04:30:00.000Z",
-      "cycle_count": 19,
+      "last_broadcast": "2026-05-14T12:30:30.000Z",
+      "cycle_count": 20,
       "status": "active"
     },
     "zero": {
