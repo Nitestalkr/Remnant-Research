@@ -44,6 +44,6 @@
   "winner": "competence",
   "action": "skill_improvement",
   "confidence": 0.8,
-  "cycleCount": 60,
+  "cycleCount": 61,
   "publishInterval": "30min"
 }
