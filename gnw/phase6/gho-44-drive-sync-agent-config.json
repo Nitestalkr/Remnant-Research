@@ -3,28 +3,28 @@
   "_schema_version": "1.0",
   "agentId": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agentName": "claude",
-  "syncVersion": 70,
-  "syncedAt": "2026-05-16T12:30:00.000Z",
+  "syncVersion": 71,
+  "syncedAt": "2026-05-16T13:00:30.000Z",
   "damping": 0.7,
   "agents_in_cluster": 5,
   "newWeights": {
     "curiosity": 0.5125,
     "helpfulness": 0.5375,
-    "competence": 0.775,
+    "competence": 0.7750,
     "safety": 0.6375,
     "goal_directed": 0.7125
   },
   "prevWeights": {
     "curiosity": 0.5125,
     "helpfulness": 0.5375,
-    "competence": 0.775,
+    "competence": 0.7750,
     "safety": 0.6375,
     "goal_directed": 0.7125
   },
   "clusterAvg": {
     "curiosity": 0.5125,
     "helpfulness": 0.5375,
-    "competence": 0.775,
+    "competence": 0.7750,
     "safety": 0.6375,
     "goal_directed": 0.7125
   },
