@@ -175,7 +175,7 @@ Drive weights are not static. They shift based on:
 
 ---
 
-## Current System State (May 11, 2026 — Cycle 116)
+## Current System State (May 15, 2026 — Cycle 121)
 
 ### Drive Health Snapshot
 | Drive | Score | Notes |

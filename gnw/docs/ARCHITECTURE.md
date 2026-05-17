@@ -2,6 +2,8 @@
 
 High-level system architecture for the Goals/Neural/Work (GNW) self-evolution framework.
 
+**Last verified:** 2026-05-17 14:37 UTC — Cycle 141 stale refresh
+
 ## System Overview
 
 GNW is a **drive-based cognitive architecture** for autonomous AI agents.

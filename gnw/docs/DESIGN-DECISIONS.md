@@ -2,6 +2,8 @@
 
 Key design choices in GNW and their rationale.
 
+**Last verified:** 2026-05-17 14:37 UTC — Cycle 141 stale refresh
+
 ## Decision 1: Drives as Weighted Vectors (Not Enums)
 
 **Choice:** Each drive is a continuous score (0.0–1.0), not a discrete state.

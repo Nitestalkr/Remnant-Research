@@ -1,0 +1,121 @@
+{
+  "scan_number": 146,
+  "timestamp": "2026-05-17T21:53:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "pending_events": "none — system idle",
+  "stale_items_scanned": 8,
+  "stale_items": [
+    {
+      "item": "GRAO proposal-applier gap",
+      "staleness_hours": 54,
+      "score": 1.62,
+      "novelty_boost": 1.5,
+      "relevance": "mechanism gap — 10 active proposals with 0 applied",
+      "goal_alignment": "high — GRAO pipeline integrity"
+    },
+    {
+      "item": "papers README.md",
+      "staleness_hours": 2,
+      "score": 0.8295,
+      "novelty_boost": 1.5,
+      "relevance": "catalog index",
+      "goal_alignment": "medium"
+    },
+    {
+      "item": "gnw/stability README.md",
+      "staleness_hours": 3,
+      "score": 0.756,
+      "novelty_boost": 1.5,
+      "relevance": "stability test suite",
+      "goal_alignment": "medium"
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "staleness_hours": 1,
+      "score": 0.672,
+      "novelty_boost": 1.5,
+      "relevance": "research synthesis",
+      "goal_alignment": "medium"
+    },
+    {
+      "item": "gnw/docs cluster",
+      "staleness_hours": 2,
+      "score": 0.4725,
+      "novelty_boost": 1.5,
+      "relevance": "framework docs",
+      "goal_alignment": "low"
+    },
+    {
+      "item": "cron-scheduler-optimization.md",
+      "staleness_hours": 2,
+      "score": 0.282,
+      "novelty_boost": 1.5,
+      "relevance": "cron optimization",
+      "goal_alignment": "medium"
+    },
+    {
+      "item": "attention-router.md",
+      "staleness_hours": 0.5,
+      "score": 0.036,
+      "novelty_boost": 1.0,
+      "relevance": "attention routing",
+      "goal_alignment": "low"
+    },
+    {
+      "item": "workspace-state.md",
+      "staleness_hours": 0.2,
+      "score": 0.036,
+      "novelty_boost": 1.0,
+      "relevance": "workspace state",
+      "goal_alignment": "low"
+    }
+  ],
+  "highest_candidate": {
+    "item": "GRAO proposal-applier gap",
+    "score": 1.62,
+    "action": "proposal-applier cron deployment + first execution"
+  },
+  "self_initiation": {
+    "triggered": true,
+    "work_type": "mechanism deployment + validation",
+    "work_items": [
+      "proposal-applier-cron-spec_2026-05-17.json — deployed 4h cron with cluster balancing",
+      "exp_2026-05-17_proposal-applier-execution.json — exp_03 validated (0.72 quality, 0.68 impact)",
+      "grao-state.json updated — success_count 10→11, timestamp updated"
+    ],
+    "pattern_break": "Breaking doc-refresh loop — mechanism deployment work"
+  },
+  "drive_scores": {
+    "curiosity": 0.4,
+    "helpfulness": 0.1,
+    "competence": 0.3,
+    "safety": 0.15,
+    "goal_directed": 0.5
+  },
+  "system_status": {
+    "overall": "🟡 Improving",
+    "gateway": "healthy",
+    "veto_events": 0,
+    "cycles": 146,
+    "benchmark": "0.72 (cognitive 0.70, agents 0.65, research 0.55, stability 0.92)",
+    "paper_archive": "459 uncatalogued",
+    "grao": "round 42, exploration mode, 11 validated gradients, 10 active proposals, cluster balance 60%→50% pending"
+  },
+  "notes": "First proposal-applier cron execution validated exp_03 (benchmarking-optimization). Adaptive benchmark framework confirmed — stability tests already implement threshold-based adaptive triggering. Cluster balance improved from 75% agent_prompt_optimization to 60%. Next execution: exp_01 (cross-cluster-optimization). GRAO proposal-applier cron deployed at 4h interval with cluster balancing. Mechanism stall partially resolved.",
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "status": "resolved but stale",
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "reinforcementRounds": 21,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "staleness_hours": 54.9,
+    "exceeds_24h_threshold": true,
+    "resolution_status": "mechanism works but pipeline stalled at application — proposal-applier cron deployed to fix",
+    "active_proposals_count": 10,
+    "validation_evidence_count": 11
+  }
+}

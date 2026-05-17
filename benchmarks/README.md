@@ -84,16 +84,25 @@ Output format: JSON snapshot → `benchmarks/metrics/` → `benchmarks/reports/`
 
 ## Baseline
 
-Current measurements: `benchmarks/baseline.md`
+Current measurements: `benchmarks/baseline.md` (v1.1 — 2026-05-16)
+
+## Latest Benchmark
+
+Cycle 127 (2026-05-16 10:15 AM):
+- **Overall Score: 0.72** (+0.06 vs baseline 0.66)
+- **Cognitive: 0.70** — GRAO exploration breakthrough, GHO-44 convergence
+- **Agents: 0.65** — GHO-44 sync test COMPLETE, 5-agent deployment
+- **Research: 0.55** — 19 papers catalogued, consolidation v1.1 pending
+- **Stability: 0.92** — Gateway healthy, 0 veto events, loop prevention
 
 ## Future Assessments
 
 When someone asks about system quality:
 1. Pull latest benchmark report from `benchmarks/reports/`
-2. Compare against baseline
+2. Compare against baseline (v1.1)
 3. Highlight improvements and areas needing attention
 4. Provide specific numbers, not generalizations
 
 ---
 
-_Benchmarking framework v1.0 — 2026-05-11_
+_Benchmarking framework v1.1 — 2026-05-16 (Cycle 127 update)_

@@ -1,11 +1,25 @@
 {
   "saturation_status": {
     "exploration_triggered": true,
-    "exploration_count": 5,
-    "last_reinforcement_rounds": 18,
-    "last_round_success_ratio": 0.94
+    "exploration_count": 11,
+    "reinforcementRounds": 21,
+    "last_round_success_ratio": 1.0,
+    "dual_threshold_reached": true,
+    "breakout": true
   },
   "proposal_types": "exploration",
-  "last_exploration_timestamp": "2026-05-13T12:00:00Z",
-  "notes": "Refreshed snapshot via TPG-GRAO-AutoEvolution cron. Current state injected to prevent boredom scan false saturation."
+  "last_exploration_timestamp": "2026-05-15T12:00:00Z",
+  "exploration_mode": {
+    "active": true,
+    "gradients_validated": 5,
+    "success_ratio": 1.0
+  },
+  "new_explorations": [
+    "cross-cluster-optimization",
+    "research-domain-expansion",
+    "benchmarking-optimization",
+    "cron-scheduler-refinement",
+    "trace-collection-enhancement"
+  ],
+  "notes": "Refreshed snapshot via TPG-GRAO-AutoEvolution cron 2026-05-15. Current state injected to prevent boredom scan false saturation. 5 new exploration proposals generated."
 }

@@ -1,0 +1,98 @@
+{
+  "scan_number": 134,
+  "timestamp": "2026-05-17T09:12:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 7,
+  "stale_items_detail": [
+    {
+      "file": "gnw/cognitive-cycle/README.md",
+      "age_hours": 73,
+      "score": 0.315
+    },
+    {
+      "file": "gnw/stability/README.md",
+      "age_hours": 73,
+      "score": 1.08
+    },
+    {
+      "file": "papers/README.md",
+      "age_hours": 37,
+      "score": 0.18
+    },
+    {
+      "file": "papers/consolidation-scores.md",
+      "age_hours": 37,
+      "score": 0.18
+    },
+    {
+      "file": "attention-router.md",
+      "age_hours": 13.5,
+      "score": 0.245
+    },
+    {
+      "file": "workspace-state.md",
+      "age_hours": 13.5,
+      "score": 0.245
+    },
+    {
+      "file": "papers/daily gap (May 15-17)",
+      "age_hours": 30,
+      "score": 1.536
+    }
+  ],
+  "highest_candidate": {
+    "file": "papers/daily gap (May 15-17)",
+    "score": 1.536,
+    "type": "IGNITION",
+    "reason": "30+ days of arXiv papers unprocessed, 474 uncatalogued IDs"
+  },
+  "self_initiation": true,
+  "work_performed": {
+    "type": "paper_cataloguing",
+    "count": 10,
+    "files": [
+      "2605.15177 OpenDeepThink (parallel reasoning via Bradley-Terry)",
+      "2605.15109 Neighborhoods Matter (agentic GraphRAG provenance)",
+      "2605.15100 Dual-Dimensional Consistency (inference-time scaling budget)",
+      "2605.15041 CAST (case-based tool use calibration)",
+      "2605.14998 Developmental Scaffoldings (self-organisation pre-patterns)",
+      "2605.14995 Depression Detection (digital trace analysis)",
+      "2605.14968 GraphFlow (formally verifiable workflows)",
+      "2605.14912 Sycophantic Consensus (AI alignment failure mode)",
+      "2605.14879 Temporal Fair Division (multi-agent resource competition)",
+      "2605.14851 IFPV (multi-agent operational planning)"
+    ],
+    "output_files": [
+      "papers/daily/2026-05-17-b.md",
+      "papers/consolidation-scores.md (updated)",
+      "papers/README.md (pending)"
+    ],
+    "uncatalogued_reduction": "474 → 464"
+  },
+  "drive_scores": {
+    "novelty": 1.0,
+    "relevance": 0.95,
+    "goal_alignment": 0.85
+  },
+  "system_status": {
+    "cycles": 134,
+    "idle": true,
+    "gateway": "healthy",
+    "veto_events": 0,
+    "benchmark": "0.72 (cognitive 0.70, agents 0.65, research 0.55, stability 0.92)"
+  },
+  "graos_saturation": {
+    "status": "resolved",
+    "exploration_mode": true,
+    "round": 42,
+    "exploration_count": 16,
+    "active_proposals": 10,
+    "success_ratio": 1.0,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "hours_since_last": 18,
+    "within_24h_threshold": true,
+    "source": "grao-state.json"
+  },
+  "notes": "Breaking doc-refresh loop — actual paper cataloguing work. 10 high-value papers from May 15 arXiv batch. Key hits: OpenDeepThink (population-based test-time compute, directly relevant to GRAO exp_03/exp_04), Dual-Dimensional Consistency (10x token reduction), GraphFlow (formally verifiable workflows), Temporal Fair Division (RP metrics for multi-agent coordination), CAST (case-based tool use). Paper archive progress: 481→474→464 uncatalogued."
+}

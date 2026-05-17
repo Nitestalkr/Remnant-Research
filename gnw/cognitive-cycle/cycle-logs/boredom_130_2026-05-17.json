@@ -1,0 +1,48 @@
+{
+  "scan_number": 130,
+  "timestamp": "2026-05-17T06:02:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 8,
+  "self_initiation": true,
+  "drive_scores": {
+    "boredom": 1.0,
+    "pending": 0.0,
+    "novelty": 0.84,
+    "relevance": 0.75,
+    "goal_alignment": 0.60
+  },
+  "work": {
+    "candidate": "research-consolidation-report.md",
+    "score": 0.84,
+    "staleness_hours": 16.5,
+    "action": "stale refresh — added Cycle 130 system state, paper archive progress (481 uncatalogued), GRAO exploration validation, consolidation metrics update",
+    "complete": true
+  },
+  "system_status": {
+    "cycles_total": 130,
+    "benchmark_score": 0.72,
+    "stability": 0.92,
+    "cognitive": 0.70,
+    "agents": 0.65,
+    "research": 0.55,
+    "veto_events": 0,
+    "gateway": "healthy"
+  },
+  "notes": "Boredom 1.0 above 0.6 threshold. research-consolidation-report.md highest candidate (0.84) — 16.5h stale, IGNITION-level. Consolidation report updated with Cycle 130 state: paper archive progress (481 uncatalogued, ~27 catalogued across cycles 120-125), GRAO exploration validation (CAMP+OrgAgent convergence), consolidation metrics (0.75 deep dive, 0.47 prototype viability), operational metrics. GRAO exploration mode active (round 42, 10 proposals, last application 15h ago). No new pending events. System healthy idle.",
+  "graos_saturation": {
+    "status": "resolved",
+    "source": "grao-state.json",
+    "round": 42,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "staleness_hours": 15,
+    "within_24h_threshold": true,
+    "gradients_validated": ["cross-cluster", "non-reinforcement", "trace-source", "weight-redistribution", "cluster-merging"],
+    "success_ratio": 1.0,
+    "reinforcementRounds": 21,
+    "breakout": true
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "scan_number": 143,
+  "timestamp": "2026-05-17T19:16:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 12,
+  "stale_items_detail": [
+    {
+      "item": "papers/daily gap (464 uncatalogued)",
+      "stale_hours": 720,
+      "score": 1.71,
+      "category": "IGNITION"
+    },
+    {
+      "item": "GRAO validation stall (10 active, 0 validated)",
+      "stale_hours": 28,
+      "score": 1.08,
+      "category": "IGNITION"
+    },
+    {
+      "item": "research-consolidation-report",
+      "stale_hours": 37,
+      "score": 0.672,
+      "category": "high"
+    },
+    {
+      "item": "gnw docs READMEs",
+      "stale_hours": 73,
+      "score": 0.315,
+      "category": "medium"
+    },
+    {
+      "item": "gnw stability docs",
+      "stale_hours": 73,
+      "score": 0.315,
+      "category": "medium"
+    },
+    {
+      "item": "tpg-grao READMEs",
+      "stale_hours": 55,
+      "score": 0.247,
+      "category": "medium"
+    }
+  ],
+  "self_initiation": true,
+  "highest_candidate": "GRAO validation stall (1.08)",
+  "work_performed": {
+    "target": "exp_06 (learning_acceleration gradient)",
+    "type": "mechanism_audit",
+    "description": "Known-Failures Learning System validation — SCAR + known-failures.json infrastructure exists but not operational as learning system",
+    "gap_identified": "static catalog vs active learning",
+    "recommendations": [
+      "SCAR ingestion into agent configs",
+      "Failure collection mechanism",
+      "Agent self-check protocol"
+    ],
+    "experiment_written": "exp_2026-05-17_learning_acceleration.json",
+    "impact_score": 0.80
+  },
+  "drive_scores": {
+    "boredom": 1.0,
+    "novelty_drive": 0.85,
+    "research_drive": 0.60,
+    "stability_drive": 0.92,
+    "agent_health": 0.65,
+    "cognitive": 0.70
+  },
+  "system_status": "🟡 Improving — healthy, mechanism validation work, GRAO exp_06 validated",
+  "notes": "Breaking paper-cataloguing loop (cycles 133-138). GRAO exp_06 validated: infrastructure exists but gap — static catalog vs active learning. 7 gradients now validated (cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging, learning_acceleration). Success_ratio=1. GRAO saturation resolved but stale (last_proposal_application 28.2h). Paper archive 464 uncatalogued. Benchmark 0.72.",
+  "graos_saturation": {
+    "status": "resolved_but_stale",
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "stale_hours": 28.2,
+    "exceeds_threshold": true,
+    "threshold_hours": 24,
+    "source": "grao-state.json"
+  }
+}

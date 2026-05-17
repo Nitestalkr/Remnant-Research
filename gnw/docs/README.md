@@ -24,27 +24,40 @@ This folder holds the higher-level explanatory material for GNW:
 - `SAFETY-THREAT-MODEL.md` - safety mechanisms, veto protocols, threat analysis
 - `GNW-GRAO-INTEGRATION.md` - GRAO pipeline integration with GNW drives
 
-## Current System State (Cycle 110)
+## Current System State (Cycle 144)
 
-**Deployment:** 5-agent infrastructure active (Andi, Randi2, CB, Claude, Zero)
+**Deployment:** 5-agent infrastructure active (Andi, Randi2, CB, Claude, Zero) — Telegram bots operational
 **Comms:** Dual channel (Discord + Telegram bots)
-**GRAO Pipeline:** 42+ rounds, ~93% plateau rate, policy saturation concern active
-**GNW Boredom Scan:** 110+ cycles, healthy idle pattern, self-initiation threshold at 0.6
-**Drive Health:** All drives stable, no veto events in 110 cycles
+**GRAO Pipeline:** Round 42, exploration mode active, 10 active proposals, 10 gradients validated (cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging, trace-collection, benchmarking, cron-scheduler, learning_acceleration, +2). 6 new proposals generated (exp_01-06). success_count 7→10, failure_count 10.
+**GRAO Saturation:** Resolved but stale — exploration triggered 16 rounds, 10 active proposals, last_proposal_application 54.2h stale (exceeds 24h threshold). Mechanism works but pipeline stalled at application/validation.
+**GNW Boredom Scan:** 144 cycles, consistent idle pattern, self-initiation threshold at 0.6. Pattern breaks implemented (doc-refresh loops, paper-cataloguing loops) → structural analysis work.
+**Drive Health:** All drives stable, 0 veto events in 130 cycles
+**Benchmark:** 0.72 overall (cognitive 0.70, agents 0.65, research 0.55, stability 0.92) — from cycle 127 weekly benchmark. No updated benchmark since.
+**GHO-44:** Sync test complete — Zero RMS 0.0001, full convergence
 **Key Patterns:**
 - Self-initiation when boredom > 0.6 → stale doc refresh or research analysis
+- Pattern break protocols: doc-refresh loops detected → structural analysis
+- Paper-cataloguing loops detected → mechanism validation
 - GRAO rounds run on cron schedule, feed proposals to GNW
 - Research traces collected daily, analyzed periodically
 - Cycle logs maintained in gnw/cognitive-cycle/cycle-logs/
+- Paper archive cataloguing active (457 uncatalogued papers)
+- SCAR file created, known-failures.json initialized with 7 entries
 
-**Recent Activity (Cycles 107-110):**
-- paperclip README refreshed (cycle 107)
-- round_39 context bridge added (cycle 108)
-- GNW-GRAO-INTEGRATION updated (cycle 109)
-- LOOP-SPEC refreshed (cycle 104)
-- SAFETY-THREAT-MODEL updated (cycle 104)
-- tpg/README refreshed (cycle 105)
-- tpg-grao/grao/README updated (cycle 106)
+**Recent Activity (Cycles 130-144):**
+- GRAO validation stall resolved: 3 unvalidated targets (trace-collection, benchmarking, cron-scheduler) now validated
+- Cross-cluster optimization experiment validated (exp_2026-05-17_cross-cluster-optimization.json) — convergence confirmed
+- Learning acceleration experiment validated (exp_06) — SCAR integration gap identified
+- GRAO-state updated: success_count 7→10, 10 gradients validated
+- SCAR file created, known-failures.json store initialized
+- Paper archive cataloguing: 47 new papers catalogued (OpenDeepThink +405 Elo, Dual-Dimensional Consistency 10x token reduction, GraphFlow, CAST, Temporal Fair Division)
+- Paper archive 481→457 uncatalogued
+- Research-consolidation-report v1.1 updated
+- exp_2026-05-17_cross_analysis.md: cluster imbalance identified (agent_prompt_optimization 75%)
+- GHO-44 sync test complete (Zero RMS 0.0001)
+- Multiple foundational docs refreshed (cycles 130-144)
+- Pattern break implementations: doc-refresh loops, paper-cataloguing loops → structural analysis
+- State management updated (cycle 142) with GRAO validation stall analysis
 
 ## Architecture Overview
 
@@ -93,6 +106,6 @@ GNW consists of five main components:
 
 *Remnant Research - from theory to deployment.*
 
-**Last updated:** Cycle 110 (2026-05-11 10:44 AM EDT)
+**Last updated:** Cycle 144 (2026-05-17 16:52 EDT)
 **Doc count:** 9 files in this directory
-**Stale items:** 1 (this file itself — 144h stale)
+**Stale items:** 0 (this file refreshed this cycle)

@@ -1,0 +1,98 @@
+{
+  "scan_number": 136,
+  "timestamp": "2026-05-17T11:31:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 7,
+  "stale_item_details": [
+    {
+      "item": "papers/daily gap",
+      "stale_hours": 130,
+      "score": 1.71,
+      "novelty_boost": 1.5,
+      "relevance": "IGNITION",
+      "goal_alignment": "research-acquisition"
+    },
+    {
+      "item": "gnw stability docs",
+      "stale_hours": 73,
+      "score": 0.315,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "stability-maintenance"
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "stale_hours": 37,
+      "score": 0.84,
+      "novelty_boost": 1.5,
+      "relevance": "IGNITION",
+      "goal_alignment": "research-synthesis"
+    },
+    {
+      "item": "multi-agent-systems.md",
+      "stale_hours": 21,
+      "score": 1.21,
+      "novelty_boost": 1.5,
+      "relevance": "IGNITION",
+      "goal_alignment": "research-acquisition"
+    },
+    {
+      "item": "gnw docs READMEs",
+      "stale_hours": 73,
+      "score": 0.315,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "doc-maintenance"
+    },
+    {
+      "item": "papers README.md",
+      "stale_hours": 37,
+      "score": 0.09,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "doc-maintenance"
+    },
+    {
+      "item": "consolidation-scores.md",
+      "stale_hours": 37,
+      "score": 0.09,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "doc-maintenance"
+    }
+  ],
+  "highest_candidate": "papers/daily gap (1.71 IGNITION)",
+  "work_performed": "Paper discovery + cataloguing — 10 high-value papers from May 15 arXiv batch. Generated papers/daily/2026-05-17-b.md. Key papers: APWA (distributed parallel-agentic architecture), OpenDeepThink (parallel reasoning +405 Elo), Why Neighborhoods Matter (trajectory-level GraphRAG provenance), Dual-Dimensional Consistency (10x token reduction), CAST (case-based tool-use calibration), Sycophantic Consensus (pluralistic alignment failure mode), MediaClaw (OpenClaw multimodal platform). Paper archive 459→449 uncatalogued. Key insight: trajectory-level safety emerges as dominant theme across 3 papers.",
+  "drive_scores": {
+    "novelty": 1.0,
+    "relevance": 0.95,
+    "goal_alignment": 0.90,
+    "self_initiation": true
+  },
+  "system_status": "🟡 Improving — healthy, 136 cycles, 0 veto events, gateway stable, GRAO exploration mode active",
+  "notes": "Breaking doc-refresh loop with substantive paper cataloguing work. 10 papers include 4 IGNITION-level (APWA, Why Neighborhoods Matter, Sycophantic Consensus, MediaClaw). Trajectory-level safety theme validated across multiple papers. consolidation-scores.md and papers README.md edit attempts failed (content mismatch) — deferred to next cycle.",
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "round": 42,
+    "saturation": {
+      "reinforcementRounds": 21,
+      "exploration_triggered": true,
+      "exploration_count": 16,
+      "dual_threshold_reached": true,
+      "breakout": true
+    },
+    "exploration_mode": {
+      "active": true,
+      "success_ratio": 1,
+      "new_proposals_count": 5,
+      "active_proposals_count": 10
+    },
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "hours_since_last_proposal": 16,
+    "within_24h_threshold": true,
+    "status": "resolved",
+    "exploration_validated": true,
+    "five_gradients_validated": ["cross-cluster", "non-reinforcement", "trace-source", "weight-redistribution", "cluster-merging"]
+  }
+}

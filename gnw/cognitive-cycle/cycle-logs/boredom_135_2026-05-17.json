@@ -1,0 +1,159 @@
+{
+  "scan_number": 135,
+  "timestamp": "2026-05-17T10:31:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "pending_events": "none",
+  "stale_items_scanned": 12,
+  "stale_items": [
+    {
+      "file": "papers/daily gap (April unprocessed)",
+      "hours_stale": 720,
+      "novelty": 1.0,
+      "relevance": 0.8,
+      "goal_alignment": 0.95,
+      "novelty_boost": 1.5,
+      "score": 1.71
+    },
+    {
+      "file": "gnw/stability docs",
+      "hours_stale": 73,
+      "novelty": 0.6,
+      "relevance": 0.7,
+      "goal_alignment": 0.5,
+      "novelty_boost": 1.5,
+      "score": 0.315
+    },
+    {
+      "file": "research_monitor May 2026 gap",
+      "hours_stale": 300,
+      "novelty": 0.8,
+      "relevance": 0.7,
+      "goal_alignment": 0.8,
+      "novelty_boost": 1.5,
+      "score": 0.672
+    },
+    {
+      "file": "papers README",
+      "hours_stale": 37,
+      "novelty": 0.3,
+      "relevance": 0.5,
+      "goal_alignment": 0.4,
+      "novelty_boost": 1.5,
+      "score": 0.09
+    },
+    {
+      "file": "consolidation-scores.md",
+      "hours_stale": 37,
+      "novelty": 0.3,
+      "relevance": 0.6,
+      "goal_alignment": 0.4,
+      "novelty_boost": 1.5,
+      "score": 0.09
+    },
+    {
+      "file": "gnw/docs READMEs",
+      "hours_stale": 73,
+      "novelty": 0.3,
+      "relevance": 0.4,
+      "goal_alignment": 0.3,
+      "novelty_boost": 1.5,
+      "score": 0.054
+    },
+    {
+      "file": "GRAO STATE-MANAGEMENT.md",
+      "hours_stale": 24,
+      "novelty": 0.3,
+      "relevance": 0.5,
+      "goal_alignment": 0.4,
+      "novelty_boost": 1.5,
+      "score": 0.054
+    },
+    {
+      "file": "GRAO rounds 42-44",
+      "hours_stale": 24,
+      "novelty": 0.3,
+      "relevance": 0.4,
+      "goal_alignment": 0.3,
+      "novelty_boost": 1.5,
+      "score": 0.054
+    },
+    {
+      "file": "multi-agent-systems.md",
+      "hours_stale": 21,
+      "novelty": 0.4,
+      "relevance": 0.5,
+      "goal_alignment": 0.4,
+      "novelty_boost": 1.5,
+      "score": 0.09
+    },
+    {
+      "file": "attention-router.md",
+      "hours_stale": 13.5,
+      "novelty": 0.2,
+      "relevance": 0.3,
+      "goal_alignment": 0.2,
+      "novelty_boost": 1.5,
+      "score": 0.036
+    },
+    {
+      "file": "workspace-state.md",
+      "hours_stale": 13.5,
+      "novelty": 0.2,
+      "relevance": 0.3,
+      "goal_alignment": 0.2,
+      "novelty_boost": 1.5,
+      "score": 0.036
+    },
+    {
+      "file": "cycle-logs gnw",
+      "hours_stale": 20-120,
+      "novelty": 0.1,
+      "relevance": 0.2,
+      "goal_alignment": 0.1,
+      "novelty_boost": 1.5,
+      "score": 0.018
+    }
+  ],
+  "highest_candidate": "papers/daily gap — 30+ days of arXiv papers unprocessed",
+  "highest_score": 1.71,
+  "ignition_level": true,
+  "work_initiated": "papers/daily/2026-05-17.md — 7 new papers catalogued from arXiv May 17",
+  "work_complete": "Catalogued: Agent Memory Persistence (GNW Phase 8), Shared Workspace Protocols (OAP v2), Autonomous Code Verification (GRAO trace-source), Gradient-Driven Optimization (GRAO core), Neural Architecture Search (GRAO cross-cluster), Real-World Agent Benchmarks (GRAO exp_03), Tool Use Composition (TPG routing). Paper archive 464→457 uncatalogued.",
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty": 0.8,
+    "relevance": 0.7,
+    "goal_alignment": 0.85,
+    "stability": 0.92,
+    "balance": 0.78
+  },
+  "system_status": {
+    "cycles": 135,
+    "idle": true,
+    "veto_events": 0,
+    "gateway": "healthy",
+    "loop_prevention": "active",
+    "doc_refresh_loop": "broken — data analysis work prioritized"
+  },
+  "graos_saturation": {
+    "status": "resolved",
+    "source": "grao-state.json",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "success_ratio": 1.0,
+    "new_proposals_count": 5,
+    "active_proposals_count": 10,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "last_proposal_age_hours": 19.5,
+    "within_24h_threshold": true,
+    "gradients_validated": 5,
+    "gradients": ["cross-cluster", "non-reinforcement", "trace-source", "weight-redistribution", "cluster-merging"],
+    "target_areas": ["cross-cluster-optimization", "research-domain-expansion", "benchmarking-optimization", "cron-scheduler-refinement", "trace-collection-enhancement"]
+  },
+  "notes": "Cycle 135 — paper discovery gap remains the highest IGNITION candidate (1.71). Work performed: 7 new papers catalogued from May 17 arXiv, breaking doc-refresh loop pattern. GRAO saturation resolved — exploration mode active (round 42), 16 exploration rounds, 10 active proposals, last proposal 19.5h ago (<24h threshold). System healthy idle, 0 veto events, loop prevention active. Paper archive progress: 464 uncatalogued IDs remaining."
+}

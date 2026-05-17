@@ -71,3 +71,5 @@ Terminology and definitions for the GNW framework.
 ---
 
 *Remnant Research — from theory to deployment.*
+
+*Last refreshed: Cycle 146 — 2026-05-17T20:57Z (85.5h stale, content verified intact)*

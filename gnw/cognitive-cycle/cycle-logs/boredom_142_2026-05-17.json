@@ -1,0 +1,155 @@
+{
+  "scan_number": 142,
+  "timestamp": "2026-05-17T17:12:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "threshold": 0.6,
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty": 1.0,
+    "relevance": 0.0,
+    "goal_alignment": 0.0,
+    "pending_events": 0
+  },
+  "stale_items_scanned": 12,
+  "stale_items": [
+    {
+      "item": "STATE-MANAGEMENT.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.8,
+      "goal_alignment": 0.9,
+      "final_score": 0.700,
+      "status": "refreshed"
+    },
+    {
+      "item": "GRAO README.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.7,
+      "goal_alignment": 0.8,
+      "final_score": 0.544
+    },
+    {
+      "item": "LOOP-SPEC.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.6,
+      "goal_alignment": 0.7,
+      "final_score": 0.408
+    },
+    {
+      "item": "FAILURE-ANALYSIS.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.6,
+      "goal_alignment": 0.7,
+      "final_score": 0.408
+    },
+    {
+      "item": "EXPERIMENT-FRAMEWORK.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.6,
+      "goal_alignment": 0.7,
+      "final_score": 0.408
+    },
+    {
+      "item": "gradient-derivation.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.5,
+      "goal_alignment": 0.7,
+      "final_score": 0.340
+    },
+    {
+      "item": "papers README.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.5,
+      "goal_alignment": 0.6,
+      "final_score": 0.292
+    },
+    {
+      "item": "consolidation-scores.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.5,
+      "goal_alignment": 0.6,
+      "final_score": 0.292
+    },
+    {
+      "item": "gnw/docs README.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.4,
+      "goal_alignment": 0.6,
+      "final_score": 0.247
+    },
+    {
+      "item": "gnw/stability README.md",
+      "hours_stale": 81.78,
+      "novelty_score": 0.972,
+      "relevance": 0.4,
+      "goal_alignment": 0.6,
+      "final_score": 0.247
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "hours_stale": 11.04,
+      "novelty_score": 0.504,
+      "relevance": 0.7,
+      "goal_alignment": 0.8,
+      "final_score": 0.282
+    },
+    {
+      "item": "cron-scheduler-optimization.md",
+      "hours_stale": 2.62,
+      "novelty_score": 0.504,
+      "relevance": 0.7,
+      "goal_alignment": 0.8,
+      "final_score": 0.282
+    }
+  ],
+  "highest_candidate": {
+    "item": "STATE-MANAGEMENT.md",
+    "score": 0.700,
+    "action": "stale refresh + GRAO validation stall analysis"
+  },
+  "work_performed": {
+    "description": "STATE-MANAGEMENT.md stale refresh — added Cycle 142 system state, GRAO validation stall analysis (10 active proposals, 0 validation evidence, last_proposal_application 26h stale), cross-cluster experiment validation results",
+    "files_updated": ["STATE-MANAGEMENT.md"],
+    "analysis_written": ["GRAO validation stall analysis section"]
+  },
+  "system_status": {
+    "cycles": 142,
+    "pending_events": 0,
+    "idle": true,
+    "benchmark_score": 0.72,
+    "health": "healthy"
+  },
+  "notes": "Cycle 142 boredom scan. Boredom 1.0 above 0.6 threshold. STATE-MANAGEMENT.md (0.700) highest stale candidate — 81.78h stale, foundational GRAO doc. Work performed: stale refresh with Cycle 142 system state + GRAO validation stall analysis. GRAO mechanism works but pipeline stalled at application/validation layer. 10 active proposals with ZERO validation evidence. Cross-cluster experiment (cycle 141) first validation completed. Pattern break from doc-refresh — structural analysis work.",
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "status": "resolved_but_stale",
+    "saturation": {
+      "reinforcementRounds": 21,
+      "exploration_triggered": true,
+      "exploration_count": 16,
+      "dual_threshold_reached": true,
+      "breakout": true
+    },
+    "exploration_mode": {
+      "active": true,
+      "success_ratio": 1.0,
+      "validated_gradients": 5,
+      "active_proposals": 10
+    },
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "last_proposal_application_hours_stale": 26.0,
+    "exceeds_24h_threshold": true,
+    "mechanism_status": "stalled at application/validation layer",
+    "new_proposals": [],
+    "recommendation": "Validate 2 underrepresented proposals, trigger proposal-applier cron"
+  }
+}

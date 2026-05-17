@@ -1,0 +1,59 @@
+{
+  "_schema_version": "1.0",
+  "_description": "GRAO cron payload update — adds known-failures ingestion before proposal generation",
+  "cronJob": "TPG-GRAO-AutoEvolution",
+  "timestamp": "2026-05-17T14:25:00Z",
+  "update_type": "payload_addition",
+  "new_steps": [
+    {
+      "step_number": 0,
+      "name": "Ingest Known-Failures",
+      "description": "Before generating proposals, ALWAYS read known-failures.json and SCAR file. Suppress any proposals targeting known-failed paths. Redirect to known workarounds.",
+      "actions": [
+        "Read: D:\\.openclaw\\workspace\\remnant-research\\tpg-grao\\grao\\known-failures.json",
+        "Read: D:\\.openclaw\\workspace\\scar-openclaw-protected-paths.md",
+        "For each proposed action: check if target path matches known-failures suppressed_methods",
+        "If match: suppress proposal, redirect to priority_workarounds entry",
+        "Log: suppression_count, redirected_to_workaround in cycle log",
+        "Update: learning_rate = learned_entries / total_failures_logged in known-failures.json"
+      ]
+    }
+  ],
+  "modified_steps": [
+    {
+      "original_step": 5,
+      "name": "Generate proposals",
+      "modified_action": "Run proposal-generator with known-failures filter active",
+      "new_command": "node D:/.openclaw/workspace/research/proposal-generator.js --generate --node andi --nodeType agent --action prompt_update --filter known-failures.json",
+      "notes": "proposal-generator must check known-failures suppressed_methods before outputting proposals"
+    }
+  ],
+  "cycle_log_additions": [
+    {
+      "field": "known_failures_ingested",
+      "type": "boolean",
+      "description": "Whether known-failures store was checked this cycle"
+    },
+    {
+      "field": "proposals_suppressed",
+      "type": "number",
+      "description": "Count of proposals suppressed due to known-failures"
+    },
+    {
+      "field": "workarounds_redirects",
+      "type": "array",
+      "description": "List of redirect paths from failed → workaround"
+    },
+    {
+      "field": "learning_rate",
+      "type": "number",
+      "description": "Current learning rate from known-failures.json"
+    }
+  ],
+  "implementation_notes": [
+    "This update requires gateway config patch to modify TPG-GRAO-AutoEvolution cron payload",
+    "cron payload is stored in gateway config, not workspace files",
+    "Use openclaw cron update or gateway config patch to apply",
+    "After patch: verify cron runs with new step by checking cycle log output"
+  ]
+}

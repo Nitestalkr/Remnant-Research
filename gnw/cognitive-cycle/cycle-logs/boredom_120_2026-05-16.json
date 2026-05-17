@@ -1,0 +1,139 @@
+{
+  "scan_number": 120,
+  "timestamp": "2026-05-16T09:55:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 8,
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty": 0.95,
+    "relevance": 0.85,
+    "goal_alignment": 0.80,
+    "stale_boost": 1.5,
+    "final_score": 0.956
+  },
+  "stale_items": [
+    {
+      "file": "papers/README.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "Master catalog index, 500 uncatalogued IDs"
+    },
+    {
+      "file": "papers/by-topic/multi-agent-systems.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "Topic catalog, uncatalogued gap"
+    },
+    {
+      "file": "papers/by-topic/gradient-optimization.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "GRAO foundational topic"
+    },
+    {
+      "file": "papers/by-topic/safety-and-alignment.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "GNW safety gap"
+    },
+    {
+      "file": "papers/by-topic/cognitive-architectures.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "GNW foundational"
+    },
+    {
+      "file": "papers/by-topic/memory-and-knowledge.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "GNW Phase 8"
+    },
+    {
+      "file": "papers/by-topic/self-evolving-agents.md",
+      "stale_hours": 18.4,
+      "score": 0.756,
+      "reason": "GRAO foundational"
+    },
+    {
+      "file": "processed_arxiv_ids.txt",
+      "stale_hours": 18.4,
+      "score": 0.956,
+      "reason": "500 uncatalogued IDs — root paper archive gap, highest novelty × relevance × goal_alignment"
+    }
+  ],
+  "work_completed": {
+    "action": "paper cataloging — multi-agent systems topic",
+    "file": "papers/by-topic/multi-agent-systems.md",
+    "papers_catalogued": 8,
+    "papers": [
+      {
+        "id": "2604.00085",
+        "title": "CAMP — Case-Adaptive Multi-agent Panel",
+        "relevance": "GNW drive competition + TPG case-adaptive routing",
+        "score": 9
+      },
+      {
+        "id": "2604.01020",
+        "title": "OrgAgent — Company-style Hierarchical Multi-Agent",
+        "relevance": "GNW Phase 6 + Clawstr organizational structure",
+        "score": 9
+      },
+      {
+        "id": "2604.01221",
+        "title": "HippoCamp — Contextual Agent Benchmarking",
+        "relevance": "GRAO benchmarking + TPG contextual retrieval",
+        "score": 8
+      },
+      {
+        "id": "2604.00594",
+        "title": "Agent Psychometrics — Task-level Performance Prediction",
+        "relevance": "GRAO benchmarking optimization + GNW drive health monitoring",
+        "score": 8
+      },
+      {
+        "id": "2604.00429",
+        "title": "Distributed Safety-Critical Control of Multi-Agent Systems",
+        "relevance": "Clawstr safety + GNW safety drive coordination",
+        "score": 7
+      },
+      {
+        "id": "2604.02507",
+        "title": "RLHF — A Statistical Perspective",
+        "relevance": "GRAO gradient formalism + Clawstr protocol design",
+        "score": 7
+      },
+      {
+        "id": "2604.03179",
+        "title": "Hallucination-as-Cue Framework",
+        "relevance": "GNW safety threat model + GRAO robustness",
+        "score": 7
+      }
+    ],
+    "key_insight": "Organizational structure matters: hierarchical > flat multi-agent (102.73% improvement, 74.52% token reduction). Case-adaptive panel assembly > fixed roles. Validates 5-agent fleet design."
+  },
+  "system_status": {
+    "cycles": 120,
+    "agents_deployed": 5,
+    "comms_channels": "Discord + Telegram",
+    "idle_hours": 12.6,
+    "health": "stable"
+  },
+  "notes": "Paper archive gap identified: 500 uncatalogued arXiv IDs in processed_arxiv_ids.txt. Catalogued 8 high-value papers in multi-agent systems topic. CAMP + OrgAgent converge on organizational structure being critical for multi-agent performance. GRAO exploration mode active, saturation resolved. DuckDuckGo rate-limited after 2 successful searches — arXiv direct fetch used for remaining.",
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "success_ratio": 1.0,
+    "active_proposals": 10,
+    "new_proposals": 5,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "stale_check": "resolved — last_proposal_application 19h ago (<24h threshold)",
+    "status": "stable",
+    "note": "Exploration mode active, 5 exploration gradients validated (cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging). 10 active exploration proposals applied."
+  }
+}

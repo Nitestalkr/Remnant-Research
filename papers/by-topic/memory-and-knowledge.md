@@ -111,3 +111,24 @@ Evaluation of software task completion via agentic LLMs. Informs GRAO trace qual
 2. **DeltaMem (2604.01560)** — RL-based memory consolidation
 3. **Agentic RAG (2501.09136)** — TPG retrieval architecture
 4. **K²-Agent (2603.00676)** — declarative/procedural knowledge co-evolution
+
+---
+
+### [DeltaMem — Agentic Memory Management via Reinforcement Learning](https://arxiv.org/abs/2604.01560)
+
+- **arXiv:** 2604.01560
+- **Authors:** Qi Zhang et al.
+- **Published:** 2026-04-03
+- **Relevance:** GNW Phase 8 (memory management via RL)
+
+Persona-centric memory management as an end-to-end RL problem. Directly informs GNW Phase 8: drive-driven memory consolidation as an RL-optimized process, not a fixed rule. This is the DeltaMem reference for Phase 8 implementation. **Framework Score: 9/10**
+
+---
+
+## Cycle 124 System State (2026-05-16)
+
+- **Memory architecture:** MEMORY.md + memory/*.md + wiki wiki vault active; drive-driven memory consolidation is the Phase 8 goal
+- **GRAO exploration:** trace-collection-enhancement proposal (exp_05) directly targets this domain — trace quality & coverage matrix
+- **Paper cataloguing:** 500 uncatalogued IDs; organizational structure finding (hierarchical > flat by 102.73%) confirmed across CAMP+OrgAgent
+- **System:** 123+ cycles, MEMORY.md as persistence mechanism, wiki wiki for compiled knowledge
+- **Gap:** Phase 8 memory consolidation needs DeltaMem applied — RL-based memory management not yet implemented

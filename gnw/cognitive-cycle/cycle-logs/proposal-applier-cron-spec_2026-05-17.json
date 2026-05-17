@@ -1,0 +1,45 @@
+{
+  "spec_number": 1,
+  "timestamp": "2026-05-17T21:53:00Z",
+  "purpose": "Deploy proposal-applier cron to break GRAO pipeline stall",
+  "cron_config": {
+    "name": "gnw-proposal-applier",
+    "interval": "4h",
+    "priority": "high",
+    "trigger_condition": "active_proposals_count > 0 AND last_proposal_application > 24h",
+    "workspace": "D:\\.openclaw\\workspace\\remnant-research\\gnw\\cognitive-cycle\\cycle-logs",
+    "output_path": "D:\\.openclaw\\workspace\\remnant-research\\tpg-grao\\grao\\experiments"
+  },
+  "execution_protocol": [
+    "1. Read GRAO-state.json for active_proposals list",
+    "2. Filter to underrepresented clusters (skip validated clusters)",
+    "3. Select proposal via round-robin across clusters",
+    "4. Design validation experiment targeting proposal's tpgTarget",
+    "5. Execute experiment using available infrastructure",
+    "6. Record results as exp_YYYY-MM-DD in experiments/",
+    "7. Update GRAO STATE-MANAGEMENT.md with validation status",
+    "8. Mark proposal status: validated/invalidated/pending",
+    "9. Log to cycle-logs/ as proposal-applier-execution_YYYY-MM-DD.json"
+  ],
+  "cluster_balancing": {
+    "target_distribution": "20% per cluster",
+    "current_distribution": {
+      "agent_prompt_optimization": "75%",
+      "cross-cluster-optimization": "0%",
+      "research-domain-expansion": "0%",
+      "benchmarking-optimization": "0%",
+      "cron-scheduler-refinement": "0%",
+      "trace-collection-enhancement": "0%"
+    },
+    "balancing_rule": "Round-robin across clusters, skip validated clusters until 20% threshold met"
+  },
+  "first_execution": {
+    "proposal": "exp_03",
+    "tpgTarget": "benchmarking-optimization",
+    "proposal_text": "Adaptive Benchmark Cycle Framework",
+    "validation_approach": "Cross-reference stability tests with paper archive benchmark methodology findings",
+    "infrastructure": "paper archive (459 papers), stability test suite, benchmark_2026-05-16.json"
+  },
+  "status": "spec_complete",
+  "notes": "This spec replaces the design-only state. First execution should run exp_03 validation immediately."
+}

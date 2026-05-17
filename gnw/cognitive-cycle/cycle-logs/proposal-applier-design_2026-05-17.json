@@ -1,0 +1,45 @@
+{
+  "design_number": 1,
+  "timestamp": "2026-05-17T17:57:00Z",
+  "purpose": "Design proposal-applier cron mechanism to break GRAO pipeline stall",
+  "current_state": {
+    "gap": "10 active proposals with 0 validation evidence",
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "staleness_hours": 26.95,
+    "cluster_imbalance": "agent_prompt_optimization 75%",
+    "underrepresented_domains": ["cross-cluster-optimization", "research-domain-expansion", "benchmarking-optimization", "cron-scheduler-refinement", "trace-collection-enhancement"]
+  },
+  "mechanism_design": {
+    "cron_trigger": {
+      "interval": "4h",
+      "priority": "high",
+      "condition": "active_proposals_count > 0 AND validation_evidence = 0"
+    },
+    "application_protocol": {
+      "step_1": "Select proposal from underrepresented cluster (non-agent_prompt_optimization)",
+      "step_2": "Design validation experiment targeting proposal's tpgTarget",
+      "step_3": "Execute experiment using available infrastructure (GHO-44 sync data, paper archive, stability metrics)",
+      "step_4": "Record results in experiments/ with exp_YYYY-MM-DD format",
+      "step_5": "Update GRAO STATE-MANAGEMENT.md with validation status",
+      "step_6": "Mark proposal status: validated/invalidated/pending"
+    },
+    "cluster_balancing": {
+      "target_distribution": "20% per cluster (5 clusters)",
+      "current_distribution": "agent_prompt_optimization 75%, others <10%",
+      "balancing_rule": "Round-robin across clusters, skip validated clusters until 20% threshold met"
+    },
+    "stall_detection": {
+      "threshold": "last_proposal_application > 24h",
+      "escalation": "trigger manual intervention cycle, report to boredom scan log"
+    }
+  },
+  "first_execution_plan": {
+    "proposal": "exp_03 benchmarking-optimization",
+    "tpgTarget": "benchmarking-optimization",
+    "proposal": "Adaptive Benchmark Cycle Framework",
+    "validation_approach": "Cross-reference stability tests (TEST-MEMORY-INTEGRITY, TEST-SCORE-BOUNDS, TEST-BOREDOM-THRESHOLD) with paper archive findings on benchmark methodology",
+    "infrastructure": "paper archive (459 papers), stability test suite, benchmark_2026-05-16.json"
+  },
+  "status": "design_complete",
+  "notes": "Design addresses structural gap identified in cycles 138-142. First execution should validate exp_03 (benchmarking-optimization) using existing infrastructure. Cluster balancing prevents agent_prompt_optimization dominance."
+}

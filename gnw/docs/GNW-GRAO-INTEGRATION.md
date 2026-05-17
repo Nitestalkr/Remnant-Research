@@ -4,6 +4,8 @@
 
 GNW (Goals/Neural/Work) and GRAO (Gradient-Driven Research Optimization) are designed as a closed feedback loop. GNW generates traces through agent operation; GRAO derives gradients and proposals from those traces. The trace-generation and proposal pipeline is operational, while direct experience/proposal-driven GNW drive-weight updates remain a designed path pending fuller real-agent validation.
 
+**Last verified:** 2026-05-17 14:37 UTC — Cycle 141 stale refresh
+
 ## The Feedback Loop
 
 ```

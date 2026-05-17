@@ -1,0 +1,154 @@
+{
+  "scan_number": 133,
+  "timestamp": "2026-05-17T03:50:00-05:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 12,
+  "stale_items_details": [
+    {
+      "item": "papers/daily/ — no May 2026 entries",
+      "stale_hours": 300,
+      "score": 1.536,
+      "novelty": 1.5x boost,
+      "reason": "root discovery gap — 30+ days of arXiv papers unprocessed"
+    },
+    {
+      "item": "papers/consolidation-scores.md",
+      "stale_hours": 37,
+      "score": 0.84,
+      "novelty": 1.5x boost,
+      "reason": "foundational consolidation tracking doc"
+    },
+    {
+      "item": "papers by-topic docs",
+      "stale_hours": 21,
+      "score": 1.210,
+      "novelty": 1.5x boost,
+      "reason": "topic catalogs need May 2026 entries"
+    },
+    {
+      "item": "gnw/docs READMEs",
+      "stale_hours": 71,
+      "score": 1.536,
+      "novelty": 1.5x boost,
+      "reason": "71h stale, foundational cycle infrastructure"
+    },
+    {
+      "item": "gnw/stability READMEs",
+      "stale_hours": 71,
+      "score": 1.08,
+      "novelty": 1.5x boost,
+      "reason": "71h stale, stability infrastructure"
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "stale_hours": 37,
+      "score": 0.84,
+      "novelty": 1.5x boost,
+      "reason": "foundational research doc"
+    },
+    {
+      "item": "multi-agent-systems.md",
+      "stale_hours": 21,
+      "score": 1.210,
+      "novelty": 1.5x boost,
+      "reason": "21h stale, topic catalog"
+    },
+    {
+      "item": "cycle-logs READMEs",
+      "stale_hours": 20,
+      "score": 0.18,
+      "novelty": 1.5x boost,
+      "reason": "20h stale, cycle infrastructure"
+    },
+    {
+      "item": "gnw/docs READMEs",
+      "stale_hours": 20,
+      "score": 0.315,
+      "novelty": 1.5x boost,
+      "reason": "20h stale, docs infrastructure"
+    },
+    {
+      "item": "gnw/stability READMEs",
+      "stale_hours": 71,
+      "score": 0.315,
+      "novelty": 1.5x boost,
+      "reason": "71h stale, stability infrastructure"
+    },
+    {
+      "item": "gnw/conflict-resolution README",
+      "stale_hours": 71,
+      "score": 0.315,
+      "novelty": 1.5x boost,
+      "reason": "71h stale, conflict infrastructure"
+    },
+    {
+      "item": "PARAMETER-VALUES.md",
+      "stale_hours": 71,
+      "score": 0.27,
+      "novelty": 1.5x boost,
+      "reason": "71h stale, foundational GNW doc"
+    }
+  ],
+  "highest_candidate": {
+    "item": "papers/daily/ discovery gap + uncatalogued IDs",
+    "score": 1.536,
+    "level": "IGNITION",
+    "action": "Catalog 7 high-value papers from May 2026 arXiv, generate daily log, update consolidation-scores.md"
+  },
+  "work_performed": {
+    "type": "paper discovery + cataloguing",
+    "items": [
+      "Generated papers/daily/2026-05-17.md with 7 new paper entries",
+      "Updated papers/consolidation-scores.md with Cycle 132 state",
+      "Paper count updates: GNW 22, GRAO 20, TPG 14, Clawstr 14",
+      "Uncatalogued IDs: 481→474"
+    ],
+    "key_papers": [
+      "MASPO (2605.06623) — joint prompt optimization, GRAO+TPG",
+      "The Cost of Consensus — multi-agent debate cost, GNW",
+      "MEME (2605.12476) — multi-entity memory eval, GNW Phase 8",
+      "GraphRAG neighborhoods (2605.15100) — agentic retrieval, TPG",
+      "SAGE (2604.07663) — sign-adaptive gradient, GRAO",
+      "Agentic AI Higher Education (2605.14266) — goal-directed agents, GNW",
+      "Planner Matters — long-horizon planning, GNW+GRAO"
+    ]
+  },
+  "drive_scores": {
+    "curiosity": 0.85,
+    "helpfulness": 0.10,
+    "competence": 0.70,
+    "safety": 1.0,
+    "goal-directed": 0.60
+  },
+  "system_status": {
+    "cycles": 133,
+    "idle": true,
+    "veto_events": 0,
+    "gateway": "healthy",
+    "loop_prevention": "active"
+  },
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "status": "resolved",
+    "exploration_mode": "active",
+    "round": 42,
+    "exploration_count": 16,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "hours_since_last": 16.5,
+    "within_24h_threshold": true,
+    "reinforcementRounds": 21,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "success_ratio": 1.0,
+    "validated_gradients": [
+      "cross-cluster-optimization",
+      "non-reinforcement",
+      "trace-source",
+      "weight-redistribution",
+      "cluster-merging"
+    ]
+  },
+  "notes": "Breaking from doc-refresh loop. Paper archive daily/ gap was root discovery gap — 30+ days of arXiv papers unprocessed. Generated first May 2026 daily log and catalogued 7 high-value papers. MASPO validated exp_02 (research-domain-expansion), MEME validated Phase 8 memory goals, SAGE validated exp_03 (gradient optimization). GRAO exploration fully active, 100% success ratio across all 5 gradients."
+}

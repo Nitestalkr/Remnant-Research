@@ -1,0 +1,98 @@
+{
+  "scan_number": 137,
+  "timestamp": "2026-05-17T11:31:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 7,
+  "stale_item_details": [
+    {
+      "item": "papers/daily gap",
+      "stale_hours": 130,
+      "score": 1.71,
+      "novelty_boost": 1.5,
+      "relevance": "IGNITION",
+      "goal_alignment": "research-acquisition"
+    },
+    {
+      "item": "gnw stability docs",
+      "stale_hours": 73,
+      "score": 0.315,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "stability-maintenance"
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "stale_hours": 37,
+      "score": 0.84,
+      "novelty_boost": 1.5,
+      "relevance": "IGNITION",
+      "goal_alignment": "research-synthesis"
+    },
+    {
+      "item": "multi-agent-systems.md",
+      "stale_hours": 21,
+      "score": 1.21,
+      "novelty_boost": 1.5,
+      "relevance": "IGNITION",
+      "goal_alignment": "research-acquisition"
+    },
+    {
+      "item": "gnw docs READMEs",
+      "stale_hours": 73,
+      "score": 0.315,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "doc-maintenance"
+    },
+    {
+      "item": "papers README.md",
+      "stale_hours": 37,
+      "score": 0.09,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "doc-maintenance"
+    },
+    {
+      "item": "consolidation-scores.md",
+      "stale_hours": 37,
+      "score": 0.09,
+      "novelty_boost": 1.5,
+      "relevance": "QUEUE",
+      "goal_alignment": "doc-maintenance"
+    }
+  ],
+  "highest_candidate": "papers/daily gap (1.71 IGNITION)",
+  "work_performed": "No additional work — Cycle 136 already performed paper cataloguing (10 papers from May 15 arXiv). papers/daily gap remains IGNITION-level but work was completed in prior cycle. Paper archive at 449 uncatalogued. Next: continue May 2-6 gap scanning.",
+  "drive_scores": {
+    "novelty": 1.0,
+    "relevance": 0.95,
+    "goal_alignment": 0.90,
+    "self_initiation": true
+  },
+  "system_status": "🟡 Improving — healthy, 137 cycles, 0 veto events, gateway stable, GRAO exploration mode active",
+  "notes": "Same IGNITION candidate as Cycle 136 (papers/daily gap) but work already performed. Paper archive gap persists at 449 uncatalogued. Recommended next: scan May 2-6 arXiv gap (30+ days unprocessed).",
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "round": 42,
+    "saturation": {
+      "reinforcementRounds": 21,
+      "exploration_triggered": true,
+      "exploration_count": 16,
+      "dual_threshold_reached": true,
+      "breakout": true
+    },
+    "exploration_mode": {
+      "active": true,
+      "success_ratio": 1,
+      "new_proposals_count": 5,
+      "active_proposals_count": 10
+    },
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "hours_since_last_proposal": 16,
+    "within_24h_threshold": true,
+    "status": "resolved",
+    "exploration_validated": true,
+    "five_gradients_validated": ["cross-cluster", "non-reinforcement", "trace-source", "weight-redistribution", "cluster-merging"]
+  }
+}

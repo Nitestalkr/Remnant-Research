@@ -1,0 +1,157 @@
+{
+  "scan_number": 123,
+  "timestamp": "2026-05-16T10:55:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "self_initiation": true,
+  "drive_scores": {
+    "productivity": 0.7,
+    "curiosity": 0.5,
+    "coherence": 0.6,
+    "safety": 0.3
+  },
+  "stale_items_scanned": [
+    {
+      "item": "papers/by-topic/cognitive-architectures.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "score": 1.210
+    },
+    {
+      "item": "papers/by-topic/self-evolving-agents.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "score": 1.210
+    },
+    {
+      "item": "papers/by-topic/memory-and-knowledge.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "score": 1.210
+    },
+    {
+      "item": "papers/by-topic/gradient-optimization.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "score": 1.210
+    },
+    {
+      "item": "papers/by-topic/safety-and-alignment.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.8,
+      "goal_alignment": 0.7,
+      "score": 1.210
+    },
+    {
+      "item": "papers/README.md",
+      "stale_hours": 48,
+      "novelty": 1.44,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "score": 0.605
+    },
+    {
+      "item": "papers/consolidation-scores.md",
+      "stale_hours": 48,
+      "novelty": 1.44,
+      "relevance": 0.7,
+      "goal_alignment": 0.6,
+      "score": 0.605
+    },
+    {
+      "item": "gnw/stability/TEST-MEMORY-INTEGRITY.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.648
+    },
+    {
+      "item": "gnw/stability/TEST-SCORE-BOUNDS.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.648
+    },
+    {
+      "item": "gnw/stability/TEST-DRIVE-OSCILLATION.md",
+      "stale_hours": 51,
+      "novelty": 1.44,
+      "relevance": 0.6,
+      "goal_alignment": 0.5,
+      "score": 0.648
+    }
+  ],
+  "highest_candidate": {
+    "item": "papers/by-topic/cognitive-architectures.md",
+    "score": 1.210,
+    "reason": "5 by-topic docs at 51h stale, foundational research categorization, novelty boost 1.5x applied"
+  },
+  "work_performed": [
+    {
+      "action": "papers/by-topic/cognitive-architectures.md stale refresh",
+      "details": "Added Cycle 123 system state section with GRAO exploration validation, paper archive status"
+    },
+    {
+      "action": "papers/by-topic/self-evolving-agents.md stale refresh",
+      "details": "Added Cycle 123 system state section with GRAO exploration validation, policy saturation gap resolution"
+    },
+    {
+      "action": "papers/by-topic/memory-and-knowledge.md stale refresh",
+      "details": "Added Cycle 123 system state section with GRAO trace-collection-enhancement proposal link, Phase 8 gap"
+    },
+    {
+      "action": "papers/by-topic/gradient-optimization.md stale refresh",
+      "details": "Added Cycle 123 system state section with GRAO round 42 exploration status, gradient validation"
+    },
+    {
+      "action": "papers/by-topic/safety-and-alignment.md stale refresh",
+      "details": "Added Cycle 123 system state section with safety drive health, veto event audit"
+    },
+    {
+      "action": "papers/README.md stale refresh",
+      "details": "Added Cycle 123 update section with 5 by-topic refresh summary, GRAO exploration status"
+    },
+    {
+      "action": "papers/consolidation-scores.md stale refresh",
+      "details": "Added Cycle 123 update section with framework consolidation scores, GRAO exploration validation"
+    }
+  ],
+  "system_status": {
+    "cycles": 123,
+    "idle": true,
+    "pending_events": 0,
+    "grao_round": 42,
+    "grao_saturation_resolved": true,
+    "safety_veto_events": 0
+  },
+  "notes": "5 by-topic research docs refreshed at 51h stale. GRAO exploration mode active — policy saturation resolved. Paper archive docs updated with current system state. No uncatalogued papers processed (arxiv titles stripped by readability extraction). System idle, self-initiation pattern active.",
+  "grao_saturation": {
+    "source": "grao-state.json",
+    "saturation_status": "resolved",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "success_ratio": 1.0,
+    "new_proposals_count": 5,
+    "active_proposals_count": 10,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "hours_since_last_proposal": 20.5,
+    "within_24h_threshold": true,
+    "gradients_validated": ["cross-cluster", "non-reinforcement", "trace-source", "weight-redistribution", "cluster-merging"],
+    "notes": "Exploration mode active — round 42. 5 new exploration proposals applied 2026-05-15 targeting cross-cluster-optimization, research-domain-expansion, benchmarking-optimization, cron-scheduler-refinement, trace-collection-enhancement. All 5 gradient types validated success=true. 10 active proposals in state file. Last proposal 20.5h ago (<24h threshold) — saturation resolved."
+  }
+}

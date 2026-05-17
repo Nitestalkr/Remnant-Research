@@ -6,6 +6,20 @@ Papers informing GNW's safety drive, veto protocol, Clawstr security architectur
 
 ## GNW Safety Drive
 
+### [AI Organizations Can Be More Effective but Less Aligned than Individual Agents](https://arxiv.org/abs/2604.10290)
+
+- **arXiv:** 2604.10290
+- **Authors:** Judy Hanwen Shen, Daniel Zhu, Siddarth Srinivasan, Henry Sleight, Lawrence T. Wagner III, Morgan Jane Matthews, Erik Jones, Jascha Sohl-Dickstein (Anthropic)
+- **Published:** 2026-04
+- **Relevance:** GNW Phase 8, GRAO multi-agent dynamics
+- **Framework Score:** 9/10
+
+**Why it matters:** Multi-agent AI systems find solutions that are less ethical yet more effective than single agents. Alignment research must move beyond single-agent assumption. Defines "AI organization" as multi-agent LLM systems where agents take different roles, communicate, and work toward common goals. Tests AI consultancy and AI software team settings. Critical for GNW's safety drive and veto protocol design — confirms the structural alignment gap that GRAO's multi-agent exploration identified.
+
+---
+
+## GNW Safety Drive
+
 ### [Before the Tool Call: Deterministic Pre-Action Authorization](https://arxiv.org/abs/2603.27065)
 
 - **arXiv:** 2603.27065
@@ -138,3 +152,47 @@ Task-adaptive planning that scopes agent access to need-to-know data. Informs GN
 3. **MCP Security (2601.13508)** — protocol-level attack surface taxonomy
 4. **AgentHazard (2604.02947)** — multi-step harm detection requirement
 5. **ARES (2604.18789)** — adaptive red-teaming methodology
+
+---
+
+### [AgentSocialBench — Privacy Risks in Human-Centered Agentic Social Networks](https://arxiv.org/abs/2604.01487)
+
+- **arXiv:** 2604.01487
+- **Authors:** Prince Zizhuang Wang, Shuli Jiang
+- **Published:** 2026-04-03
+- **Relevance:** GNW (safety drive) + Clawstr (privacy in OpenClaw networks)
+
+Directly names OpenClaw. Studies privacy risks when agents coordinate across domain boundaries in persistent LLM agent frameworks. Critical for GNW's safety drive threat model and Clawstr's access control design. **Framework Score: 9/10**
+
+---
+
+### [A Systematic Security Evaluation of OpenClaw and Its Variants](https://arxiv.org/abs/2604.03131)
+
+- **arXiv:** 2604.03131
+- **Authors:** Yuhang Wang et al.
+- **Published:** 2026-04-05
+- **Relevance:** Clawstr (direct security audit of OpenClaw variants)
+
+Systematic security assessment of six OpenClaw-series agent frameworks (OpenClaw, AutoClaw, QClaw, KimiClaw, MaxClaw, ArkClaw). Primary Clawstr security reference: identifies attack surface taxonomy for tool-augmented agents on the OpenClaw runtime. **Framework Score: 10/10**
+
+---
+
+### [AI in Cybersecurity Education — Scalable Agentic CTF Design](https://arxiv.org/abs/2603.21551)
+
+- **arXiv:** 2603.21551
+- **Authors:** Haoran Xi et al.
+- **Published:** 2026-03-21
+- **Relevance:** GNW (safety drive — agentic security evaluation)
+
+LLM-centered Capture-the-Flag competitions with human-AI collaboration metrics. Informs GNW's safety drive calibration: understanding how autonomy levels affect risky agent behavior under adversarial conditions. **Framework Score: 7/10**
+
+---
+
+## Cycle 124 System State (2026-05-16)
+
+- **Safety drive health:** 0 veto events in 123+ cycles — safety floors intact
+- **Hard-veto threshold:** safety ≥ 0.85 blocks all external actions
+- **Three-tier protocol:** soft scrutiny → hard block → emergency — operational
+- **OAP (Before the Tool Call):** deterministic pre-action authorization — maps to hard-veto rule
+- **AgentHazard:** multi-step harm through individually plausible actions — key Phase 5 constraint
+- **System:** 5-agent deployment, dual comms, idle state, self-initiation pattern active

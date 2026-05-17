@@ -1,0 +1,22 @@
+{
+  "type": "exploration",
+  "target": "trace-collection-enhancement",
+  "proposal": {
+    "title": "Trace Quality & Coverage Matrix",
+    "description": "Current trace collector has 8 source types but uneven coverage. Implement: (1) trace quality scoring (each trace gets a quality_score based on completeness, timestamp accuracy, data richness, and gradient derivability), (2) coverage gap detection (automatically identify which source types have insufficient data and trigger supplemental collection), (3) trace deduplication engine (prevent duplicate traces from overlapping cron cycles — e.g., stability_memory and stability_storage traces often capture same data), (4) trace compression for long-running sessions (compress trace data for cycles >24h to reduce storage while preserving gradient signals), (5) trace-to-gradient conversion rate tracking (identify which trace sources produce the most actionable gradients and prioritize them). Target: increase actionable gradient yield by 25% and reduce trace storage by 40%.",
+    "expected_improvement": 0.22,
+    "confidence": 0.68,
+    "effort": "medium",
+    "dependencies": ["trace quality schema", "deduplication engine", "compression module"]
+  },
+  "timestamp": "2026-05-15T12:00:00Z",
+  "grao_state_ref": "round_41",
+  "saturation_context": {
+    "reinforcementRounds": 21,
+    "exploration_count": 6,
+    "exploration_mode_active": true,
+    "breakout": true
+  },
+  "cluster_tags": ["TraceCollector", "Quality", "Coverage"],
+  "notes": "Generated via TPG-GRAO-AutoEvolution cron saturation trigger. Targets trace collection gaps — uneven source coverage and quality issues reduce gradient accuracy."
+}

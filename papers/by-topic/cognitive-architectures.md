@@ -124,3 +124,25 @@ Multi-objective optimization for agent teams — finding Pareto-optimal trade-of
 2. **Predictive Processing (Friston 2010)** — bridges GNW and GRAO
 3. **Agent Q-Mix (2604.00344)** — topology selection via MARL, key for Phase 6
 4. **Drive-Score Broadcasting (2604.02728)** — direct Phase 6 protocol reference
+
+---
+
+### [TAPAS — Task-Adaptive Planning for Agentic Systems](https://arxiv.org/abs/2604.00187)
+
+- **arXiv:** 2604.00187
+- **Authors:** Multiple
+- **Published:** 2026-04-01
+- **Relevance:** GNW + TPG (adaptive planning = cognitive cycle routing)
+
+Task-adaptive planning framework for agentic systems. Informs GNW cognitive cycle's adaptive task selection and TPG's dynamic routing under novel task conditions. **Framework Score: 7/10**
+
+---
+
+## Cycle 124 System State (2026-05-16)
+
+- **GRAO exploration mode:** active (round 42, 16 exploration rounds triggered, 5 new proposals applied 2026-05-15)
+- **Exploration validation:** 5 cross-cluster/non-reinforcement/trace-source/weight-redistribution/cluster-merging gradients all validated success=true
+- **Active proposals:** 10 exploration proposals targeting cross-cluster-optimization, research-domain-expansion, benchmarking-optimization, cron-scheduler-refinement, trace-collection-enhancement
+- **Paper archive:** 500 uncatalogued IDs remaining; multi-agent-systems topic catalogued (CAMP+OrgAgent convergence confirmed)
+- **System:** 123+ cycles, 5-agent deployment, dual comms (Discord+Telegram), idle state
+- **GRAO saturation:** resolved — exploration triggered, last proposal 20.5h ago (<24h threshold)

@@ -1,0 +1,58 @@
+{
+  "experimentId": "exp_2026-05-17_learning_acceleration",
+  "target": "agent-learning-optimization",
+  "proposal": "Known-Failures Learning System — SCAR integration, failure suppression, workaround prioritization",
+  "timestamp": "2026-05-17T19:16:00Z",
+  "validation_type": "mechanism_audit",
+  "status": "validated",
+  "success": true,
+  "findings": {
+    "infrastructure_exists": true,
+    "active_learning": false,
+    "gap": "store initialized but not operational as learning system",
+    "details": {
+      "known_failures_store": {
+        "entries": 7,
+        "all_learned": true,
+        "total_failures_logged": 0,
+        "learning_rate": 0.0,
+        "agents_unlearned": [],
+        "description": "Static catalog from SCAR file — no active failure collection mechanism"
+      },
+      "scar_file": {
+        "exists": true,
+        "path": "D:\\.openclaw\\workspace\\scar-openclaw-protected-paths.md",
+        "last_updated": "2026-05-17T14:14:00Z",
+        "protected_paths": 7
+      },
+      "agent_ingestion": {
+        "status": "pending",
+        "agents_unlearned": ["main", "Randi2", "CB", "Claude", "Zero"],
+        "description": "SCAR data not yet ingested into agent configs — agents still attempt config.patch on protected paths"
+      },
+      "failure_collection": {
+        "mechanism": "none",
+        "description": "No automated mechanism to capture new failures and log them to known-failures.json"
+      }
+    }
+  },
+  "impact_score": 0.80,
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "SCAR ingestion into agent configs",
+      "description": "Add scar-openclaw-protected-paths.md references to each agent's workspace-state.md or agent.yaml config. Agents should check SCAR before attempting config.patch on protected paths."
+    },
+    {
+      "priority": "medium",
+      "action": "Failure collection mechanism",
+      "description": "Add GNW boredom scan cycle step: 'Check known-failures.json for unlearned agents. If agents still attempt failed methods, log new entries and update agents_unlearned.'"
+    },
+    {
+      "priority": "medium",
+      "action": "Agent self-check protocol",
+      "description": "Each agent should query known-failures.json before config operations. If target path is in suppressed_methods, use priority_workaround instead."
+    }
+  ],
+  "validation_notes": "exp_06 validated: infrastructure exists (SCAR file + known-failures.json store) but mechanism not operational as learning system. Gap is between static catalog and active learning. Fix requires SCAR ingestion + failure collection mechanism. This addresses the structural gap identified in cycles 138-142 (10 active proposals with 0 validation evidence)."
+}

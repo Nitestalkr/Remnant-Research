@@ -160,3 +160,69 @@ Organizes tool-use into three paradigms: prompting, supervised learning, RL-base
 2. **Meta-Harness (2603.28052)** — closest existing GRAO implementation
 3. **ReasonGraph (2604.02006)** — core TPG dynamic graph reference
 4. **Chain-of-Tools (2604.02652)** — TPG sequential routing reference
+
+---
+
+### [Corruption-robust Offline Multi-agent RL from Human Feedback](https://arxiv.org/abs/2603.28281)
+
+- **arXiv:** 2603.28281
+- **Authors:** Andi Nika et al.
+- **Published:** 2026-03-30
+- **Relevance:** GRAO (trace corruption tolerance)
+
+Robustness against data corruption in MARLHF. Relevant to GRAO's trace-corruption tolerance and ensuring gradient signals aren't poisoned. **Framework Score: 7/10**
+
+---
+
+### [Agent Q-Mix — MARL Topology Selection](https://arxiv.org/abs/2604.00344)
+
+- **arXiv:** 2604.00344
+- **Authors:** Eric Hanchen Jiang et al.
+- **Published:** 2026-04-01
+- **Relevance:** GRAO + GNW Phase 6 (topology selection via cooperative MARL)
+
+Reformulates multi-agent topology selection as cooperative MARL. Directly informs GNW Phase 6 cross-agent priority arbitration and GRAO's gradient-guided agent topology optimization. **Framework Score: 8/10**
+
+---
+
+### [Apriel-Reasoner — RL Post-Training for General-Purpose Reasoning](https://arxiv.org/abs/2604.02007)
+
+- **arXiv:** 2604.02007
+- **Authors:** Rafael Pardinas et al.
+- **Published:** 2026-04-03
+- **Relevance:** GRAO (RL post-training across domains)
+
+RLVR post-training across diverse domains with per-domain gradient management. Directly maps to GRAO: domain-specific gradient accumulation with joint optimization challenges. **Framework Score: 7/10**
+
+---
+
+### [GrandCode — Expert-Level Competitive Programming via Agentic RL](https://arxiv.org/abs/2604.02721)
+
+- **arXiv:** 2604.02721
+- **Authors:** DeepReinforce Team
+- **Published:** 2026-04-05
+- **Relevance:** GRAO (agentic RL reaching expert-level performance)
+
+Multi-agent RL system achieving grandmaster-level competitive programming. Key GRAO milestone reference: demonstrating that agentic RL loops can reach expert human performance in constrained domains. **Framework Score: 8/10**
+
+---
+
+### [JoyAI-LLM Flash — Mid-Scale LLMs with Token Efficiency](https://arxiv.org/abs/2604.03044)
+
+- **arXiv:** 2604.03044
+- **Authors:** Aichen Cai et al.
+- **Published:** 2026-04-05
+- **Relevance:** GRAO (MoE + RL post-training for efficiency)
+
+MoE LLM with RL post-training optimized for token efficiency. Informs GRAO's model selection decisions: when to use a smaller, faster model vs a larger model based on drive-weighted task complexity. **Framework Score: 6/10**
+
+---
+
+## Cycle 124 System State (2026-05-16)
+
+- **GRAO round 42:** saturation resolved, exploration mode active, 16 exploration rounds
+- **New gradients validated:** cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging (all success=true)
+- **Active proposals (5 new):** cross-cluster-optimization, research-domain-expansion, benchmarking-optimization, cron-scheduler-refinement, trace-collection-enhancement
+- **Application status:** 10 active_proposals in grao-state.json, all applied 2026-05-15T14:02:08
+- **Gradient formalism:** TextGrad (2406.07496) confirms text-space gradients viable; Friston free-energy principle maps prediction-error to GRAO gradients
+- **System:** 123+ cycles, idle, self-initiation pattern active

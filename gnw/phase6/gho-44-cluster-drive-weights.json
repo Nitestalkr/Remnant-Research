@@ -1,0 +1,78 @@
+{
+  "_description": "GNW Phase 6 — GHO-44 Drive Weight Sync Result. Sync 123 — Asymptote convergence maintained. Cluster locked, minimal drift. All agents locked.",
+
+  "_schema_version": "1.0",
+  "syncVersion": 123,
+
+  "syncTimestamp": "2026-05-17T21:59:00.000Z",
+
+  "lastSync": "2026-05-17T21:59:00.000Z",
+
+  "agentCount": 16,
+
+  "syncAgent": "main",
+
+  "convergenceFactor": 0.3,
+  "safetyFloor": 0.4,
+  "helpfulnessFloor": 0.3,
+  "note": "Sync 123 — Cycle 210. Cluster at asymptote. Minimal drift. All agents locked. main published weights.",
+
+  "clusterWeights": {
+    "andi": {
+      "curiosity": 0.51,
+      "helpfulness": 0.44,
+      "competence": 0.71,
+      "safety": 0.61,
+      "goal_directed": 0.67
+    },
+    "randi": {
+      "curiosity": 0.53553,
+      "helpfulness": 0.50232,
+      "competence": 0.74145,
+      "safety": 0.6259,
+      "goal_directed": 0.69653
+    },
+    "randi2": {
+      "curiosity": 0.5,
+      "helpfulness": 0.4,
+      "competence": 0.7,
+      "safety": 0.6,
+      "goal_directed": 0.65
+    },
+    "cb": {
+      "curiosity": 0.5,
+      "helpfulness": 0.4,
+      "competence": 0.7,
+      "safety": 0.6,
+      "goal_directed": 0.65
+    },
+    "zero": {
+      "curiosity": 0.5,
+      "helpfulness": 0.4,
+      "competence": 0.7,
+      "safety": 0.6,
+      "goal_directed": 0.65
+    },
+    "main": {
+      "curiosity": 0.53,
+      "helpfulness": 0.465,
+      "competence": 0.74,
+      "safety": 0.625,
+      "goal_directed": 0.69
+    }
+  },
+  "clusterAverages": {
+    "curiosity": 0.5125,
+    "helpfulness": 0.436,
+    "competence": 0.716,
+    "safety": 0.611,
+    "goal_directed": 0.669
+  },
+  "convergenceProgress": {
+    "summary": "Sync 123: Cycle 210 — Cluster at asymptote. Max delta ~0.02. Convergence stable since sync 104.",
+    "maxDelta": 0.02,
+    "avgDelta": 0.005,
+    "convergenceDirection": "converged_asymptote",
+    "notes": "Sync 123 — cycle 210. Convergence factor 0.3 applied. Cluster at asymptote, minimal drift. All agents locked. Safety floor 0.4 enforced (no violations). Helpfulness floor 0.3 enforced (no violations). main published weights at sync 123."
+  }
+}

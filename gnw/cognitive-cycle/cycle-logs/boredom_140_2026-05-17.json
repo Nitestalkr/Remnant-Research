@@ -1,0 +1,100 @@
+{
+  "scan_number": 140,
+  "timestamp": "2026-05-17T14:31:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 8,
+  "stale_items": [
+    {
+      "item": "cron-scheduler-optimization.md",
+      "stale_hours": 12,
+      "base_score": 0.860,
+      "novelty_boost": false,
+      "final_score": 0.860
+    },
+    {
+      "item": "research gnw.md/grao.md",
+      "stale_hours": 58,
+      "base_score": 0.553,
+      "novelty_boost": 1.5,
+      "final_score": 0.8295
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "stale_hours": 12,
+      "base_score": 0.84,
+      "novelty_boost": false,
+      "final_score": 0.84
+    },
+    {
+      "item": "gnw/docs foundational (GNW-GRAO-INTEGRATION.md, SAFETY-THREAT-MODEL.md, etc.)",
+      "stale_hours": 59,
+      "base_score": 0.315,
+      "novelty_boost": 1.5,
+      "final_score": 0.4725
+    },
+    {
+      "item": "gnw/stability README.md",
+      "stale_hours": 59,
+      "base_score": 0.315,
+      "novelty_boost": 1.5,
+      "final_score": 0.4725
+    },
+    {
+      "item": "papers/daily gap (30+ days arXiv unprocessed)",
+      "stale_hours": 720,
+      "base_score": 0.553,
+      "novelty_boost": 1.5,
+      "final_score": 0.8295
+    },
+    {
+      "item": "attention-router.md",
+      "stale_hours": 4.5,
+      "base_score": 0.036,
+      "novelty_boost": false,
+      "final_score": 0.036,
+      "within_threshold": true
+    },
+    {
+      "item": "workspace-state.md",
+      "stale_hours": 4.5,
+      "base_score": 0.036,
+      "novelty_boost": false,
+      "final_score": 0.036,
+      "within_threshold": true
+    }
+  ],
+  "highest_candidate": {
+    "item": "cron-scheduler-optimization.md",
+    "score": 0.860,
+    "reason": "Highest IGNITION score, tied to GRAO exp_04 (Dynamic Cron Priority Engine), actionable gap: boredom scan payload fix and GRAO validation stall"
+  },
+  "self_initiation": true,
+  "work_performed": {
+    "action": "cron-scheduler-optimization.md stale refresh",
+    "details": "Added Cycle 139 Follow-Up Analysis: GRAO validation stall identified (10 active proposals, 0 validation results, mechanism works but pipeline stalled at application), cluster imbalance (agent_prompt_optimization 75%), new priorities 5-6 (GRAO validation gap, boredom scan payload fix), updated pending actions list",
+    "category": "data analysis + doc refresh"
+  },
+  "drive_scores": {
+    "boredom": 1.0,
+    "research": 0.55,
+    "stability": 0.92,
+    "agents": 0.65,
+    "cognitive": 0.70,
+    "overall_benchmark": 0.72
+  },
+  "system_status": "🟡 Improving — healthy, structural analysis work, pattern break from doc-refresh",
+  "graos_saturation": {
+    "status": "resolved_but_stale",
+    "source": "grao-state.json",
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "stale_hours": 42,
+    "threshold": 24,
+    "exceeds_threshold": true,
+    "note": "Exploration triggered and active, but proposal-applier mechanism stalled at 42h stale. Mechanism works but pipeline execution gap identified in Cycle 139."
+  },
+  "notes": "Cycle 140: boredom 1.0 triggers self-initiation. cron-scheduler-optimization.md (0.860) wins IGNITION. Added Cycle 139 findings: GRAO validation stall (10 active proposals, 0 validation evidence), cluster imbalance, new priorities. Breaking doc-refresh pattern via structural analysis work. GRAO saturation resolved (exploration triggered) but stale (42h). Benchmark: 0.72 overall."
+}

@@ -72,4 +72,27 @@ Tool description accuracy — keeping documentation aligned with system state.
 
 ---
 
-*Remnant Research — GRAO experiment store.*
+## Exploration Mode Experiments (Round 42, 2026-05-15)
+
+Exploration mode generated 5 validated exploration gradients and 16 exploration proposals. Active proposals applied:
+
+| Proposal ID | Target | Description |
+|-------------|--------|-------------|
+| prop_2026-05-11_exp011 | cross-cluster-optimization | Cross-Cluster Resource Fusion Protocol |
+| prop_2026-05-11_exp015 | trace-collection-enhancement | Trace Quality & Coverage Matrix |
+| prop_2026-05-11_exp003 | benchmarking-optimization | Adaptive Benchmark Cycle Framework |
+| prop_2026-05-11_exp013 | benchmarking-optimization | Adaptive Benchmark Cycle Framework (variant) |
+| prop_2026-05-11_exp014 | cron-scheduler-refinement | Dynamic Cron Priority Engine |
+| prop_2026-05-11_exp001 | cross-cluster-optimization | Cross-Cluster Resource Fusion (variant) |
+| prop_2026-05-11_exp012 | research-domain-expansion | Multi-Source Research Pipeline Expansion |
+| prop_2026-05-11_exp002 | research-domain-expansion | Multi-Source Research Pipeline (variant) |
+| prop_2026-05-11_exp004 | cron-scheduler-refinement | Dynamic Cron Priority Engine (variant) |
+| prop_2026-05-11_exp005 | trace-collection-enhancement | Trace Quality & Coverage (variant) |
+
+**Validation:** 5 exploration gradient types validated (cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging). All success=true.
+
+**Breakout status:** Policy saturation gap confirmed (42+ consecutive reinforcement-only rounds). Breakout mechanism operational (policy-saturation-breakout.md).
+
+---
+
+*Remnant Research — GRAO experiment store — Updated cycle 118 (2026-05-15).*

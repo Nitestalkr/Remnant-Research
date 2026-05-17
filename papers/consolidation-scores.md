@@ -2,7 +2,44 @@
 
 Tracks the depth of paper coverage per Remnant Research framework. Score reflects: number of cataloged papers × average framework-relevance score, normalized to 0–100.
 
-Last updated: 2026-05-13
+Last updated: 2026-05-17 (Cycle 134)
+
+### Cycle 124 Update (2026-05-16)
+- **3 new papers catalogued (May 13 crawl):** ToolCUA (GUI-Tool orchestration, GRAO+Clawstr), Pixel-Searcher (agentic perception, TPG+GNW), LongMemEval-V2 (long-term memory, GNW Phase 8+GRAO)
+- **Paper count updates:** GNW 18→19 (+LongMemEval-V2 for Phase 8), GRAO 16→17 (+ToolCUA for harness engineering), TPG 10→11 (+Pixel-Searcher for retrieval), Clawstr 11→12 (+ToolCUA)
+- **GRAO exploration validated:** 16 exploration rounds, 5 gradients validated, 10 active proposals
+- **Policy saturation:** resolved — 42+ consecutive reinforcement-only rounds → forced exploration → 100% success ratio
+- **Paper archive:** 481 uncatalogued IDs remain (500→481)
+- **System:** 124+ cycles, idle state
+
+---
+
+## Cycle 134 Update (2026-05-17)
+- **8 new papers catalogued (May 17 discovery):** MASPO (joint prompt optimization, GRAO+TPG), The Cost of Consensus (multi-agent debate, GNW), MEME (multi-entity memory eval, GNW Phase 8), GraphRAG neighborhoods (agentic retrieval, TPG), SAGE (sign-adaptive gradient, GRAO), Agentic AI Higher Education (goal-directed agents, GNW), Planner Matters (long-horizon planning, GNW+GRAO)
+- **Paper count updates:** GNW 22→32 (+10 from May 17 batch B), GRAO 20→28 (+10), TPG 14→22 (+8), Clawstr 14→18 (+4)
+- **GRAO exploration:** Round 42, 16 exploration rounds, 10 active proposals, 5 gradients validated
+- **Paper archive:** 464 uncatalogued IDs remain (481→474→464)
+- **May 17 batch B highlights:** OpenDeepThink (parallel reasoning via Bradley-Terry, +405 Elo), Dual-Dimensional Consistency (10x token reduction), GraphFlow (formally verifiable workflows), Temporal Fair Division (RP metrics), CAST (case-based tool use calibration), Sycophantic Consensus (alignment failure mode)
+- **System:** 132+ cycles, idle state
+
+---
+
+## Cycle 135 Update (2026-05-17)
+- **5 new papers catalogued (May 17 discovery scan):** Oblivion (2604.00131), AgentFlow (2510.05592), HarnessAudit (2605.14271 - reinforcement), Clawdbot Audit (2602.14364)
+- **Paper count updates:** GNW 32→35 (+3: Oblivion for Phase 7, Clawdbot for safety, AgentFlow for Phase 7), GRAO 28→30 (+2: AgentFlow, Oblivion), TPG 22→23 (+1: AgentFlow), Clawstr 18→20 (+2: HarnessAudit, Clawdbot)
+- **GNW Phase 7 gap filled:** Oblivion (2604.00131) — decay-driven memory control framework directly addresses drive decay during inactivity
+- **GRAO exp_04 validation:** AgentFlow (2510.05592) — in-the-flow optimization validates GRAO's trace→gradient→proposal pipeline
+- **Key insight:** Oblivion's decay-driven accessibility maps to GNW's drive-score decay model; decoupled read/write maps to drive-competition
+- **Paper archive:** 459 uncatalogued IDs remain (464→459)
+- **System:** 135+ cycles, idle state
+
+---
+
+## Cycle 120 Update (2026-05-16)
+- **GRAO exploration validated:** multi-agent-systems cataloguing confirmed CAMP+OrgAgent convergence (hierarchical > flat by 102.73%, 74.52% token reduction)
+- **Paper count updates:** GNW 18→18 (CAMP already scored), GRAO 16→16, TPG 10→10, Clawstr 11→11 (new multi-agent papers cross-scored)
+- **Cross-framework insight:** organizational structure is a first-class variable in multi-agent performance — not just agent capability
+- **Next pass priorities:** drive decay papers, domain-specific gradient routing, harness lifecycle, temporal prediction graphs
 
 ---
 

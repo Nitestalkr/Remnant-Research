@@ -1,0 +1,74 @@
+{
+  "_schema_version": "1.0",
+  "_description": "TPG-GRAO Learning Component — logs known failures, suppresses retrying them, prioritizes known-working approaches. Integrates into the GRAO gradient-driven cycle.",
+  "proposalId": "learning_001",
+  "timestamp": "2026-05-17T14:12:00Z",
+  "tpgTarget": "agent-learning-optimization",
+  "proposalType": "system_enhancement",
+  "status": "proposed",
+  "components": [
+    {
+      "name": "Known-Failures Store",
+      "file": "known-failures.json",
+      "function": "Central registry of config paths, methods, and workarounds that agents have learned. GRAO queries this before generating attempt proposals.",
+      "operations": [
+        "log_failure: agent attempts failed method → record in store",
+        "mark_learned: agent adopts workaround → mark entry learned",
+        "suppress: GRAO auto-suppresses learned-failed methods from proposal queue",
+        "prioritize: GRAO auto-prioritizes known-working workarounds",
+        "track_unlearned: agents still retrying known-failed paths flagged as unlearned"
+      ]
+    },
+    {
+      "name": "Learning Rate Tracker",
+      "function": "Measures how quickly agents adopt known workarounds vs retrying failures.",
+      "metrics": [
+        "learning_rate = learned_entries / total_failures_logged",
+        "retry_rate = agents_retrying_known_failure / total_agents",
+        "unlearned_count = agents_still_retrying_known_failures"
+      ]
+    },
+    {
+      "name": "SCAR Integration",
+      "file": "scar-openclaw-protected-paths.md",
+      "function": "SCAR files serve as the authoritative source for known failures. GRAO learns from SCAR entries without requiring agent trial-and-error.",
+      "flow": "SCAR created → GRAO ingests → agents query SCAR first → failures reduced to zero"
+    },
+    {
+      "name": "Gradient Integration",
+      "function": "Learning rate becomes a GRAO gradient that drives agent behavior optimization.",
+      "gradients": [
+        {
+          "type": "learning_acceleration",
+          "trigger": "retry_rate > threshold",
+          "action": "force SCAR ingestion into agent context"
+        },
+        {
+          "type": "failure_suppression",
+          "trigger": "known_failure entry marked learned",
+          "action": "auto-suppress from attempt queue"
+        },
+        {
+          "type": "workaround_priority",
+          "trigger": "attempt queued",
+          "action": "check known-failures store → redirect to workaround if learned"
+        }
+      ]
+    }
+  ],
+  "implementation_steps": [
+    "Step 1: known-failures.json created (✅ done)",
+    "Step 2: SCAR file created (✅ done)",
+    "Step 3: GRAO cron updated to ingest known-failures before proposal generation",
+    "Step 4: Agents trained to query SCAR first before config patch attempts",
+    "Step 5: Learning rate tracking integrated into GRAO monitor",
+    "Step 6: Feedback loop — learning rate becomes optimization gradient"
+  ],
+  "expected_outcomes": [
+    "Zero token waste on known-failed config patch attempts",
+    "Agents consistently use known workarounds first",
+    "Learning rate measurable and trackable",
+    "SCAR files become community knowledge base for all OpenClaw agents",
+    "TPG-GRAO learning gradient drives continuous optimization"
+  ]
+}

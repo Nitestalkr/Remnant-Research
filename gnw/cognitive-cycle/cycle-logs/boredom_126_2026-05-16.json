@@ -1,0 +1,104 @@
+{
+  "scan_number": 126,
+  "timestamp": "2026-05-16T13:29:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "pending_events": "none",
+  "stale_items_scanned": 5,
+  "stale_items": [
+    {
+      "file": "research-consolidation-report.md",
+      "path": "remnant-research/research/spike-write/",
+      "staleness_hours": 48,
+      "novelty": 0.8,
+      "relevance": 0.7,
+      "goal_alignment": 0.9,
+      "score": 0.84,
+      "novelty_boost": 1.5,
+      "status": "IGNITION-level candidate"
+    },
+    {
+      "file": "gnw.md",
+      "path": "remnant-research/research/",
+      "staleness_hours": 42,
+      "novelty": 0.6,
+      "relevance": 0.5,
+      "goal_alignment": 0.6,
+      "score": 0.45,
+      "novelty_boost": 1.5
+    },
+    {
+      "file": "grao.md",
+      "path": "remnant-research/research/",
+      "staleness_hours": 42,
+      "novelty": 0.6,
+      "relevance": 0.5,
+      "goal_alignment": 0.6,
+      "score": 0.45,
+      "novelty_boost": 1.5
+    },
+    {
+      "file": "benchmarks files (5)",
+      "path": "remnant-research/benchmarks/",
+      "staleness_hours": 48,
+      "score": 0.30,
+      "novelty_boost": 1.5
+    },
+    {
+      "file": "attention-router.md",
+      "path": "gnw/attention-router/",
+      "staleness_hours": 3.1,
+      "score": 0.0,
+      "within_threshold": true
+    }
+  ],
+  "self_initiation": true,
+  "highest_candidate": {
+    "file": "research-consolidation-report.md",
+    "score": 0.84,
+    "reason": "Actionable gap: prototype viability 0.47 vs target 0.70; 3 immediate recommendations pending; GRAO exploration validated; paper archive progress 481 uncatalogued remaining"
+  },
+  "work_performed": {
+    "action": "research-consolidation-report.md stale refresh",
+    "updates": [
+      "Cycle 126 system state section added",
+      "GRAO exploration mode status (round 42, 16 exploration rounds, 5 validated gradients, 10 active proposals)",
+      "Paper archive progress (500→481 uncatalogued)",
+      "System operational metrics (126+ cycles, 5-agent deployment, 0 vetos)",
+      "Recommendations updated with paper archive completion target"
+    ]
+  },
+  "drive_scores": {
+    "novelty": 0.84,
+    "relevance": 0.7,
+    "goal_alignment": 0.9,
+    "total": 0.84
+  },
+  "system_status": {
+    "idle": true,
+    "cycles": 126,
+    "agents_active": 5,
+    "comms": "Discord + Telegram",
+    "vetos": 0,
+    "drive_health": "healthy oscillation",
+    "gateway": "running"
+  },
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "saturation_status": "resolved",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "success_ratio": 1.0,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "last_proposal_age_hours": 23.2,
+    "within_24h": true,
+    "status": "stable",
+    "notes": "Exploration mode active — round 42. 5 new exploration proposals applied (2026-05-15). 10 active proposals targeting cross-cluster-optimization, research-domain-expansion, benchmarking-optimization, cron-scheduler-refinement, trace-collection-enhancement. All 5 exploration gradients validated (success_ratio=1.0). Saturation resolved — no stale data."
+  },
+  "notes": "Cycle 126: boredom 1.0, IGNITION candidate research-consolidation-report.md (0.84). Work performed: doc refresh with GRAO exploration status, paper archive progress, recommendations update. Break from doc-refresh pattern maintained — content update with actionable insights. GRAO saturation resolved (exploration active, last proposal 23.2h ago <24h threshold)."
+}

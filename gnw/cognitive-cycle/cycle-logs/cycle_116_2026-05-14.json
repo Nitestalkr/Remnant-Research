@@ -1,0 +1,103 @@
+{
+  "cycle_number": 116,
+  "timestamp": "2026-05-15T03:41:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 1.0,
+  "pending_events": [],
+  "stale_items": [
+    {
+      "file": "remnant-research/gnw/workspace-state.md",
+      "staleness_hours": 66.2,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/DRIVE-COMPUTATION.md",
+      "staleness_hours": 61.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/docs/DESIGN-DECISIONS.md",
+      "staleness_hours": 60.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/docs/ROADMAP.md",
+      "staleness_hours": 60.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/docs/SAFETY-THREAT-MODEL.md",
+      "staleness_hours": 59.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/docs/PARAMETER-VALUES.md",
+      "staleness_hours": 58.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/docs/GNW-GRAO-INTEGRATION.md",
+      "staleness_hours": 58.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/phase6 (non-drive files)",
+      "staleness_hours": 40.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/cognitive-cycle/cycle-logs/cycle_114_2026-05-13.json",
+      "staleness_hours": 38.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/README.md",
+      "staleness_hours": 15.0,
+      "within_threshold": true
+    },
+    {
+      "file": "remnant-research/gnw/cognitive-cycle/README.md",
+      "staleness_hours": 15.0,
+      "within_threshold": true
+    },
+    {
+      "file": "remnant-research/gnw/cognitive-cycle/cycle-log-format.md",
+      "staleness_hours": 15.0,
+      "within_threshold": true
+    }
+  ],
+  "stage_contents": [
+    {"item": "GNW Phase 6", "score": 0.75, "status": "active"},
+    {"item": "GRAO integration", "score": 0.60, "status": "active"},
+    {"item": "5-agent Telegram deployment", "score": 0.80, "status": "active"},
+    {"item": "Ghostworks in-house model", "score": 0.85, "status": "active"},
+    {"item": "Drive weight drift investigation", "score": 0.55, "status": "pending"},
+    {"item": "Stale March Projects", "score": 0.75, "status": "active"},
+    {"item": "attention-router.md", "score": 0.0, "status": "missing"}
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "threshold": 0.6,
+    "candidate": "workspace-state.md stale refresh + stale scan",
+    "action": "Updated workspace-state.md to cycle 116. Scanned 12 stale items. Phase6 drive-weight files verified fresh (11-12h). GRAO-state.json and attention-router.md both confirmed missing. Cycle log numbering gap noted (114→117)."
+  },
+  "drive_scores": {
+    "curiosity": 0.30,
+    "helpfulness": 0.10,
+    "competence": 0.40,
+    "safety": 0.80,
+    "goal_directed": 0.20
+  },
+  "graos_saturation": {
+    "detected": false,
+    "source": "grao-state.json not found",
+    "reinforcementRounds": null,
+    "exploration_triggered": false,
+    "exploration_count": 0,
+    "last_exploration_timestamp": null,
+    "data_freshness": "stale",
+    "notes": "grao-state.json does not exist. GRAO integration status unknown. Last known: Round 42, plateau 93% per cycle 116 workspace-state. Phase6 drive-weight-store.json and gho-44 files updated tonight (11-12h stale, acceptable)."
+  },
+  "system_status": "idle",
+  "notes": "Boredom 1.0, idle state. No pending events. workspace-state.md refreshed. 12 stale items scored. Phase6 drive-weight files fresh. GRAO-state.json and attention-router.md both missing. Cycle log gap: numbering 114→117 inconsistent. System healthy idle. DRIVE-COMPUTATION.md (61h) and PARAMETER-VALUES.md (58h) next refresh candidates."
+}

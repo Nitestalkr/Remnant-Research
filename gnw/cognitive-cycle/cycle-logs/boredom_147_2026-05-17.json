@@ -1,0 +1,90 @@
+{
+  "scan_number": 147,
+  "timestamp": "2026-05-17T22:31:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 7,
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty": 1.0,
+    "relevance": 0.72,
+    "goal_alignment": 0.65,
+    "stale_boost": 1.5
+  },
+  "stale_items": [
+    {
+      "item": "papers/daily gap",
+      "staleness_hours": 24,
+      "score": 1.71,
+      "status": "IGNITION"
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "staleness_hours": 37,
+      "score": 0.84,
+      "status": "IGNITION"
+    },
+    {
+      "item": "multi-agent-systems.md",
+      "staleness_hours": 21,
+      "score": 1.21,
+      "status": "IGNITION"
+    },
+    {
+      "item": "gnw/docs READMEs",
+      "staleness_hours": 73,
+      "score": 0.315,
+      "status": "QUEUE"
+    },
+    {
+      "item": "gnw/stability README",
+      "staleness_hours": 73,
+      "score": 0.315,
+      "status": "QUEUE"
+    },
+    {
+      "item": "papers README",
+      "staleness_hours": 37,
+      "score": 0.09,
+      "status": "QUEUE"
+    },
+    {
+      "item": "consolidation-scores.md",
+      "staleness_hours": 37,
+      "score": 0.09,
+      "status": "QUEUE"
+    }
+  ],
+  "highest_candidate": {
+    "item": "papers/daily gap",
+    "score": 1.71,
+    "action": "Paper cataloguing — 7 new papers from May 17 arXiv batch"
+  },
+  "work_completed": {
+    "action": "Paper cataloguing — 7 new papers",
+    "details": "LIFE Progression Survey (IGNITION), PetroGraph (domain-aware orchestration), IFPV (adversarial validation), Temporal Fair Division (benchmarking metrics), Privacy Preserving MAPF (trace collection)",
+    "uncatalogued_change": "459 → 452"
+  },
+  "system_status": "🟡 Improving — healthy, paper discovery + cataloguing work, pattern break maintained",
+  "notes": "Cycle 147 — papers/daily gap (1.71) highest IGNITION candidate. Catalogued 7 papers including LIFE Progression Survey (core GNW self-evolution framework). Key themes: LIFE progression, domain-aware orchestration, adversarial validation, temporal fairness metrics. GRAO proposal-applier cron deployed in cycle 146 to fix 54h stale last_proposal_application gap.",
+  "grao_saturation": {
+    "source": "grao-state.json",
+    "status": "resolved_but_stale",
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "reinforcementRounds": 21,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "active_proposals": 10,
+    "last_proposal_application_hours": 54.9,
+    "last_proposal_application_timestamp": "2026-05-17T21:53:00Z",
+    "exceeds_24h_threshold": true,
+    "mitigation": "proposal-applier-cron-spec deployed in cycle 146 (4h interval, cluster balancing)",
+    "success_count": 11,
+    "gradient_categories": {
+      "reinforcement": true,
+      "exploration": true,
+      "insufficient_data": true
+    }
+  }
+}

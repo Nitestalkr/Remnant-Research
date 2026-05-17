@@ -1,0 +1,29 @@
+{
+  "scan_number": 119,
+  "timestamp": "2026-05-15T12:41:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 15,
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty": 0.85,
+    "relevance": 0.70,
+    "goal_alignment": 0.60,
+    "stale_boost_applied": 1.5
+  },
+  "system_status": "idle — no pending events, 3-day gap since last cycle (118 on May 12)",
+  "notes": "GRAO saturation resolved. exploration_triggered=true, exploration_count=11, active since 2026-05-15T12:00:00Z (41 min ago). 5 new exploration proposals generated today. Highest stale candidate: tpg-grao README (10d stale, foundational). Self-initiation candidate: exp_04 (Dynamic Cron Priority Engine) from GRAO exploration proposals — directly addresses boredom scan idle cycle problem.",
+  "graos_saturation": {
+    "status": "resolved",
+    "source": "grao-state.json",
+    "timestamp": "2026-05-15T12:00:00Z",
+    "exploration_triggered": true,
+    "exploration_count": 11,
+    "exploration_mode_active": true,
+    "success_ratio": 1.0,
+    "new_proposals_count": 5,
+    "reinforcementRounds": 21,
+    "dual_threshold_reached": true,
+    "breakout": true
+  }
+}

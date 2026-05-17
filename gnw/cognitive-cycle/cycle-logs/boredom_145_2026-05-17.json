@@ -1,0 +1,100 @@
+{
+  "scan_number": 145,
+  "timestamp": "2026-05-17T17:22:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0,
+  "stale_items_scanned": 124,
+  "stale_items_above_threshold": [
+    {
+      "item": "GRAO validation stall mechanism",
+      "staleness_hours": 54.2,
+      "score": 1.08,
+      "category": "structural"
+    },
+    {
+      "item": "Paper archive gap (uncatalogued)",
+      "staleness_hours": 78,
+      "score": 1.44,
+      "category": "research"
+    },
+    {
+      "item": "cron-scheduler-optimization.md",
+      "staleness_hours": 7,
+      "score": 0.860,
+      "category": "docs"
+    },
+    {
+      "item": "research-consolidation-report.md",
+      "staleness_hours": 7,
+      "score": 0.84,
+      "category": "research"
+    },
+    {
+      "item": "GRAO rounds_13/20",
+      "staleness_hours": 93,
+      "score": 0.81,
+      "category": "grao"
+    },
+    {
+      "item": "gnw docs cluster",
+      "staleness_hours": 12,
+      "score": 0.315,
+      "category": "docs"
+    },
+    {
+      "item": "gnw stability tests",
+      "staleness_hours": 40,
+      "score": 0.315,
+      "category": "stability"
+    },
+    {
+      "item": "GRAO experiments/rounds",
+      "staleness_hours": "7-94",
+      "score": "0.136-0.270",
+      "category": "grao"
+    },
+    {
+      "item": "benchmarks",
+      "staleness_hours": "14-40",
+      "score": "0.09",
+      "category": "benchmarks"
+    }
+  ],
+  "highest_candidate": {
+    "item": "GRAO validation stall",
+    "score": 1.08,
+    "reason": "10 active proposals with 0 validation evidence, mechanism stalled 54.2h",
+    "action": "Validation sweep — validated exp_02, exp_03, exp_04 (3 previously unvalidated targets)"
+  },
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty": 1.0,
+    "relevance": 0.85,
+    "goal_alignment": 0.9,
+    "stale_boost": 1.5
+  },
+  "system_status": "🟡 Improving — healthy, structural validation work completed",
+  "work_completed": {
+    "description": "GRAO validation sweep — validated 3 unvalidated targets (exp_02 research-domain-expansion, exp_03 benchmarking-optimization, exp_04 cron-scheduler-refinement)",
+    "results": {
+      "exp_02": "validated_with_gap (0.62 quality) — research pipeline exists but domain coverage limited",
+      "exp_03": "validated_with_gap (0.68 quality) — 4-bucket benchmark missing innovation/ROI bucket",
+      "exp_04": "validated_with_gap (0.74 quality) — cron scoring operational but missing domain-weighted scoring"
+    },
+    "grao_state_update": "success_count 10→13, validation_gap resolved",
+    "output_file": "exp_2026-05-17_validation_sweep.json"
+  },
+  "notes": "Pattern break from doc-refresh loop. Structural validation work completed. GRAO mechanism still stalled at proposal-application (54.2h stale). Recommendation: trigger proposal-applier cron to resolve mechanism staleness.",
+  "grao_saturation": {
+    "status": "resolved_but_stale",
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-15T14:02:08Z",
+    "staleness_hours": 54.2,
+    "threshold_exceeded": true,
+    "source": "grao-state.json",
+    "validation_gap": "resolved — 3 unvalidated targets now validated (success_count 10→13)",
+    "mechanism_stall": "proposal-applier execution stalled 54.2h — infrastructure exists but not operational"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "scan_number": 118,
+  "timestamp": "2026-05-16T09:25:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "pending_events": "none",
+  "stale_items_scanned": 12,
+  "stale_items": [
+    {
+      "path": "paperclip/gho-44-24hr-checkpoint-2026-05-14.md",
+      "hours_stale": 43.9,
+      "score": 1.08,
+      "relevance": "operational sync test in progress",
+      "goal_alignment": "high"
+    },
+    {
+      "path": "paperclip/gho-44-sync-protocol.md",
+      "hours_stale": 68.3,
+      "score": 0.756,
+      "relevance": "foundational sync protocol",
+      "goal_alignment": "high"
+    },
+    {
+      "path": "paperclip/gho-44-drive-weight-schema.md",
+      "hours_stale": 68.1,
+      "score": 0.648,
+      "relevance": "drive weight schema definition",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/grao/loops/round_13_2026-04-25.json",
+      "hours_stale": 624.9,
+      "score": 0.315,
+      "relevance": "stale GRAO round data",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/grao/loops/round_20_2026-04-26.json",
+      "hours_stale": 576.9,
+      "score": 0.270,
+      "relevance": "stale GRAO round data",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/grao/EXPERIMENT-FRAMEWORK.md",
+      "hours_stale": 168.1,
+      "score": 0.136,
+      "relevance": "experiment framework spec",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/grao/gradient-derivation.md",
+      "hours_stale": 168.1,
+      "score": 0.120,
+      "relevance": "gradient derivation method",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/grao/FAILURE-ANALYSIS.md",
+      "hours_stale": 168.1,
+      "score": 0.136,
+      "relevance": "failure analysis spec",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/tpg/SIGNAL-RECONCILIATION.md",
+      "hours_stale": 168.1,
+      "score": 0.135,
+      "relevance": "signal reconciliation method",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/tpg/architecture.md",
+      "hours_stale": 168.1,
+      "score": 0.162,
+      "relevance": "TPG architecture doc",
+      "goal_alignment": "medium"
+    },
+    {
+      "path": "remnant-research/tpg-grao/traces/README.md",
+      "hours_stale": 168.1,
+      "score": 0.108,
+      "relevance": "traces collection README",
+      "goal_alignment": "low"
+    },
+    {
+      "path": "remnant-research/tpg-grao/reports/README.md",
+      "hours_stale": 168.1,
+      "score": 0.108,
+      "relevance": "reports collection README",
+      "goal_alignment": "low"
+    }
+  ],
+  "highest_candidate": "paperclip/gho-44-24hr-checkpoint-2026-05-14.md (score: 1.08)",
+  "self_initiation": true,
+  "work_performed": "GHO-44 24-hour sync test final checkpoint — test window completed (72h), final cluster state captured at sync v301, convergence assessment written",
+  "drive_scores": {
+    "curiosity": 0.531,
+    "helpfulness": 0.405,
+    "competence": 0.727,
+    "safety": 0.525,
+    "goal_directed": 0.583
+  },
+  "system_status": {
+    "agents_active": 5,
+    "cycles_total": 118,
+    "idle": true,
+    "safety_violations": 0,
+    "convergence": "full convergence permanently maintained (GHO-44)"
+  },
+  "notes": "GHO-44 24-hour sync test window ended at 2026-05-16 05:30 UTC. Final cluster data captured at sync v301 (Andi) / v300 (Zero). Zero achieved near-perfect convergence (RMS 0.0001). Claude at v4 (stale, hasn't synced since 5/14). Fixed agents (Andi Assistant, Codex, Claude) confirmed as structural convergence ceiling. All 5 safety floors intact. Test objectives met. Break from doc-refresh pattern — actual operational data analysis.",
+  "graos_saturation": {
+    "saturation.reinforcementRounds": 21,
+    "saturation.exploration_triggered": true,
+    "saturation.exploration_count": 16,
+    "saturation.dual_threshold_reached": true,
+    "saturation.breakout": true,
+    "exploration_mode.active": true,
+    "success_ratio": 1.0,
+    "new_proposals_count": 5,
+    "active_proposals_count": 10,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "hours_since_last_proposal": 19.2,
+    "status": "resolved — exploration triggered, last proposal 19h ago (<24h threshold), saturation resolved",
+    "source": "grao-state.json"
+  }
+}

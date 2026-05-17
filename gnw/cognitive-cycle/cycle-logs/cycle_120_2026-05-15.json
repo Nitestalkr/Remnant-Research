@@ -1,0 +1,140 @@
+{
+  "cycle_number": 120,
+  "timestamp": "2026-05-15T06:41:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 1.0,
+  "pending_events": [
+    {
+      "file": "remnant-research/gnw/DRIVE-COMPUTATION.md",
+      "staleness_hours": 65.0,
+      "score": 0.800,
+      "reason": "Drive computation model docs stale"
+    },
+    {
+      "file": "remnant-research/gnw/DESIGN-DECISIONS.md",
+      "staleness_hours": 64.0,
+      "score": 0.600,
+      "reason": "Phase 6 design decisions stale"
+    },
+    {
+      "file": "remnant-research/gnw/ROADMAP.md",
+      "staleness_hours": 64.0,
+      "score": 0.400,
+      "reason": "GNW roadmap stale"
+    },
+    {
+      "file": "remnant-research/gnw/SAFETY-THREAT-MODEL.md",
+      "staleness_hours": 63.0,
+      "score": 0.400,
+      "reason": "Safety threat model stale"
+    },
+    {
+      "file": "remnant-research/gnw/PARAMETER-VALUES.md",
+      "staleness_hours": 62.0,
+      "score": 0.900,
+      "reason": "Phase 6 parameter values stale"
+    },
+    {
+      "file": "remnant-research/gnw/GNW-GRAO-INTEGRATION.md",
+      "staleness_hours": 62.0,
+      "score": 0.500,
+      "reason": "GRAO integration docs stale"
+    }
+  ],
+  "stale_items": [
+    {
+      "file": "remnant-research/gnw/DRIVE-COMPUTATION.md",
+      "staleness_hours": 65.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/DESIGN-DECISIONS.md",
+      "staleness_hours": 64.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/ROADMAP.md",
+      "staleness_hours": 64.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/SAFETY-THREAT-MODEL.md",
+      "staleness_hours": 63.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/PARAMETER-VALUES.md",
+      "staleness_hours": 62.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/GNW-GRAO-INTEGRATION.md",
+      "staleness_hours": 62.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/phase6 files (non-drive)",
+      "staleness_hours": 44.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/cycle logs (gap)",
+      "staleness_hours": 42.0,
+      "within_threshold": false
+    },
+    {
+      "file": "remnant-research/gnw/README.md",
+      "staleness_hours": 19.0,
+      "within_threshold": true
+    },
+    {
+      "file": "remnant-research/gnw/cognitive-cycle/README.md",
+      "staleness_hours": 19.0,
+      "within_threshold": true
+    },
+    {
+      "file": "remnant-research/gnw/cognitive-cycle/cycle-log-format.md",
+      "staleness_hours": 19.0,
+      "within_threshold": true
+    },
+    {
+      "file": "remnant-research/gnw/attention-router.md",
+      "staleness_hours": null,
+      "within_threshold": false
+    }
+  ],
+  "stage_contents": [
+    {"item": "GNW Phase 6", "score": 0.75, "status": "active"},
+    {"item": "GRAO integration", "score": 0.60, "status": "active"},
+    {"item": "5-agent Telegram deployment", "score": 0.80, "status": "active"},
+    {"item": "Ghostworks in-house model", "score": 0.85, "status": "active"},
+    {"item": "Drive weight drift investigation", "score": 0.55, "status": "pending"},
+    {"item": "Stale March Projects", "score": 0.75, "status": "active"},
+    {"item": "attention-router.md", "score": 0.0, "status": "missing"}
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "threshold": 0.6,
+    "candidate": "PARAMETER-VALUES.md",
+    "action": "refresh stale parameter docs (62h, score 0.900)"
+  },
+  "drive_scores": {
+    "curiosity": 0.30,
+    "helpfulness": 0.10,
+    "competence": 0.40,
+    "safety": 0.80,
+    "goal_directed": 0.20
+  },
+  "graos_saturation": {
+    "detected": false,
+    "source": "grao-state.json",
+    "reinforcementRounds": null,
+    "exploration_triggered": false,
+    "exploration_count": 0,
+    "last_exploration_timestamp": null,
+    "data_freshness": "missing",
+    "notes": "grao-state.json confirmed missing since cycle 116"
+  },
+  "system_status": "self-initiation",
+  "notes": "Boredom 1.0, idle state. Self-initiation triggered on PARAMETER-VALUES.md (highest stale score 0.900). attention-router.md confirmed missing. GRAO-state.json still absent. 5-agent infrastructure operational. No pending user events. Cycle log numbering: 119 was last, this is 120."
+}

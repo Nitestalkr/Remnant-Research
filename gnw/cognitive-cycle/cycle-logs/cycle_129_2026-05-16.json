@@ -1,0 +1,56 @@
+{
+  "cycle_number": 129,
+  "timestamp": "2026-05-16T23:03:00Z",
+  "cron_job": "GNW-Cognitive-Cycle",
+  "boredom_score": 1.0,
+  "pending_events": [],
+  "stale_items": [
+    {
+      "file": "gnw/attention-router.md",
+      "staleness_hours": 21,
+      "within_threshold": false
+    },
+    {
+      "file": "gnw/LOOP-SPEC.md",
+      "staleness_hours": 48,
+      "within_threshold": false
+    },
+    {
+      "file": "gnw/grao/STATE-MANAGEMENT.md",
+      "staleness_hours": 36,
+      "within_threshold": false
+    }
+  ],
+  "stage_contents": [
+    {"item": "GRAO Exploration Mode", "score": 0.85, "status": "active"},
+    {"item": "Paper Archive Cataloguing", "score": 0.60, "status": "active"},
+    {"item": "Research Consolidation v1.1", "score": 0.55, "status": "active"},
+    {"item": "5-Agent Deployment", "score": 0.70, "status": "active"},
+    {"item": "GHO-44 Sync Test", "score": 0.90, "status": "completed"}
+  ],
+  "self_initiation": {
+    "triggered": true,
+    "threshold": 0.6,
+    "candidate": "gnw/attention-router.md",
+    "action": "No IGNITION candidate — highest stale item (0.307) below threshold. No work initiated."
+  },
+  "drive_scores": {
+    "curiosity": 0.75,
+    "helpfulness": 0.10,
+    "competence": 0.50,
+    "safety": 0.90,
+    "goal_directed": 0.60
+  },
+  "graos_saturation": {
+    "detected": false,
+    "source": "cycle-state",
+    "reinforcementRounds": 0,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "last_exploration_timestamp": "2026-05-16T15:30:00Z",
+    "data_freshness": "fresh",
+    "notes": "Exploration mode active since cycle 118. Last proposal 7.5h ago (<24h threshold). 10 active proposals. No saturation detected."
+  },
+  "system_status": "self-initiation",
+  "notes": "Idle cycle. No pending events. Boredom 1.0 triggers self-initiation but no IGNITION items found. attention-router.md (0.307) highest stale item, below threshold. GRAO exploration healthy. Paper archive 481 uncatalogued."
+}

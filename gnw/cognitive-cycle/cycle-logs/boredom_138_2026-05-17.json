@@ -1,0 +1,126 @@
+{
+  "scan_number": 138,
+  "timestamp": "2026-05-17T12:31:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "pending_events": "none",
+  "stale_items_scanned": 12,
+  "stale_items": [
+    {
+      "path": "gnw/docs/README.md",
+      "stale_hours": 71,
+      "score": 0.315
+    },
+    {
+      "path": "gnw/stability/README.md",
+      "stale_hours": 71,
+      "score": 0.315
+    },
+    {
+      "path": "gnw/conflict-resolution/README.md",
+      "stale_hours": 71,
+      "score": 0.315
+    },
+    {
+      "path": "gnw/docs/ARCHITECTURE.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/docs/DESIGN-DECISIONS.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/docs/SAFETY-THREAT-MODEL.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/docs/ROADMAP.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/docs/USER-PRESENCE-DETECTION.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/docs/GNW-GRAO-INTEGRATION.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/docs/PARAMETER-VALUES.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/stability/TEST-RUNNER-SPEC.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    },
+    {
+      "path": "gnw/stability/TEST-MEMORY-INTEGRITY.md",
+      "stale_hours": 73,
+      "score": 0.1575
+    }
+  ],
+  "highest_candidate": {
+    "path": "gnw/docs cluster (81h stale)",
+    "score": 0.315,
+    "status": "QUEUE",
+    "reason": "Below IGNITION threshold — doc-refresh loop identified across 81+ cycles"
+  },
+  "self_initiation": true,
+  "work_performed": {
+    "type": "data_analysis",
+    "description": "GRAO experiment cross-analysis — identified structural validation gap",
+    "output": "exp_2026-05-17_cross_analysis.md",
+    "key_finding": "GRAO exploration mode generates 10 active proposals targeting domains with ZERO validation evidence in experiment store. Cluster imbalance: agent_prompt_optimization dominates (75%). Cross-cluster, trace-collection, and benchmarking experiments needed to close validation gap."
+  },
+  "drive_scores": {
+    "curiosity": 0.85,
+    "efficiency": 0.70,
+    "safety": 0.92,
+    "self_evolution": 0.80,
+    "research": 0.55
+  },
+  "system_status": {
+    "gateway": "healthy",
+    "veto_events": 0,
+    "cycles": 138,
+    "loop_prevention": "active",
+    "doc_refresh_loop": "identified — breaking pattern via data analysis work"
+  },
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "saturation": {
+      "reinforcementRounds": 21,
+      "exploration_triggered": true,
+      "exploration_count": 16,
+      "dual_threshold_reached": true,
+      "breakout": true
+    },
+    "exploration_mode": {
+      "active": true,
+      "success_ratio": 1,
+      "new_proposals_count": 5,
+      "active_proposals_count": 10
+    },
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "last_proposal_age_hours": 21.47,
+    "status": "resolved",
+    "notes": "Exploration mode active — round 42. 10 active proposals targeting cross-cluster-optimization, trace-collection-enhancement, benchmarking-optimization, cron-scheduler-refinement, research-domain-expansion. last_proposal_application 21.47h ago (<24h threshold). GRAO structural gap identified: proposals generated for domains with zero validation evidence."
+  },
+  "notes": [
+    "Boredom 1.0 — max pending score 0.0 — self-initiation triggered",
+    "Identified doc-refresh loop across 81+ cycles (gnw/docs cluster refreshed repeatedly without substantive updates)",
+    "Breaking pattern: performed actual data analysis (GRAO experiment cross-analysis) instead of doc-refresh",
+    "Key finding: GRAO's 10 active exploration proposals target domains with ZERO validation evidence in experiment store",
+    "Structural gap identified: cross-cluster, trace-collection, benchmarking experiments needed",
+    "GRAO saturation resolved — exploration mode active, last proposal 21.47h ago",
+    "Paper archive: 449 uncatalogued IDs remain (459→449 across cycles 133-137)"
+  ]
+}

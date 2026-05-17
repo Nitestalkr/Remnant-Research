@@ -1,0 +1,102 @@
+{
+  "_schema_version": "1.0",
+  "_description": "GRAO exp_05 — Trace Quality & Coverage Matrix validation",
+  "experimentId": "exp_2026-05-17_trace-quality-matrix",
+  "timestamp": "2026-05-17T18:39:00Z",
+  "target": "trace-collection-enhancement",
+  "proposalId": "exp005",
+  "type": "exploration",
+  "data_source": "tpg-grao/traces directory inventory + gnw/stability README scan",
+
+  "hypothesis": "Implementing trace quality scoring and coverage gap detection will increase actionable gradient yield by 25% and reduce trace storage by 40% through deduplication and compression",
+
+  "test_data": {
+    "trace_inventory": {
+      "total_traces": 9,
+      "directories": ["2026-05-11"],
+      "source_types_present": ["agent", "deployment", "external_api", "stability_memory", "stability_storage", "research", "cron"],
+      "source_types_missing": ["experience", "user_interaction"],
+      "date_range": "2026-05-11 (single day)",
+      "stale_since": "2026-05-11T03:45:25Z (6 days stale)"
+    },
+    "coverage_analysis": {
+      "total_source_types": 8,
+      "covered_types": 7,
+      "coverage_ratio": 0.875,
+      "missing_types": ["experience", "user_interaction"],
+      "temporal_coverage": "6 days gap (May 11 → May 17)",
+      "traces_per_day": {
+        "2026-05-11": 8
+      }
+    },
+    "quality_assessment": {
+      "timestamp_accuracy": "high — all traces have precise ISO timestamps",
+      "data_richness": "medium — traces capture event metadata but lack gradient derivation context",
+      "completeness": "partial — single-day snapshot, no multi-day trend data",
+      "gradient_derivability": "low — traces exist but no trace-to-gradient conversion rate tracking"
+    },
+    "deduplication_findings": {
+      "potential_duplicates": [
+        {
+          "pair": ["stability_memory", "stability_storage"],
+          "evidence": "Same timestamp (03:45:25-539Z), likely capturing overlapping stability check data",
+          "estimated_redundancy": "0.4"
+        }
+      ],
+      "compression_candidates": {
+        "current_total_traces": 9,
+        "estimated_compressed": "6 (after deduplication)",
+        "storage_reduction": "0.33"
+      }
+    }
+  },
+
+  "results": {
+    "coverage_status": "partial — 7/8 source types covered, experience and user_interaction missing",
+    "temporal_gap": "6 days (May 11 → May 17) — trace collection stalled",
+    "quality_score": {
+      "overall": 0.45,
+      "breakdown": {
+        "timestamp_accuracy": 0.9,
+        "data_richness": 0.5,
+        "completeness": 0.3,
+        "gradient_derivability": 0.2
+      }
+    },
+    "deduplication_potential": 0.33,
+    "coverage_gaps": [
+      {
+        "source_type": "experience",
+        "status": "missing",
+        "recommendation": "Add experience traces from GRAO round data and experiment results"
+      },
+      {
+        "source_type": "user_interaction",
+        "status": "missing",
+        "recommendation": "Add user interaction traces from Telegram/Discord message patterns"
+      }
+    ]
+  },
+
+  "validation": {
+    "hypothesis_supported": "partial — coverage gap detection validated (2 missing types), but actionable gradient yield improvement not measurable without gradient data",
+    "evidence": "Trace inventory shows 7/8 coverage (0.875 ratio), 6-day temporal gap, single-day snapshot. Deduplication candidate found (stability_memory ↔ stability_storage). Quality score 0.45 — below threshold for actionable gradients.",
+    "impact_score": 0.55,
+    "confidence": 0.60,
+    "limitations": "No gradient data available in traces for conversion rate analysis. Single-day snapshot limits temporal analysis. No pre-implementation baseline."
+  },
+
+  "recommendations": {
+    "priority": "MEDIUM",
+    "actions": [
+      "Implement trace quality schema (scoring 0-1 for timestamp, richness, completeness, derivability)",
+      "Add experience and user_interaction trace sources",
+      "Implement deduplication engine for stability_memory/stability_storage overlap",
+      "Establish trace-to-gradient conversion rate tracking",
+      "Trigger supplemental collection for coverage gaps (experience, user_interaction)",
+      "Compress traces for cycles >24h"
+    ]
+  },
+
+  "notes": "First trace quality assessment. Coverage gap detection validated — 2 missing types (experience, user_interaction). Quality score 0.45 confirms need for quality schema. Deduplication candidate confirmed. Impact 0.55 — moderate improvement potential. Requires gradient data for full validation."
+}

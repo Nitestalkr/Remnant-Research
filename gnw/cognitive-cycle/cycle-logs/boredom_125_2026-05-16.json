@@ -1,0 +1,112 @@
+{
+  "scan_number": 125,
+  "timestamp": "2026-05-16T12:25:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 8,
+  "stale_items_details": [
+    {
+      "item": "research_monitor/2026-05-13/papers",
+      "staleness_hours": 38,
+      "score": 1.210,
+      "novelty": 0.8,
+      "relevance": 0.7,
+      "goal_alignment": 0.9
+    },
+    {
+      "item": "research_monitor/2026-05-11/papers",
+      "staleness_hours": 26,
+      "score": 0.756,
+      "novelty": 0.8,
+      "relevance": 0.6,
+      "goal_alignment": 0.8
+    },
+    {
+      "item": "research_monitor/2026-05-14/papers",
+      "staleness_hours": 14,
+      "score": 0.605,
+      "novelty": 0.7,
+      "relevance": 0.7,
+      "goal_alignment": 0.9
+    },
+    {
+      "item": "paper archive consolidation-scores",
+      "staleness_hours": 3.5,
+      "score": 0.605,
+      "novelty": 0.6,
+      "relevance": 0.9,
+      "goal_alignment": 1.0
+    },
+    {
+      "item": "GHO-44-final checkpoint",
+      "staleness_hours": 5,
+      "score": 0.270,
+      "novelty": 0.5,
+      "relevance": 0.4,
+      "goal_alignment": 0.6
+    },
+    {
+      "item": "gnw/cognitive-cycle/README.md",
+      "staleness_hours": 51,
+      "score": 0.315,
+      "novelty": 0.5,
+      "relevance": 0.5,
+      "goal_alignment": 0.6
+    },
+    {
+      "item": "gnw stability READMEs",
+      "staleness_hours": 48,
+      "score": 0.315,
+      "novelty": 0.4,
+      "relevance": 0.5,
+      "goal_alignment": 0.6
+    },
+    {
+      "item": "gnw conflict-resolution README",
+      "staleness_hours": 48,
+      "score": 0.315,
+      "novelty": 0.4,
+      "relevance": 0.5,
+      "goal_alignment": 0.6
+    }
+  ],
+  "highest_candidate": {
+    "item": "research_monitor/2026-05-13/papers",
+    "score": 1.210,
+    "action": "Catalogued 3 uncatalogued PDFs from May 13 arXiv crawl: ToolCUA (GUI-Tool orchestration), Pixel-Searcher (agentic perception), LongMemEval-V2 (long-term memory) — all high-value papers catalogued in paper archive"
+  },
+  "self_initiation": true,
+  "drive_scores": {
+    "novelty_drive": 0.8,
+    "relevance_drive": 0.7,
+    "goal_alignment_drive": 0.9,
+    "stale_boost": 1.5x applied for items >6h stale
+  },
+  "system_status": {
+    "cycles": 125,
+    "idle_state": true,
+    "pending_events": 0,
+    "agent_deployment": "5-agent (Andi, Randi2, CB, Claude, Zero)",
+    "comms": "Discord + Telegram dual channels",
+    "health": "stable"
+  },
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "timestamp": "2026-05-15T12:00:00Z",
+    "saturation_status": "resolved",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "last_proposal_hours_ago": 22.3,
+    "within_24h": true,
+    "gradients_validated": 5,
+    "success_ratio": 1.0,
+    "notes": "Exploration mode active — round 42. 10 active proposals targeting cross-cluster-optimization, research-domain-expansion, benchmarking-optimization, cron-scheduler-refinement, trace-collection-enhancement. All 5 exploration gradients validated. No stale data detected."
+  },
+  "notes": "Cycle 125: boredom 1.0 above threshold. research_monitor 2026-05-13 papers (38h stale, score 1.210) won as highest candidate. Catalogued 3 uncatalogued PDFs from May 13 arXiv crawl. Key insight: LongMemEval-V2 directly addresses GNW Phase 8 memory integration — coding agent-based memory viable but expensive, advances accuracy-latency Pareto frontier. Paper archive reduced from 500 to 481 uncatalogued IDs. GRAO saturation confirmed resolved via direct grao-state.json read (exploration triggered, 22.3h since last proposal, within 24h threshold)."
+}

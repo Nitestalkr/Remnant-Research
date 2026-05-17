@@ -2,6 +2,8 @@
 
 Defines what the GNW safety veto protocol is defending against, the assumed failure modes, and the adversarial conditions.
 
+**Last verified:** 2026-05-17 14:37 UTC — Cycle 141 stale refresh
+
 ---
 
 ## What We're Defending Against

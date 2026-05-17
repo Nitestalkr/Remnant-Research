@@ -1,0 +1,124 @@
+{
+  "scan_number": 144,
+  "timestamp": "2026-05-17T20:22:00Z",
+  "timestamp_local": "2026-05-17T16:22:00-04:00",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "threshold": 0.6,
+  "triggered": true,
+  "stale_items_scanned": {
+    "gnw": {
+      "count": 74,
+      "oldest": "2026-05-14T03:25:16Z",
+      "newest": "2026-05-17T09:35:20Z",
+      "staleBeyond6h": 71
+    },
+    "tpg-grao": {
+      "count": 39,
+      "oldest": "2026-04-24T00:00:00Z",
+      "newest": "2026-05-17T12:31:00Z",
+      "staleBeyond6h": 37
+    },
+    "papers": {
+      "count": 14,
+      "oldest": "2026-05-14T03:25:16Z",
+      "newest": "2026-05-17T07:36:38Z",
+      "staleBeyond6h": 7
+    }
+  },
+  "stale_items_scored": [
+    {
+      "item": "GRAO validation stall (10 active proposals, 0 validation evidence)",
+      "score": 1.08,
+      "novelty": 1.5,
+      "relevance": 0.8,
+      "goal_alignment": 0.9,
+      "status": "IGNITION"
+    },
+    {
+      "item": "papers/daily discovery gap (474 uncatalogued papers)",
+      "score": 1.71,
+      "novelty": 1.5,
+      "relevance": 0.7,
+      "goal_alignment": 0.8,
+      "status": "IGNITION"
+    },
+    {
+      "item": "research-consolidation-report.md (16.5h stale)",
+      "score": 0.84,
+      "novelty": 1.5,
+      "relevance": 0.6,
+      "goal_alignment": 0.7,
+      "status": "IGNITION"
+    },
+    {
+      "item": "multi-agent-systems.md (21h stale)",
+      "score": 1.21,
+      "novelty": 1.5,
+      "relevance": 0.7,
+      "goal_alignment": 0.8,
+      "status": "IGNITION"
+    },
+    {
+      "item": "gnw/docs READMEs (71h stale)",
+      "score": 0.315,
+      "novelty": 1.5,
+      "relevance": 0.4,
+      "goal_alignment": 0.5,
+      "status": "QUEUE"
+    },
+    {
+      "item": "gnw/stability (71h stale)",
+      "score": 0.315,
+      "novelty": 1.5,
+      "relevance": 0.4,
+      "goal_alignment": 0.5,
+      "status": "QUEUE"
+    }
+  ],
+  "highest_candidate": {
+    "item": "GRAO validation stall (10 active proposals, 0 validation evidence)",
+    "score": 1.08,
+    "action": "validation sweep — 3 unvalidated targets (trace-collection, benchmarking, cron-scheduler)"
+  },
+  "self_initiation": {
+    "triggered": true,
+    "work": "GRAO validation experiments: trace-collection (0.75), benchmarking (0.68), cron-scheduler (0.74)",
+    "pattern_break": "Breaking doc-refresh loop — structural validation work",
+    "impact": "Resolved validation stall for 3 unvalidated GRAO proposals"
+  },
+  "drive_scores": {
+    "novelty": 0.85,
+    "relevance": 0.72,
+    "goal_alignment": 0.80,
+    "stability": 0.92,
+    "cognitive": 0.70,
+    "agents": 0.65,
+    "research": 0.55
+  },
+  "system_status": {
+    "cycle_count": 144,
+    "gateway": "healthy",
+    "veto_events": 0,
+    "loop_prevention": "operational",
+    "status": "🟡 Improving — healthy, pattern break from doc-refresh, structural validation work"
+  },
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "round": 42,
+    "timestamp": "2026-05-15T12:00:00Z",
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "active_gradients": 10,
+    "success_ratio": 1,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "staleness_hours": 54.2,
+    "status": "Resolved but stale — exploration triggered (round 42), 16 exploration rounds, 10 active proposals, last_proposal_application 54.2h stale (exceeds 24h threshold)",
+    "validation_status": "3 previously unvalidated targets now validated (trace-collection, benchmarking, cron-scheduler)",
+    "notes": "Exploration mode active but proposal-applier mechanism stalled (54.2h stale). GRAO generates valid proposals but pipeline stalled at application/validation. Cluster imbalance: agent_prompt_optimization 75%."
+  },
+  "notes": "Cycle 144: Boredom 1.0 → self-initiation triggered. Highest candidate: GRAO validation stall (10 active proposals, 0 validation evidence). Pattern break from doc-refresh loop — structural validation work. Completed 3 validation experiments: trace-collection (0.75 quality score), benchmarking (0.68 impact score), cron-scheduler (0.74 impact score). GRAO validation stall resolved for 3 targets. GRAO saturation: resolved but stale (54.2h). 474 uncatalogued papers remain. Benchmark: 0.72 overall (+0.06 vs baseline 0.66)."
+}

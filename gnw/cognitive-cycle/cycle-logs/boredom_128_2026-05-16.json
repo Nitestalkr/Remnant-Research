@@ -1,0 +1,148 @@
+{
+  "scan_number": 128,
+  "timestamp": "2026-05-16T22:39:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 15,
+  "self_initiation": true,
+  "drive_scores": {
+    "boredom": 1.0,
+    "drive": 0.70,
+    "memory_pressure": 0.134,
+    "stability": 0.92
+  },
+  "stale_items": [
+    {
+      "file": "research-consolidation-report.md",
+      "stale_hours": 9.5,
+      "score": 0.84,
+      "category": "research"
+    },
+    {
+      "file": "cron-scheduler-optimization.md",
+      "stale_hours": 9.5,
+      "score": 0.54,
+      "category": "research"
+    },
+    {
+      "file": "research/gnw.md",
+      "stale_hours": 46.5,
+      "score": 0.45,
+      "category": "research"
+    },
+    {
+      "file": "research/grao.md",
+      "stale_hours": 46.5,
+      "score": 0.45,
+      "category": "research"
+    },
+    {
+      "file": "papers/consolidation-scores.md",
+      "stale_hours": 10,
+      "score": 0.605,
+      "category": "papers"
+    },
+    {
+      "file": "papers/by-topic/self-evolving-agents.md",
+      "stale_hours": 11.5,
+      "score": 0.756,
+      "category": "papers"
+    },
+    {
+      "file": "papers/daily/2026-04-06.md",
+      "stale_hours": 63,
+      "score": 0.315,
+      "category": "papers"
+    },
+    {
+      "file": "benchmarks/metrics/benchmark_cognitive_2026-05-11.json",
+      "stale_hours": 64,
+      "score": 0.30,
+      "category": "benchmarks"
+    },
+    {
+      "file": "tpg-grao/tpg/system-health.json",
+      "stale_hours": 81,
+      "score": 0.27,
+      "category": "tpg"
+    },
+    {
+      "file": "tpg-grao/tpg/cross-cluster-optimization.json",
+      "stale_hours": 81,
+      "score": 0.27,
+      "category": "tpg"
+    },
+    {
+      "file": "gnw/docs/GNW-GRAO-INTEGRATION.md",
+      "stale_hours": 48,
+      "score": 0.45,
+      "category": "gnw"
+    },
+    {
+      "file": "gnw/docs/ROADMAP.md",
+      "stale_hours": 48,
+      "score": 0.36,
+      "category": "gnw"
+    },
+    {
+      "file": "gnw/docs/SAFETY-THREAT-MODEL.md",
+      "stale_hours": 48,
+      "score": 0.27,
+      "category": "gnw"
+    },
+    {
+      "file": "gnw/docs/ARCHITECTURE.md",
+      "stale_hours": 48,
+      "score": 0.27,
+      "category": "gnw"
+    },
+    {
+      "file": "gnw/docs/DESIGN-DECISIONS.md",
+      "stale_hours": 48,
+      "score": 0.27,
+      "category": "gnw"
+    }
+  ],
+  "highest_candidate": {
+    "file": "cron-scheduler-optimization.md",
+    "score": 0.54,
+    "novelty_boost": 1.5,
+    "novelty_score": 0.81,
+    "category": "research",
+    "grao_alignment": "exp_04 (Dynamic Cron Priority Engine)",
+    "ignition_level": true,
+    "action": "Updated with Cycle 128 system state, benchmark integration, research progress"
+  },
+  "self_initiation": {
+    "work_performed": true,
+    "files_updated": ["cron-scheduler-optimization.md"],
+    "work_type": "stale_refresh + research artifact update"
+  },
+  "system_status": {
+    "idle": true,
+    "pending_events": 0,
+    "gateway": "healthy",
+    "veto_events": 0,
+    "loop_prevention": "active",
+    "memory_decline": "15.8% → 13.4%",
+    "benchmark_score": 0.72,
+    "benchmark_baseline": 0.66
+  },
+  "notes": "Boredom 1.0 — above 0.6 threshold. GRAO saturation resolved (last_proposal_application 7.5h ago). 15 stale items scanned. cron-scheduler-optimization.md selected (IGNITION, tied to GRAO exp_04). Updated with Cycle 128 state, benchmark integration notes, research progress (481 uncatalogued papers, GHO-44 complete). System healthy idle. No pending events. Boredom Scan timeout issue still active (payload size).",
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "success_ratio": 1.0,
+    "active_proposals_count": 10,
+    "new_proposals_count": 5,
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "last_proposal_hours_ago": 7.5,
+    "status": "resolved",
+    "notes": "Exploration mode active — round 42. 5 new exploration proposals applied (2026-05-15) targeting cross-cluster-optimization, research-domain-expansion, benchmarking-optimization, cron-scheduler-refinement, trace-collection-enhancement. 10 active proposals. Last proposal application 7.5h ago (<24h threshold) — saturation resolved."
+  }
+}

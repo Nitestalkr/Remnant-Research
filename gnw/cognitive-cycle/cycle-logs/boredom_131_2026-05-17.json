@@ -1,0 +1,132 @@
+{
+  "scan_number": 132,
+  "timestamp": "2026-05-17T03:20:00-05:00",
+  "utc": "2026-05-17T07:20:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "stale_items_scanned": 8,
+  "stale_items": [
+    {
+      "name": "cron-scheduler-optimization.md",
+      "path": "research/spike-write/cron-scheduler-optimization.md",
+      "staleness_hours": 30.5,
+      "score": 0.860,
+      "category": "IGNITION",
+      "reason": "GRAO exp_04 tied spike write, actionable gap"
+    },
+    {
+      "name": "research-grao.md",
+      "path": "research/grao.md",
+      "staleness_hours": 51,
+      "score": 0.553,
+      "category": "QUEUE",
+      "reason": "Foundational GRAO research doc"
+    },
+    {
+      "name": "research-gnw.md",
+      "path": "research/gnw.md",
+      "staleness_hours": 51,
+      "score": 0.553,
+      "category": "QUEUE",
+      "reason": "Foundational GNW research doc"
+    },
+    {
+      "name": "papers/daily 2026-04-0x.md",
+      "path": "papers/daily",
+      "staleness_hours": 72,
+      "score": 0.243,
+      "category": "QUEUE",
+      "reason": "Paper archive docs"
+    },
+    {
+      "name": "benchmarks/metrics 2026-05-11.json",
+      "path": "benchmarks/metrics",
+      "staleness_hours": 72,
+      "score": 0.243,
+      "category": "QUEUE",
+      "reason": "Benchmark metrics"
+    },
+    {
+      "name": "code-review-drill-001.md",
+      "path": "benchmarks/reports",
+      "staleness_hours": 72,
+      "score": 0.243,
+      "category": "QUEUE",
+      "reason": "Benchmark report"
+    },
+    {
+      "name": "workspace-state.md",
+      "path": "gnw/workspace-state.md",
+      "staleness_hours": 0.4,
+      "score": 0.0,
+      "category": "FRESH",
+      "reason": "Within threshold"
+    },
+    {
+      "name": "attention-router.md",
+      "path": "gnw/attention-router.md",
+      "staleness_hours": 1.8,
+      "score": 0.0,
+      "category": "FRESH",
+      "reason": "Within threshold"
+    }
+  ],
+  "highest_candidate": {
+    "name": "cron-scheduler-optimization.md",
+    "score": 0.860,
+    "category": "IGNITION",
+    "novelty": 1.536,
+    "relevance": 0.8,
+    "goal_alignment": 0.7
+  },
+  "self_initiation": true,
+  "work_performed": true,
+  "work_details": {
+    "target": "cron-scheduler-optimization.md",
+    "action": "Stale refresh with Cycle 131 system state",
+    "sections_added": ["Cycle 131 Follow-Up Analysis", "Current System State (03:20 EST)", "GRAO Alignment update", "Actionable Recommendations with priority ordering", "Pending Actions list", "Research Progress update"],
+    "key_insights": ["Boredom Scan payload fix still active — full workspace-state.md cycle notes table causes timeout", "TPG-GRAO vs Clawstr cluster separation confirmed working", "GRAO exploration: 5 gradients validated, success_ratio=1, 10 active proposals", "Benchmark 0.72 available for cron health metric input"]
+  },
+  "drive_scores": {
+    "novelty_drive": 1.0,
+    "relevance_drive": 0.8,
+    "goal_alignment_drive": 0.7,
+    "stability_drive": 0.92,
+    "cognitive_drive": 0.70,
+    "agents_drive": 0.65,
+    "research_drive": 0.55
+  },
+  "system_status": {
+    "cycles": 131,
+    "idle": true,
+    "pending_events": 0,
+    "veto_events": 0,
+    "gateway": "healthy",
+    "memory_decline_pct": 13.4,
+    "benchmark_score": 0.72,
+    "benchmark_date": "2026-05-16"
+  },
+  "graos_saturation": {
+    "source": "grao-state.json",
+    "round": 42,
+    "timestamp": "2026-05-15T12:00:00Z",
+    "saturation": {
+      "reinforcementRounds": 21,
+      "exploration_triggered": true,
+      "exploration_count": 16,
+      "dual_threshold_reached": true,
+      "breakout": true
+    },
+    "exploration_mode": {
+      "active": true,
+      "success_ratio": 1,
+      "new_proposals_count": 5,
+      "active_proposals_count": 10
+    },
+    "last_proposal_application": "2026-05-16T15:03:00Z",
+    "staleness_hours_from_last": 12.2,
+    "status": "resolved",
+    "notes": "Exploration mode active — round 42. 16 exploration rounds, 10 active proposals. last_proposal_application 12.2h ago (<24h threshold). Saturation resolved. 5 exploration gradients validated (cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging). success_ratio=1."
+  },
+  "notes": "Cycle 131 boredom scan — boredom 1.0, above 0.6 threshold. 8 stale items scanned. cron-scheduler-optimization.md (0.860 IGNITION) wins tied to GRAO exp_04. Work performed: stale refresh with Cycle 131 system state, priority-ordered actionable recommendations, GRAO alignment update. Boredom Scan payload fix still pending — full workspace-state.md cycle notes table causes timeout errors. GRAO exploration validated: 5 gradients success_ratio=1. Benchmark 0.72 available for cron health monitoring."
+}

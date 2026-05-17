@@ -1,0 +1,22 @@
+{
+  "type": "exploration",
+  "target": "cron-scheduler-refinement",
+  "proposal": {
+    "title": "Dynamic Cron Priority Engine",
+    "description": "Current cron scheduling is static (fixed intervals per task). Implement priority-based cron: (1) gradient-weighted scheduling (tasks with higher gradient magnitude get more frequent execution), (2) saturation-aware scheduling (when exploration mode active, reduce reinforcement cron frequency, increase exploration cron frequency), (3) cross-agent cron coordination (prevent overlapping heavy tasks across agents — if Randi2 is running a deep code analysis, reduce Zero's deployment check frequency to avoid resource contention), (4) cost-aware scheduling (prefer free model executions during high-usage periods, premium models during low-usage). Target: reduce wasted cron cycles by 30% and improve gradient collection density.",
+    "expected_improvement": 0.18,
+    "confidence": 0.55,
+    "effort": "high",
+    "dependencies": ["cron scheduler API", "gradient-weighting schema", "cross-agent resource monitor"]
+  },
+  "timestamp": "2026-05-15T12:00:00Z",
+  "grao_state_ref": "round_41",
+  "saturation_context": {
+    "reinforcementRounds": 21,
+    "exploration_count": 6,
+    "exploration_mode_active": true,
+    "breakout": true
+  },
+  "cluster_tags": ["Scheduler", "Cron", "Resource"],
+  "notes": "Generated via TPG-GRAO-AutoEvolution cron saturation trigger. Targets cron inefficiency — static scheduling doesn't adapt to gradient dynamics or saturation state."
+}

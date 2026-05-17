@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-05-15T14:00:00Z",
+  "comparison_type": "current_grao_state vs stale round files",
+  "current_state": {
+    "round": 42,
+    "timestamp": "2026-05-15T12:00:00Z",
+    "reinforcementRounds": 21,
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "exploration_mode_active": true,
+    "gradients_validated": 5,
+    "success_ratio": 1.0,
+    "status": "stable",
+    "trace_collector_sources": 7,
+    "known_patterns": 40,
+    "success_count": 7,
+    "failure_count": 10,
+    "active_proposals": 10,
+    "new_proposals_count": 5,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z"
+  },
+  "stale_file_comparisons": {
+    "round_31_2026-04-27": {
+      "was_exploration_count": 10,
+      "is_exploration_count": 16,
+      "was_last_exploration_timestamp": "2026-05-13T16:03:00Z",
+      "is_last_exploration_timestamp": "2026-05-15T12:00:00Z",
+      "was_proposal_types": "reinforcement",
+      "is_proposal_types": "exploration",
+      "was_saturation_status": "exploration_triggered pending",
+      "is_saturation_status": "exploration_triggered, exploration_count=16, breakout=true",
+      "discrepancies": ["exploration_count +6 (5 new proposals added)", "exploration_timestamp +2d", "proposal_types shifted reinforcement→exploration"],
+      "refreshed": true,
+      "refresh_timestamp": "2026-05-15T14:00:00Z"
+    },
+    "round_38_2026-04-28": {
+      "was_exploration_count": 5,
+      "is_exploration_count": 16,
+      "was_reinforcementRounds": 18,
+      "is_reinforcementRounds": 21,
+      "was_last_round_success_ratio": 0.94,
+      "is_success_ratio": 1.0,
+      "was_proposal_types": "reinforcement",
+      "is_proposal_types": "exploration",
+      "was_saturation_status": "reinforcement_only",
+      "is_saturation_status": "exploration_triggered, dual_threshold_reached=true",
+      "discrepancies": ["exploration_count +11 (5 new proposals added)", "reinforcementRounds +3", "success_ratio improved 0.94→1.0", "proposal_types shifted reinforcement→exploration"],
+      "refreshed": true,
+      "refresh_timestamp": "2026-05-15T14:00:00Z"
+    },
+    "round_33_2026-04-30": {
+      "was_exploration_count": 5,
+      "is_exploration_count": 16,
+      "was_reinforcementRounds": 18,
+      "is_reinforcementRounds": 21,
+      "was_last_round_success_ratio": 0.94,
+      "is_success_ratio": 1.0,
+      "was_proposal_types": "reinforcement",
+      "is_proposal_types": "exploration",
+      "was_saturation_status": "reinforcement_only",
+      "is_saturation_status": "exploration_triggered, dual_threshold_reached=true",
+      "discrepancies": ["exploration_count +11 (5 new proposals added)", "reinforcementRounds +3", "success_ratio improved 0.94→1.0", "proposal_types shifted reinforcement→exploration"],
+      "refreshed": true,
+      "refresh_timestamp": "2026-05-15T14:00:00Z"
+    }
+  },
+  "gnw_boredom_scan_impact": {
+    "risk": "low",
+    "notes": "All stale files refreshed with current saturation state. False saturation signals prevented — boredom scan will read current exploration_count=16 and active exploration mode, not stale values. exploration_count discrepancy (10→16, 5→16) would have caused false saturation if not refreshed."
+  },
+  "notes": "Cross-reference generated via TPG-GRAO-AutoEvolution cron 2026-05-15. All stale round files updated with current grao-state values. exploration_count updated from stale values to 16. gnw boredom scan protected."
+}

@@ -4,6 +4,8 @@ Documented parameter values for GNW. These are current best-guess values, subjec
 
 > **This is the canonical source for all parameter values.** Other files reference these values for context. When in doubt, consult this file.
 
+**Last verified:** 2026-05-17 14:37 UTC — Cycle 141 stale refresh
+
 ---
 
 ## Drive Base Parameters
@@ -176,3 +178,4 @@ and correct boredom triggering behavior.
 ---
 
 *Remnant Research - from theory to deployment.*
+*Last updated: 2026-05-16 07:31 UTC — Cycle 123 (stale refresh)*

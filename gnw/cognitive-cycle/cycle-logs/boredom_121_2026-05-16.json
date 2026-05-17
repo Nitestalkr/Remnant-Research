@@ -1,0 +1,62 @@
+{
+  "scan_number": 121,
+  "timestamp": "2026-05-16T10:25:00Z",
+  "boredom_score": 1.0,
+  "max_pending_score": 0.0,
+  "pending_events": "none",
+  "stale_items_scanned": 12,
+  "stale_items": [
+    {
+      "source": "papers/README.md",
+      "stale_hours": 36,
+      "score": 1.44,
+      "relevance": "foundational catalog index"
+    },
+    {
+      "source": "papers/consolidation-scores.md",
+      "stale_hours": 36,
+      "score": 0.81,
+      "relevance": "framework coverage tracking"
+    },
+    {
+      "source": "papers by-topic/ (5 files)",
+      "stale_hours": 36,
+      "score": 0.756,
+      "relevance": "topic catalog"
+    },
+    {
+      "source": "cycle-logs (19 files)",
+      "stale_hours": 18-36,
+      "score": 0.36,
+      "relevance": "cycle history"
+    }
+  ],
+  "highest_candidate": "papers/README.md (1.44)",
+  "work_initiated": "Paper archive stale refresh — README.md + consolidation-scores.md updated with Cycle 120 system state, GRAO exploration validation, paper cataloguing progress",
+  "work_complete": "Both docs updated with current system metrics and next cataloguing priorities",
+  "drive_scores": {
+    "boredom": 1.0,
+    "novelty": 1.5,
+    "relevance": 0.96,
+    "goal_alignment": 0.6,
+    "stale_boost": 1.5
+  },
+  "system_status": "Healthy idle — no pending events, self-initiation cycle complete",
+  "notes": "Cycle 120 updated multi-agent-systems.md cataloguing at 6:00 AM (within threshold). Cycle 121 refreshed paper archive README and consolidation-scores with GRAO exploration validation findings: CAMP+OrgAgent converge on organizational structure importance (hierarchical > flat by 102.73%). Paper cataloguing backlog: ~492 uncatalogued IDs. Next priorities: drive decay, domain-specific gradient routing, harness lifecycle, temporal prediction graphs.",
+  "graos_saturation": {
+    "exploration_triggered": true,
+    "exploration_count": 16,
+    "reinforcementRounds": 21,
+    "dual_threshold_reached": true,
+    "breakout": true,
+    "active_gradients": 5,
+    "success_ratio": 1.0,
+    "new_proposals": 5,
+    "active_proposals": 10,
+    "last_proposal_application": "2026-05-15T14:02:08.661Z",
+    "last_proposal_age_hours": 20,
+    "status": "resolved",
+    "source": "grao-state.json",
+    "notes": "Exploration mode active — round 42. Last proposal 20h ago (<24h threshold). 10 active exploration proposals. All 5 gradient types validated (cross-cluster, non-reinforcement, trace-source, weight-redistribution, cluster-merging). 100% success ratio. Saturation resolved."
+  }
+}

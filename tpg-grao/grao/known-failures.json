@@ -1,0 +1,121 @@
+{
+  "_schema_version": "1.0",
+  "_description": "GRAO Known-Failures Store — logs config paths, methods, and workarounds that agents have learned. Used to suppress failed attempts and prioritize known-working approaches.",
+  "version": 1,
+  "timestamp": "2026-05-17T14:12:00Z",
+  "total_failures_logged": 0,
+  "total_learned": 0,
+  "learning_rate": 0.0,
+  "agents_unlearned": [],
+  "entries": [
+    {
+      "id": "kf_001",
+      "type": "known_failure",
+      "path": "imageModel.primary",
+      "attempt": "config.patch",
+      "result": "error — protected path, immutable via config patch",
+      "workaround": "per-call model override on image tool call",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "high",
+      "category": "config_protection"
+    },
+    {
+      "id": "kf_002",
+      "type": "known_failure",
+      "path": "imageGenerationModel.primary",
+      "attempt": "config.patch",
+      "result": "error — protected path, immutable via config patch",
+      "workaround": "per-call model override on image_generate tool call",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "high",
+      "category": "config_protection"
+    },
+    {
+      "id": "kf_003",
+      "type": "known_failure",
+      "path": "agent.id",
+      "attempt": "config.patch",
+      "result": "error — agent identity immutable",
+      "workaround": "recreate agent (not patch)",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "medium",
+      "category": "config_protection"
+    },
+    {
+      "id": "kf_004",
+      "type": "known_failure",
+      "path": "gateway.restart",
+      "attempt": "config.patch",
+      "result": "error — requires dedicated gateway action",
+      "workaround": "gateway tool action restart",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "medium",
+      "category": "config_protection"
+    },
+    {
+      "id": "kf_005",
+      "type": "known_failure",
+      "path": "gateway.update.run",
+      "attempt": "config.patch",
+      "result": "error — requires dedicated gateway action",
+      "workaround": "gateway tool action update.run",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "medium",
+      "category": "config_protection"
+    },
+    {
+      "id": "kf_006",
+      "type": "known_failure",
+      "path": "credentials auth profiles",
+      "attempt": "config.patch",
+      "result": "error — encrypted, managed by auth system",
+      "workaround": "env vars (OPENAI_API_KEY, OPENROUTER_API_KEY) or OAuth profiles",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "high",
+      "category": "config_protection"
+    },
+    {
+      "id": "kf_007",
+      "type": "known_failure",
+      "path": "plugins install/uninstall",
+      "attempt": "config.patch",
+      "result": "error — plugin lifecycle external",
+      "workaround": "clawhub install or manual plugin file placement",
+      "learned": true,
+      "learnedAt": "2026-05-17T14:12:00Z",
+      "source": "scar-openclaw-protected-paths.md",
+      "priority": "low",
+      "category": "config_protection"
+    }
+  ],
+  "suppressed_methods": {
+    "config.patch_on_imageModel": true,
+    "config.patch_on_imageGenerationModel": true,
+    "config.patch_on_agent.id": true,
+    "config.patch_on_gateway.restart": true,
+    "config.patch_on_gateway.update.run": true,
+    "config.patch_on_credentials": true,
+    "config.patch_on_plugins": true
+  },
+  "priority_workarounds": {
+    "imageModel": "per-call model override",
+    "imageGenerationModel": "per-call model override",
+    "agent.id": "recreate agent",
+    "gateway.restart": "gateway action restart",
+    "gateway.update.run": "gateway action update.run",
+    "credentials": "env vars / OAuth",
+    "plugins": "clawhub install"
+  }
+}
