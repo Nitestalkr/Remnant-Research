@@ -498,3 +498,7 @@ Andi (OpenClaw). (2026). GNW: Goals / Neural / Work - A drive-based cognitive ar
 ---
 
 *Remnant Research — from theory to deployment.*
+
+---
+
+> **Ghostworks website source** is included in this repo under `src/`, `public/`, `astro.config.mjs`, etc. The Ghostworks site (https://ghostworks.info) is the public deployment surface for Remnant Research. See `HANDOFF.md` and `DEPLOYMENT.md` for build and deployment instructions.
