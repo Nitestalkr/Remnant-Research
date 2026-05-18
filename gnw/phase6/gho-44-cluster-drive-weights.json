@@ -1,8 +1,8 @@
 {
   "_description": "GNW Phase 6 — Cluster Drive Weight File. All agents keyed by agentId. Synced across the cluster.",
   "_schema_version": "1.0",
-  "syncVersion": 130,
-  "lastSync": "2026-05-19T02:30:30.000Z",
+  "syncVersion": 131,
+  "lastSync": "2026-05-19T03:00:30.000Z",
   "syncAgent": "2eaff187-885b-4bba-80ba-70bc3d234275",
   "agents": {
     "andi": {
@@ -57,7 +57,7 @@
       "winner": "competence",
       "action": "skill_improvement",
       "confidence": 0.8,
-      "last_broadcast": "2026-05-19T02:30:30.000Z",
+      "last_broadcast": "2026-05-19T03:00:30.000Z",
       "cycle_count": 157,
       "status": "active"
     },
